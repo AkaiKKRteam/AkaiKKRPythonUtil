@@ -1,0 +1,100 @@
+# fcc PdAd (non-magnetic, mjwasa) Pd90Ag10
+  directory:  Pd90Ag10   output file:  out_go.log
+  converged:  True
+  total energy:  -10136.332085101  Ry
+  total moment:  0.0  muB
+  local moment:  [0.0, 0.0]  muB
+
+  directory:  Pd90Ag10   output file:  out_cnd.log
+  resistivity:  10.1973  (micro ohm cm)
+
+# fcc PdAd (non-magnetic, mjwasa) Pd80Ag20
+  directory:  Pd80Ag20   output file:  out_go.log
+  converged:  True
+  total energy:  -10190.32129378  Ry
+  total moment:  0.0  muB
+  local moment:  [0.0, 0.0]  muB
+
+  directory:  Pd80Ag20   output file:  out_cnd.log
+  resistivity:  17.4111  (micro ohm cm)
+
+# fcc PdAd (non-magnetic, mjwasa) Pd70Ag30
+  directory:  Pd70Ag30   output file:  out_go.log
+  converged:  True
+  total energy:  -10244.310756322  Ry
+  total moment:  0.0  muB
+  local moment:  [0.0, -0.0]  muB
+
+  directory:  Pd70Ag30   output file:  out_cnd.log
+  resistivity:  24.02681  (micro ohm cm)
+
+# fcc PdAd (non-magnetic, mjwasa) Pd60Ag40
+  directory:  Pd60Ag40   output file:  out_go.log
+  converged:  True
+  total energy:  -10298.300363439  Ry
+  total moment:  0.0  muB
+  local moment:  [0.0, -0.0]  muB
+
+  directory:  Pd60Ag40   output file:  out_cnd.log
+  resistivity:  26.69464  (micro ohm cm)
+
+# fcc PdAd (non-magnetic, mjwasa) Pd50Ag50
+  directory:  Pd50Ag50   output file:  out_go.log
+  converged:  True
+  total energy:  -10352.290036046  Ry
+  total moment:  0.0  muB
+  local moment:  [0.0, 0.0]  muB
+
+  directory:  Pd50Ag50   output file:  out_cnd.log
+  resistivity:  21.47605  (micro ohm cm)
+
+# fcc PdAd (non-magnetic, mjwasa) Pd40Ag60
+  directory:  Pd40Ag60   output file:  out_go.log
+  converged:  True
+  total energy:  -10406.279653254  Ry
+  total moment:  0.0  muB
+  local moment:  [0.0, 0.0]  muB
+
+  directory:  Pd40Ag60   output file:  out_cnd.log
+  resistivity:  15.5203  (micro ohm cm)
+
+# fcc PdAd (non-magnetic, mjwasa) Pd30Ag70
+  directory:  Pd30Ag70   output file:  out_go.log
+  converged:  True
+  total energy:  -10460.268543545  Ry
+  total moment:  0.0  muB
+  local moment:  [0.0, -0.0]  muB
+
+  directory:  Pd30Ag70   output file:  out_cnd.log
+  resistivity:  12.92602  (micro ohm cm)
+
+# fcc PdAd (non-magnetic, mjwasa) Pd20Ag80
+  directory:  Pd20Ag80   output file:  out_go.log
+  converged:  True
+  total energy:  -10514.257119887  Ry
+  total moment:  0.0  muB
+  local moment:  [0.0, -0.0]  muB
+
+  directory:  Pd20Ag80   output file:  out_cnd.log
+  resistivity:  9.12832  (micro ohm cm)
+
+# fcc PdAd (non-magnetic, mjwasa) Pd10Ag90
+  directory:  Pd10Ag90   output file:  out_go.log
+  converged:  True
+  total energy:  -10568.245283572  Ry
+  total moment:  0.0  muB
+  local moment:  [-0.0, 0.0]  muB
+
+  directory:  Pd10Ag90   output file:  out_cnd.log
+  resistivity:  4.82678  (micro ohm cm)
+
+# resistivity difference between present and reference cals.
+  Pd90Ag10:  0.0000e+00
+  Pd80Ag20:  1.0000e-05
+  Pd70Ag30:  -1.0000e-05
+  Pd60Ag40:  3.0000e-05
+  Pd50Ag50:  0.0000e+00
+  Pd40Ag60:  0.0000e+00
+  Pd30Ag70:  0.0000e+00
+  Pd20Ag80:  0.0000e+00
+  Pd10Ag90:  -1.0000e-05
