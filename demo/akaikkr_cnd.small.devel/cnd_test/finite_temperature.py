@@ -291,5 +291,6 @@ def main(akaikkr_exe):
 
             prev_dir = directory
 
-
-main(akaikkr_exe="/home/kino/kino/kit/AkaiKKRprogram.current.gfortran/akaikkr_cnd/specx")
+if __name__ =="__main__":
+    homedir = os.path.expanduser("~")
+    main(akaikkr_exe=os.path.join(homedir,"kino/kit/AkaiKKRprogram.current.gfortran/akaikkr_cnd/specx"))
