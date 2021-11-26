@@ -1,0 +1,1936 @@
+reference/ifort.json
+metadata {'date': 'Thu Nov 25 06:39:59 2021', 'user': 'kino', 'hostname': 'mygarden1', 'platform': 'Linux-5.11.0-40-generic-x86_64-with-glibc2.31', 'processorname': 'Intel(R) Core(TM) i7-9700 CPU @ 3.00GHz'}
+Namespace(program_path='/home/kino/kino/kit/AkaiKKRprogram.current.gfortran/', create_ref=True, compiler='ifort', no_run=True, no_postscript=True, set='all') all
+             go dos spc fsm tc j30 gofmg
+Cu            -   -   -                 
+Co            -   -   -   -  -   -      
+Fe            -   -   -   -  -   -      
+Ni            -   -   -   -  -   -      
+NiFe          -   -   -   -  -   -      
+FeRh05Pt05    -   -   -   -  -   -      
+AlMnFeCo_bcc  -   -   -   -  -   -     -
+Fe_lmd        -   -   -                 
+FeB195        -   -   -                 
+GaAs          -   -   -                 
+Co2MnSi       -   -   -   -  -   -      
+SmCo5_oc      -   -   -   -  -   -      
+SmCo5_noc     -                         
+
+executable files
+/home/kino/kino/kit/AkaiKKRprogram.current.gfortran/akaikkr/specx
+/home/kino/kino/kit/AkaiKKRprogram.current.gfortran/akaikkr/fmg
+
+get_structures(primitive=False), symmetry, nsite ('Fm-3m', 225) 4
+get_structures(primitive=True), symmetry, nsite ('Fm-3m', 225) 1
+prim_stand_struc, symmetry, nsite ('Fm-3m', 225) 1
+input_struc_to filepath Cu/215293bf32134ff2fd287e6add7ec86e/input.cif
+cif_primitive= True
+cif symmetry, spg lib symmetry 225 225
+debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
+conventional standard structure
+prim_stand_nsite=1, nsite_kkr=1
+save to Cu/215293bf32134ff2fd287e6add7ec86e/structure.json
+debug, option []
+saved to Cu/215293bf32134ff2fd287e6add7ec86e/inputcard_geom
+kkr_struc, symmetry, nsite ('Fm-3m', 225) 1
+kkr space group symbol, nsite 225 1
+input prim structure num_site 1
+kkr   prim structure num_site 1
+('Fm-3m', 225) ('Fm-3m', 225)
+----------------------------------
+### fcc Cu (non-magnetic, mjw, go)
+  directory:  Cu   output file:  out_go.log
+           conv orbitallocalmoment spinlocalmoment        te       tm
+  current  True              [0.0]           [0.0] -3.30e+03 0.00e+00
+
+get_structures(primitive=False), symmetry, nsite ('Fm-3m', 225) 4
+get_structures(primitive=True), symmetry, nsite ('Fm-3m', 225) 1
+prim_stand_struc, symmetry, nsite ('Fm-3m', 225) 1
+input_struc_to filepath Cu/215293bf32134ff2fd287e6add7ec86e/input.cif
+cif_primitive= True
+cif symmetry, spg lib symmetry 225 225
+debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
+conventional standard structure
+prim_stand_nsite=1, nsite_kkr=1
+save to Cu/215293bf32134ff2fd287e6add7ec86e/structure.json
+debug, option []
+saved to Cu/215293bf32134ff2fd287e6add7ec86e/inputcard_geom
+kkr_struc, symmetry, nsite ('Fm-3m', 225) 1
+kkr space group symbol, nsite 225 1
+input prim structure num_site 1
+kkr   prim structure num_site 1
+('Fm-3m', 225) ('Fm-3m', 225)
+-----------------------------------
+### fcc Cu (non-magnetic, mjw, dos)
+  directory:  Cu   output file:  out_dos.log
+   totalDOS (up)
+  energy   -1.50e+00  -1.49e+00  -1.48e+00  ...  4.75e-01   4.85e-01   4.95e-01 
+  current   1.15e-03   1.17e-03   1.19e-03  ...   2.91e+00   3.82e+00   1.82e+00
+  
+  [1 rows x 200 columns]
+
+   pdos (up), atom=0, l=d
+  energy   -1.50e+00  -1.49e+00  -1.48e+00  ...  4.80e-01   4.90e-01   5.00e-01 
+  current   8.10e-03   7.90e-03   7.70e-03  ...   7.36e-01   1.13e-01   2.46e+00
+  
+  [1 rows x 201 columns]
+
+   final: True
+
+get_structures(primitive=False), symmetry, nsite ('Fm-3m', 225) 4
+get_structures(primitive=True), symmetry, nsite ('Fm-3m', 225) 1
+prim_stand_struc, symmetry, nsite ('Fm-3m', 225) 1
+input_struc_to filepath Cu/215293bf32134ff2fd287e6add7ec86e/input.cif
+cif_primitive= True
+cif symmetry, spg lib symmetry 225 225
+debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
+conventional standard structure
+prim_stand_nsite=1, nsite_kkr=1
+save to Cu/215293bf32134ff2fd287e6add7ec86e/structure.json
+debug, option []
+saved to Cu/215293bf32134ff2fd287e6add7ec86e/inputcard_geom
+kkr_struc, symmetry, nsite ('Fm-3m', 225) 1
+kkr space group symbol, nsite 225 1
+input prim structure num_site 1
+kkr   prim structure num_site 1
+('Fm-3m', 225) ('Fm-3m', 225)
+-------------------------------------
+### fcc Cu (non-magnetic, mjw, spc31)
+kpath is made by HighSymmKpath
+  directory:  Cu   output file:  out_spc31.log
+   Aw(w,k) k=0 0 0, up
+  energy   -7.48e-01  -7.43e-01  -7.38e-01  ...  2.37e-01   2.42e-01   2.47e-01 
+  current   1.34e-01   1.64e-01   2.06e-01  ...   1.20e-02   1.17e-02   1.15e-02
+  
+  [1 rows x 200 columns]
+
+get_structures(primitive=False), symmetry, nsite ('P6_3/mmc', 194) 2
+get_structures(primitive=True), symmetry, nsite ('P6_3/mmc', 194) 2
+prim_stand_struc, symmetry, nsite ('P6_3/mmc', 194) 2
+input_struc_to filepath Co/f39668f3f568e1ca11eaf47ff22fd05c/input.cif
+cif_primitive= True
+cif symmetry, spg lib symmetry 194 194
+debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
+conventional standard structure
+prim_stand_nsite=2, nsite_kkr=2
+save to Co/f39668f3f568e1ca11eaf47ff22fd05c/structure.json
+debug, option []
+saved to Co/f39668f3f568e1ca11eaf47ff22fd05c/inputcard_geom
+kkr_struc, symmetry, nsite ('P6_3/mmc', 194) 2
+kkr space group symbol, nsite 194 2
+input prim structure num_site 2
+kkr   prim structure num_site 2
+('P6_3/mmc', 194) ('P6_3/mmc', 194)
+------------------------------
+### hcp Co (magnetic, mjw, go)
+  directory:  Co   output file:  out_go.log
+           conv orbitallocalmoment spinlocalmoment        te       tm
+  current  True              [0.0]       [1.60411] -5.56e+03 3.12e+00
+
+get_structures(primitive=False), symmetry, nsite ('P6_3/mmc', 194) 2
+get_structures(primitive=True), symmetry, nsite ('P6_3/mmc', 194) 2
+prim_stand_struc, symmetry, nsite ('P6_3/mmc', 194) 2
+input_struc_to filepath Co/f39668f3f568e1ca11eaf47ff22fd05c/input.cif
+cif_primitive= True
+cif symmetry, spg lib symmetry 194 194
+debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
+conventional standard structure
+prim_stand_nsite=2, nsite_kkr=2
+save to Co/f39668f3f568e1ca11eaf47ff22fd05c/structure.json
+debug, option []
+saved to Co/f39668f3f568e1ca11eaf47ff22fd05c/inputcard_geom
+kkr_struc, symmetry, nsite ('P6_3/mmc', 194) 2
+kkr space group symbol, nsite 194 2
+input prim structure num_site 2
+kkr   prim structure num_site 2
+('P6_3/mmc', 194) ('P6_3/mmc', 194)
+-------------------------------
+### hcp Co (magnetic, mjw, fsm)
+  directory:  Co   output file:  out_fsm.log
+           conv orbitallocalmoment spinlocalmoment        te       tm
+  current  True              [0.0]       [0.51772] -5.56e+03 1.00e+00
+
+get_structures(primitive=False), symmetry, nsite ('P6_3/mmc', 194) 2
+get_structures(primitive=True), symmetry, nsite ('P6_3/mmc', 194) 2
+prim_stand_struc, symmetry, nsite ('P6_3/mmc', 194) 2
+input_struc_to filepath Co/f39668f3f568e1ca11eaf47ff22fd05c/input.cif
+cif_primitive= True
+cif symmetry, spg lib symmetry 194 194
+debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
+conventional standard structure
+prim_stand_nsite=2, nsite_kkr=2
+save to Co/f39668f3f568e1ca11eaf47ff22fd05c/structure.json
+debug, option []
+saved to Co/f39668f3f568e1ca11eaf47ff22fd05c/inputcard_geom
+kkr_struc, symmetry, nsite ('P6_3/mmc', 194) 2
+kkr space group symbol, nsite 194 2
+input prim structure num_site 2
+kkr   prim structure num_site 2
+('P6_3/mmc', 194) ('P6_3/mmc', 194)
+------------------------------
+### hcp Co (magnetic, mjw, tc)
+  directory:  Co   output file:  out_tc.log
+                Tc
+  current 1.37e+03
+
+get_structures(primitive=False), symmetry, nsite ('P6_3/mmc', 194) 2
+get_structures(primitive=True), symmetry, nsite ('P6_3/mmc', 194) 2
+prim_stand_struc, symmetry, nsite ('P6_3/mmc', 194) 2
+input_struc_to filepath Co/f39668f3f568e1ca11eaf47ff22fd05c/input.cif
+cif_primitive= True
+cif symmetry, spg lib symmetry 194 194
+debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
+conventional standard structure
+prim_stand_nsite=2, nsite_kkr=2
+save to Co/f39668f3f568e1ca11eaf47ff22fd05c/structure.json
+debug, option []
+saved to Co/f39668f3f568e1ca11eaf47ff22fd05c/inputcard_geom
+kkr_struc, symmetry, nsite ('P6_3/mmc', 194) 2
+kkr space group symbol, nsite 194 2
+input prim structure num_site 2
+kkr   prim structure num_site 2
+('P6_3/mmc', 194) ('P6_3/mmc', 194)
+--------------------------------
+### hcp Co (magnetic, mjw, j3.0)
+  directory:  Co   output file:  out_j3.0.log
+                Tc
+  current 1.30e+03
+
+   J_ij(meV) at the shortest distance
+  typecomp  Co-Co_1_1
+  current   13.770806
+
+get_structures(primitive=False), symmetry, nsite ('P6_3/mmc', 194) 2
+get_structures(primitive=True), symmetry, nsite ('P6_3/mmc', 194) 2
+prim_stand_struc, symmetry, nsite ('P6_3/mmc', 194) 2
+input_struc_to filepath Co/f39668f3f568e1ca11eaf47ff22fd05c/input.cif
+cif_primitive= True
+cif symmetry, spg lib symmetry 194 194
+debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
+conventional standard structure
+prim_stand_nsite=2, nsite_kkr=2
+save to Co/f39668f3f568e1ca11eaf47ff22fd05c/structure.json
+debug, option []
+saved to Co/f39668f3f568e1ca11eaf47ff22fd05c/inputcard_geom
+kkr_struc, symmetry, nsite ('P6_3/mmc', 194) 2
+kkr space group symbol, nsite 194 2
+input prim structure num_site 2
+kkr   prim structure num_site 2
+('P6_3/mmc', 194) ('P6_3/mmc', 194)
+-------------------------------
+### hcp Co (magnetic, mjw, dos)
+  directory:  Co   output file:  out_dos.log
+   totalDOS (up)
+  energy   -1.50e+00  -1.49e+00  -1.48e+00  ...  4.75e-01   4.85e-01   4.95e-01 
+  current   2.34e-03   2.38e-03   2.42e-03  ...   2.37e+00   1.88e+00   2.35e+00
+  
+  [1 rows x 200 columns]
+
+   totalDOS (dn)
+  energy   -1.50e+00  -1.49e+00  -1.48e+00  ...  4.75e-01   4.85e-01   4.95e-01 
+  current   2.08e-03   2.11e-03   2.14e-03  ...   1.83e+00   2.10e-01   9.39e-01
+  
+  [1 rows x 200 columns]
+
+   pdos (up), atom=0, l=d
+  energy   -1.50e+00  -1.49e+00  -1.48e+00  ...  4.80e-01   4.90e-01   5.00e-01 
+  current   5.40e-03   5.30e-03   5.20e-03  ...   8.90e-02   4.43e-01   1.72e-01
+  
+  [1 rows x 201 columns]
+
+   pdos (dn), atom=0, l=d
+  energy   -1.50e+00  -1.49e+00  -1.48e+00  ...  4.80e-01   4.90e-01   5.00e-01 
+  current   5.30e-03   5.20e-03   5.10e-03  ...   7.18e-02   4.66e-02   1.81e-01
+  
+  [1 rows x 201 columns]
+
+   final: True
+
+get_structures(primitive=False), symmetry, nsite ('P6_3/mmc', 194) 2
+get_structures(primitive=True), symmetry, nsite ('P6_3/mmc', 194) 2
+prim_stand_struc, symmetry, nsite ('P6_3/mmc', 194) 2
+input_struc_to filepath Co/f39668f3f568e1ca11eaf47ff22fd05c/input.cif
+cif_primitive= True
+cif symmetry, spg lib symmetry 194 194
+debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
+conventional standard structure
+prim_stand_nsite=2, nsite_kkr=2
+save to Co/f39668f3f568e1ca11eaf47ff22fd05c/structure.json
+debug, option []
+saved to Co/f39668f3f568e1ca11eaf47ff22fd05c/inputcard_geom
+kkr_struc, symmetry, nsite ('P6_3/mmc', 194) 2
+kkr space group symbol, nsite 194 2
+input prim structure num_site 2
+kkr   prim structure num_site 2
+('P6_3/mmc', 194) ('P6_3/mmc', 194)
+---------------------------------
+### hcp Co (magnetic, mjw, spc31)
+kpath is made by HighSymmKpath
+  directory:  Co   output file:  out_spc31.log
+   Aw(w,k) k=0 0 0, up
+  energy   -7.48e-01  -7.43e-01  -7.38e-01  ...  2.37e-01   2.42e-01   2.47e-01 
+  current   6.09e-02   6.79e-02   7.63e-02  ...   3.96e-02   3.92e-02   3.88e-02
+  
+  [1 rows x 200 columns]
+
+   Aw(w,k) k=0 0 0, dn
+  energy   -7.48e-01  -7.43e-01  -7.38e-01  ...  2.37e-01   2.42e-01   2.47e-01 
+  current   4.66e-02   5.12e-02   5.67e-02  ...   6.61e-02   6.38e-02   6.16e-02
+  
+  [1 rows x 200 columns]
+
+get_structures(primitive=False), symmetry, nsite ('Im-3m', 229) 2
+get_structures(primitive=True), symmetry, nsite ('Im-3m', 229) 1
+prim_stand_struc, symmetry, nsite ('Im-3m', 229) 1
+input_struc_to filepath Fe/caf80bdd15f4dc9f486d4724ecd18076/input.cif
+cif_primitive= True
+cif symmetry, spg lib symmetry 229 229
+debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
+conventional standard structure
+prim_stand_nsite=1, nsite_kkr=1
+save to Fe/caf80bdd15f4dc9f486d4724ecd18076/structure.json
+debug, option []
+saved to Fe/caf80bdd15f4dc9f486d4724ecd18076/inputcard_geom
+kkr_struc, symmetry, nsite ('Im-3m', 229) 1
+kkr space group symbol, nsite 229 1
+input prim structure num_site 1
+kkr   prim structure num_site 1
+('Im-3m', 229) ('Im-3m', 229)
+------------------------------
+### bcc Fe (magnetic, mjw, go)
+  directory:  Fe   output file:  out_go.log
+           conv orbitallocalmoment spinlocalmoment        te       tm
+  current  True              [0.0]       [2.11874] -2.54e+03 2.10e+00
+
+get_structures(primitive=False), symmetry, nsite ('Im-3m', 229) 2
+get_structures(primitive=True), symmetry, nsite ('Im-3m', 229) 1
+prim_stand_struc, symmetry, nsite ('Im-3m', 229) 1
+input_struc_to filepath Fe/caf80bdd15f4dc9f486d4724ecd18076/input.cif
+cif_primitive= True
+cif symmetry, spg lib symmetry 229 229
+debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
+conventional standard structure
+prim_stand_nsite=1, nsite_kkr=1
+save to Fe/caf80bdd15f4dc9f486d4724ecd18076/structure.json
+debug, option []
+saved to Fe/caf80bdd15f4dc9f486d4724ecd18076/inputcard_geom
+kkr_struc, symmetry, nsite ('Im-3m', 229) 1
+kkr space group symbol, nsite 229 1
+input prim structure num_site 1
+kkr   prim structure num_site 1
+('Im-3m', 229) ('Im-3m', 229)
+-------------------------------
+### bcc Fe (magnetic, mjw, fsm)
+  directory:  Fe   output file:  out_fsm.log
+           conv orbitallocalmoment spinlocalmoment        te       tm
+  current  True              [0.0]       [1.01773] -2.54e+03 1.00e+00
+
+get_structures(primitive=False), symmetry, nsite ('Im-3m', 229) 2
+get_structures(primitive=True), symmetry, nsite ('Im-3m', 229) 1
+prim_stand_struc, symmetry, nsite ('Im-3m', 229) 1
+input_struc_to filepath Fe/caf80bdd15f4dc9f486d4724ecd18076/input.cif
+cif_primitive= True
+cif symmetry, spg lib symmetry 229 229
+debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
+conventional standard structure
+prim_stand_nsite=1, nsite_kkr=1
+save to Fe/caf80bdd15f4dc9f486d4724ecd18076/structure.json
+debug, option []
+saved to Fe/caf80bdd15f4dc9f486d4724ecd18076/inputcard_geom
+kkr_struc, symmetry, nsite ('Im-3m', 229) 1
+kkr space group symbol, nsite 229 1
+input prim structure num_site 1
+kkr   prim structure num_site 1
+('Im-3m', 229) ('Im-3m', 229)
+------------------------------
+### bcc Fe (magnetic, mjw, tc)
+  directory:  Fe   output file:  out_tc.log
+                Tc
+  current 9.43e+02
+
+get_structures(primitive=False), symmetry, nsite ('Im-3m', 229) 2
+get_structures(primitive=True), symmetry, nsite ('Im-3m', 229) 1
+prim_stand_struc, symmetry, nsite ('Im-3m', 229) 1
+input_struc_to filepath Fe/caf80bdd15f4dc9f486d4724ecd18076/input.cif
+cif_primitive= True
+cif symmetry, spg lib symmetry 229 229
+debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
+conventional standard structure
+prim_stand_nsite=1, nsite_kkr=1
+save to Fe/caf80bdd15f4dc9f486d4724ecd18076/structure.json
+debug, option []
+saved to Fe/caf80bdd15f4dc9f486d4724ecd18076/inputcard_geom
+kkr_struc, symmetry, nsite ('Im-3m', 229) 1
+kkr space group symbol, nsite 229 1
+input prim structure num_site 1
+kkr   prim structure num_site 1
+('Im-3m', 229) ('Im-3m', 229)
+--------------------------------
+### bcc Fe (magnetic, mjw, j3.0)
+  directory:  Fe   output file:  out_j3.0.log
+                Tc
+  current 9.19e+02
+
+   J_ij(meV) at the shortest distance
+  typecomp  Fe-Fe_1_1
+  current   15.597594
+
+get_structures(primitive=False), symmetry, nsite ('Im-3m', 229) 2
+get_structures(primitive=True), symmetry, nsite ('Im-3m', 229) 1
+prim_stand_struc, symmetry, nsite ('Im-3m', 229) 1
+input_struc_to filepath Fe/caf80bdd15f4dc9f486d4724ecd18076/input.cif
+cif_primitive= True
+cif symmetry, spg lib symmetry 229 229
+debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
+conventional standard structure
+prim_stand_nsite=1, nsite_kkr=1
+save to Fe/caf80bdd15f4dc9f486d4724ecd18076/structure.json
+debug, option []
+saved to Fe/caf80bdd15f4dc9f486d4724ecd18076/inputcard_geom
+kkr_struc, symmetry, nsite ('Im-3m', 229) 1
+kkr space group symbol, nsite 229 1
+input prim structure num_site 1
+kkr   prim structure num_site 1
+('Im-3m', 229) ('Im-3m', 229)
+-------------------------------
+### bcc Fe (magnetic, mjw, dos)
+  directory:  Fe   output file:  out_dos.log
+   totalDOS (up)
+  energy   -1.50e+00  -1.49e+00  -1.48e+00  ...  4.75e-01   4.85e-01   4.95e-01 
+  current   1.24e-03   1.26e-03   1.28e-03  ...   8.11e-02   4.77e-02   5.28e-02
+  
+  [1 rows x 200 columns]
+
+   totalDOS (dn)
+  energy   -1.50e+00  -1.49e+00  -1.48e+00  ...  4.75e-01   4.85e-01   4.95e-01 
+  current   1.08e-03   1.09e-03   1.11e-03  ...   1.19e-01   1.25e-01   1.61e+00
+  
+  [1 rows x 200 columns]
+
+   pdos (up), atom=0, l=d
+  energy   -1.50e+00  -1.49e+00  -1.48e+00  ...  4.80e-01   4.90e-01   5.00e-01 
+  current   4.20e-03   4.20e-03   4.10e-03  ...   2.18e-02   1.85e-02   2.84e-02
+  
+  [1 rows x 201 columns]
+
+   pdos (dn), atom=0, l=d
+  energy   -1.50e+00  -1.49e+00  -1.48e+00  ...  4.80e-01   4.90e-01   5.00e-01 
+  current   4.10e-03   4.10e-03   4.00e-03  ...   4.11e-02   9.71e-02   1.10e+00
+  
+  [1 rows x 201 columns]
+
+   final: True
+
+get_structures(primitive=False), symmetry, nsite ('Im-3m', 229) 2
+get_structures(primitive=True), symmetry, nsite ('Im-3m', 229) 1
+prim_stand_struc, symmetry, nsite ('Im-3m', 229) 1
+input_struc_to filepath Fe/caf80bdd15f4dc9f486d4724ecd18076/input.cif
+cif_primitive= True
+cif symmetry, spg lib symmetry 229 229
+debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
+conventional standard structure
+prim_stand_nsite=1, nsite_kkr=1
+save to Fe/caf80bdd15f4dc9f486d4724ecd18076/structure.json
+debug, option []
+saved to Fe/caf80bdd15f4dc9f486d4724ecd18076/inputcard_geom
+kkr_struc, symmetry, nsite ('Im-3m', 229) 1
+kkr space group symbol, nsite 229 1
+input prim structure num_site 1
+kkr   prim structure num_site 1
+('Im-3m', 229) ('Im-3m', 229)
+---------------------------------
+### bcc Fe (magnetic, mjw, spc31)
+kpath is made by HighSymmKpath
+  directory:  Fe   output file:  out_spc31.log
+   Aw(w,k) k=0 0 0, up
+  energy   -7.48e-01  -7.43e-01  -7.38e-01  ...  2.37e-01   2.42e-01   2.47e-01 
+  current   5.05e-02   5.66e-02   6.39e-02  ...   1.47e-02   1.44e-02   1.41e-02
+  
+  [1 rows x 200 columns]
+
+   Aw(w,k) k=0 0 0, dn
+  energy   -7.48e-01  -7.43e-01  -7.38e-01  ...  2.37e-01   2.42e-01   2.47e-01 
+  current   2.83e-02   3.07e-02   3.35e-02  ...   4.22e-02   4.01e-02   3.81e-02
+  
+  [1 rows x 200 columns]
+
+get_structures(primitive=False), symmetry, nsite ('Fm-3m', 225) 4
+get_structures(primitive=True), symmetry, nsite ('Fm-3m', 225) 1
+prim_stand_struc, symmetry, nsite ('Fm-3m', 225) 1
+input_struc_to filepath Ni/95dddf03f8f08e074850c45b9301c51f/input.cif
+cif_primitive= True
+cif symmetry, spg lib symmetry 225 225
+debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
+conventional standard structure
+prim_stand_nsite=1, nsite_kkr=1
+save to Ni/95dddf03f8f08e074850c45b9301c51f/structure.json
+debug, option []
+saved to Ni/95dddf03f8f08e074850c45b9301c51f/inputcard_geom
+kkr_struc, symmetry, nsite ('Fm-3m', 225) 1
+kkr space group symbol, nsite 225 1
+input prim structure num_site 1
+kkr   prim structure num_site 1
+('Fm-3m', 225) ('Fm-3m', 225)
+------------------------------
+### fcc Ni (magnetic, mjw, go)
+  directory:  Ni   output file:  out_go.log
+           conv orbitallocalmoment spinlocalmoment        te       tm
+  current  True              [0.0]       [0.68463] -3.04e+03 6.60e-01
+
+get_structures(primitive=False), symmetry, nsite ('Fm-3m', 225) 4
+get_structures(primitive=True), symmetry, nsite ('Fm-3m', 225) 1
+prim_stand_struc, symmetry, nsite ('Fm-3m', 225) 1
+input_struc_to filepath Ni/95dddf03f8f08e074850c45b9301c51f/input.cif
+cif_primitive= True
+cif symmetry, spg lib symmetry 225 225
+debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
+conventional standard structure
+prim_stand_nsite=1, nsite_kkr=1
+save to Ni/95dddf03f8f08e074850c45b9301c51f/structure.json
+debug, option []
+saved to Ni/95dddf03f8f08e074850c45b9301c51f/inputcard_geom
+kkr_struc, symmetry, nsite ('Fm-3m', 225) 1
+kkr space group symbol, nsite 225 1
+input prim structure num_site 1
+kkr   prim structure num_site 1
+('Fm-3m', 225) ('Fm-3m', 225)
+-------------------------------
+### fcc Ni (magnetic, mjw, fsm)
+  directory:  Ni   output file:  out_fsm.log
+           conv orbitallocalmoment spinlocalmoment        te       tm
+  current  True              [0.0]       [0.99783] -3.04e+03 1.00e+00
+
+get_structures(primitive=False), symmetry, nsite ('Fm-3m', 225) 4
+get_structures(primitive=True), symmetry, nsite ('Fm-3m', 225) 1
+prim_stand_struc, symmetry, nsite ('Fm-3m', 225) 1
+input_struc_to filepath Ni/95dddf03f8f08e074850c45b9301c51f/input.cif
+cif_primitive= True
+cif symmetry, spg lib symmetry 225 225
+debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
+conventional standard structure
+prim_stand_nsite=1, nsite_kkr=1
+save to Ni/95dddf03f8f08e074850c45b9301c51f/structure.json
+debug, option []
+saved to Ni/95dddf03f8f08e074850c45b9301c51f/inputcard_geom
+kkr_struc, symmetry, nsite ('Fm-3m', 225) 1
+kkr space group symbol, nsite 225 1
+input prim structure num_site 1
+kkr   prim structure num_site 1
+('Fm-3m', 225) ('Fm-3m', 225)
+------------------------------
+### fcc Ni (magnetic, mjw, tc)
+  directory:  Ni   output file:  out_tc.log
+                Tc
+  current 4.59e+02
+
+get_structures(primitive=False), symmetry, nsite ('Fm-3m', 225) 4
+get_structures(primitive=True), symmetry, nsite ('Fm-3m', 225) 1
+prim_stand_struc, symmetry, nsite ('Fm-3m', 225) 1
+input_struc_to filepath Ni/95dddf03f8f08e074850c45b9301c51f/input.cif
+cif_primitive= True
+cif symmetry, spg lib symmetry 225 225
+debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
+conventional standard structure
+prim_stand_nsite=1, nsite_kkr=1
+save to Ni/95dddf03f8f08e074850c45b9301c51f/structure.json
+debug, option []
+saved to Ni/95dddf03f8f08e074850c45b9301c51f/inputcard_geom
+kkr_struc, symmetry, nsite ('Fm-3m', 225) 1
+kkr space group symbol, nsite 225 1
+input prim structure num_site 1
+kkr   prim structure num_site 1
+('Fm-3m', 225) ('Fm-3m', 225)
+--------------------------------
+### fcc Ni (magnetic, mjw, j3.0)
+  directory:  Ni   output file:  out_j3.0.log
+                Tc
+  current 4.36e+02
+
+   J_ij(meV) at the shortest distance
+  typecomp Ni-Ni_1_1
+  current   3.501745
+
+get_structures(primitive=False), symmetry, nsite ('Fm-3m', 225) 4
+get_structures(primitive=True), symmetry, nsite ('Fm-3m', 225) 1
+prim_stand_struc, symmetry, nsite ('Fm-3m', 225) 1
+input_struc_to filepath Ni/95dddf03f8f08e074850c45b9301c51f/input.cif
+cif_primitive= True
+cif symmetry, spg lib symmetry 225 225
+debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
+conventional standard structure
+prim_stand_nsite=1, nsite_kkr=1
+save to Ni/95dddf03f8f08e074850c45b9301c51f/structure.json
+debug, option []
+saved to Ni/95dddf03f8f08e074850c45b9301c51f/inputcard_geom
+kkr_struc, symmetry, nsite ('Fm-3m', 225) 1
+kkr space group symbol, nsite 225 1
+input prim structure num_site 1
+kkr   prim structure num_site 1
+('Fm-3m', 225) ('Fm-3m', 225)
+-------------------------------
+### fcc Ni (magnetic, mjw, dos)
+  directory:  Ni   output file:  out_dos.log
+   totalDOS (up)
+  energy   -1.50e+00  -1.49e+00  -1.48e+00  ...  4.75e-01   4.85e-01   4.95e-01 
+  current   1.11e-03   1.13e-03   1.15e-03  ...   2.32e+00   1.17e+00   1.32e+00
+  
+  [1 rows x 200 columns]
+
+   totalDOS (dn)
+  energy   -1.50e+00  -1.49e+00  -1.48e+00  ...  4.75e-01   4.85e-01   4.95e-01 
+  current   1.06e-03   1.07e-03   1.09e-03  ...   2.32e+00   6.88e-01   3.60e+00
+  
+  [1 rows x 200 columns]
+
+   pdos (up), atom=0, l=d
+  energy   -1.50e+00  -1.49e+00  -1.48e+00  ...  4.80e-01   4.90e-01   5.00e-01 
+  current   5.50e-03   5.40e-03   5.30e-03  ...   6.93e-01   8.10e-02   1.66e-01
+  
+  [1 rows x 201 columns]
+
+   pdos (dn), atom=0, l=d
+  energy   -1.50e+00  -1.49e+00  -1.48e+00  ...  4.80e-01   4.90e-01   5.00e-01 
+  current   4.90e-03   4.80e-03   4.70e-03  ...   8.81e-01   4.12e-01   9.78e-01
+  
+  [1 rows x 201 columns]
+
+   final: True
+
+get_structures(primitive=False), symmetry, nsite ('Fm-3m', 225) 4
+get_structures(primitive=True), symmetry, nsite ('Fm-3m', 225) 1
+prim_stand_struc, symmetry, nsite ('Fm-3m', 225) 1
+input_struc_to filepath Ni/95dddf03f8f08e074850c45b9301c51f/input.cif
+cif_primitive= True
+cif symmetry, spg lib symmetry 225 225
+debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
+conventional standard structure
+prim_stand_nsite=1, nsite_kkr=1
+save to Ni/95dddf03f8f08e074850c45b9301c51f/structure.json
+debug, option []
+saved to Ni/95dddf03f8f08e074850c45b9301c51f/inputcard_geom
+kkr_struc, symmetry, nsite ('Fm-3m', 225) 1
+kkr space group symbol, nsite 225 1
+input prim structure num_site 1
+kkr   prim structure num_site 1
+('Fm-3m', 225) ('Fm-3m', 225)
+---------------------------------
+### fcc Ni (magnetic, mjw, spc31)
+kpath is made by HighSymmKpath
+  directory:  Ni   output file:  out_spc31.log
+   Aw(w,k) k=0 0 0, up
+  energy   -7.48e-01  -7.43e-01  -7.38e-01  ...  2.37e-01   2.42e-01   2.47e-01 
+  current   7.52e-02   8.71e-02   1.02e-01  ...   1.42e-02   1.39e-02   1.36e-02
+  
+  [1 rows x 200 columns]
+
+   Aw(w,k) k=0 0 0, dn
+  energy   -7.48e-01  -7.43e-01  -7.38e-01  ...  2.37e-01   2.42e-01   2.47e-01 
+  current   7.02e-02   8.10e-02   9.45e-02  ...   1.81e-02   1.77e-02   1.72e-02
+  
+  [1 rows x 200 columns]
+
+get_structures(primitive=False), symmetry, nsite ('Fm-3m', 225) 4
+get_structures(primitive=True), symmetry, nsite ('Fm-3m', 225) 1
+failed to use SpacegroupAnalyzer. Probably it is an alloy.
+prim_stand_struc, symmetry, nsite ('Fm-3m', 225) 1
+input_struc_to filepath NiFe/e549f3977f740dcac4cb82224b952d66/input.cif
+cif_primitive= True
+cif symmetry, spg lib symmetry 225 225
+debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
+conventional standard structure
+prim_stand_nsite=1, nsite_kkr=1
+save to NiFe/e549f3977f740dcac4cb82224b952d66/structure.json
+debug, option []
+saved to NiFe/e549f3977f740dcac4cb82224b952d66/inputcard_geom
+kkr_struc, symmetry, nsite ('Fm-3m', 225) 1
+kkr space group symbol, nsite 225 1
+input prim structure num_site 1
+kkr   prim structure num_site 1
+('Fm-3m', 225) ('Fm-3m', 225)
+-----------------------------------
+### fcc NiFe (magnetic, pbeasa, go)
+  directory:  NiFe   output file:  out_go.log
+           conv orbitallocalmoment     spinlocalmoment        te       tm
+  current  True         [0.0, 0.0]  [2.62303, 0.57349] -2.99e+03 7.78e-01
+
+get_structures(primitive=False), symmetry, nsite ('Fm-3m', 225) 4
+get_structures(primitive=True), symmetry, nsite ('Fm-3m', 225) 1
+failed to use SpacegroupAnalyzer. Probably it is an alloy.
+prim_stand_struc, symmetry, nsite ('Fm-3m', 225) 1
+input_struc_to filepath NiFe/e549f3977f740dcac4cb82224b952d66/input.cif
+cif_primitive= True
+cif symmetry, spg lib symmetry 225 225
+debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
+conventional standard structure
+prim_stand_nsite=1, nsite_kkr=1
+save to NiFe/e549f3977f740dcac4cb82224b952d66/structure.json
+debug, option []
+saved to NiFe/e549f3977f740dcac4cb82224b952d66/inputcard_geom
+kkr_struc, symmetry, nsite ('Fm-3m', 225) 1
+kkr space group symbol, nsite 225 1
+input prim structure num_site 1
+kkr   prim structure num_site 1
+('Fm-3m', 225) ('Fm-3m', 225)
+------------------------------------
+### fcc NiFe (magnetic, pbeasa, fsm)
+  directory:  NiFe   output file:  out_fsm.log
+           conv orbitallocalmoment     spinlocalmoment        te       tm
+  current  True         [0.0, 0.0]  [2.78166, 0.80204] -2.99e+03 1.00e+00
+
+get_structures(primitive=False), symmetry, nsite ('Fm-3m', 225) 4
+get_structures(primitive=True), symmetry, nsite ('Fm-3m', 225) 1
+failed to use SpacegroupAnalyzer. Probably it is an alloy.
+prim_stand_struc, symmetry, nsite ('Fm-3m', 225) 1
+input_struc_to filepath NiFe/e549f3977f740dcac4cb82224b952d66/input.cif
+cif_primitive= True
+cif symmetry, spg lib symmetry 225 225
+debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
+conventional standard structure
+prim_stand_nsite=1, nsite_kkr=1
+save to NiFe/e549f3977f740dcac4cb82224b952d66/structure.json
+debug, option []
+saved to NiFe/e549f3977f740dcac4cb82224b952d66/inputcard_geom
+kkr_struc, symmetry, nsite ('Fm-3m', 225) 1
+kkr space group symbol, nsite 225 1
+input prim structure num_site 1
+kkr   prim structure num_site 1
+('Fm-3m', 225) ('Fm-3m', 225)
+-----------------------------------
+### fcc NiFe (magnetic, pbeasa, tc)
+  directory:  NiFe   output file:  out_tc.log
+                Tc
+  current 5.72e+02
+
+get_structures(primitive=False), symmetry, nsite ('Fm-3m', 225) 4
+get_structures(primitive=True), symmetry, nsite ('Fm-3m', 225) 1
+failed to use SpacegroupAnalyzer. Probably it is an alloy.
+prim_stand_struc, symmetry, nsite ('Fm-3m', 225) 1
+input_struc_to filepath NiFe/e549f3977f740dcac4cb82224b952d66/input.cif
+cif_primitive= True
+cif symmetry, spg lib symmetry 225 225
+debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
+conventional standard structure
+prim_stand_nsite=1, nsite_kkr=1
+save to NiFe/e549f3977f740dcac4cb82224b952d66/structure.json
+debug, option []
+saved to NiFe/e549f3977f740dcac4cb82224b952d66/inputcard_geom
+kkr_struc, symmetry, nsite ('Fm-3m', 225) 1
+kkr space group symbol, nsite 225 1
+input prim structure num_site 1
+kkr   prim structure num_site 1
+('Fm-3m', 225) ('Fm-3m', 225)
+-------------------------------------
+### fcc NiFe (magnetic, pbeasa, j3.0)
+  directory:  NiFe   output file:  out_j3.0.log
+                Tc
+  current 5.54e+02
+
+   J_ij(meV) at the shortest distance
+  typecomp NiFe-NiFe_1_1 NiFe-NiFe_1_2 NiFe-NiFe_2_2
+  current       9.586516      9.327839      2.539664
+
+get_structures(primitive=False), symmetry, nsite ('Fm-3m', 225) 4
+get_structures(primitive=True), symmetry, nsite ('Fm-3m', 225) 1
+failed to use SpacegroupAnalyzer. Probably it is an alloy.
+prim_stand_struc, symmetry, nsite ('Fm-3m', 225) 1
+input_struc_to filepath NiFe/e549f3977f740dcac4cb82224b952d66/input.cif
+cif_primitive= True
+cif symmetry, spg lib symmetry 225 225
+debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
+conventional standard structure
+prim_stand_nsite=1, nsite_kkr=1
+save to NiFe/e549f3977f740dcac4cb82224b952d66/structure.json
+debug, option []
+saved to NiFe/e549f3977f740dcac4cb82224b952d66/inputcard_geom
+kkr_struc, symmetry, nsite ('Fm-3m', 225) 1
+kkr space group symbol, nsite 225 1
+input prim structure num_site 1
+kkr   prim structure num_site 1
+('Fm-3m', 225) ('Fm-3m', 225)
+------------------------------------
+### fcc NiFe (magnetic, pbeasa, dos)
+  directory:  NiFe   output file:  out_dos.log
+   totalDOS (up)
+  energy   -1.50e+00  -1.49e+00  -1.48e+00  ...  4.75e-01   4.85e-01   4.95e-01 
+  current   9.40e-04   9.60e-04   9.70e-04  ...   2.70e+00   1.12e+00   2.69e+00
+  
+  [1 rows x 200 columns]
+
+   totalDOS (dn)
+  energy   -1.50e+00  -1.49e+00  -1.48e+00  ...  4.75e-01   4.85e-01   4.95e-01 
+  current   8.90e-04   9.00e-04   9.20e-04  ...   2.42e+00   2.27e+00   2.53e+00
+  
+  [1 rows x 200 columns]
+
+   pdos (up), atom=0, l=d
+  energy   -1.50e+00  -1.49e+00  -1.48e+00  ...  4.80e-01   4.90e-01   5.00e-01 
+  current   2.50e-03   2.50e-03   2.50e-03  ...   2.06e-01   1.28e+00   1.58e+00
+  
+  [1 rows x 201 columns]
+
+   pdos (dn), atom=0, l=d
+  energy   -1.50e+00  -1.49e+00  -1.48e+00  ...  4.80e-01   4.90e-01   5.00e-01 
+  current   2.20e-03   2.20e-03   2.20e-03  ...   1.24e+00   1.02e+00   1.44e+00
+  
+  [1 rows x 201 columns]
+
+   final: True
+
+get_structures(primitive=False), symmetry, nsite ('Fm-3m', 225) 4
+get_structures(primitive=True), symmetry, nsite ('Fm-3m', 225) 1
+failed to use SpacegroupAnalyzer. Probably it is an alloy.
+prim_stand_struc, symmetry, nsite ('Fm-3m', 225) 1
+input_struc_to filepath NiFe/e549f3977f740dcac4cb82224b952d66/input.cif
+cif_primitive= True
+cif symmetry, spg lib symmetry 225 225
+debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
+conventional standard structure
+prim_stand_nsite=1, nsite_kkr=1
+save to NiFe/e549f3977f740dcac4cb82224b952d66/structure.json
+debug, option []
+saved to NiFe/e549f3977f740dcac4cb82224b952d66/inputcard_geom
+kkr_struc, symmetry, nsite ('Fm-3m', 225) 1
+kkr space group symbol, nsite 225 1
+input prim structure num_site 1
+kkr   prim structure num_site 1
+('Fm-3m', 225) ('Fm-3m', 225)
+--------------------------------------
+### fcc NiFe (magnetic, pbeasa, spc31)
+kpath is made by HighSymmKpath
+  directory:  NiFe   output file:  out_spc31.log
+   Aw(w,k) k=0 0 0, up
+  energy   -7.48e-01  -7.43e-01  -7.38e-01  ...  2.37e-01   2.42e-01   2.47e-01 
+  current   6.80e-02   7.81e-02   9.08e-02  ...   0.00e+00   6.21e-02   1.17e-02
+  
+  [1 rows x 200 columns]
+
+   Aw(w,k) k=0 0 0, dn
+  energy   -7.48e-01  -7.43e-01  -7.38e-01  ...  2.37e-01   2.42e-01   2.47e-01 
+  current   6.80e-02   7.82e-02   9.11e-02  ...   2.59e-01   0.00e+00   1.72e-01
+  
+  [1 rows x 200 columns]
+
+get_structures(primitive=False), symmetry, nsite ('P4/mmm', 123) 2
+get_structures(primitive=True), symmetry, nsite ('P4/mmm', 123) 2
+prim_stand_struc, symmetry, nsite ('P4/mmm', 123) 2
+input_struc_to filepath FeRh05Pt05/7db1320a85961ebc66c790147b5d3a3d/input.cif
+cif_primitive= True
+cif symmetry, spg lib symmetry 123 123
+debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
+conventional standard structure
+prim_stand_nsite=2, nsite_kkr=2
+save to FeRh05Pt05/7db1320a85961ebc66c790147b5d3a3d/structure.json
+debug, option []
+saved to FeRh05Pt05/7db1320a85961ebc66c790147b5d3a3d/inputcard_geom
+kkr_struc, symmetry, nsite ('P4/mmm', 123) 2
+kkr space group symbol, nsite 123 2
+input prim structure num_site 2
+kkr   prim structure num_site 2
+('P4/mmm', 123) ('P4/mmm', 123)
+-------------------------------------------
+### so FeRh0.5Pt0.5. (magnetic, pbeasa, go)
+  directory:  FeRh05Pt05   output file:  out_go.log
+           conv orbitallocalmoment  ...        te       tm
+  current  True    [0.0, 0.0, 0.0]  ... -2.57e+04 3.45e+00
+  
+  [1 rows x 5 columns]
+
+get_structures(primitive=False), symmetry, nsite ('P4/mmm', 123) 2
+get_structures(primitive=True), symmetry, nsite ('P4/mmm', 123) 2
+prim_stand_struc, symmetry, nsite ('P4/mmm', 123) 2
+input_struc_to filepath FeRh05Pt05/7db1320a85961ebc66c790147b5d3a3d/input.cif
+cif_primitive= True
+cif symmetry, spg lib symmetry 123 123
+debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
+conventional standard structure
+prim_stand_nsite=2, nsite_kkr=2
+save to FeRh05Pt05/7db1320a85961ebc66c790147b5d3a3d/structure.json
+debug, option []
+saved to FeRh05Pt05/7db1320a85961ebc66c790147b5d3a3d/inputcard_geom
+kkr_struc, symmetry, nsite ('P4/mmm', 123) 2
+kkr space group symbol, nsite 123 2
+input prim structure num_site 2
+kkr   prim structure num_site 2
+('P4/mmm', 123) ('P4/mmm', 123)
+---------------------------------------------
+### so FeRh0.5Pt0.5. (magnetic, pbeasa, j3.0)
+  directory:  FeRh05Pt05   output file:  out_j3.0.log
+                Tc
+  current 2.17e+02
+
+   J_ij(meV) at the shortest distance
+  typecomp Fe-Fe_1_1 Fe-RhPt_1_1  ... RhPt-RhPt_1_2 RhPt-RhPt_2_2
+  current   0.492694    6.173180  ...      0.165006      0.201569
+  
+  [1 rows x 6 columns]
+
+get_structures(primitive=False), symmetry, nsite ('P4/mmm', 123) 2
+get_structures(primitive=True), symmetry, nsite ('P4/mmm', 123) 2
+prim_stand_struc, symmetry, nsite ('P4/mmm', 123) 2
+input_struc_to filepath FeRh05Pt05/7db1320a85961ebc66c790147b5d3a3d/input.cif
+cif_primitive= True
+cif symmetry, spg lib symmetry 123 123
+debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
+conventional standard structure
+prim_stand_nsite=2, nsite_kkr=2
+save to FeRh05Pt05/7db1320a85961ebc66c790147b5d3a3d/structure.json
+debug, option []
+saved to FeRh05Pt05/7db1320a85961ebc66c790147b5d3a3d/inputcard_geom
+kkr_struc, symmetry, nsite ('P4/mmm', 123) 2
+kkr space group symbol, nsite 123 2
+input prim structure num_site 2
+kkr   prim structure num_site 2
+('P4/mmm', 123) ('P4/mmm', 123)
+--------------------------------------------
+### so FeRh0.5Pt0.5. (magnetic, pbeasa, fsm)
+  directory:  FeRh05Pt05   output file:  out_fsm.log
+           conv orbitallocalmoment             spinlocalmoment        te       tm
+  current  True    [0.0, 0.0, 0.0]  [2.73149, 0.2865, 0.25053] -2.57e+04 3.00e+00
+
+get_structures(primitive=False), symmetry, nsite ('P4/mmm', 123) 2
+get_structures(primitive=True), symmetry, nsite ('P4/mmm', 123) 2
+prim_stand_struc, symmetry, nsite ('P4/mmm', 123) 2
+input_struc_to filepath FeRh05Pt05/7db1320a85961ebc66c790147b5d3a3d/input.cif
+cif_primitive= True
+cif symmetry, spg lib symmetry 123 123
+debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
+conventional standard structure
+prim_stand_nsite=2, nsite_kkr=2
+save to FeRh05Pt05/7db1320a85961ebc66c790147b5d3a3d/structure.json
+debug, option []
+saved to FeRh05Pt05/7db1320a85961ebc66c790147b5d3a3d/inputcard_geom
+kkr_struc, symmetry, nsite ('P4/mmm', 123) 2
+kkr space group symbol, nsite 123 2
+input prim structure num_site 2
+kkr   prim structure num_site 2
+('P4/mmm', 123) ('P4/mmm', 123)
+-------------------------------------------
+### so FeRh0.5Pt0.5. (magnetic, pbeasa, tc)
+  directory:  FeRh05Pt05   output file:  out_tc.log
+                Tc
+  current 2.19e+02
+
+get_structures(primitive=False), symmetry, nsite ('P4/mmm', 123) 2
+get_structures(primitive=True), symmetry, nsite ('P4/mmm', 123) 2
+prim_stand_struc, symmetry, nsite ('P4/mmm', 123) 2
+input_struc_to filepath FeRh05Pt05/7db1320a85961ebc66c790147b5d3a3d/input.cif
+cif_primitive= True
+cif symmetry, spg lib symmetry 123 123
+debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
+conventional standard structure
+prim_stand_nsite=2, nsite_kkr=2
+save to FeRh05Pt05/7db1320a85961ebc66c790147b5d3a3d/structure.json
+debug, option []
+saved to FeRh05Pt05/7db1320a85961ebc66c790147b5d3a3d/inputcard_geom
+kkr_struc, symmetry, nsite ('P4/mmm', 123) 2
+kkr space group symbol, nsite 123 2
+input prim structure num_site 2
+kkr   prim structure num_site 2
+('P4/mmm', 123) ('P4/mmm', 123)
+--------------------------------------------
+### so FeRh0.5Pt0.5. (magnetic, pbeasa, dos)
+  directory:  FeRh05Pt05   output file:  out_dos.log
+   totalDOS (up)
+  energy   -1.50e+00  -1.49e+00  -1.48e+00  ...  4.75e-01   4.85e-01   4.95e-01 
+  current   2.19e-03   2.23e-03   2.26e-03  ...   3.08e+00   3.65e+00   3.52e+00
+  
+  [1 rows x 200 columns]
+
+   totalDOS (dn)
+  energy   -1.50e+00  -1.49e+00  -1.48e+00  ...  4.75e-01   4.85e-01   4.95e-01 
+  current   1.96e-03   1.99e-03   2.02e-03  ...   1.22e+00   3.27e+00   2.66e+00
+  
+  [1 rows x 200 columns]
+
+   pdos (up), atom=0, l=d
+  energy   -1.50e+00  -1.49e+00  -1.48e+00  ...  4.80e-01   4.90e-01   5.00e-01 
+  current   2.00e-03   2.00e-03   2.00e-03  ...   5.48e-01   6.30e-01   5.74e-01
+  
+  [1 rows x 201 columns]
+
+   pdos (dn), atom=0, l=d
+  energy   -1.50e+00  -1.49e+00  -1.48e+00  ...  4.80e-01   4.90e-01   5.00e-01 
+  current   1.80e-03   1.80e-03   1.80e-03  ...   4.61e-01   1.02e+00   5.76e-01
+  
+  [1 rows x 201 columns]
+
+   final: True
+
+get_structures(primitive=False), symmetry, nsite ('P4/mmm', 123) 2
+get_structures(primitive=True), symmetry, nsite ('P4/mmm', 123) 2
+prim_stand_struc, symmetry, nsite ('P4/mmm', 123) 2
+input_struc_to filepath FeRh05Pt05/7db1320a85961ebc66c790147b5d3a3d/input.cif
+cif_primitive= True
+cif symmetry, spg lib symmetry 123 123
+debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
+conventional standard structure
+prim_stand_nsite=2, nsite_kkr=2
+save to FeRh05Pt05/7db1320a85961ebc66c790147b5d3a3d/structure.json
+debug, option []
+saved to FeRh05Pt05/7db1320a85961ebc66c790147b5d3a3d/inputcard_geom
+kkr_struc, symmetry, nsite ('P4/mmm', 123) 2
+kkr space group symbol, nsite 123 2
+input prim structure num_site 2
+kkr   prim structure num_site 2
+('P4/mmm', 123) ('P4/mmm', 123)
+----------------------------------------------
+### so FeRh0.5Pt0.5. (magnetic, pbeasa, spc31)
+kpath is made by HighSymmKpath
+  directory:  FeRh05Pt05   output file:  out_spc31.log
+   Aw(w,k) k=0 0 0, up
+  energy   -7.48e-01  -7.43e-01  -7.38e-01  ...  2.37e-01   2.42e-01   2.47e-01 
+  current   9.29e-02   1.08e-01   1.27e-01  ...   5.23e-01   3.67e+00   1.35e-01
+  
+  [1 rows x 200 columns]
+
+   Aw(w,k) k=0 0 0, dn
+  energy   -7.48e-01  -7.43e-01  -7.38e-01  ...  2.37e-01   2.42e-01   2.47e-01 
+  current   6.24e-02   7.02e-02   7.97e-02  ...   0.00e+00   0.00e+00   2.64e+00
+  
+  [1 rows x 200 columns]
+
+get_structures(primitive=False), symmetry, nsite ('Im-3m', 229) 2
+get_structures(primitive=True), symmetry, nsite ('Im-3m', 229) 1
+failed to use SpacegroupAnalyzer. Probably it is an alloy.
+prim_stand_struc, symmetry, nsite ('Im-3m', 229) 1
+input_struc_to filepath AlMnFeCo_bcc/c795171a55fa7f9ca0350bcb25387435/input.cif
+cif_primitive= True
+cif symmetry, spg lib symmetry 229 229
+debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
+conventional standard structure
+prim_stand_nsite=1, nsite_kkr=1
+save to AlMnFeCo_bcc/c795171a55fa7f9ca0350bcb25387435/structure.json
+debug, option []
+saved to AlMnFeCo_bcc/c795171a55fa7f9ca0350bcb25387435/inputcard_geom
+kkr_struc, symmetry, nsite ('Im-3m', 229) 1
+kkr space group symbol, nsite 229 1
+input prim structure num_site 1
+kkr   prim structure num_site 1
+('Im-3m', 229) ('Im-3m', 229)
+---------------------------------------
+### bcc AlMnFeCo (magnetic, pbeasa, go)
+  directory:  AlMnFeCo_bcc   output file:  out_go.log
+           conv    orbitallocalmoment  ...        te       tm
+  current  True  [0.0, 0.0, 0.0, 0.0]  ... -2.03e+03 1.66e+00
+  
+  [1 rows x 5 columns]
+
+get_structures(primitive=False), symmetry, nsite ('Im-3m', 229) 2
+get_structures(primitive=True), symmetry, nsite ('Im-3m', 229) 1
+failed to use SpacegroupAnalyzer. Probably it is an alloy.
+prim_stand_struc, symmetry, nsite ('Im-3m', 229) 1
+input_struc_to filepath AlMnFeCo_bcc/c795171a55fa7f9ca0350bcb25387435/input.cif
+cif_primitive= True
+cif symmetry, spg lib symmetry 229 229
+debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
+conventional standard structure
+prim_stand_nsite=1, nsite_kkr=1
+save to AlMnFeCo_bcc/c795171a55fa7f9ca0350bcb25387435/structure.json
+debug, option []
+saved to AlMnFeCo_bcc/c795171a55fa7f9ca0350bcb25387435/inputcard_geom
+kkr_struc, symmetry, nsite ('Im-3m', 229) 1
+kkr space group symbol, nsite 229 1
+input prim structure num_site 1
+kkr   prim structure num_site 1
+('Im-3m', 229) ('Im-3m', 229)
+----------------------------------------
+### bcc AlMnFeCo (magnetic, pbeasa, fsm)
+  directory:  AlMnFeCo_bcc   output file:  out_fsm.log
+           conv    orbitallocalmoment  ...        te       tm
+  current  True  [0.0, 0.0, 0.0, 0.0]  ... -2.03e+03 1.00e+00
+  
+  [1 rows x 5 columns]
+
+get_structures(primitive=False), symmetry, nsite ('Im-3m', 229) 2
+get_structures(primitive=True), symmetry, nsite ('Im-3m', 229) 1
+failed to use SpacegroupAnalyzer. Probably it is an alloy.
+prim_stand_struc, symmetry, nsite ('Im-3m', 229) 1
+input_struc_to filepath AlMnFeCo_bcc/c795171a55fa7f9ca0350bcb25387435/input.cif
+cif_primitive= True
+cif symmetry, spg lib symmetry 229 229
+debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
+conventional standard structure
+prim_stand_nsite=1, nsite_kkr=1
+save to AlMnFeCo_bcc/c795171a55fa7f9ca0350bcb25387435/structure.json
+debug, option []
+saved to AlMnFeCo_bcc/c795171a55fa7f9ca0350bcb25387435/inputcard_geom
+kkr_struc, symmetry, nsite ('Im-3m', 229) 1
+kkr space group symbol, nsite 229 1
+input prim structure num_site 1
+kkr   prim structure num_site 1
+('Im-3m', 229) ('Im-3m', 229)
+-----------------------------------------------------------
+### bcc AlMnFeCo (magnetic, pbeasa, spin flipped Mn, gofmg)
+  directory:  AlMnFeCo_bcc   output file:  out_gofmg.log
+           conv    orbitallocalmoment  ...        te       tm
+  current  True  [0.0, 0.0, 0.0, 0.0]  ... -2.03e+03 2.77e-01
+  
+  [1 rows x 5 columns]
+
+get_structures(primitive=False), symmetry, nsite ('Im-3m', 229) 2
+get_structures(primitive=True), symmetry, nsite ('Im-3m', 229) 1
+failed to use SpacegroupAnalyzer. Probably it is an alloy.
+prim_stand_struc, symmetry, nsite ('Im-3m', 229) 1
+input_struc_to filepath AlMnFeCo_bcc/c795171a55fa7f9ca0350bcb25387435/input.cif
+cif_primitive= True
+cif symmetry, spg lib symmetry 229 229
+debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
+conventional standard structure
+prim_stand_nsite=1, nsite_kkr=1
+save to AlMnFeCo_bcc/c795171a55fa7f9ca0350bcb25387435/structure.json
+debug, option []
+saved to AlMnFeCo_bcc/c795171a55fa7f9ca0350bcb25387435/inputcard_geom
+kkr_struc, symmetry, nsite ('Im-3m', 229) 1
+kkr space group symbol, nsite 229 1
+input prim structure num_site 1
+kkr   prim structure num_site 1
+('Im-3m', 229) ('Im-3m', 229)
+------------------------------
+### fcc Ni (magnetic, mjw, tc)
+  directory:  AlMnFeCo_bcc   output file:  out_tc.log
+                Tc
+  current 9.72e+02
+
+get_structures(primitive=False), symmetry, nsite ('Im-3m', 229) 2
+get_structures(primitive=True), symmetry, nsite ('Im-3m', 229) 1
+failed to use SpacegroupAnalyzer. Probably it is an alloy.
+prim_stand_struc, symmetry, nsite ('Im-3m', 229) 1
+input_struc_to filepath AlMnFeCo_bcc/c795171a55fa7f9ca0350bcb25387435/input.cif
+cif_primitive= True
+cif symmetry, spg lib symmetry 229 229
+debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
+conventional standard structure
+prim_stand_nsite=1, nsite_kkr=1
+save to AlMnFeCo_bcc/c795171a55fa7f9ca0350bcb25387435/structure.json
+debug, option []
+saved to AlMnFeCo_bcc/c795171a55fa7f9ca0350bcb25387435/inputcard_geom
+kkr_struc, symmetry, nsite ('Im-3m', 229) 1
+kkr space group symbol, nsite 229 1
+input prim structure num_site 1
+kkr   prim structure num_site 1
+('Im-3m', 229) ('Im-3m', 229)
+-----------------------------------------
+### bcc AlMnFeCo (magnetic, pbeasa, j3.0)
+  directory:  AlMnFeCo_bcc   output file:  out_j3.0.log
+                Tc
+  current 9.74e+02
+
+   J_ij(meV) at the shortest distance
+  typecomp HEA-HEA_1_1 HEA-HEA_1_2  ... HEA-HEA_3_4 HEA-HEA_4_4
+  current     0.092766    0.389751  ...   25.041986   18.543721
+  
+  [1 rows x 10 columns]
+
+get_structures(primitive=False), symmetry, nsite ('Im-3m', 229) 2
+get_structures(primitive=True), symmetry, nsite ('Im-3m', 229) 1
+failed to use SpacegroupAnalyzer. Probably it is an alloy.
+prim_stand_struc, symmetry, nsite ('Im-3m', 229) 1
+input_struc_to filepath AlMnFeCo_bcc/c795171a55fa7f9ca0350bcb25387435/input.cif
+cif_primitive= True
+cif symmetry, spg lib symmetry 229 229
+debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
+conventional standard structure
+prim_stand_nsite=1, nsite_kkr=1
+save to AlMnFeCo_bcc/c795171a55fa7f9ca0350bcb25387435/structure.json
+debug, option []
+saved to AlMnFeCo_bcc/c795171a55fa7f9ca0350bcb25387435/inputcard_geom
+kkr_struc, symmetry, nsite ('Im-3m', 229) 1
+kkr space group symbol, nsite 229 1
+input prim structure num_site 1
+kkr   prim structure num_site 1
+('Im-3m', 229) ('Im-3m', 229)
+----------------------------------------
+### bcc AlMnFeCo (magnetic, pbeasa, dos)
+  directory:  AlMnFeCo_bcc   output file:  out_dos.log
+   totalDOS (up)
+  energy   -1.50e+00  -1.49e+00  -1.48e+00  ...  4.75e-01   4.85e-01   4.95e-01 
+  current   9.00e-04   9.10e-04   9.30e-04  ...   2.59e+00   2.60e+00   2.61e+00
+  
+  [1 rows x 200 columns]
+
+   totalDOS (dn)
+  energy   -1.50e+00  -1.49e+00  -1.48e+00  ...  4.75e-01   4.85e-01   4.95e-01 
+  current   8.10e-04   8.20e-04   8.30e-04  ...   2.69e+00   2.71e+00   2.72e+00
+  
+  [1 rows x 200 columns]
+
+   pdos (up), atom=0, l=d
+  energy   -1.50e+00  -1.49e+00  -1.48e+00  ...  4.80e-01   4.90e-01   5.00e-01 
+  current  -0.00e+00  -0.00e+00  -0.00e+00  ...   1.29e+00   1.30e+00   1.30e+00
+  
+  [1 rows x 201 columns]
+
+   pdos (dn), atom=0, l=d
+  energy   -1.50e+00  -1.49e+00  -1.48e+00  ...  4.80e-01   4.90e-01   5.00e-01 
+  current   0.00e+00   0.00e+00   0.00e+00  ...   1.37e+00   1.37e+00   1.38e+00
+  
+  [1 rows x 201 columns]
+
+   final: True
+
+get_structures(primitive=False), symmetry, nsite ('Im-3m', 229) 2
+get_structures(primitive=True), symmetry, nsite ('Im-3m', 229) 1
+failed to use SpacegroupAnalyzer. Probably it is an alloy.
+prim_stand_struc, symmetry, nsite ('Im-3m', 229) 1
+input_struc_to filepath AlMnFeCo_bcc/c795171a55fa7f9ca0350bcb25387435/input.cif
+cif_primitive= True
+cif symmetry, spg lib symmetry 229 229
+debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
+conventional standard structure
+prim_stand_nsite=1, nsite_kkr=1
+save to AlMnFeCo_bcc/c795171a55fa7f9ca0350bcb25387435/structure.json
+debug, option []
+saved to AlMnFeCo_bcc/c795171a55fa7f9ca0350bcb25387435/inputcard_geom
+kkr_struc, symmetry, nsite ('Im-3m', 229) 1
+kkr space group symbol, nsite 229 1
+input prim structure num_site 1
+kkr   prim structure num_site 1
+('Im-3m', 229) ('Im-3m', 229)
+------------------------------------------
+### bcc AlMnFeCo (magnetic, pbeasa, spc31)
+kpath is made by HighSymmKpath
+  directory:  AlMnFeCo_bcc   output file:  out_spc31.log
+   Aw(w,k) k=0 0 0, up
+  energy   -9.72e-01  -9.65e-01  -9.59e-01  ...  3.09e-01   3.15e-01   3.22e-01 
+  current   6.77e-03   7.08e-03   7.42e-03  ...   5.54e-01   5.77e-01   5.89e-01
+  
+  [1 rows x 200 columns]
+
+   Aw(w,k) k=0 0 0, dn
+  energy   -9.72e-01  -9.65e-01  -9.59e-01  ...  3.09e-01   3.15e-01   3.22e-01 
+  current   6.24e-03   6.54e-03   6.87e-03  ...   0.00e+00   0.00e+00   0.00e+00
+  
+  [1 rows x 200 columns]
+
+get_structures(primitive=False), symmetry, nsite ('Im-3m', 229) 2
+get_structures(primitive=True), symmetry, nsite ('Im-3m', 229) 1
+prim_stand_struc, symmetry, nsite ('Im-3m', 229) 1
+input_struc_to filepath Fe_lmd/caf80bdd15f4dc9f486d4724ecd18076/input.cif
+cif_primitive= True
+cif symmetry, spg lib symmetry 229 229
+debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
+conventional standard structure
+prim_stand_nsite=1, nsite_kkr=1
+save to Fe_lmd/caf80bdd15f4dc9f486d4724ecd18076/structure.json
+debug, option []
+saved to Fe_lmd/caf80bdd15f4dc9f486d4724ecd18076/inputcard_geom
+kkr_struc, symmetry, nsite ('Im-3m', 229) 1
+kkr space group symbol, nsite 229 1
+input prim structure num_site 1
+kkr   prim structure num_site 1
+('Im-3m', 229) ('Im-3m', 229)
+------------------------
+### bcc Fe(lmd, mjw, go)
+  directory:  Fe_lmd   output file:  out_go.log
+           conv orbitallocalmoment      spinlocalmoment        te        tm
+  current  True         [0.0, 0.0]  [1.87142, -1.87142] -2.54e+03 -0.00e+00
+
+get_structures(primitive=False), symmetry, nsite ('Im-3m', 229) 2
+get_structures(primitive=True), symmetry, nsite ('Im-3m', 229) 1
+prim_stand_struc, symmetry, nsite ('Im-3m', 229) 1
+input_struc_to filepath Fe_lmd/caf80bdd15f4dc9f486d4724ecd18076/input.cif
+cif_primitive= True
+cif symmetry, spg lib symmetry 229 229
+debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
+conventional standard structure
+prim_stand_nsite=1, nsite_kkr=1
+save to Fe_lmd/caf80bdd15f4dc9f486d4724ecd18076/structure.json
+debug, option []
+saved to Fe_lmd/caf80bdd15f4dc9f486d4724ecd18076/inputcard_geom
+kkr_struc, symmetry, nsite ('Im-3m', 229) 1
+kkr space group symbol, nsite 229 1
+input prim structure num_site 1
+kkr   prim structure num_site 1
+('Im-3m', 229) ('Im-3m', 229)
+-------------------------
+### bcc Fe(lmd, mjw, dos)
+  directory:  Fe_lmd   output file:  out_dos.log
+   totalDOS (up)
+  energy   -1.50e+00  -1.49e+00  -1.48e+00  ...  4.75e-01   4.85e-01   4.95e-01 
+  current   1.19e-03   1.20e-03   1.22e-03  ...   1.57e-01   1.48e+00   1.17e+00
+  
+  [1 rows x 200 columns]
+
+   totalDOS (dn)
+  energy   -1.50e+00  -1.49e+00  -1.48e+00  ...  4.75e-01   4.85e-01   4.95e-01 
+  current   1.19e-03   1.20e-03   1.22e-03  ...   1.57e-01   1.48e+00   1.17e+00
+  
+  [1 rows x 200 columns]
+
+   pdos (up), atom=0, l=d
+  energy   -1.50e+00  -1.49e+00  -1.48e+00  ...  4.80e-01   4.90e-01   5.00e-01 
+  current   4.10e-03   4.10e-03   4.00e-03  ...   7.12e-02   6.64e-01   5.45e-02
+  
+  [1 rows x 201 columns]
+
+   pdos (dn), atom=0, l=d
+  energy   -1.50e+00  -1.49e+00  -1.48e+00  ...  4.80e-01   4.90e-01   5.00e-01 
+  current   4.10e-03   4.00e-03   4.00e-03  ...   9.75e-02   9.15e-01   8.10e-02
+  
+  [1 rows x 201 columns]
+
+   final: True
+
+get_structures(primitive=False), symmetry, nsite ('Im-3m', 229) 2
+get_structures(primitive=True), symmetry, nsite ('Im-3m', 229) 1
+prim_stand_struc, symmetry, nsite ('Im-3m', 229) 1
+input_struc_to filepath Fe_lmd/caf80bdd15f4dc9f486d4724ecd18076/input.cif
+cif_primitive= True
+cif symmetry, spg lib symmetry 229 229
+debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
+conventional standard structure
+prim_stand_nsite=1, nsite_kkr=1
+save to Fe_lmd/caf80bdd15f4dc9f486d4724ecd18076/structure.json
+debug, option []
+saved to Fe_lmd/caf80bdd15f4dc9f486d4724ecd18076/inputcard_geom
+kkr_struc, symmetry, nsite ('Im-3m', 229) 1
+kkr space group symbol, nsite 229 1
+input prim structure num_site 1
+kkr   prim structure num_site 1
+('Im-3m', 229) ('Im-3m', 229)
+---------------------------
+### bcc Fe(lmd, mjw, spc31)
+kpath is made by HighSymmKpath
+  directory:  Fe_lmd   output file:  out_spc31.log
+   Aw(w,k) k=0 0 0, up
+  energy   -7.48e-01  -7.43e-01  -7.38e-01  ...  2.37e-01   2.42e-01   2.47e-01 
+  current   5.18e-02   5.83e-02   6.61e-02  ...   1.06e-01   0.00e+00   0.00e+00
+  
+  [1 rows x 200 columns]
+
+get_structures(primitive=False), symmetry, nsite ('P6/mmm', 191) 3
+get_structures(primitive=True), symmetry, nsite ('P6/mmm', 191) 3
+prim_stand_struc, symmetry, nsite ('P6/mmm', 191) 3
+input_struc_to filepath FeB195/ffafff117c1d38fc1906815a65c250eb/input.cif
+cif_primitive= True
+cif symmetry, spg lib symmetry 191 191
+debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
+conventional standard structure
+prim_stand_nsite=3, nsite_kkr=3
+save to FeB195/ffafff117c1d38fc1906815a65c250eb/structure.json
+debug, option []
+saved to FeB195/ffafff117c1d38fc1906815a65c250eb/inputcard_geom
+kkr_struc, symmetry, nsite ('P6/mmm', 191) 3
+kkr space group symbol, nsite 191 3
+input prim structure num_site 3
+kkr   prim structure num_site 3
+('P6/mmm', 191) ('P6/mmm', 191)
+-------------------------------
+### FeN1.95 (magnetic, mjw, go)
+  directory:  FeB195   output file:  out_go.log
+           conv orbitallocalmoment  ...        te       tm
+  current  True    [0.0, 0.0, 0.0]  ... -2.64e+03 8.62e-01
+  
+  [1 rows x 5 columns]
+
+get_structures(primitive=False), symmetry, nsite ('P6/mmm', 191) 3
+get_structures(primitive=True), symmetry, nsite ('P6/mmm', 191) 3
+prim_stand_struc, symmetry, nsite ('P6/mmm', 191) 3
+input_struc_to filepath FeB195/ffafff117c1d38fc1906815a65c250eb/input.cif
+cif_primitive= True
+cif symmetry, spg lib symmetry 191 191
+debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
+conventional standard structure
+prim_stand_nsite=3, nsite_kkr=3
+save to FeB195/ffafff117c1d38fc1906815a65c250eb/structure.json
+debug, option []
+saved to FeB195/ffafff117c1d38fc1906815a65c250eb/inputcard_geom
+kkr_struc, symmetry, nsite ('P6/mmm', 191) 3
+kkr space group symbol, nsite 191 3
+input prim structure num_site 3
+kkr   prim structure num_site 3
+('P6/mmm', 191) ('P6/mmm', 191)
+--------------------------------
+### FeN1.95 (magnetic, mjw, dos)
+  directory:  FeB195   output file:  out_dos.log
+   totalDOS (up)
+  energy   -1.50e+00  -1.49e+00  -1.48e+00  ...  4.75e-01   4.85e-01   4.95e-01 
+  current   3.11e-03   3.16e-03   3.22e-03  ...   8.23e+00   5.14e+00   4.79e+00
+  
+  [1 rows x 200 columns]
+
+   totalDOS (dn)
+  energy   -1.50e+00  -1.49e+00  -1.48e+00  ...  4.75e-01   4.85e-01   4.95e-01 
+  current   3.03e-03   3.09e-03   3.14e-03  ...   1.10e+01   8.60e+00   5.57e+00
+  
+  [1 rows x 200 columns]
+
+   pdos (up), atom=0, l=d
+  energy   -1.50e+00  -1.49e+00  -1.48e+00  ...  4.80e-01   4.90e-01   5.00e-01 
+  current   3.30e-03   3.30e-03   3.30e-03  ...   5.01e-01   4.22e-01   4.44e-01
+  
+  [1 rows x 201 columns]
+
+   pdos (dn), atom=0, l=d
+  energy   -1.50e+00  -1.49e+00  -1.48e+00  ...  4.80e-01   4.90e-01   5.00e-01 
+  current   3.40e-03   3.40e-03   3.40e-03  ...   1.02e+00   6.85e-01   4.91e-01
+  
+  [1 rows x 201 columns]
+
+   final: True
+
+get_structures(primitive=False), symmetry, nsite ('P6/mmm', 191) 3
+get_structures(primitive=True), symmetry, nsite ('P6/mmm', 191) 3
+prim_stand_struc, symmetry, nsite ('P6/mmm', 191) 3
+input_struc_to filepath FeB195/ffafff117c1d38fc1906815a65c250eb/input.cif
+cif_primitive= True
+cif symmetry, spg lib symmetry 191 191
+debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
+conventional standard structure
+prim_stand_nsite=3, nsite_kkr=3
+save to FeB195/ffafff117c1d38fc1906815a65c250eb/structure.json
+debug, option []
+saved to FeB195/ffafff117c1d38fc1906815a65c250eb/inputcard_geom
+kkr_struc, symmetry, nsite ('P6/mmm', 191) 3
+kkr space group symbol, nsite 191 3
+input prim structure num_site 3
+kkr   prim structure num_site 3
+('P6/mmm', 191) ('P6/mmm', 191)
+-------------------------------
+### FeN1.95 (magnetic, mjw, go)
+  directory:  FeB195   output file:  out_go.log
+           conv orbitallocalmoment  ...        te       tm
+  current  True    [0.0, 0.0, 0.0]  ... -2.64e+03 8.62e-01
+  
+  [1 rows x 5 columns]
+
+get_structures(primitive=False), symmetry, nsite ('P6/mmm', 191) 3
+get_structures(primitive=True), symmetry, nsite ('P6/mmm', 191) 3
+prim_stand_struc, symmetry, nsite ('P6/mmm', 191) 3
+input_struc_to filepath FeB195/ffafff117c1d38fc1906815a65c250eb/input.cif
+cif_primitive= True
+cif symmetry, spg lib symmetry 191 191
+debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
+conventional standard structure
+prim_stand_nsite=3, nsite_kkr=3
+save to FeB195/ffafff117c1d38fc1906815a65c250eb/structure.json
+debug, option []
+saved to FeB195/ffafff117c1d38fc1906815a65c250eb/inputcard_geom
+kkr_struc, symmetry, nsite ('P6/mmm', 191) 3
+kkr space group symbol, nsite 191 3
+input prim structure num_site 3
+kkr   prim structure num_site 3
+('P6/mmm', 191) ('P6/mmm', 191)
+----------------------------------
+### FeN1.95 (magnetic, mjw, spc31)
+kpath is made by HighSymmKpath
+  directory:  FeB195   output file:  out_spc31.log
+   Aw(w,k) k=0 0 0, up
+  energy   -1.12e+00  -1.11e+00  -1.11e+00  ...  3.56e-01   3.64e-01   3.71e-01 
+  current   4.69e-02   5.57e-02   6.74e-02  ...   1.40e+00   2.20e+00   4.43e+00
+  
+  [1 rows x 200 columns]
+
+   Aw(w,k) k=0 0 0, dn
+  energy   -1.12e+00  -1.11e+00  -1.11e+00  ...  3.56e-01   3.64e-01   3.71e-01 
+  current   4.44e-02   5.24e-02   6.30e-02  ...   9.32e-01   1.20e+00   2.75e+00
+  
+  [1 rows x 200 columns]
+
+get_structures(primitive=False), symmetry, nsite ('F-43m', 216) 16
+get_structures(primitive=True), symmetry, nsite ('F-43m', 216) 4
+prim_stand_struc, symmetry, nsite ('F-43m', 216) 4
+input_struc_to filepath GaAs/29c8bc9fb0bb8e1c8ce7e69a3cb3aa47/input.cif
+cif_primitive= True
+cif symmetry, spg lib symmetry 216 216
+debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
+conventional standard structure
+prim_stand_nsite=4, nsite_kkr=4
+save to GaAs/29c8bc9fb0bb8e1c8ce7e69a3cb3aa47/structure.json
+debug, option []
+saved to GaAs/29c8bc9fb0bb8e1c8ce7e69a3cb3aa47/inputcard_geom
+kkr_struc, symmetry, nsite ('F-43m', 216) 4
+kkr space group symbol, nsite 216 4
+input prim structure num_site 4
+kkr   prim structure num_site 4
+saved to GaAs/29c8bc9fb0bb8e1c8ce7e69a3cb3aa47/rdf.png
+rdf difference, bins= 200
+_rdf_diff_is_zero [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+np.all(diff == 0) True
+('F-43m', 216) ('F-43m', 216)
+--------------------------------
+### GaAs (non-magnetic, mjw, go)
+  directory:  GaAs   output file:  out_go.log
+           conv    orbitallocalmoment       spinlocalmoment        te       tm
+  current  True  [0.0, 0.0, 0.0, 0.0]  [0.0, 0.0, 0.0, 0.0] -8.40e+03 0.00e+00
+
+get_structures(primitive=False), symmetry, nsite ('F-43m', 216) 16
+get_structures(primitive=True), symmetry, nsite ('F-43m', 216) 4
+prim_stand_struc, symmetry, nsite ('F-43m', 216) 4
+input_struc_to filepath GaAs/29c8bc9fb0bb8e1c8ce7e69a3cb3aa47/input.cif
+cif_primitive= True
+cif symmetry, spg lib symmetry 216 216
+debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
+conventional standard structure
+prim_stand_nsite=4, nsite_kkr=4
+save to GaAs/29c8bc9fb0bb8e1c8ce7e69a3cb3aa47/structure.json
+debug, option []
+saved to GaAs/29c8bc9fb0bb8e1c8ce7e69a3cb3aa47/inputcard_geom
+kkr_struc, symmetry, nsite ('F-43m', 216) 4
+kkr space group symbol, nsite 216 4
+input prim structure num_site 4
+kkr   prim structure num_site 4
+saved to GaAs/29c8bc9fb0bb8e1c8ce7e69a3cb3aa47/rdf.png
+rdf difference, bins= 200
+_rdf_diff_is_zero [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+np.all(diff == 0) True
+('F-43m', 216) ('F-43m', 216)
+---------------------------------
+### GaAs (non-magnetic, mjw, dos)
+  directory:  GaAs   output file:  out_dos.log
+   totalDOS (up)
+  energy   -1.50e+00  -1.49e+00  -1.48e+00  ...  4.75e-01   4.85e-01   4.95e-01 
+  current   1.29e-02   1.35e-02   1.40e-02  ...   3.22e+00   2.84e+00   7.88e+00
+  
+  [1 rows x 200 columns]
+
+   pdos (up), atom=0, l=d
+  energy   -1.50e+00  -1.49e+00  -1.48e+00  ...  4.80e-01   4.90e-01   5.00e-01 
+  current   1.09e-02   1.14e-02   1.18e-02  ...   1.51e-01   4.77e-02   2.18e-01
+  
+  [1 rows x 201 columns]
+
+   final: True
+
+get_structures(primitive=False), symmetry, nsite ('F-43m', 216) 16
+get_structures(primitive=True), symmetry, nsite ('F-43m', 216) 4
+prim_stand_struc, symmetry, nsite ('F-43m', 216) 4
+input_struc_to filepath GaAs/29c8bc9fb0bb8e1c8ce7e69a3cb3aa47/input.cif
+cif_primitive= True
+cif symmetry, spg lib symmetry 216 216
+debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
+conventional standard structure
+prim_stand_nsite=4, nsite_kkr=4
+save to GaAs/29c8bc9fb0bb8e1c8ce7e69a3cb3aa47/structure.json
+debug, option []
+saved to GaAs/29c8bc9fb0bb8e1c8ce7e69a3cb3aa47/inputcard_geom
+kkr_struc, symmetry, nsite ('F-43m', 216) 4
+kkr space group symbol, nsite 216 4
+input prim structure num_site 4
+kkr   prim structure num_site 4
+saved to GaAs/29c8bc9fb0bb8e1c8ce7e69a3cb3aa47/rdf.png
+rdf difference, bins= 200
+_rdf_diff_is_zero [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+np.all(diff == 0) True
+('F-43m', 216) ('F-43m', 216)
+-----------------------------------
+### GaAs (non-magnetic, mjw, spc31)
+kpath is made by HighSymmKpath
+  directory:  GaAs   output file:  out_spc31.log
+   Aw(w,k) k=0 0 0, up
+  energy   -1.12e+00  -1.11e+00  -1.11e+00  ...  3.56e-01   3.64e-01   3.71e-01 
+  current   8.87e-01   1.30e+00   2.10e+00  ...   1.57e-01   1.39e-01   1.24e-01
+  
+  [1 rows x 200 columns]
+
+get_structures(primitive=False), symmetry, nsite ('Fm-3m', 225) 16
+get_structures(primitive=True), symmetry, nsite ('Fm-3m', 225) 4
+prim_stand_struc, symmetry, nsite ('Fm-3m', 225) 4
+input_struc_to filepath Co2MnSi/f004c18c44f33831824ae67414f00215/input.cif
+cif_primitive= True
+cif symmetry, spg lib symmetry 225 225
+debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
+conventional standard structure
+prim_stand_nsite=4, nsite_kkr=4
+save to Co2MnSi/f004c18c44f33831824ae67414f00215/structure.json
+debug, option []
+saved to Co2MnSi/f004c18c44f33831824ae67414f00215/inputcard_geom
+kkr_struc, symmetry, nsite ('Fm-3m', 225) 4
+kkr space group symbol, nsite 225 4
+input prim structure num_site 4
+kkr   prim structure num_site 4
+('Fm-3m', 225) ('Fm-3m', 225)
+-------------------------------
+### Co2MnSi (magnetic, pbe, go)
+  directory:  Co2MnSi   output file:  out_go.log
+           conv orbitallocalmoment  ...        te       tm
+  current  True    [0.0, 0.0, 0.0]  ... -8.47e+03 5.00e+00
+  
+  [1 rows x 5 columns]
+
+get_structures(primitive=False), symmetry, nsite ('Fm-3m', 225) 16
+get_structures(primitive=True), symmetry, nsite ('Fm-3m', 225) 4
+prim_stand_struc, symmetry, nsite ('Fm-3m', 225) 4
+input_struc_to filepath Co2MnSi/f004c18c44f33831824ae67414f00215/input.cif
+cif_primitive= True
+cif symmetry, spg lib symmetry 225 225
+debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
+conventional standard structure
+prim_stand_nsite=4, nsite_kkr=4
+save to Co2MnSi/f004c18c44f33831824ae67414f00215/structure.json
+debug, option []
+saved to Co2MnSi/f004c18c44f33831824ae67414f00215/inputcard_geom
+kkr_struc, symmetry, nsite ('Fm-3m', 225) 4
+kkr space group symbol, nsite 225 4
+input prim structure num_site 4
+kkr   prim structure num_site 4
+('Fm-3m', 225) ('Fm-3m', 225)
+--------------------------------
+### Co2MnSi (magnetic, pbe, fsm)
+  directory:  Co2MnSi   output file:  out_fsm.log
+           conv orbitallocalmoment  ...        te       tm
+  current  True    [0.0, 0.0, 0.0]  ... -8.47e+03 4.50e+00
+  
+  [1 rows x 5 columns]
+
+get_structures(primitive=False), symmetry, nsite ('Fm-3m', 225) 16
+get_structures(primitive=True), symmetry, nsite ('Fm-3m', 225) 4
+prim_stand_struc, symmetry, nsite ('Fm-3m', 225) 4
+input_struc_to filepath Co2MnSi/f004c18c44f33831824ae67414f00215/input.cif
+cif_primitive= True
+cif symmetry, spg lib symmetry 225 225
+debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
+conventional standard structure
+prim_stand_nsite=4, nsite_kkr=4
+save to Co2MnSi/f004c18c44f33831824ae67414f00215/structure.json
+debug, option []
+saved to Co2MnSi/f004c18c44f33831824ae67414f00215/inputcard_geom
+kkr_struc, symmetry, nsite ('Fm-3m', 225) 4
+kkr space group symbol, nsite 225 4
+input prim structure num_site 4
+kkr   prim structure num_site 4
+('Fm-3m', 225) ('Fm-3m', 225)
+-------------------------------
+### Co2MnSi (magnetic, pbe, tc)
+  directory:  Co2MnSi   output file:  out_tc.log
+                Tc
+  current 8.78e+02
+
+get_structures(primitive=False), symmetry, nsite ('Fm-3m', 225) 16
+get_structures(primitive=True), symmetry, nsite ('Fm-3m', 225) 4
+prim_stand_struc, symmetry, nsite ('Fm-3m', 225) 4
+input_struc_to filepath Co2MnSi/f004c18c44f33831824ae67414f00215/input.cif
+cif_primitive= True
+cif symmetry, spg lib symmetry 225 225
+debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
+conventional standard structure
+prim_stand_nsite=4, nsite_kkr=4
+save to Co2MnSi/f004c18c44f33831824ae67414f00215/structure.json
+debug, option []
+saved to Co2MnSi/f004c18c44f33831824ae67414f00215/inputcard_geom
+kkr_struc, symmetry, nsite ('Fm-3m', 225) 4
+kkr space group symbol, nsite 225 4
+input prim structure num_site 4
+kkr   prim structure num_site 4
+('Fm-3m', 225) ('Fm-3m', 225)
+---------------------------------
+### Co2MnSi (magnetic, pbe, j3.0)
+  directory:  Co2MnSi   output file:  out_j3.0.log
+                Tc
+  current 8.77e+02
+
+   J_ij(meV) at the shortest distance
+  typecomp Co-Co_1_1  Co-Mn_1_1 Co-Si_1_1 Mn-Mn_1_1 Mn-Si_1_1  Si-Si_1_1
+  current   1.843411  13.565600  0.139347  1.754462  0.120058  -0.000593
+
+get_structures(primitive=False), symmetry, nsite ('Fm-3m', 225) 16
+get_structures(primitive=True), symmetry, nsite ('Fm-3m', 225) 4
+prim_stand_struc, symmetry, nsite ('Fm-3m', 225) 4
+input_struc_to filepath Co2MnSi/f004c18c44f33831824ae67414f00215/input.cif
+cif_primitive= True
+cif symmetry, spg lib symmetry 225 225
+debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
+conventional standard structure
+prim_stand_nsite=4, nsite_kkr=4
+save to Co2MnSi/f004c18c44f33831824ae67414f00215/structure.json
+debug, option []
+saved to Co2MnSi/f004c18c44f33831824ae67414f00215/inputcard_geom
+kkr_struc, symmetry, nsite ('Fm-3m', 225) 4
+kkr space group symbol, nsite 225 4
+input prim structure num_site 4
+kkr   prim structure num_site 4
+('Fm-3m', 225) ('Fm-3m', 225)
+--------------------------------
+### Co2MnSi (magnetic, pbe, dos)
+  directory:  Co2MnSi   output file:  out_dos.log
+   totalDOS (up)
+  energy   -1.50e+00  -1.49e+00  -1.48e+00  ...  4.75e-01   4.85e-01   4.95e-01 
+  current   4.80e-04   4.90e-04   5.00e-04  ...   1.03e+01   6.67e+00   8.09e+00
+  
+  [1 rows x 200 columns]
+
+   totalDOS (dn)
+  energy   -1.50e+00  -1.49e+00  -1.48e+00  ...  4.75e-01   4.85e-01   4.95e-01 
+  current   4.40e-04   4.50e-04   4.50e-04  ...   3.66e+01   2.08e+01   7.17e+00
+  
+  [1 rows x 200 columns]
+
+   pdos (up), atom=0, l=d
+  energy   -1.50e+00  -1.49e+00  -1.48e+00  ...  4.80e-01   4.90e-01   5.00e-01 
+  current   4.00e-04   4.00e-04   4.00e-04  ...   2.32e-01   8.30e-01   2.89e-02
+  
+  [1 rows x 201 columns]
+
+   pdos (dn), atom=0, l=d
+  energy   -1.50e+00  -1.49e+00  -1.48e+00  ...  4.80e-01   4.90e-01   5.00e-01 
+  current   4.00e-04   4.00e-04   4.00e-04  ...   5.63e-01   9.04e-02   9.99e-01
+  
+  [1 rows x 201 columns]
+
+   final: True
+
+get_structures(primitive=False), symmetry, nsite ('Fm-3m', 225) 16
+get_structures(primitive=True), symmetry, nsite ('Fm-3m', 225) 4
+prim_stand_struc, symmetry, nsite ('Fm-3m', 225) 4
+input_struc_to filepath Co2MnSi/f004c18c44f33831824ae67414f00215/input.cif
+cif_primitive= True
+cif symmetry, spg lib symmetry 225 225
+debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
+conventional standard structure
+prim_stand_nsite=4, nsite_kkr=4
+save to Co2MnSi/f004c18c44f33831824ae67414f00215/structure.json
+debug, option []
+saved to Co2MnSi/f004c18c44f33831824ae67414f00215/inputcard_geom
+kkr_struc, symmetry, nsite ('Fm-3m', 225) 4
+kkr space group symbol, nsite 225 4
+input prim structure num_site 4
+kkr   prim structure num_site 4
+('Fm-3m', 225) ('Fm-3m', 225)
+----------------------------------
+### Co2MnSi (magnetic, pbe, spc31)
+kpath is made by HighSymmKpath
+  directory:  Co2MnSi   output file:  out_spc31.log
+   Aw(w,k) k=0 0 0, up
+  energy   -8.97e-01  -8.91e-01  -8.85e-01  ...  2.85e-01   2.91e-01   2.97e-01 
+  current   7.02e-02   1.35e-01   3.74e-01  ...   2.17e-01   1.47e-01   1.10e-01
+  
+  [1 rows x 200 columns]
+
+   Aw(w,k) k=0 0 0, dn
+  energy   -8.97e-01  -8.91e-01  -8.85e-01  ...  2.85e-01   2.91e-01   2.97e-01 
+  current   2.77e-02   4.01e-02   6.39e-02  ...   5.55e+01   5.63e+02   4.35e+01
+  
+  [1 rows x 200 columns]
+
+get_structures(primitive=False), symmetry, nsite ('P6/mmm', 191) 6
+get_structures(primitive=True), symmetry, nsite ('P6/mmm', 191) 6
+prim_stand_struc, symmetry, nsite ('P6/mmm', 191) 6
+input_struc_to filepath SmCo5_oc/b8260bd2a71fea65131fe090346c6003/input.cif
+cif_primitive= True
+cif symmetry, spg lib symmetry 191 191
+debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
+conventional standard structure
+prim_stand_nsite=6, nsite_kkr=6
+save to SmCo5_oc/b8260bd2a71fea65131fe090346c6003/structure.json
+debug, option []
+saved to SmCo5_oc/b8260bd2a71fea65131fe090346c6003/inputcard_geom
+kkr_struc, symmetry, nsite ('P6/mmm', 191) 6
+kkr space group symbol, nsite 191 6
+input prim structure num_site 6
+kkr   prim structure num_site 6
+('P6/mmm', 191) ('P6/mmm', 191)
+[['0.0a', '0.0b', '0.0c', 'Sm'], ['0.5a', '0.0b', '0.5c', 'Co3g'], ['0.0a', '0.5b', '0.5c', 'Co3g'], ['0.5a', '0.5b', '0.5c', 'Co3g'], ['1/3a', '2/3b', '0.0c', 'Co2c'], ['2/3a', '1/3b', '0.0c', 'Co2c']]
+------------------------------------------------------------
+### SmCo5(magnetic, open core for Sm-4f, srals, mjw-asa, go)
+  directory:  SmCo5_oc   output file:  out_go.log
+           conv          orbitallocalmoment  ...        te       tm
+  current  True  [0.10692, 0.12707, 0.0142]  ... -3.48e+04 7.03e+00
+  
+  [1 rows x 5 columns]
+
+get_structures(primitive=False), symmetry, nsite ('P6/mmm', 191) 6
+get_structures(primitive=True), symmetry, nsite ('P6/mmm', 191) 6
+prim_stand_struc, symmetry, nsite ('P6/mmm', 191) 6
+input_struc_to filepath SmCo5_oc/b8260bd2a71fea65131fe090346c6003/input.cif
+cif_primitive= True
+cif symmetry, spg lib symmetry 191 191
+debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
+conventional standard structure
+prim_stand_nsite=6, nsite_kkr=6
+save to SmCo5_oc/b8260bd2a71fea65131fe090346c6003/structure.json
+debug, option []
+saved to SmCo5_oc/b8260bd2a71fea65131fe090346c6003/inputcard_geom
+kkr_struc, symmetry, nsite ('P6/mmm', 191) 6
+kkr space group symbol, nsite 191 6
+input prim structure num_site 6
+kkr   prim structure num_site 6
+('P6/mmm', 191) ('P6/mmm', 191)
+[['0.0a', '0.0b', '0.0c', 'Sm'], ['0.5a', '0.0b', '0.5c', 'Co3g'], ['0.0a', '0.5b', '0.5c', 'Co3g'], ['0.5a', '0.5b', '0.5c', 'Co3g'], ['1/3a', '2/3b', '0.0c', 'Co2c'], ['2/3a', '1/3b', '0.0c', 'Co2c']]
+-------------------------------------------------------------
+### SmCo5(magnetic, open core for Sm-4f, srals, mjw-asa, fsm)
+  directory:  SmCo5_oc   output file:  out_fsm.log
+           conv           orbitallocalmoment  ...        te       tm
+  current  True  [0.09984, 0.12561, 0.01291]  ... -3.48e+04 6.50e+00
+  
+  [1 rows x 5 columns]
+
+get_structures(primitive=False), symmetry, nsite ('P6/mmm', 191) 6
+get_structures(primitive=True), symmetry, nsite ('P6/mmm', 191) 6
+prim_stand_struc, symmetry, nsite ('P6/mmm', 191) 6
+input_struc_to filepath SmCo5_oc/b8260bd2a71fea65131fe090346c6003/input.cif
+cif_primitive= True
+cif symmetry, spg lib symmetry 191 191
+debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
+conventional standard structure
+prim_stand_nsite=6, nsite_kkr=6
+save to SmCo5_oc/b8260bd2a71fea65131fe090346c6003/structure.json
+debug, option []
+saved to SmCo5_oc/b8260bd2a71fea65131fe090346c6003/inputcard_geom
+kkr_struc, symmetry, nsite ('P6/mmm', 191) 6
+kkr space group symbol, nsite 191 6
+input prim structure num_site 6
+kkr   prim structure num_site 6
+('P6/mmm', 191) ('P6/mmm', 191)
+[['0.0a', '0.0b', '0.0c', 'Sm'], ['0.5a', '0.0b', '0.5c', 'Co3g'], ['0.0a', '0.5b', '0.5c', 'Co3g'], ['0.5a', '0.5b', '0.5c', 'Co3g'], ['1/3a', '2/3b', '0.0c', 'Co2c'], ['2/3a', '1/3b', '0.0c', 'Co2c']]
+------------------------------------------------------------
+### SmCo5(magnetic, open core for Sm-4f, srals, mjw-asa, tc)
+  directory:  SmCo5_oc   output file:  out_tc.log
+                Tc
+  current 1.08e+03
+
+get_structures(primitive=False), symmetry, nsite ('P6/mmm', 191) 6
+get_structures(primitive=True), symmetry, nsite ('P6/mmm', 191) 6
+prim_stand_struc, symmetry, nsite ('P6/mmm', 191) 6
+input_struc_to filepath SmCo5_oc/b8260bd2a71fea65131fe090346c6003/input.cif
+cif_primitive= True
+cif symmetry, spg lib symmetry 191 191
+debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
+conventional standard structure
+prim_stand_nsite=6, nsite_kkr=6
+save to SmCo5_oc/b8260bd2a71fea65131fe090346c6003/structure.json
+debug, option []
+saved to SmCo5_oc/b8260bd2a71fea65131fe090346c6003/inputcard_geom
+kkr_struc, symmetry, nsite ('P6/mmm', 191) 6
+kkr space group symbol, nsite 191 6
+input prim structure num_site 6
+kkr   prim structure num_site 6
+('P6/mmm', 191) ('P6/mmm', 191)
+[['0.0a', '0.0b', '0.0c', 'Sm'], ['0.5a', '0.0b', '0.5c', 'Co3g'], ['0.0a', '0.5b', '0.5c', 'Co3g'], ['0.5a', '0.5b', '0.5c', 'Co3g'], ['1/3a', '2/3b', '0.0c', 'Co2c'], ['2/3a', '1/3b', '0.0c', 'Co2c']]
+--------------------------------------------------------------
+### SmCo5(magnetic, open core for Sm-4f, srals, mjw-asa, j3.0)
+  directory:  SmCo5_oc   output file:  out_j3.0.log
+                Tc
+  current 1.07e+03
+
+   J_ij(meV) at the shortest distance
+  typecomp Co2c-Co2c_1_1 Co2c-Sm_1_1  ... Co3g-Sm_1_1 Sm-Sm_1_1
+  current       5.818364    1.015324  ...    2.378124  0.728371
+  
+  [1 rows x 6 columns]
+
+get_structures(primitive=False), symmetry, nsite ('P6/mmm', 191) 6
+get_structures(primitive=True), symmetry, nsite ('P6/mmm', 191) 6
+prim_stand_struc, symmetry, nsite ('P6/mmm', 191) 6
+input_struc_to filepath SmCo5_oc/b8260bd2a71fea65131fe090346c6003/input.cif
+cif_primitive= True
+cif symmetry, spg lib symmetry 191 191
+debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
+conventional standard structure
+prim_stand_nsite=6, nsite_kkr=6
+save to SmCo5_oc/b8260bd2a71fea65131fe090346c6003/structure.json
+debug, option []
+saved to SmCo5_oc/b8260bd2a71fea65131fe090346c6003/inputcard_geom
+kkr_struc, symmetry, nsite ('P6/mmm', 191) 6
+kkr space group symbol, nsite 191 6
+input prim structure num_site 6
+kkr   prim structure num_site 6
+('P6/mmm', 191) ('P6/mmm', 191)
+[['0.0a', '0.0b', '0.0c', 'Sm'], ['0.5a', '0.0b', '0.5c', 'Co3g'], ['0.0a', '0.5b', '0.5c', 'Co3g'], ['0.5a', '0.5b', '0.5c', 'Co3g'], ['1/3a', '2/3b', '0.0c', 'Co2c'], ['2/3a', '1/3b', '0.0c', 'Co2c']]
+-------------------------------------------------------------
+### SmCo5(magnetic, open core for Sm-4f, srals, mjw-asa, dos)
+  directory:  SmCo5_oc   output file:  out_dos.log
+   totalDOS (up)
+  energy   -1.50e+00  -1.49e+00  -1.48e+00  ...  4.75e-01   4.85e-01   4.95e-01 
+  current   2.25e-01   3.76e-01   8.02e-01  ...   1.18e+01   9.97e+00   3.14e+00
+  
+  [1 rows x 200 columns]
+
+   totalDOS (dn)
+  energy   -1.50e+00  -1.49e+00  -1.48e+00  ...  4.75e-01   4.85e-01   4.95e-01 
+  current   3.67e+01   3.47e+01   1.75e+00  ...   8.48e+00   8.56e+00   6.56e+00
+  
+  [1 rows x 200 columns]
+
+   pdos (up), atom=0, l=d
+  energy   -1.50e+00  -1.49e+00  -1.48e+00  ...  4.80e-01   4.90e-01   5.00e-01 
+  current   2.20e-03   2.30e-03   2.40e-03  ...   3.65e-01   1.28e-01   2.32e-01
+  
+  [1 rows x 201 columns]
+
+   pdos (dn), atom=0, l=d
+  energy   -1.50e+00  -1.49e+00  -1.48e+00  ...  4.80e-01   4.90e-01   5.00e-01 
+  current   1.67e-02   2.34e-02   4.70e-03  ...   4.25e-01   3.12e-01   3.12e-01
+  
+  [1 rows x 201 columns]
+
+   final: True
+
+get_structures(primitive=False), symmetry, nsite ('P6/mmm', 191) 6
+get_structures(primitive=True), symmetry, nsite ('P6/mmm', 191) 6
+prim_stand_struc, symmetry, nsite ('P6/mmm', 191) 6
+input_struc_to filepath SmCo5_oc/b8260bd2a71fea65131fe090346c6003/input.cif
+cif_primitive= True
+cif symmetry, spg lib symmetry 191 191
+debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
+conventional standard structure
+prim_stand_nsite=6, nsite_kkr=6
+save to SmCo5_oc/b8260bd2a71fea65131fe090346c6003/structure.json
+debug, option []
+saved to SmCo5_oc/b8260bd2a71fea65131fe090346c6003/inputcard_geom
+kkr_struc, symmetry, nsite ('P6/mmm', 191) 6
+kkr space group symbol, nsite 191 6
+input prim structure num_site 6
+kkr   prim structure num_site 6
+('P6/mmm', 191) ('P6/mmm', 191)
+[['0.0a', '0.0b', '0.0c', 'Sm'], ['0.5a', '0.0b', '0.5c', 'Co3g'], ['0.0a', '0.5b', '0.5c', 'Co3g'], ['0.5a', '0.5b', '0.5c', 'Co3g'], ['1/3a', '2/3b', '0.0c', 'Co2c'], ['2/3a', '1/3b', '0.0c', 'Co2c']]
+---------------------------------------------------------------
+### SmCo5(magnetic, open core for Sm-4f, srals, mjw-asa, spc31)
+kpath is made by HighSymmKpath
+  directory:  SmCo5_oc   output file:  out_spc31.log
+   Aw(w,k) k=0 0 0, up
+  energy   -1.27e+00  -1.26e+00  -1.25e+00  ...  4.04e-01   4.12e-01   4.21e-01 
+  current   6.73e-01   3.75e-01   2.45e-01  ...   2.93e-01   2.40e-01   2.05e-01
+  
+  [1 rows x 200 columns]
+
+   Aw(w,k) k=0 0 0, dn
+  energy   -1.27e+00  -1.26e+00  -1.25e+00  ...  4.04e-01   4.12e-01   4.21e-01 
+  current   4.27e-02   4.18e-02   4.09e-02  ...   1.90e-01   1.71e-01   1.55e-01
+  
+  [1 rows x 200 columns]
+
+get_structures(primitive=False), symmetry, nsite ('P6/mmm', 191) 6
+get_structures(primitive=True), symmetry, nsite ('P6/mmm', 191) 6
+prim_stand_struc, symmetry, nsite ('P6/mmm', 191) 6
+input_struc_to filepath SmCo5_noc/b8260bd2a71fea65131fe090346c6003/input.cif
+cif_primitive= True
+cif symmetry, spg lib symmetry 191 191
+debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
+conventional standard structure
+prim_stand_nsite=6, nsite_kkr=6
+save to SmCo5_noc/b8260bd2a71fea65131fe090346c6003/structure.json
+debug, option []
+saved to SmCo5_noc/b8260bd2a71fea65131fe090346c6003/inputcard_geom
+kkr_struc, symmetry, nsite ('P6/mmm', 191) 6
+kkr space group symbol, nsite 191 6
+input prim structure num_site 6
+kkr   prim structure num_site 6
+('P6/mmm', 191) ('P6/mmm', 191)
+[['0.0a', '0.0b', '0.0c', 'Sm'], ['0.5a', '0.0b', '0.5c', 'Co3g'], ['0.0a', '0.5b', '0.5c', 'Co3g'], ['0.5a', '0.5b', '0.5c', 'Co3g'], ['1/3a', '2/3b', '0.0c', 'Co2c'], ['2/3a', '1/3b', '0.0c', 'Co2c']]
+----------------------------------------
+### SmCo5 (magnetic, srals, mjw-asa, go)
+  directory:  SmCo5_noc   output file:  out_go.log
+           conv           orbitallocalmoment  ...        te       tm
+  current  True  [0.11411, 0.06717, 1.01274]  ... -3.48e+04 1.50e+00
+  
+  [1 rows x 5 columns]
+
+
+================
+
+saved to reference/ifort.json

@@ -1,0 +1,108 @@
+data_NIMS_MatNavi_4296219127_1_2
+
+#
+# COPYRIGHT NOTICE
+#
+# This CIF data is created using data from AtomWork, published 2010/06 by
+# National Institute for Materials Science (NIMS), Tsukuba, Japan. Copyright
+# 2010 by NIMS and  Materials Phases Data system (MPDS), Vitznau,
+# Switzerland. All Rghts Reserved.
+#
+# DISCLAIMER
+#
+# The values reported here are taken from the literature and other sources and
+# the author does not warrant their correctness nor accept any
+# responsibility for errors. Users are advised to consult the primarysources.
+#
+
+_chemical_formula_sum 'Po'
+_space_group_crystal_system cubic
+_symmetry_space_group_name_H-M 'P m -3 m'
+_symmetry_Int_Tables_number 221
+
+loop_
+    _symmetry_equiv_pos_site_id
+    _symmetry_equiv_pos_as_xyz
+1 x,y,z
+2 -x,-y,z
+3 -x,y,-z
+4 x,-y,-z
+5 z,x,y
+6 z,-x,-y
+7 -z,-x,y
+8 -z,x,-y
+9 y,z,x
+10 -y,z,-x
+11 y,-z,-x
+12 -y,-z,x
+13 y,x,-z
+14 -y,-x,-z
+15 y,-x,z
+16 -y,x,z
+17 x,z,-y
+18 -x,z,y
+19 -x,-z,-y
+20 x,-z,y
+21 z,y,-x
+22 z,-y,x
+23 -z,y,x
+24 -z,-y,-x
+25 -x,-y,-z
+26 x,y,-z
+27 x,-y,z
+28 -x,y,z
+29 -z,-x,-y
+30 -z,x,y
+31 z,x,-y
+32 z,-x,y
+33 -y,-z,-x
+34 y,-z,x
+35 -y,z,x
+36 y,z,-x
+37 -y,-x,z
+38 y,x,z
+39 -y,x,-z
+40 y,-x,-z
+41 -x,-z,y
+42 x,-z,-y
+43 x,z,y
+44 -x,z,-y
+45 -z,-y,x
+46 -z,y,-x
+47 z,-y,-x
+48 z,y,x
+
+_cell_length_a 3.359
+_cell_length_b 3.359
+_cell_length_c 3.359
+_cell_angle_alpha 90
+_cell_angle_beta 90
+_cell_angle_gamma 90
+_cell_volume 37.9
+_cell_formula_units_Z 1
+
+loop_
+    _atom_site_label
+    _atom_site_fract_x
+    _atom_site_fract_y
+    _atom_site_fract_z
+    _atom_site_occupancy
+    _atom_site_symmetry_multiplicity
+    _atom_site_Wyckoff_symbol
+    _atom_site_U_iso_or_equiv
+    _atom_site_type_symbol
+Po 0 0 0 1.0 1 a ? Po
+
+_publ_section_title 'THE STRUCTURES OF POLONIUM AND ITS COMPOUNDS-I. \a AND \b POLONIUM METAL'
+_journal_coden_ASTM JINCAO
+_journal_name_full 'J. Inorg. Nucl. Chem.'
+_journal_year 1966
+_journal_volume 28
+_journal_page_first 1837
+_journal_page_last 1846
+_journal_language English
+
+loop_
+    _publ_author_name
+'De Sando R.J.'
+'Lange R.C.'

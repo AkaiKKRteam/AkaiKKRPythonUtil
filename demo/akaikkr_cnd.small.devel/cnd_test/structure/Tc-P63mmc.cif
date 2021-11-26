@@ -1,0 +1,85 @@
+data_NIMS_MatNavi_4295349597_1_2
+
+#
+# COPYRIGHT NOTICE
+#
+# This CIF data is created using data from AtomWork, published 2010/06 by
+# National Institute for Materials Science (NIMS), Tsukuba, Japan. Copyright
+# 2010 by NIMS and  Materials Phases Data system (MPDS), Vitznau,
+# Switzerland. All Rghts Reserved.
+#
+# DISCLAIMER
+#
+# The values reported here are taken from the literature and other sources and
+# the author does not warrant their correctness nor accept any
+# responsibility for errors. Users are advised to consult the primarysources.
+#
+
+_chemical_formula_sum 'Re'
+_space_group_crystal_system hexagonal
+_symmetry_space_group_name_H-M 'P 63/m m c'
+_symmetry_Int_Tables_number 194
+
+loop_
+    _symmetry_equiv_pos_site_id
+    _symmetry_equiv_pos_as_xyz
+1 x,y,z
+2 -y,x-y,z
+3 -x+y,-x,z
+4 -x,-y,z+1/2
+5 y,-x+y,z+1/2
+6 x-y,x,z+1/2
+7 y,x,-z
+8 x-y,-y,-z
+9 -x,-x+y,-z
+10 -y,-x,-z+1/2
+11 -x+y,y,-z+1/2
+12 x,x-y,-z+1/2
+13 -x,-y,-z
+14 y,-x+y,-z
+15 x-y,x,-z
+16 x,y,-z+1/2
+17 -y,x-y,-z+1/2
+18 -x+y,-x,-z+1/2
+19 -y,-x,z
+20 -x+y,y,z
+21 x,x-y,z
+22 y,x,z+1/2
+23 x-y,-y,z+1/2
+24 -x,-x+y,z+1/2
+
+_cell_length_a 2.491
+_cell_length_b 2.491
+_cell_length_c 4.02
+_cell_angle_alpha 90
+_cell_angle_beta 90
+_cell_angle_gamma 120
+_cell_volume 21.6
+_cell_formula_units_Z 2
+
+loop_
+    _atom_site_label
+    _atom_site_fract_x
+    _atom_site_fract_y
+    _atom_site_fract_z
+    _atom_site_occupancy
+    _atom_site_symmetry_multiplicity
+    _atom_site_Wyckoff_symbol
+    _atom_site_U_iso_or_equiv
+    _atom_site_type_symbol
+Re 0.333333 0.666667 0.25 1.0 2 c ? Re
+
+_publ_section_title 'High-pressure x-ray diffraction studies on rhenium up to 216 GPa (2.16 Mbar)'
+_journal_coden_ASTM PRBMDO
+_journal_name_full 'Phys. Rev. B: Condens. Matter'
+_journal_year 1987
+_journal_volume 36
+_journal_page_first 9790
+_journal_page_last 9792
+_journal_language English
+
+loop_
+    _publ_author_name
+'Vohra Y.K.'
+'Duclos S.J.'
+'Ruoff A.L.'
