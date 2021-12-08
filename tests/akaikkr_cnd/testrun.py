@@ -36,12 +36,40 @@ def make_exe():
     exe_dic.update({"all":exe_list})
 
     exe_list = []
-    exe_list += [ Co_go ]
-    exe_dic.update({"1": exe_list})
+    exe_list += [ Co_go, Co_j30 ]
+    exe_dic.update({"Co": exe_list})
+
+    exe_list = []
+    exe_list += [ Fe_go, Fe_j30 ]
+    exe_dic.update({"Fe": exe_list})
+
+    exe_list = []
+    exe_list += [ Ni_go, Ni_j30 ]
+    exe_dic.update({"Ni": exe_list})
+
+    exe_list = []
+    exe_list += [ NiFe_go, NiFe_j30 ]
+    exe_dic.update({"NiFe": exe_list})
+
+    exe_list = []
+    exe_list += [FeRh05Pt05_go, FeRh05Pt05_j30]
+    exe_dic.update({"FeRhPt": exe_list})
+
+    exe_list = []
+    exe_list += [SmCo5_oc_go, SmCo5_oc_j30]
+    exe_dic.update({"SmCo5_oc": exe_list})
 
     exe_list = []
     exe_list += [Cu_go, Cu_dos, Cu_spc ]
     exe_dic.update({"Cu": exe_list})
+
+    exe_list = []
+    exe_list += [Fe_lmd_go]
+    exe_dic.update({"Fe_lmd": exe_list})
+
+    exe_list = []
+    exe_list += [Co2MnSi_go, Co2MnSi_j30]
+    exe_dic.update({"Co2MnSi": exe_list})
 
     exe_list = []
     exe_list += [Cu_go, Cu_dos, Cu_spc ]

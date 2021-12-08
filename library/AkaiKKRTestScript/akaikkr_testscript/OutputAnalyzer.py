@@ -271,32 +271,83 @@ class DiffVector:
         return df_diff
 
 
+def _sort_types_inside_row(df):
+    """exchange type1 and type2 as type1<type2 to compare with another data.
+    and add pair column.
+    """
+    df = df.copy()
+    type1 = df["type1"].values
+    type2 = df["type2"].values
+    t1t2_list = []
+    for t1, t2 in zip(type1, type2):
+        _t1t2 = [t1,t2]
+        _t1t2.sort()
+        t1t2_list.append(_t1t2)
+    df[["type1","type2"]] = t1t2_list
+
+    if "pair" in list(df.columns):
+        del df["pair"]
+
+    # add pair column
+    comp1 = df["comp1"].values
+    comp2 = df["comp2"].values
+    type1 = df["type1"].values
+    type2 = df["type2"].values
+    typepair = []
+    for t1, t2, c1, c2 in zip(type1, type2, comp1, comp2):
+        typepair.append("-".join([t1, t2, c1, c2]))
+    df_pair = pd.DataFrame({"pair": typepair})
+
+    jijdf = pd.concat([df, df_pair], axis=1)
+    return jijdf
+
+
 def _make_jij_dataframe(result_jij, ref_jij, target="J_ij(meV)"):
     # make jij dataframe
     df_result_jij = pd.DataFrame(result_jij[1:], columns=result_jij[0])
+    df_result_jij = df_result_jij[["comp1","comp2","J_ij","J_ij(meV)","pair"]]
 
     if ref_jij is not None:
         df_ref_jij = pd.DataFrame(ref_jij[1:], columns=ref_jij[0])
+        df_ref_jij = _sort_types_inside_row(df_ref_jij)
+
+        # sort values to compare the result with another dataframe.
+        df_ref_jij.sort_values(by="distance", inplace=True)
+        df_ref_jij = df_ref_jij[["comp1","comp2","J_ij","J_ij(meV)","pair"]]
+        df_ref_jij.reset_index(drop=True)
+
         zipped_verson_df_list = zip([_CURRENT_, _REFERENCE_], [
             df_result_jij, df_ref_jij])
     else:
         zipped_verson_df_list = zip([_CURRENT_], [df_result_jij])
 
-    # replace J_ij with {_CURRENT_}_J_ij
+    # replace J_ij* with {_CURRENT_}_J_ij*.
+    # replace distace with {_CURRENT_}_distance.
     for version, _df in zipped_verson_df_list:
         col2 = {}
         for col in _df.columns:
             if col.startswith("J_ij"):
                 col2[col] = "{}_{}".format(version, col)
+            if col.startswith("distance"):
+                col2[col] = "{}_{}".format(version, col)
         _df.rename(columns=col2, inplace=True)
+
+    print("debug df_result_jij")
+    print(df_result_jij)
+
+    print("debug df_ref_jij")
+    print(df_ref_jij)
 
     if ref_jij is not None:
         # merge
-        col = ['site1', 'site2', 'comp1', 'comp2', 'a', 'b', 'c', 'distance',
-               'type1', 'type2', 'pair']
+        print("debug merge")
+        col = ["comp1","comp2",'pair']
         df = df_result_jij.merge(df_ref_jij, on=col)
     else:
         df = df_result_jij
+
+    print("debug df")
+    print(df)
 
     # add pair-comp1-comp2 field
     paircomp = []
@@ -457,6 +508,17 @@ def j_diff_msg(key, result, ref,
         chk1 = True
 
     df_jij = _make_jij_dataframe(result_jij, ref_jij)
+
+    if True:
+        print("debug ref_jij")
+        print(ref_jij)
+
+        print("debug result_jij")
+        print(result_jij)
+        
+        print("debug df_jij")
+        print(df_jij)
+        print("------------")
 
     if _REFERENCE_ in df_jij.index:
         diffvector = DiffVector(df_jij, thres_vector)

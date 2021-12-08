@@ -212,6 +212,32 @@ def _cut_a_pdos_block(data_iter, search_keyword, value_positions):
 
     return None, None
 
+def _sort_types_inside_row(df):
+    """exchange type1 and type2 as type1<type2 to compare with another data.
+    and add pair column.
+    """
+    df = df.copy().reset_index(drop=True)
+    type1 = df["type1"].values
+    type2 = df["type2"].values
+    t1t2_list = []
+    for t1, t2 in zip(type1, type2):
+        _t1t2 = [t1,t2]
+        _t1t2.sort()
+        t1t2_list.append(_t1t2)
+    df[["type1","type2"]] = t1t2_list
+
+    # add pair column
+    comp1 = df["comp1"].values
+    comp2 = df["comp2"].values
+    type1 = df["type1"].values
+    type2 = df["type2"].values
+    typepair = []
+    for t1, t2, c1, c2 in zip(type1, type2, comp1, comp2):
+        typepair.append("-".join([t1, t2, c1, c2]))
+    df_pair = pd.DataFrame({"pair": typepair})
+
+    jijdf = pd.concat([df, df_pair], axis=1)
+    return jijdf
 
 def _cut_only_nn(_jijdf):
     """cut only the first columns if jij DataFrame
@@ -222,25 +248,28 @@ def _cut_only_nn(_jijdf):
     Returns:
         pd.DataFrame: Jij only the first n.n. neighbor
     """
-    _jijdf.reset_index(inplace=True)
-    type1 = _jijdf["type1"].values
-    type2 = _jijdf["type2"].values
-    typepair = []
-    for t1, t2 in zip(type1, type2):
-        typepair.append("-".join([t1, t2]))
-    _pairdf = pd.DataFrame({"pair": typepair})
-    jijdf = pd.concat([_jijdf, _pairdf], axis=1)
-    typepair = list(set(typepair))
+
+    jijdf = _sort_types_inside_row(_jijdf)
+
+    typepair = np.unique(jijdf["pair"].values).tolist()
+    print("debug typepair", typepair)
     typepair.sort()
     df_list = []
     for pair in typepair:
         _df = jijdf.query("pair=='{}'".format(pair)).sort_values(
             by="distance").reset_index(drop=True)
+        if True:
+            print("debug pair",pair)
+            print(_df.loc[:3,:])
         _dist = _df.loc[0, "distance"]
         df = _df[_df["distance"] == _dist]
         df_list.append(df)
     dfsmall = pd.concat(df_list, axis=0)
-    del dfsmall["index"]
+
+    # in the order of distance
+    dfsmall.sort_values(by="distance", inplace=True)
+    dfsmall.reset_index(drop=True, inplace=True)
+
     jijnn = [list(dfsmall.columns)]
     v = dfsmall.values.tolist()
     jijnn.extend(v)
