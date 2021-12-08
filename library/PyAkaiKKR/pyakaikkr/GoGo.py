@@ -174,7 +174,7 @@ class GoDos(GoGo):
     def prescript(self,):
         self.param["go"] = self.go
         self.param["record"] = "2nd"
-        self.param["ewidth"] = 2.0
+        self.param["ewidth"] = 2.0 # Default value. It will be updated.
         args = self.args
         if args:
             self.param.update(args)
@@ -286,8 +286,8 @@ class GoCnd(GoGo):
     def prescript(self, **args):
         self.param["go"] = " "+self.go  # extran " " is necessary.
         self.param["record"] = "2nd"
-        self.param["ewidth"] = 0.01
-        self.param["bzqlty"] = 40
+        self.param["ewidth"] = 0.01 # default value.
+        self.param["bzqlty"] = 40  # default value. It will be updated later.
         args = self.args
         if args:
             self.param.update(args)

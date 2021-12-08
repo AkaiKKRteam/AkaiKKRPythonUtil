@@ -15,11 +15,11 @@ import subprocess
 
 from pyakaikkr import AkaikkrJob, JijPlotter
 from pyakaikkr.CompareCifKkr import CompareCifKkr
+from pyakaikkr.GoGo import *
 
 from .exeutil import ExeUtil
 from .resultutil import ResultUtil
 from .OutputAnalyzer import *
-from .GoGo import *
 from .loadmeta import make_meta
 
 _REFERENCE_PATH_ = "reference"
