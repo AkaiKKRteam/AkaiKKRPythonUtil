@@ -563,7 +563,7 @@ class AkaikkrJob:
         else:
             return False
 
-    def check_convergence_go(self, outfile):
+    def get_convergence(self, outfile):
         """check convergence for go calculation.
         converged if sbtime report is found.
         not converged if *** no convergence is found.
@@ -577,7 +577,6 @@ class AkaikkrJob:
         Returns:
             bool: converged or not
         """
-        # check convergence for go calcualtion
         data = self._read(outfile)
 
         flag = True
@@ -1657,7 +1656,7 @@ StructureWriter.poscar(struc)."""
             raise KKRValueAquisitionError("failed to get resistivity")
         return resistivity
 
-    def get_conductivity_spin(self, outfile):
+    def get_conductivity(self, outfile):
         """get conductivity per spin
 
         Args:
@@ -1684,8 +1683,8 @@ StructureWriter.poscar(struc)."""
             conductivity_spin = None
         return conductivity_spin
 
-    def check_core_level(self, outfile, core_state=["3d", "4d", "4f"]):
-        """check core states defined by core_state.
+    def get_core_level(self, outfile, core_state=["3d", "4d", "4f"]):
+        """get core states defined by core_state.
 
         Args:
             outfile (str): filename to analyze

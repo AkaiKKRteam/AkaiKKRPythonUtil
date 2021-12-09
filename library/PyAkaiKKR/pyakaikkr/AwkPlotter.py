@@ -48,7 +48,7 @@ class AwkPlotter(AwkReader):
             show_colorbar (bool, optional): show colorbar. Defaults to False.
             linecolor (str, optional): line color of grids and ef. Defaults to "w".
             linewidth (int, optional): line width of grid and ef. Defaults to 2.
-        """             
+        """
         kdist = self.kdist
         Awk = self.Awk
         energy = self.energy
@@ -86,71 +86,84 @@ class AwkPlotter(AwkReader):
             plt.close(fig)
 
 
-def plotband(directory, pot="pot.dat", outfile="out_go.log",
+class AwkEXPlotter:
+
+    def __init__(self, directory,  outfile="out_go.log", pot="pot.dat",):
+        """
+        Args:
+            directory (str): directory to save figures
+            pot (str, optional): potential filename. Defaults to "pot.dat".
+            outfile (str, optional): output filename. Defaults to "out_go.log".
+        """
+        self.directory = directory
+        self.outfile = outfile
+        self.pot = pot
+
+    def make(self,
              output_directory=None, klabel_filename=KLABEL_FILENAME_):
-    """plot band A(w,k).
-    band files are {potetialfile}_up.spc and {potetialfile}_dn.spc
+        """plot band A(w,k).
+        band files are {potetialfile}_up.spc and {potetialfile}_dn.spc
 
-    Args:
-        directory (str): directory to save figures
-        pot (str, optional): potential filename. Defaults to "pot.dat".
-        outfile (str, optional): output filename. Defaults to "out_go.log".
-        output_directory (str, optional): the directory of the output file. Defaults to None.
-        klabel_filename (str, optional): klabel filename. Defaults to KLABEL_FILENAME_.
-    """
-    if output_directory is None:
-        output_directory = directory
-    job = AkaikkrJob(directory)
-    magtyp = job.get_magtyp(outfile)
-    param_default = job.default
-    pot = job.get_potentialfile(outfile)
+        Args:
+            output_directory (str, optional): the directory of the output file. Defaults to None.
+            klabel_filename (str, optional): klabel filename. Defaults to KLABEL_FILENAME_.
+        """
+        directory = self.directory
+        outfile = self.outfile
 
-    klabel = None
-    if klabel_filename is not None:
-        kpath_filepath = os.path.join(directory, klabel_filename)
-        with open(kpath_filepath) as f:
-            content = json.load(f)
-            print("debug: file, loaded content",kpath_filepath, content)
-            klabel = []
-            for vpath in content["kpath"]:
-                for v in vpath:
-                    k = str(list(v.keys())[0])
-                    k = "$"+k+r"$"
-                    klabel.append(k)
+        if output_directory is None:
+            output_directory = directory
+        job = AkaikkrJob(directory)
+        magtyp = job.get_magtyp(outfile)
+        param_default = job.default
+        pot = job.get_potentialfile(outfile)
 
-    filename = "{}_up.spc".format(pot)
-    filepath = os.path.join(directory, filename)
-    Awk = AwkPlotter(filepath)
-    pcolorargs = {"cmap": "magma"}
-    imgfilename = os.path.join(output_directory, "Awk_up.png")
-    os.makedirs(output_directory, exist_ok=True)
-    Awk.show(klabel=klabel, linecolor="green", show_colorbar=True,
-             imgfilename=imgfilename, **pcolorargs)
-    print("  saved to", imgfilename)
+        klabel = None
+        if klabel_filename is not None:
+            kpath_filepath = os.path.join(directory, klabel_filename)
+            with open(kpath_filepath) as f:
+                content = json.load(f)
+                print("debug: file, loaded content", kpath_filepath, content)
+                klabel = []
+                for vpath in content["kpath"]:
+                    for v in vpath:
+                        k = str(list(v.keys())[0])
+                        k = "$"+k+r"$"
+                        klabel.append(k)
 
-    if magtyp[0] == "m":  # mag
-        filename = "{}_dn.spc".format(pot)
+        filename = "{}_up.spc".format(pot)
         filepath = os.path.join(directory, filename)
         Awk = AwkPlotter(filepath)
         pcolorargs = {"cmap": "magma"}
-        imgfilename = os.path.join(output_directory, "Awk_dn.png")
+        imgfilename = os.path.join(output_directory, "Awk_up.png")
+        os.makedirs(output_directory, exist_ok=True)
         Awk.show(klabel=klabel, linecolor="green", show_colorbar=True,
                  imgfilename=imgfilename, **pcolorargs)
         print("  saved to", imgfilename)
 
-        fig, axes = plt.subplots(1, 2, figsize=(12, 5))
-        filenames = ["{}_up.spc".format(pot), "{}_dn.spc".format(pot)]
-        for filename, ax in zip(filenames, axes):
+        if magtyp[0] == "m":  # mag
+            filename = "{}_dn.spc".format(pot)
             filepath = os.path.join(directory, filename)
             Awk = AwkPlotter(filepath)
-            pcolorargs = {"cmap": "magma", "alpha": 0.9}
-            tickparams = {"labelsize": 12, "labelcolor": "blue"}
-            Awk.show(klabel, ax=ax, linewidth=0, **pcolorargs)
-            ax.tick_params("both", **tickparams)
-            ax.set_ylabel("$E$(Ry)", c="blue")
-        imgfilename = os.path.join(output_directory, "Awk_both.png")
-        fig.savefig(imgfilename)
-        fig.clf()
-        plt.close(fig)
-        print("  saved to", imgfilename)
-    print()
+            pcolorargs = {"cmap": "magma"}
+            imgfilename = os.path.join(output_directory, "Awk_dn.png")
+            Awk.show(klabel=klabel, linecolor="green", show_colorbar=True,
+                     imgfilename=imgfilename, **pcolorargs)
+            print("  saved to", imgfilename)
+
+            fig, axes = plt.subplots(1, 2, figsize=(12, 5))
+            filenames = ["{}_up.spc".format(pot), "{}_dn.spc".format(pot)]
+            for filename, ax in zip(filenames, axes):
+                filepath = os.path.join(directory, filename)
+                Awk = AwkPlotter(filepath)
+                pcolorargs = {"cmap": "magma", "alpha": 0.9}
+                tickparams = {"labelsize": 12, "labelcolor": "blue"}
+                Awk.show(klabel, ax=ax, linewidth=0, **pcolorargs)
+                ax.tick_params("both", **tickparams)
+                ax.set_ylabel("$E$(Ry)", c="blue")
+            imgfilename = os.path.join(output_directory, "Awk_both.png")
+            fig.savefig(imgfilename)
+            fig.clf()
+            plt.close(fig)
+            print("  saved to", imgfilename)
+        print()

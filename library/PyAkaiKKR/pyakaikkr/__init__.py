@@ -8,7 +8,7 @@ from .AkaiKkr import *
 from .Fmg import *
 from .AwkReader import *
 from .AwkPlotter import *
-from .JijPlotter import *
+from .JijPlotter import JijPlotter
 from .DosPlotter import *
 from .IterPlotter import *
 from .StructureWriter import *

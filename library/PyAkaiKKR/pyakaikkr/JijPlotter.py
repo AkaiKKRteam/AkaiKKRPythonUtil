@@ -8,22 +8,26 @@ import os
 
 
 class JijPlotter:
-    """load jij.csv and plot Jij
-    """
-
-    def __init__(self, directory, filename="jij.csv"):
+    def __init__(self, df=None,  directory=None, outfile="jij.csv"):
         """initialization routine
 
         Args:
-            directory (str): directory to run
-            filename (str): csv filename to read
+            df (pd.DataFrame, optional): data. Defaults to None
+            outfile (str, optional): Jij csv filename to read. Defaults to "jij.csv"
         """
-        self.directory = directory
-        filepath = os.path.join(directory, filename)
-        df = pd.read_csv(filepath)
-        self.df = df
+        self.df = None
+        if df is not None:
+            self.df = df
+        elif df is None and directory is not None and outfile is not None:
+            self.directory = directory
+            filepath = os.path.join(directory, outfile)
+            df = pd.read_csv(filepath)
+            self.df = df
+        if self.df is None:
+            raise ValueError(
+                "JijPloter.__init__(), invalid parameter is given.")
 
-    def plot_typepair(self, a=1.0, marker="o", output_directory=None,
+    def make_typepair(self, a=1.0, marker="o", output_directory=None,
                       figsize=(5, 3)):
         """plot Jij of all type pairs
         save all combinations of type pairs
@@ -34,9 +38,7 @@ class JijPlotter:
             output_directory (str, optional): output directory.
             figsize (tuple, optional): figure size. Defaults to (5, 3).
         """
-        directory = self.directory
-        if output_directory is None:
-            output_directory = directory
+
         df = self.df.copy()
 
         xlabel = "distance"
@@ -90,7 +92,7 @@ class JijPlotter:
                 fig.clf()
                 plt.close(fig)
 
-    def plot_comppair(self, type1, type2, typeofsite, a=1.0,
+    def make_comppair(self, type1, type2, typeofsite, a=1.0,
                       marker="o",  output_directory=None,
                       figsize=(5, 3)):
         """plot Jij of specified type1 and type2
@@ -105,9 +107,7 @@ class JijPlotter:
             output_directory (str, optional): output directory.
             figsize (tuple, optional): figure size. Defaults to (5, 3).
         """
-        directory = self.directory
-        if output_directory is None:
-            output_directory = directory
+
         df = self.df.query("type1=='{}' and type2=='{}'".format(
             type1, type2)).reset_index(drop=True)
         xlabel = "distance"
@@ -172,6 +172,3 @@ class JijPlotter:
                 fig.clf()
                 plt.close(fig)
                 print("  saved to", imgpath)
-
-# todo:
-# (type, comp) pair function must be made.

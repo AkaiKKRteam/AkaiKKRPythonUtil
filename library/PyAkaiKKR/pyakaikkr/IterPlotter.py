@@ -10,6 +10,7 @@ import numpy as np
 class IterPlotter:
     """plotter for history
     """
+
     def __init__(self, rms):
         """initialization routine
 
@@ -21,15 +22,15 @@ class IterPlotter:
             rms = rms.reshape(1, -1)
         self.rms = rms
 
-    def show(self, outputpath: str, ylabels: list, filename :str,  figsize=(5, 3)):
+    def make(self, output_directory: str, ylabels: list, filename: str,  figsize=(5, 3)):
         """make iteration plot
 
         Args:
-            outputpath (str): output directory
+            output_directory (str): output directory
             ylabels (list): ylabels
             filename (str): output filename
             figsize (tuple, optional): figure size. Defaults to (5, 3).
-        """        
+        """
         os.makedirs(outputpath, exist_ok=True)
         filepath = os.path.join(outputpath, filename)
 

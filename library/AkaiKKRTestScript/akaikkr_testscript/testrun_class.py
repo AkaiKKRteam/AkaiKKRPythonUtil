@@ -370,8 +370,8 @@ def Fe_j(akaikkr_exe, directory="Fe", comment=_Fe_COMMENT_,
                                 displc=displc, directory=directory), comment)
     gogo.execute(displc=displc, execute_postscript=execute_postscript)
     if execute_postscript:
-        jijplotter = JijPlotter(directory)
-        jijplotter.plot_typepair()
+        jijplotter = JijPlotter(directory=directory)
+        jijplotter.make_typepair(output_directory=directory)
     label = "{}_{}".format(directory, gogo.go)
     return label, gogo.result
 
@@ -383,8 +383,8 @@ def Fe_j30(akaikkr_exe, directory="Fe", comment=_Fe_COMMENT_,
                                   displc=displc, directory=directory), comment)
     gogo.execute(displc=displc, execute_postscript=execute_postscript)
     if execute_postscript:
-        jijplotter = JijPlotter(directory)
-        jijplotter.plot_typepair()
+        jijplotter = JijPlotter(directory=directory)
+        jijplotter.make_typepair(output_directory=directory)
     label = "{}_{}".format(directory, gogo.go)
     return label, gogo.result
 
@@ -424,7 +424,7 @@ def _Co_common_param(
     # param["c/a"] = 1.6215
     param["magtyp"] = "mag"
     param["rmt"] = [1.0 for i in param["ncmp"]]
-    
+
     return param
 
 
@@ -474,8 +474,8 @@ def Co_j(akaikkr_exe, directory="Co", comment=_Co_COMMENT_,
     gogo.execute(displc=displc, execute_postscript=execute_postscript)
     label = "{}_{}".format(directory, gogo.go)
     if execute_postscript:
-        jijplotter = JijPlotter(directory)
-        jijplotter.plot_typepair()
+        jijplotter = JijPlotter(directory=directory)
+        jijplotter.make_typepair(output_directory=directory)
     return label, gogo.result
 
 
@@ -488,8 +488,8 @@ def Co_j30(akaikkr_exe,  directory="Co", comment=_Co_COMMENT_,
     gogo.execute(displc=displc, execute_postscript=execute_postscript)
     label = "{}_{}".format(directory, gogo.go)
     if execute_postscript:
-        jijplotter = JijPlotter(directory)
-        jijplotter.plot_typepair()
+        jijplotter = JijPlotter(directory=directory)
+        jijplotter.make_typepair(output_directory=directory)
     return label, gogo.result
 
 
@@ -589,8 +589,8 @@ def Ni_j(akaikkr_exe, directory="Ni", comment=_Ni_COMMENT_,
                                 displc=displc, directory=directory),
                comment)
     gogo.execute(displc=displc, execute_postscript=execute_postscript)
-    jijplotter = JijPlotter(directory)
-    jijplotter.plot_typepair()
+    jijplotter = JijPlotter(directory=directory)
+    jijplotter.make_typepair(output_directory=directory)
     label = "{}_{}".format(directory, gogo.go)
     return label, gogo.result
 
@@ -603,8 +603,8 @@ def Ni_j30(akaikkr_exe,  directory="Ni", comment=_Ni_COMMENT_,
                  comment)
     gogo.execute(displc=displc, execute_postscript=execute_postscript)
     if execute_postscript:
-        jijplotter = JijPlotter(directory)
-        jijplotter.plot_typepair()
+        jijplotter = JijPlotter(directory=directory)
+        jijplotter.make_typepair(output_directory=directory)
     label = "{}_{}".format(directory, gogo.go)
     return label, gogo.result
 
@@ -650,7 +650,7 @@ def _AlMnFeCo_bcc_common_param(akaikkr_exe: dict, displc: bool, ciffilepath="../
     param["pmix"] = 0.01
     param["rmt"] = [1.0]
     param["mxl"] = [3]
-        
+
     return param
 
 
@@ -718,9 +718,10 @@ def AlMnFeCo_bcc_j30(akaikkr_exe,  directory="AlMnFeCo_bcc", comment=_AlMnFeCo_b
         job = AkaikkrJob(directory)
         outfile = "out_go.log"
         typeofsite = job.get_type_of_site(outfile)
-        jijplotter = JijPlotter(directory)
-        jijplotter.plot_comppair(
-            "Mn0.25Al0.25Fe0.25Co0.25_2a_0", "Mn0.25Al0.25Fe0.25Co0.25_2a_0", typeofsite)
+        jijplotter = JijPlotter(directory=directory)
+        jijplotter.make_comppair(
+            "Mn0.25Al0.25Fe0.25Co0.25_2a_0", "Mn0.25Al0.25Fe0.25Co0.25_2a_0", typeofsite,
+            output_directory=directory)
     return label, gogo.result
 
 
@@ -735,9 +736,9 @@ def AlMnFeCo_bcc_j(akaikkr_exe, directory="AlMnFeCo_bcc", comment=_AlMnFeCo_bcc_
         outfile = "out_go.log"
         job = AkaikkrJob(directory)
         typeofsite = job.get_type_of_site(outfile)
-        jijplotter = JijPlotter(directory)
-        jijplotter.plot_comppair(
-            "HEA", "HEA", typeofsite)
+        jijplotter = JijPlotter(directory=directory)
+        jijplotter.make_comppair(
+            "HEA", "HEA", typeofsite, output_directory=directory)
     label = "{}_{}".format(directory, gogo.go)
     return label, gogo.result
 
@@ -794,7 +795,7 @@ def _FeRh05Pt05_common_param(akaikkr_exe: dict, displc: bool, ciffilepath="../st
     param["bzqlty"] = 8
     param["rmt"] = [1.0 for i in range(param["ntyp"])]
     param["mxl"] = [3 for i in range(param["ntyp"])]
-        
+
     return param
 
 
@@ -865,9 +866,11 @@ def FeRh05Pt05_j30(akaikkr_exe,  directory="FeRh05Pt05",
         outfile = "out_go.log"
         job = AkaikkrJob(directory)
         typeofsite = job.get_type_of_site(outfile)
-        jijplotter = JijPlotter(directory)
-        jijplotter.plot_comppair("Fe_1a_0", "Rh0.5Pt0.5_1d_1", typeofsite)
-        jijplotter.plot_comppair("Fe_1a_0", "Fe_1a_0", typeofsite)
+        jijplotter = JijPlotter(directory=directory)
+        jijplotter.make_comppair(
+            "Fe_1a_0", "Rh0.5Pt0.5_1d_1", typeofsite, output_directory=directory)
+        jijplotter.make_comppair("Fe_1a_0", "Fe_1a_0",
+                                 typeofsite, output_directory=directory)
 
     label = "{}_{}".format(directory, gogo.go)
     return label, gogo.result
@@ -884,9 +887,11 @@ def FeRh05Pt05_j(akaikkr_exe,  directory="FeRh05Pt05",
         outfile = "out_go.log"
         job = AkaikkrJob(directory)
         typeofsite = job.get_type_of_site(outfile)
-        jijplotter = JijPlotter(directory)
-        jijplotter.plot_comppair("Fe", "RhPt", typeofsite)
-        jijplotter.plot_comppair("Fe", "Fe", typeofsite)
+        jijplotter = JijPlotter(directory=directory)
+        jijplotter.make_comppair(
+            "Fe", "RhPt", typeofsite, output_directory=directory)
+        jijplotter.make_comppair(
+            "Fe", "Fe", typeofsite, output_directory=directory)
 
     label = "{}_{}".format(directory, gogo.go)
     return label, gogo.result
@@ -931,7 +936,6 @@ def _NiFe_common_param(akaikkr_exe: dict, displc: bool, ciffilepath="../structur
         raise ValueError("ntyp must be 1 for NiFe.")
     param["rmt"] = [1.0 for i in range(param["ntyp"])]
     param["mxl"] = [3 for i in range(param["ntyp"])]
-
 
     return param
 
@@ -984,8 +988,9 @@ def NiFe_j(akaikkr_exe,  directory="NiFe", comment=_NiFe_COMMENT_,
         outfile = "out_go.log"
         job = AkaikkrJob(directory)
         typeofsite = job.get_type_of_site(outfile)
-        jijplotter = JijPlotter(directory)
-        jijplotter.plot_comppair("NiFe", "NiFe", typeofsite)
+        jijplotter = JijPlotter(directory=directory)
+        jijplotter.make_comppair(
+            "NiFe", "NiFe", typeofsite, output_directory=directory)
     label = "{}_{}".format(directory, gogo.go)
     return label, gogo.result
 
@@ -1001,8 +1006,9 @@ def NiFe_j30(akaikkr_exe,  directory="NiFe", comment=_NiFe_COMMENT_,
         outfile = "out_go.log"
         job = AkaikkrJob(directory)
         typeofsite = job.get_type_of_site(outfile)
-        jijplotter = JijPlotter(directory)
-        jijplotter.plot_comppair("Fe0.1Ni0.9_4a_0", "Fe0.1Ni0.9_4a_0", typeofsite)
+        jijplotter = JijPlotter(directory=directory)
+        jijplotter.make_comppair(
+            "Fe0.1Ni0.9_4a_0", "Fe0.1Ni0.9_4a_0", typeofsite, output_directory=directory)
     label = "{}_{}".format(directory, gogo.go)
     return label, gogo.result
 
@@ -1057,17 +1063,17 @@ def _Fe_lmd_common_param(akaikkr_exe: dict, displc: bool, ciffilepath="../struct
     # lmd must increase ncomp
     ncmp_list = []
     for ncmp in param["ncmp"]:
-        if not isinstance(ncmp,int):
+        if not isinstance(ncmp, int):
             raise ValueError("Each ncmp must be type int.")
-        ncmp_list.append([ncmp,ncmp])
+        ncmp_list.append([ncmp, ncmp])
     param["ncmp"] = [ncmp]
 
     # alloy isn't allowed now.
-    # extend sizes twice 
+    # extend sizes twice
     anclr_list = []
     for anclr in param["anclr"]:
         _x = anclr
-        if len(_x)!=1:
+        if len(_x) != 1:
             raise ValueError("Each anclr must be 1.")
         _x.extend(_x)
         anclr_list.append(_x)
@@ -1078,7 +1084,7 @@ def _Fe_lmd_common_param(akaikkr_exe: dict, displc: bool, ciffilepath="../struct
         conc = np.array(conc)
         _x = conc*0.5
         _x = _x.tolist()
-        if len(_x)!=1:
+        if len(_x) != 1:
             raise ValueError("Each conc must be 1.")
         _x.extend(_x)
         conc_list.append(_x)
@@ -1273,7 +1279,6 @@ def _Co2MnSi_common_param(akaikkr_exe: dict, displc: bool,
     param["sdftyp"] = "pbe"
     param["rmt"] = [1.0 for i in range(param["ntyp"])]
 
-
     return param
 
 
@@ -1322,8 +1327,8 @@ def Co2MnSi_j(akaikkr_exe,   directory="Co2MnSi", comment=_Co2MnSi_COMMENT_,
                                                               displc=displc, directory=directory),  comment, )
     gogo.execute(displc=displc, execute_postscript=execute_postscript)
     if execute_postscript:
-        jijplotter = JijPlotter(directory)
-        jijplotter.plot_typepair()
+        jijplotter = JijPlotter(directory=directory)
+        jijplotter.make_typepair(output_directory=directory)
     label = "{}_{}".format(directory, gogo.go)
     return label, gogo.result
 
@@ -1334,8 +1339,8 @@ def Co2MnSi_j30(akaikkr_exe,  directory="Co2MnSi", comment=_Co2MnSi_COMMENT_,
                                                                 displc=displc, directory=directory),  comment, )
     gogo.execute(displc=displc, execute_postscript=execute_postscript)
     if execute_postscript:
-        jijplotter = JijPlotter(directory)
-        jijplotter.plot_typepair()
+        jijplotter = JijPlotter(directory=directory)
+        jijplotter.make_typepair(output_directory=directory)
     label = "{}_{}".format(directory, gogo.go)
     return label, gogo.result
 
@@ -1425,8 +1430,8 @@ def SmCo5_oc_j(akaikkr_exe,  directory="SmCo5_oc", comment=_SmCo5_oc_COMMENT_,
                                                                displc=displc, directory=directory),  comment, )
     gogo.execute(displc=displc, execute_postscript=execute_postscript)
     if execute_postscript:
-        jijplotter = JijPlotter(directory)
-        jijplotter.plot_typepair()
+        jijplotter = JijPlotter(directory=directory)
+        jijplotter.make_typepair(output_directory=directory)
     label = "{}_{}".format(directory, gogo.go)
     return label, gogo.result
 
@@ -1437,8 +1442,8 @@ def SmCo5_oc_j30(akaikkr_exe,  directory="SmCo5_oc", comment=_SmCo5_oc_COMMENT_,
                                                                  displc=displc, directory=directory),  comment, )
     gogo.execute(displc=displc, execute_postscript=execute_postscript)
     if execute_postscript:
-        jijplotter = JijPlotter(directory)
-        jijplotter.plot_typepair()
+        jijplotter = JijPlotter(directory=directory)
+        jijplotter.make_typepair(output_directory=directory)
     label = "{}_{}".format(directory, gogo.go)
     return label, gogo.result
 
@@ -1481,7 +1486,6 @@ def _SmCo5_noc_common_param(akaikkr_exe: dict, displc: bool,
     param["magtyp"] = "mag"
     param["rmt"] = [0.0 for i in range(param["ntyp"])]
 
-        
     return param
 
 
@@ -1490,10 +1494,10 @@ _SmCo5_noc_COMMENT_ = "SmCo5 (magnetic, srals, mjw-asa, {})"
 
 def SmCo5_noc_go(akaikkr_exe,  directory="SmCo5_noc", comment=_SmCo5_noc_COMMENT_,
                  displc=False, execute_postscript=True):
-    gogo = GoGo(akaikkr_exe, directory, 
-            _SmCo5_noc_common_param(akaikkr_exe=akaikkr_exe,
-                                    displc=displc, directory=directory),  
-            comment, )
+    gogo = GoGo(akaikkr_exe, directory,
+                _SmCo5_noc_common_param(akaikkr_exe=akaikkr_exe,
+                                        displc=displc, directory=directory),
+                comment, )
     gogo.execute(displc=displc, execute_postscript=execute_postscript)
     label = "{}_{}".format(directory, gogo.go)
     return label, gogo.result

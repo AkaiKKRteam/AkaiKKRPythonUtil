@@ -9,8 +9,8 @@ import numpy as np
 from .AkaiKkr import AkaikkrJob
 
 
-def plot_dos(directory, outfile, output_direcotry=None,
-             yscale="log", figsize=(5, 3)):
+def _plot_dos(directory, outfile, output_direcotry=None,
+              yscale="log", figsize=(5, 3)):
     job = AkaikkrJob(directory)
     energy, dos_block = job.get_dos_as_list(outfile)
 
@@ -52,8 +52,8 @@ def plot_dos(directory, outfile, output_direcotry=None,
     plt.close(fig)
 
 
-def plot_pdos_all(directory, outfile, output_direcotry=None,
-                  yscale="log", figsize=(5, 3)):
+def _plot_pdos_all(directory, outfile, output_direcotry=None,
+                   yscale="log", figsize=(5, 3)):
     l_label = ["s", "p", "d", "f", "g", "h", "i", "j", "k", "l", "m"]
     job = AkaikkrJob(directory)
     typeofsite = job.get_type_of_site(outfile)
@@ -133,11 +133,20 @@ def plot_pdos_all(directory, outfile, output_direcotry=None,
         print()
 
 
-class DosPlotter:
-    def __init__(self, directory):
+class DosEXPlotter:
+    def __init__(self, directory, outfile):
+        """
+        Args:
+            directory (str): directory to save figures
+            outfile (str, optional): output filename. Defaults to "out_go.log".
+        """
         self.directory = directory
+        self.outfile = outfile
 
-    def show(self, outfile, output_directory=None):
-        plot_dos(self.directory, outfile, output_direcotry=output_directory)
-        plot_pdos_all(self.directory, outfile,
-                      output_direcotry=output_directory)
+    def make_dos(self, output_directory=None, yscale="log", figsize=(5, 3)):
+        _plot_dos(self.directory, self.outfile,
+                  output_direcotry=output_directory, yscale="log", figsize=(5, 3))
+
+    def make_pdos_all(self, output_directory=None, yscale="log", figsize=(5, 3)):
+        _plot_pdos_all(self.directory, self.outfile,
+                       output_direcotry=output_directory, yscale="log", figsize=(5, 3))

@@ -7,7 +7,8 @@ import os
 from abc import abstractmethod
 import pandas as pd
 import numpy as np
-from pyakaikkr import plotband, KLABEL_FILENAME_, AkaikkrJob, HighSymKPath, plot_dos, plot_pdos_all, Fmg, AwkReader
+
+from pyakaikkr import KLABEL_FILENAME_, AkaikkrJob, HighSymKPath, DosEXPlotter, Fmg, AwkReader, AwkEXPlotter
 
 
 def _make_displc(anclr, displc=[0, 0, 0]):
@@ -155,7 +156,7 @@ class GoGo:
                "spinlocalmoment": job.get_local_moment(outfile, mode="spin"),
                "orbitallocalmoment": job.get_local_moment(outfile, mode="orbital"),
                "threads": job.get_threads_openmp(outfile),
-               "conv": job.check_convergence_go(outfile)}
+               "conv": job.get_convergence(outfile)}
         if go == "fsm":
             dic.update({"fspin": job.get_fixed_spin_moment(outfile)})
         if go[0] == "j":
@@ -193,7 +194,7 @@ class GoGo:
 
         if go == "cnd":
             resistivity = job.get_resistivity(outfile)
-            conduct = job.get_conductivity_spin(outfile)
+            conduct = job.get_conductivity(outfile)
             dic.update({"resis": resistivity, "cnd": conduct})
         if go[:3] == "spc":
             magtyp = job.get_magtyp(outfile)
@@ -351,8 +352,9 @@ class GoDos(GoGo):
             self.param.update(args)
 
     def postscript(self):
-        plot_dos(self.directory, self.outputcard)
-        plot_pdos_all(self.directory, self.outputcard)
+        dosplotter = DosEXPlotter(self.directory, self.outputcard)
+        dosplotter.make_dos(output_directory=self.directory)
+        dosplotter.make_pdos_all(output_directory=self.directory)
 
 
 class GoTc(GoGo):
@@ -511,4 +513,5 @@ class GoSpc(GoGo):
             self.param.update(args)
 
     def postscript(self):
-        plotband(self.directory)
+        awkplotter = AwkEXPlotter(self.directory)
+        awkplotter.make(output_directory=self.directory)

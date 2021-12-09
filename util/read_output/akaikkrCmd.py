@@ -356,20 +356,20 @@ def Jij(filename, outputpath, outputtype):
     os.makedirs(outputpath, exist_ok=True)
 
     if outputtype == "csv":
-        df = job.cut_jij_dataframe(filename)
+        df = job.get_jij_as_dataframe(filename)
         jij_filename = os.path.join(outputpath, "Jij.csv")
         df.to_csv(jij_filename, index=False)
         print(jij_filename, "is made.")
     elif outputtype == "console":
-        df = job.cut_jij_dataframe(filename)
+        df = job.get_jij_as_dataframe(filename)
         print(df)
     elif outputtype == "png":
         typeofsite = job.get_type_of_site(filename)
-        df = job.cut_jij_dataframe(filename)
+        df = job.get_jij_as_dataframe(filename)
         jij_filename = os.path.join(outputpath, "Jij.csv")
         df.to_csv(jij_filename, index=False)
         print(jij_filename, "is made.")
-        jijplotter = JijPlotter(outputpath, filename="Jij.csv")
+        jijplotter = JijPlotter(directory=outputpath, outfile="Jij.csv")
         jijplotter.plot_typepair(output_directory=outputpath)
         typepairs = []
         for type1, type2 in zip(df["type1"], df["type2"]):
@@ -391,8 +391,8 @@ def dos(filename, outputpath,):
     """
     job = AkaikkrJob(".")
     os.makedirs(outputpath, exist_ok=True)
-    dosplot = DosPlotter(".")
-    dosplot.show(filename, outputpath)
+    dosplot = DosEXPlotter(directory=".", outfile=filename)
+    dosplot.make_dos(output_directory=outputpath)
 
 
 @ cmd.command()
@@ -410,9 +410,9 @@ def spc(filename, outputpath, klabelfile):
     filename_ = s[-1]
     print(dir_part, filename_)
 
-    plotband(dir_part, outfile=filename_,
-             output_directory=outputpath,
-             klabel_filename=klabelfile)
+    plotter = AwkEXPlotter(dir_part, outfile=filename_)
+    plotter.make(output_directory=outputpath,
+                 klabel_filename=klabelfile)
 
 
 if __name__ == '__main__':
