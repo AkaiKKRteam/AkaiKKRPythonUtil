@@ -48,7 +48,7 @@ def converged(filename):
     """Extract converged or not"""
     job = AkaikkrJob(".")
     tos = job.get_type_of_site(filename)
-    v = job.check_convergence_go(filename)
+    v = job.get_convergence(filename)
     print(sys._getframe().f_code.co_name, v)
 
 
@@ -169,7 +169,7 @@ def histall(filename, outputpath, outputtype):
     elif outputtype == "png":
         iterplotter = IterPlotter(xs)
         os.makedirs(outputpath, exist_ok=True)
-        iterplotter.show(outputpath, filename="hist.png",
+        iterplotter.make(outputpath, filename="hist.png",
                          ylabels=labels, figsize=(5, 8))
 
 
@@ -194,7 +194,7 @@ def momenthist(filename, outputpath, outputtype):
     elif outputtype == "png":
         os.makedirs(outputpath, exist_ok=True)
         rmsplotter = IterPlotter(tm)
-        rmsplotter.show(outputpath, "moment", "momenthist.png")
+        rmsplotter.make(outputpath, "moment", "momenthist.png")
 
 
 @ hist.command("err")
@@ -218,7 +218,7 @@ def errhist(filename, outputpath, outputtype):
     elif outputtype == "png":
         os.makedirs(outputpath, exist_ok=True)
         rmsplotter = IterPlotter(tm)
-        rmsplotter.show(outputpath, "err", "errhist.png")
+        rmsplotter.make(outputpath, "err", "errhist.png")
 
 
 @ hist.command("te")
@@ -242,7 +242,7 @@ def tehist(filename, outputpath, outputtype):
     elif outputtype == "png":
         os.makedirs(outputpath, exist_ok=True)
         rmsplotter = IterPlotter(tm)
-        rmsplotter.show(outputpath, "te", "tehist.png")
+        rmsplotter.make(outputpath, "te", "tehist.png")
 
 
 @ cmd.command()
@@ -339,7 +339,7 @@ def R(filename,):
     job = AkaikkrJob(".")
     v = job.get_resistivity(filename)
     print("R", v)
-    v = job.get_conductivity_spin(filename)
+    v = job.get_conductivity(filename)
     print("cnd", v)
 
 
@@ -370,14 +370,14 @@ def Jij(filename, outputpath, outputtype):
         df.to_csv(jij_filename, index=False)
         print(jij_filename, "is made.")
         jijplotter = JijPlotter(directory=outputpath, outfile="Jij.csv")
-        jijplotter.plot_typepair(output_directory=outputpath)
+        jijplotter.make_typepair(output_directory=outputpath)
         typepairs = []
         for type1, type2 in zip(df["type1"], df["type2"]):
             typepairs.append("{}-{}".format(type1, type2))
         typepairs = list(set(typepairs))
         for typepair in typepairs:
             types = typepair.split("-")
-            jijplotter.plot_comppair(
+            jijplotter.make_comppair(
                 types[0], types[1], typeofsite,
                 output_directory=outputpath)
 
