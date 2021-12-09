@@ -720,7 +720,7 @@ def AlMnFeCo_bcc_j30(akaikkr_exe,  directory="AlMnFeCo_bcc", comment=_AlMnFeCo_b
         typeofsite = job.get_type_of_site(outfile)
         jijplotter = JijPlotter(directory)
         jijplotter.plot_comppair(
-            "HEA", "HEA", typeofsite)
+            "Mn0.25Al0.25Fe0.25Co0.25_2a_0", "Mn0.25Al0.25Fe0.25Co0.25_2a_0", typeofsite)
     return label, gogo.result
 
 

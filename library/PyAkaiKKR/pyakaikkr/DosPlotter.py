@@ -12,8 +12,10 @@ from .AkaiKkr import AkaikkrJob
 def plot_dos(directory, outfile, output_direcotry=None,
              yscale="log", figsize=(5, 3)):
     job = AkaikkrJob(directory)
-    energy, dos_up, dos_dn = job.cut_dos_float(outfile)
-    if len(dos_dn) > 1:  # mag
+    energy, dos_block = job.get_dos_as_list(outfile)
+
+    if len(dos_block) > 1:  # mag
+        dos_up, dos_dn = dos_block[0], dos_block[1]
         _figsize = (figsize[0]*2, figsize[1])
         fig, axes = plt.subplots(1, 2, figsize=_figsize)
         ax = axes[0]
@@ -30,6 +32,7 @@ def plot_dos(directory, outfile, output_direcotry=None,
         ax.set_ylabel("DOS")
 
     else:  # monmag
+        dos_up = dos_block[0]
         _figsize = figsize
         fig, ax = plt.subplots(figsize=_figsize)
         ax.plot(energy, dos_up)
@@ -51,7 +54,7 @@ def plot_dos(directory, outfile, output_direcotry=None,
 
 def plot_pdos_all(directory, outfile, output_direcotry=None,
                   yscale="log", figsize=(5, 3)):
-    l_label = ["s", "p", "d", "f", "g"]
+    l_label = ["s", "p", "d", "f", "g", "h", "i", "j", "k", "l", "m"]
     job = AkaikkrJob(directory)
     typeofsite = job.get_type_of_site(outfile)
 
@@ -61,21 +64,10 @@ def plot_pdos_all(directory, outfile, output_direcotry=None,
             serial_site.append(shortname)
 
     output_format = "spin_separation"
-    energy, pdos_block = job.cut_pdos_all(outfile, output_format=output_format)
+    energy, pdos_block = job.get_pdos_as_list(
+        outfile, output_format=output_format)
     energy = np.array(energy)
-    # print("energy", energy)
-    # print("pdos_block", pdos_block)
-    if False:
-        # print out format
-        if output_format == "spin_separation":
-            for pdos_updn in pdos_block:
-                for pdos in pdos_updn:
-                    pdos = np.array(pdos)
-                    print(pdos[:2, :])
-        elif output_format == "sequential":
-            for pdos in pdos_block:
-                pdos = np.array(pdos)
-                print(pdos[:2, :])
+
     if output_direcotry is None:
         output_direcotry = directory
 

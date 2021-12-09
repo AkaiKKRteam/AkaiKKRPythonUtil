@@ -2,7 +2,7 @@
 # Copyright (c) 2021 AkaiKKRteam.
 # Distributed under the terms of the Apache License, Version 2.0.
 
-__version__ = '2021.12.08'
+__version__ = '2021.12.09'
 from .Error import *
 from .AkaiKkr import *
 from .Fmg import *

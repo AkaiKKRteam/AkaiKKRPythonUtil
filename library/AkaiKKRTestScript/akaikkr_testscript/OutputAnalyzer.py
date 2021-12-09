@@ -280,10 +280,10 @@ def _sort_types_inside_row(df):
     type2 = df["type2"].values
     t1t2_list = []
     for t1, t2 in zip(type1, type2):
-        _t1t2 = [t1,t2]
+        _t1t2 = [t1, t2]
         _t1t2.sort()
         t1t2_list.append(_t1t2)
-    df[["type1","type2"]] = t1t2_list
+    df[["type1", "type2"]] = t1t2_list
 
     if "pair" in list(df.columns):
         del df["pair"]
@@ -305,7 +305,8 @@ def _sort_types_inside_row(df):
 def _make_jij_dataframe(result_jij, ref_jij, target="J_ij(meV)"):
     # make jij dataframe
     df_result_jij = pd.DataFrame(result_jij[1:], columns=result_jij[0])
-    df_result_jij = df_result_jij[["comp1","comp2","J_ij","J_ij(meV)","pair"]]
+    df_result_jij = df_result_jij[[
+        "comp1", "comp2", "J_ij", "J_ij(meV)", "pair"]]
 
     if ref_jij is not None:
         df_ref_jij = pd.DataFrame(ref_jij[1:], columns=ref_jij[0])
@@ -313,7 +314,8 @@ def _make_jij_dataframe(result_jij, ref_jij, target="J_ij(meV)"):
 
         # sort values to compare the result with another dataframe.
         df_ref_jij.sort_values(by="distance", inplace=True)
-        df_ref_jij = df_ref_jij[["comp1","comp2","J_ij","J_ij(meV)","pair"]]
+        df_ref_jij = df_ref_jij[[
+            "comp1", "comp2", "J_ij", "J_ij(meV)", "pair"]]
         df_ref_jij.reset_index(drop=True)
 
         zipped_verson_df_list = zip([_CURRENT_, _REFERENCE_], [
@@ -343,11 +345,10 @@ def _make_jij_dataframe(result_jij, ref_jij, target="J_ij(meV)"):
 
     if ref_jij is not None:
         # merge
-        col = ["comp1","comp2",'pair']
+        col = ["comp1", "comp2", 'pair']
         df = df_result_jij.merge(df_ref_jij, on=col)
     else:
         df = df_result_jij
-
 
     # add pair-comp1-comp2 field
     paircomp = []
@@ -508,7 +509,6 @@ def j_diff_msg(key, result, ref,
         chk1 = True
 
     df_jij = _make_jij_dataframe(result_jij, ref_jij)
-
 
     if _REFERENCE_ in df_jij.index:
         diffvector = DiffVector(df_jij, thres_vector)
