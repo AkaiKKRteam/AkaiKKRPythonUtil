@@ -332,22 +332,22 @@ def _make_jij_dataframe(result_jij, ref_jij, target="J_ij(meV)"):
                 col2[col] = "{}_{}".format(version, col)
         _df.rename(columns=col2, inplace=True)
 
-    print("debug df_result_jij")
-    print(df_result_jij)
+    if True:
+        print()
+        print("debug df_result_jij")
+        print(df_result_jij)
 
-    print("debug df_ref_jij")
-    print(df_ref_jij)
+        print("debug df_ref_jij")
+        print(df_ref_jij)
+        print()
 
     if ref_jij is not None:
         # merge
-        print("debug merge")
         col = ["comp1","comp2",'pair']
         df = df_result_jij.merge(df_ref_jij, on=col)
     else:
         df = df_result_jij
 
-    print("debug df")
-    print(df)
 
     # add pair-comp1-comp2 field
     paircomp = []
@@ -509,16 +509,6 @@ def j_diff_msg(key, result, ref,
 
     df_jij = _make_jij_dataframe(result_jij, ref_jij)
 
-    if True:
-        print("debug ref_jij")
-        print(ref_jij)
-
-        print("debug result_jij")
-        print(result_jij)
-        
-        print("debug df_jij")
-        print(df_jij)
-        print("------------")
 
     if _REFERENCE_ in df_jij.index:
         diffvector = DiffVector(df_jij, thres_vector)
