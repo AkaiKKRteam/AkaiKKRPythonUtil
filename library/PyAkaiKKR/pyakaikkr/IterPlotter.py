@@ -31,6 +31,7 @@ class IterPlotter:
             filename (str): output filename
             figsize (tuple, optional): figure size. Defaults to (5, 3).
         """
+        outputpath = output_directory
         os.makedirs(outputpath, exist_ok=True)
         filepath = os.path.join(outputpath, filename)
 

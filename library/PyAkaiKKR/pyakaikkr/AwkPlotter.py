@@ -5,6 +5,7 @@
 from pymatgen.core.periodic_table import Element
 import matplotlib.pyplot as plt
 import os
+import numpy as np
 import json
 from .AkaiKkr import AkaikkrJob
 from .AwkReader import AwkReader
@@ -12,7 +13,70 @@ from .AwkReader import AwkReader
 KLABEL_FILENAME_ = "klabel.json"
 
 
-class AwkPlotter(AwkReader):
+class AwkPlotter:
+    def __init__(self):
+        pass
+
+    def make(self, kcrt: np.ndarray, Awk: np.ndarray,
+             kdist: np.ndarray, energy: np.ndarray, klabel: [str],
+             show_kgrid=True, show_ef=True, show_colorbar=False,
+             ylabel="$E(Ry)-E_F$", linecolor="w", linewidth=2,
+             imgfilename: str = None, ax: plt.axes = None, figsize=(10, 5),
+             **pcolorargs
+             ):
+        """make A(w,k) figure
+
+        Args:
+            kcrt (np.ndarray): kcrt of Awk file.
+            Awk (np.ndarray): Awk of Awk file.
+            kdist (np.ndarray): kdist of Awk file.
+            energy (np.ndarray): energies of Awk file.
+            klabel ([str]]): klabels.
+            imgfilename (str): output filename.
+            show_kgrid (bool, optional): show k grid line. Defaults to True.
+            show_ef (bool, optional): show ef line. Defaults to True.
+            show_colorbar (bool, optional): show colorbar. Defaults to False.
+            linecolor (str, optional): line color of grids and ef. Defaults to "w".
+            linewidth (int, optional): line width of grid and ef. Defaults to 2.
+            ax (matplotlib.axes): matplotlib axes.
+            figsize (tuple, optional): figsize. Defaults to (10,5).
+            **pcolorargs: parameters
+        """
+
+        fig = None
+        if ax is None:
+            fig, ax = plt.subplots(figsize=figsize)
+            fig.tight_layout()
+
+        plt.rcParams['pcolor.shading'] = 'auto'
+        self.pcolormesh = ax.pcolormesh(
+            kdist, energy, Awk.T, **pcolorargs,)
+        ax.set_ylabel(ylabel)
+        ax.set_xticks(kdist[kcrt])
+
+        if klabel is not None:
+            ax.set_xticklabels(klabel)
+        else:
+            ax.get_xaxis().set_visible(False)
+        if show_kgrid:
+            for x in kdist[kcrt]:
+                ax.axvline(x, c=linecolor, lw=linewidth)
+        if show_ef:
+            ax.axhline(0.0, c=linecolor, lw=linewidth)
+
+        if fig and show_colorbar:
+            colorbar = fig.colorbar(
+                self.pcolormesh, ax=ax, orientation="vertical")
+
+        if fig and imgfilename is not None:
+            fig.savefig(imgfilename)
+
+        if fig:
+            fig.clf()
+            plt.close(fig)
+
+
+class AwkEXSubPlotter(AwkReader):
     """Plot A(w,k)
     """
 
@@ -53,42 +117,17 @@ class AwkPlotter(AwkReader):
         Awk = self.Awk
         energy = self.energy
         kcrt = self.kcrt
-        fig = None
-        if ax is None:
-            fig, ax = plt.subplots(figsize=figsize)
-            fig.tight_layout()
 
-        plt.rcParams['pcolor.shading'] = 'auto'
-        self.pcolormesh = ax.pcolormesh(
-            kdist, energy, Awk.T, **pcolorargs,)
-        ax.set_ylabel(ylabel)
-        ax.set_xticks(kdist[kcrt])
-
-        if klabel is not None:
-            ax.set_xticklabels(klabel)
-        else:
-            ax.get_xaxis().set_visible(False)
-        if show_kgrid:
-            for x in kdist[kcrt]:
-                ax.axvline(x, c=linecolor, lw=linewidth)
-        if show_ef:
-            ax.axhline(0.0, c=linecolor, lw=linewidth)
-
-        if fig and show_colorbar:
-            colorbar = fig.colorbar(
-                self.pcolormesh, ax=ax, orientation="vertical")
-
-        if fig and imgfilename is not None:
-            fig.savefig(imgfilename)
-
-        if fig:
-            fig.clf()
-            plt.close(fig)
+        awkplotter = AwkPlotter()
+        awkplotter.make(kcrt,  Awk, kdist, energy, klabel=klabel,
+                        show_kgrid=show_kgrid, show_ef=show_ef, show_colorbar=show_colorbar,
+                        ylabel=ylabel, linecolor=linecolor, linewidth=linewidth,
+                        imgfilename=imgfilename, ax=ax, **pcolorargs)
 
 
 class AwkEXPlotter:
 
-    def __init__(self, directory,  outfile="out_go.log", pot="pot.dat",):
+    def __init__(self, directory, outfile="out_spc.log", pot="pot.dat",):
         """
         Args:
             directory (str): directory to save figures
@@ -133,7 +172,7 @@ class AwkEXPlotter:
 
         filename = "{}_up.spc".format(pot)
         filepath = os.path.join(directory, filename)
-        Awk = AwkPlotter(filepath)
+        Awk = AwkEXSubPlotter(filepath)
         pcolorargs = {"cmap": "magma"}
         imgfilename = os.path.join(output_directory, "Awk_up.png")
         os.makedirs(output_directory, exist_ok=True)
@@ -144,7 +183,7 @@ class AwkEXPlotter:
         if magtyp[0] == "m":  # mag
             filename = "{}_dn.spc".format(pot)
             filepath = os.path.join(directory, filename)
-            Awk = AwkPlotter(filepath)
+            Awk = AwkEXSubPlotter(filepath)
             pcolorargs = {"cmap": "magma"}
             imgfilename = os.path.join(output_directory, "Awk_dn.png")
             Awk.show(klabel=klabel, linecolor="green", show_colorbar=True,
@@ -155,7 +194,7 @@ class AwkEXPlotter:
             filenames = ["{}_up.spc".format(pot), "{}_dn.spc".format(pot)]
             for filename, ax in zip(filenames, axes):
                 filepath = os.path.join(directory, filename)
-                Awk = AwkPlotter(filepath)
+                Awk = AwkEXSubPlotter(filepath)
                 pcolorargs = {"cmap": "magma", "alpha": 0.9}
                 tickparams = {"labelsize": 12, "labelcolor": "blue"}
                 Awk.show(klabel, ax=ax, linewidth=0, **pcolorargs)

@@ -8,7 +8,8 @@ from abc import abstractmethod
 import pandas as pd
 import numpy as np
 
-from pyakaikkr import KLABEL_FILENAME_, AkaikkrJob, HighSymKPath, DosEXPlotter, Fmg, AwkReader, AwkEXPlotter
+from pyakaikkr import KLABEL_FILENAME_, AkaikkrJob, HighSymKPath, PDosEXPlotter, \
+    DosEXPlotter, Fmg, AwkReader, AwkEXPlotter
 
 
 def _make_displc(anclr, displc=[0, 0, 0]):
@@ -353,8 +354,9 @@ class GoDos(GoGo):
 
     def postscript(self):
         dosplotter = DosEXPlotter(self.directory, self.outputcard)
-        dosplotter.make_dos(output_directory=self.directory)
-        dosplotter.make_pdos_all(output_directory=self.directory)
+        dosplotter.make(output_directory=self.directory)
+        pdosplotter = PDosEXPlotter(self.directory, self.outputcard)
+        pdosplotter.make(output_directory=self.directory)
 
 
 class GoTc(GoGo):
@@ -403,6 +405,8 @@ class Goj30(GoGo):
 
 class Goj(GoGo):
     """run Akaikkr as go="j"
+
+    obsolete
     """
 
     def __init__(self, akaikkr_exe, directory, common_param, comment,
@@ -513,5 +517,5 @@ class GoSpc(GoGo):
             self.param.update(args)
 
     def postscript(self):
-        awkplotter = AwkEXPlotter(self.directory)
+        awkplotter = AwkEXPlotter(self.directory, self.outputcard)
         awkplotter.make(output_directory=self.directory)

@@ -133,6 +133,36 @@ def _plot_pdos_all(directory, outfile, output_direcotry=None,
         print()
 
 
+class PDosEXPlotter:
+    def __init__(self, directory, outfile):
+        """
+        Args:
+            directory (str): directory to save figures
+            outfile (str, optional): output filename. Defaults to "out_go.log".
+        """
+        self.directory = directory
+        self.outfile = outfile
+
+    def make(self, output_directory=None, yscale="log", figsize=(5, 3)):
+        _plot_pdos_all(self.directory, self.outfile,
+                       output_direcotry=output_directory, yscale="log", figsize=(5, 3))
+
+
+class DosPlotter:
+    def __init__(self, directory, outfile):
+        """
+        Args:
+            directory (str): directory to save figures
+            outfile (str, optional): output filename. Defaults to "out_go.log".
+        """
+        self.directory = directory
+        self.outfile = outfile
+
+    def make(self, output_directory=None, yscale="log", figsize=(5, 3)):
+        _plot_dos(self.directory, self.outfile,
+                  output_direcotry=output_directory, yscale="log", figsize=(5, 3))
+
+
 class DosEXPlotter:
     def __init__(self, directory, outfile):
         """
@@ -143,10 +173,6 @@ class DosEXPlotter:
         self.directory = directory
         self.outfile = outfile
 
-    def make_dos(self, output_directory=None, yscale="log", figsize=(5, 3)):
+    def make(self, output_directory=None, yscale="log", figsize=(5, 3)):
         _plot_dos(self.directory, self.outfile,
                   output_direcotry=output_directory, yscale="log", figsize=(5, 3))
-
-    def make_pdos_all(self, output_directory=None, yscale="log", figsize=(5, 3)):
-        _plot_pdos_all(self.directory, self.outfile,
-                       output_direcotry=output_directory, yscale="log", figsize=(5, 3))

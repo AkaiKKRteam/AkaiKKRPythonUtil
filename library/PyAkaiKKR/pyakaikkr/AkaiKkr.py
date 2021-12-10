@@ -960,10 +960,9 @@ class AkaikkrJob:
 
     def get_dos_as_list(self, dosfile, keyword="total DOS", save=False):
         """get DOS as float values.
-        The filename of the DOS csv file is keyword.replace(" ","_").csv.
 
         Args:
-            dosfile (str): filename to analyze
+            dosfile (str): output filename.
             keyword (str, optional): keyword to find DOS. Defaults to "total DOS".
             save (bool, optional): save DOS file or not as csv. Defaults to False.
 
@@ -1015,6 +1014,31 @@ class AkaikkrJob:
         else:
             dos_block = [dos_up]
         return e, dos_block
+
+    def get_dos_as_dataframe(self, dosfile):
+        """get DOS as DataFrame
+
+        Args:
+            dosfile (str): output filename.
+            keyword (str, optional): keyword to find DOS. Defaults to "total DOS".
+            save (bool, optional): save DOS file or not as csv. Defaults to False.
+
+        Raises:
+            KKRValueAquisitionError: failed to get keyword
+
+        Returns:
+            pd.DataFrame: energies, DOS up, DOS down if there is.
+        """
+        energy, dos_block = self.get_dos_as_list(dosfile)
+
+        if len(dos_block) == 1:
+            df = pd.DataFrame({"energy": energy, "dos_up": dos_block[0]})
+        elif len(dos_block) == 2:
+            df = pd.DataFrame({"energy": energy, "dos_up": dos_block[0],
+                               "dos_dn": dos_block[1]})
+        else:
+            raise ValueError("Internal error: dos_block must 1 or 2.")
+        return df
 
     def get_pdos_as_list(self, dosfile, output_format="spin_separation"):
         """cut PDOS
