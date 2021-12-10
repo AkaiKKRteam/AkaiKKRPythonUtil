@@ -353,10 +353,12 @@ class GoDos(GoGo):
             self.param.update(args)
 
     def postscript(self):
-        dosplotter = DosEXPlotter(self.directory, self.outputcard)
-        dosplotter.make(output_directory=self.directory)
-        pdosplotter = PDosEXPlotter(self.directory, self.outputcard)
-        pdosplotter.make(output_directory=self.directory)
+        dosplotter = DosEXPlotter(
+            self.directory, self.outputcard, self.directory)
+        dosplotter.make()
+        pdosplotter = PDosEXPlotter(
+            self.directory, self.outputcard, self.directory)
+        pdosplotter.make()
 
 
 class GoTc(GoGo):
@@ -401,6 +403,7 @@ class Goj30(GoGo):
         df.to_csv(filepath, index=False)
         print("  saved to", filepath)
         print()
+        self.df_jij = df
 
 
 class Goj(GoGo):
@@ -517,5 +520,6 @@ class GoSpc(GoGo):
             self.param.update(args)
 
     def postscript(self):
-        awkplotter = AwkEXPlotter(self.directory, self.outputcard)
-        awkplotter.make(output_directory=self.directory)
+        awkplotter = AwkEXPlotter(
+            self.directory, self.outputcard, self.directory)
+        awkplotter.make()

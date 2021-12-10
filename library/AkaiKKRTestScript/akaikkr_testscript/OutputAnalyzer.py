@@ -322,6 +322,7 @@ def _make_jij_dataframe(result_jij, ref_jij, target="J_ij(meV)"):
             df_result_jij, df_ref_jij])
     else:
         zipped_verson_df_list = zip([_CURRENT_], [df_result_jij])
+        df_ref_jij = None
 
     # replace J_ij* with {_CURRENT_}_J_ij*.
     # replace distace with {_CURRENT_}_distance.

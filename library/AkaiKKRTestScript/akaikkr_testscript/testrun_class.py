@@ -363,19 +363,6 @@ def Fe_tc(akaikkr_exe,  directory="Fe", comment=_Fe_COMMENT_,
     return label, gogo.result
 
 
-def Fe_j(akaikkr_exe, directory="Fe", comment=_Fe_COMMENT_,
-         displc=False, execute_postscript=True):
-    gogo = Goj(akaikkr_exe, directory,
-               _Fe_common_param(akaikkr_exe=akaikkr_exe,
-                                displc=displc, directory=directory), comment)
-    gogo.execute(displc=displc, execute_postscript=execute_postscript)
-    if execute_postscript:
-        jijplotter = JijPlotter(directory=directory)
-        jijplotter.make_typepair(output_directory=directory)
-    label = "{}_{}".format(directory, gogo.go)
-    return label, gogo.result
-
-
 def Fe_j30(akaikkr_exe, directory="Fe", comment=_Fe_COMMENT_,
            displc=False, execute_postscript=True):
     gogo = Goj30(akaikkr_exe, directory,
@@ -383,8 +370,8 @@ def Fe_j30(akaikkr_exe, directory="Fe", comment=_Fe_COMMENT_,
                                   displc=displc, directory=directory), comment)
     gogo.execute(displc=displc, execute_postscript=execute_postscript)
     if execute_postscript:
-        jijplotter = JijPlotter(directory=directory)
-        jijplotter.make_typepair(output_directory=directory)
+        jijplotter = JijPlotter(gogo.df_jij, directory)
+        jijplotter.make_typepair()
     label = "{}_{}".format(directory, gogo.go)
     return label, gogo.result
 
@@ -465,20 +452,6 @@ def Co_tc(akaikkr_exe, directory="Co", comment=_Co_COMMENT_,
     return label, gogo.result
 
 
-def Co_j(akaikkr_exe, directory="Co", comment=_Co_COMMENT_,
-         displc=False, execute_postscript=True):
-    gogo = Goj(akaikkr_exe, directory,
-               _Co_common_param(akaikkr_exe=akaikkr_exe,
-                                displc=displc, directory=directory),
-               comment)
-    gogo.execute(displc=displc, execute_postscript=execute_postscript)
-    label = "{}_{}".format(directory, gogo.go)
-    if execute_postscript:
-        jijplotter = JijPlotter(directory=directory)
-        jijplotter.make_typepair(output_directory=directory)
-    return label, gogo.result
-
-
 def Co_j30(akaikkr_exe,  directory="Co", comment=_Co_COMMENT_,
            displc=False, execute_postscript=True):
     gogo = Goj30(akaikkr_exe, directory,
@@ -488,8 +461,8 @@ def Co_j30(akaikkr_exe,  directory="Co", comment=_Co_COMMENT_,
     gogo.execute(displc=displc, execute_postscript=execute_postscript)
     label = "{}_{}".format(directory, gogo.go)
     if execute_postscript:
-        jijplotter = JijPlotter(directory=directory)
-        jijplotter.make_typepair(output_directory=directory)
+        jijplotter = JijPlotter(gogo.df_jij, directory)
+        jijplotter.make_typepair()
     return label, gogo.result
 
 
@@ -582,19 +555,6 @@ def Ni_tc(akaikkr_exe,  directory="Ni", comment=_Ni_COMMENT_,
     return label, gogo.result
 
 
-def Ni_j(akaikkr_exe, directory="Ni", comment=_Ni_COMMENT_,
-         displc=False, execute_postscript=True):
-    gogo = Goj(akaikkr_exe, directory,
-               _Ni_common_param(akaikkr_exe=akaikkr_exe,
-                                displc=displc, directory=directory),
-               comment)
-    gogo.execute(displc=displc, execute_postscript=execute_postscript)
-    jijplotter = JijPlotter(directory=directory)
-    jijplotter.make_typepair(output_directory=directory)
-    label = "{}_{}".format(directory, gogo.go)
-    return label, gogo.result
-
-
 def Ni_j30(akaikkr_exe,  directory="Ni", comment=_Ni_COMMENT_,
            displc=False, execute_postscript=True):
     gogo = Goj30(akaikkr_exe, directory,
@@ -603,8 +563,8 @@ def Ni_j30(akaikkr_exe,  directory="Ni", comment=_Ni_COMMENT_,
                  comment)
     gogo.execute(displc=displc, execute_postscript=execute_postscript)
     if execute_postscript:
-        jijplotter = JijPlotter(directory=directory)
-        jijplotter.make_typepair(output_directory=directory)
+        jijplotter = JijPlotter(gogo.df_jij, directory)
+        jijplotter.make_typepair()
     label = "{}_{}".format(directory, gogo.go)
     return label, gogo.result
 
@@ -718,28 +678,10 @@ def AlMnFeCo_bcc_j30(akaikkr_exe,  directory="AlMnFeCo_bcc", comment=_AlMnFeCo_b
         job = AkaikkrJob(directory)
         outfile = "out_go.log"
         typeofsite = job.get_type_of_site(outfile)
-        jijplotter = JijPlotter(directory=directory)
+        jijplotter = JijPlotter(gogo.df_jij, directory)
         jijplotter.make_comppair(
             "Mn0.25Al0.25Fe0.25Co0.25_2a_0", "Mn0.25Al0.25Fe0.25Co0.25_2a_0", typeofsite,
-            output_directory=directory)
-    return label, gogo.result
-
-
-def AlMnFeCo_bcc_j(akaikkr_exe, directory="AlMnFeCo_bcc", comment=_AlMnFeCo_bcc_COMMENT_,
-                   displc=False, execute_postscript=True):
-    gogo = Goj(akaikkr_exe, directory,
-               _AlMnFeCo_bcc_common_param(akaikkr_exe=akaikkr_exe,
-                                          displc=displc, directory=directory),
-               comment)
-    gogo.execute(displc=displc, execute_postscript=execute_postscript)
-    if execute_postscript:
-        outfile = "out_go.log"
-        job = AkaikkrJob(directory)
-        typeofsite = job.get_type_of_site(outfile)
-        jijplotter = JijPlotter(directory=directory)
-        jijplotter.make_comppair(
-            "HEA", "HEA", typeofsite, output_directory=directory)
-    label = "{}_{}".format(directory, gogo.go)
+        )
     return label, gogo.result
 
 
@@ -866,32 +808,11 @@ def FeRh05Pt05_j30(akaikkr_exe,  directory="FeRh05Pt05",
         outfile = "out_go.log"
         job = AkaikkrJob(directory)
         typeofsite = job.get_type_of_site(outfile)
-        jijplotter = JijPlotter(directory=directory)
+        jijplotter = JijPlotter(gogo.df_jij, directory)
         jijplotter.make_comppair(
-            "Fe_1a_0", "Rh0.5Pt0.5_1d_1", typeofsite, output_directory=directory)
+            "Fe_1a_0", "Rh0.5Pt0.5_1d_1", typeofsite, )
         jijplotter.make_comppair("Fe_1a_0", "Fe_1a_0",
-                                 typeofsite, output_directory=directory)
-
-    label = "{}_{}".format(directory, gogo.go)
-    return label, gogo.result
-
-
-def FeRh05Pt05_j(akaikkr_exe,  directory="FeRh05Pt05",
-                 comment=_FeRh05Pt05_COMMENT_,
-                 displc=False, execute_postscript=True):
-    gogo = Goj(akaikkr_exe, directory, _FeRh05Pt05_common_param(akaikkr_exe=akaikkr_exe,
-                                                                displc=displc, directory=directory),
-               comment)
-    gogo.execute(displc=displc, execute_postscript=execute_postscript)
-    if execute_postscript:
-        outfile = "out_go.log"
-        job = AkaikkrJob(directory)
-        typeofsite = job.get_type_of_site(outfile)
-        jijplotter = JijPlotter(directory=directory)
-        jijplotter.make_comppair(
-            "Fe", "RhPt", typeofsite, output_directory=directory)
-        jijplotter.make_comppair(
-            "Fe", "Fe", typeofsite, output_directory=directory)
+                                 typeofsite,)
 
     label = "{}_{}".format(directory, gogo.go)
     return label, gogo.result
@@ -977,24 +898,6 @@ def NiFe_tc(akaikkr_exe,  directory="NiFe", comment=_NiFe_COMMENT_,
     return label, gogo.result
 
 
-def NiFe_j(akaikkr_exe,  directory="NiFe", comment=_NiFe_COMMENT_,
-           displc=False, execute_postscript=True):
-    gogo = Goj(akaikkr_exe, directory,
-               _NiFe_common_param(akaikkr_exe=akaikkr_exe,
-                                  displc=displc, directory=directory),
-               comment)
-    gogo.execute(displc=displc, execute_postscript=execute_postscript)
-    if execute_postscript:
-        outfile = "out_go.log"
-        job = AkaikkrJob(directory)
-        typeofsite = job.get_type_of_site(outfile)
-        jijplotter = JijPlotter(directory=directory)
-        jijplotter.make_comppair(
-            "NiFe", "NiFe", typeofsite, output_directory=directory)
-    label = "{}_{}".format(directory, gogo.go)
-    return label, gogo.result
-
-
 def NiFe_j30(akaikkr_exe,  directory="NiFe", comment=_NiFe_COMMENT_,
              displc=False, execute_postscript=True):
     gogo = Goj30(akaikkr_exe, directory,
@@ -1006,9 +909,9 @@ def NiFe_j30(akaikkr_exe,  directory="NiFe", comment=_NiFe_COMMENT_,
         outfile = "out_go.log"
         job = AkaikkrJob(directory)
         typeofsite = job.get_type_of_site(outfile)
-        jijplotter = JijPlotter(directory=directory)
+        jijplotter = JijPlotter(gogo.df_jij, directory)
         jijplotter.make_comppair(
-            "Fe0.1Ni0.9_4a_0", "Fe0.1Ni0.9_4a_0", typeofsite, output_directory=directory)
+            "Fe0.1Ni0.9_4a_0", "Fe0.1Ni0.9_4a_0", typeofsite, )
     label = "{}_{}".format(directory, gogo.go)
     return label, gogo.result
 
@@ -1321,26 +1224,14 @@ def Co2MnSi_tc(akaikkr_exe,  directory="Co2MnSi", comment=_Co2MnSi_COMMENT_,
     return label, gogo.result
 
 
-def Co2MnSi_j(akaikkr_exe,   directory="Co2MnSi", comment=_Co2MnSi_COMMENT_,
-              displc=False, execute_postscript=True):
-    gogo = Goj(akaikkr_exe, directory,  _Co2MnSi_common_param(akaikkr_exe=akaikkr_exe,
-                                                              displc=displc, directory=directory),  comment, )
-    gogo.execute(displc=displc, execute_postscript=execute_postscript)
-    if execute_postscript:
-        jijplotter = JijPlotter(directory=directory)
-        jijplotter.make_typepair(output_directory=directory)
-    label = "{}_{}".format(directory, gogo.go)
-    return label, gogo.result
-
-
 def Co2MnSi_j30(akaikkr_exe,  directory="Co2MnSi", comment=_Co2MnSi_COMMENT_,
                 displc=False, execute_postscript=True):
     gogo = Goj30(akaikkr_exe, directory,  _Co2MnSi_common_param(akaikkr_exe=akaikkr_exe,
                                                                 displc=displc, directory=directory),  comment, )
     gogo.execute(displc=displc, execute_postscript=execute_postscript)
     if execute_postscript:
-        jijplotter = JijPlotter(directory=directory)
-        jijplotter.make_typepair(output_directory=directory)
+        jijplotter = JijPlotter(gogo.df_jij, directory)
+        jijplotter.make_typepair()
     label = "{}_{}".format(directory, gogo.go)
     return label, gogo.result
 
@@ -1424,26 +1315,14 @@ def SmCo5_oc_tc(akaikkr_exe,  directory="SmCo5_oc", comment=_SmCo5_oc_COMMENT_,
     return label, gogo.result
 
 
-def SmCo5_oc_j(akaikkr_exe,  directory="SmCo5_oc", comment=_SmCo5_oc_COMMENT_,
-               displc=False, execute_postscript=True):
-    gogo = Goj(akaikkr_exe, directory,  _SmCo5_oc_common_param(akaikkr_exe=akaikkr_exe,
-                                                               displc=displc, directory=directory),  comment, )
-    gogo.execute(displc=displc, execute_postscript=execute_postscript)
-    if execute_postscript:
-        jijplotter = JijPlotter(directory=directory)
-        jijplotter.make_typepair(output_directory=directory)
-    label = "{}_{}".format(directory, gogo.go)
-    return label, gogo.result
-
-
 def SmCo5_oc_j30(akaikkr_exe,  directory="SmCo5_oc", comment=_SmCo5_oc_COMMENT_,
                  displc=False, execute_postscript=True):
     gogo = Goj30(akaikkr_exe, directory,  _SmCo5_oc_common_param(akaikkr_exe=akaikkr_exe,
                                                                  displc=displc, directory=directory),  comment, )
     gogo.execute(displc=displc, execute_postscript=execute_postscript)
     if execute_postscript:
-        jijplotter = JijPlotter(directory=directory)
-        jijplotter.make_typepair(output_directory=directory)
+        jijplotter = JijPlotter(gogo.df_jij, directory)
+        jijplotter.make_typepair()
     label = "{}_{}".format(directory, gogo.go)
     return label, gogo.result
 

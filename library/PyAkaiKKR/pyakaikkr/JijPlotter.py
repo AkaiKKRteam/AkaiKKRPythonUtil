@@ -5,29 +5,22 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import os
+from .BasePlotter import BaseEXPlotter, BasePlotter
+from .AkaiKkr import AkaikkrJob
 
 
-class JijPlotter:
-    def __init__(self, df=None,  directory=None, outfile="jij.csv"):
+class JijPlotter(BasePlotter):
+    def __init__(self, df, output_directory):
         """initialization routine
 
         Args:
             df (pd.DataFrame, optional): data. Defaults to None
-            outfile (str, optional): Jij csv filename to read. Defaults to "jij.csv"
+            output_directory (str): output directory of images.
         """
-        self.df = None
-        if df is not None:
-            self.df = df
-        elif df is None and directory is not None and outfile is not None:
-            self.directory = directory
-            filepath = os.path.join(directory, outfile)
-            df = pd.read_csv(filepath)
-            self.df = df
-        if self.df is None:
-            raise ValueError(
-                "JijPloter.__init__(), invalid parameter is given.")
+        super().__init__(output_directory)
+        self.df = df
 
-    def make_typepair(self, a=1.0, marker="o", output_directory=None,
+    def make_typepair(self, a=1.0, marker="o",
                       figsize=(5, 3)):
         """plot Jij of all type pairs
         save all combinations of type pairs
@@ -35,11 +28,11 @@ class JijPlotter:
         Args:
             a (float, optional): a length. Defaults to 1.0.
             marker (str, optional): matplotlib.plot() maker. Defaults to "o".
-            output_directory (str, optional): output directory.
             figsize (tuple, optional): figure size. Defaults to (5, 3).
         """
 
         df = self.df.copy()
+        output_directory = self.output_directory
 
         xlabel = "distance"
         ylabel = "J_ij(meV)"
@@ -47,12 +40,13 @@ class JijPlotter:
         ylabel_fig = "$J_{ij}$ (meV)"
 
         # plot range
-        values = df[xlabel].astype(float).values*a
+        values = df[xlabel].astype(float).values
         xlim = (values.min(), values.max())
         dx = (xlim[1]-xlim[0])*0.05
         xlim = (xlim[0]-dx, xlim[1]+dx)
-        values = df[ylabel].values
+        values = df[ylabel].astype(float).values
         ylim = (values.min(), values.max())
+        print("debug, ylim", ylim)
         dy = (ylim[1]-ylim[0])*0.05
         ylim = (ylim[0]-dy, ylim[1]+dy)
 
@@ -70,7 +64,7 @@ class JijPlotter:
         for pair in uniq_type_pair:
             _df = df.query("typepair=='{}'".format(pair))
 
-            distance = _df[xlabel]*a
+            distance = _df[xlabel].astype(float).values*a
             Jij = _df[ylabel]
 
             fig, ax = plt.subplots(figsize=figsize)
@@ -92,8 +86,9 @@ class JijPlotter:
                 fig.clf()
                 plt.close(fig)
 
-    def make_comppair(self, type1, type2, typeofsite, a=1.0,
-                      marker="o",  output_directory=None,
+    def make_comppair(self, type1, type2, typeofsite,
+                      a=1.0,
+                      marker="o",
                       figsize=(5, 3)):
         """plot Jij of specified type1 and type2
         save png images of all the (comp1,comp2) combinations
@@ -102,12 +97,12 @@ class JijPlotter:
             type1 (str): type1 name
             type2 (str): type2 name
             typeofsite (dict): typeofsite of AkaikkrJob
+
             a (float, optional): a scale of length. Defaults to 1.0.
             marker (str, optional): matplotlib.plot() marker. Defaults to "o".
-            output_directory (str, optional): output directory.
             figsize (tuple, optional): figure size. Defaults to (5, 3).
         """
-
+        output_directory = self.output_directory
         df = self.df.query("type1=='{}' and type2=='{}'".format(
             type1, type2)).reset_index(drop=True)
         xlabel = "distance"
@@ -172,3 +167,15 @@ class JijPlotter:
                 fig.clf()
                 plt.close(fig)
                 print("  saved to", imgpath)
+
+
+class JijEXPlotter(BaseEXPlotter, JijPlotter):
+    def __init__(self, directory, outfile, output_directory):
+        super(BaseEXPlotter, self).__init__(
+            directory, outfile, output_directory)
+
+        job = AkaikkrJob(directory)
+        df = job.get_jij_as_dataframe()
+        super(JijPlotter, self).__init__(df, output_directory)
+
+    # the same members of JijPlotter can be used.
