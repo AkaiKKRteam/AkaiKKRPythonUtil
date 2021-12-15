@@ -6,6 +6,10 @@ import matplotlib.pyplot as plt
 import os
 import numpy as np
 
+from .AkaiKkr import AkaikkrJob
+
+from .BasePlotter import BaseEXPlotter
+
 
 class IterPlotter:
     """plotter for history
@@ -56,3 +60,41 @@ class IterPlotter:
         print("saved to", filepath)
         fig.clf()
         plt.close(fig)
+
+
+class IterEXPlotter(BaseEXPlotter):
+    def __init__(self, directory, outfile="out_go.log",  output_directory=None,):
+        """
+        Args:
+            directory (str): directory to save figures
+            outfile (str, optional): output filename. Defaults to "out_spc.log".
+            pot (str, optional): potential filename. Defaults to "pot.dat".
+            output_directory (str, optional): the directory of the output file. Defaults to None.
+
+        """
+
+        super().__init__(directory, outfile, output_directory)
+
+    def make(self, hist_type=["te", "moment", "err"], filename: str = "iter_all.png", figsize=(5, 3)):
+        """make history plot from outputfile
+
+        Args:
+            hist_type ([str]]): history type te|moment|err. Defauls to ["te", "moment", "err"].
+            filename (str): image filename
+        """
+        job = AkaikkrJob(self.directory)
+        rms = []
+        for h in hist_type:
+            if h == "te":
+                value = job.get_te_history(self.outfile)
+            elif h == "moment":
+                value = job.get_moment_history(self.outfile)
+            elif h == "err":
+                value = job.get_err_history(self.outfile)
+            else:
+                raise ValueError("unknown hist_type={}".format(hist_type))
+            rms.append(value)
+
+        iterplotter = IterPlotter(rms)
+        iterplotter.make(self.output_directory, ylabels=hist_type,
+                         filename=filename, figsize=figsize)

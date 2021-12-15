@@ -115,7 +115,7 @@ class JijPlotter(BasePlotter):
         xlim = (values.min(), values.max())
         dx = (xlim[1]-xlim[0])*0.05
         xlim = (xlim[0]-dx, xlim[1]+dx)
-        values = df[ylabel].values
+        values = df[ylabel].astype(float).values
         ylim = (values.min(), values.max())
         dy = (ylim[1]-ylim[0])*0.05
         ylim = (ylim[0]-dy, ylim[1]+dy)
@@ -147,7 +147,7 @@ class JijPlotter(BasePlotter):
             label = "{}-{}".format(comp1name, comp2name)
             _df = df.query("comppair=='{}'".format(pairname))
 
-            distance = _df[xlabel]*a
+            distance = _df[xlabel].astype(float).values*a
             Jij = _df[ylabel]
 
             fig, ax = plt.subplots(figsize=figsize)
