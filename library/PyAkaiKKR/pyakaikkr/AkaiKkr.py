@@ -203,7 +203,7 @@ def _cut_a_pdos_block(data_iter, search_keyword, value_positions):
                     v = list(map(float, v2))
                 except ValueError:
                     # I want to write outfile here...
-                    print("\nerror in cut_pdos_all")
+                    print("\nerror in get_pdos_as_list")
                     return None, None
                 pdos.append(v)
             if len(e) == 0:
@@ -211,40 +211,6 @@ def _cut_a_pdos_block(data_iter, search_keyword, value_positions):
             return e, pdos
 
     return None, None
-
-
-def _cut_only_nn(_jijdf):
-    """cut only the first columns if jij DataFrame
-
-    Args:
-        _jijdf (pd.DataFrame): Jij DataFrame
-
-    Returns:
-        pd.DataFrame: Jij only the first n.n. neighbor
-    """
-    _jijdf.reset_index(inplace=True)
-    type1 = _jijdf["type1"].values
-    type2 = _jijdf["type2"].values
-    typepair = []
-    for t1, t2 in zip(type1, type2):
-        typepair.append("-".join([t1, t2]))
-    _pairdf = pd.DataFrame({"pair": typepair})
-    jijdf = pd.concat([_jijdf, _pairdf], axis=1)
-    typepair = list(set(typepair))
-    typepair.sort()
-    df_list = []
-    for pair in typepair:
-        _df = jijdf.query("pair=='{}'".format(pair)).sort_values(
-            by="distance").reset_index(drop=True)
-        _dist = _df.loc[0, "distance"]
-        df = _df[_df["distance"] == _dist]
-        df_list.append(df)
-    dfsmall = pd.concat(df_list, axis=0)
-    del dfsmall["index"]
-    jijnn = [list(dfsmall.columns)]
-    v = dfsmall.values.tolist()
-    jijnn.extend(v)
-    return jijnn
 
 
 class AkaikkrJob:
@@ -259,6 +225,10 @@ class AkaikkrJob:
         """
         # path of running directory
         self.path_dir = path_dir
+
+        self.outfile = None
+        self.data = None
+
     # default parameters for AkaiKKR
         self.default = {
             "go": "go", "potentialfile": "pot.dat",
@@ -290,25 +260,16 @@ class AkaikkrJob:
         Returns:
             list: newline splitted contents of the file
         """
-        filepath = os.path.join(self.path_dir, outfile)
-        if True:
+        if self.data is None:
+            self.outfile = outfile
+            filepath = os.path.join(self.path_dir, outfile)
             data = None
             with open(filepath) as f:
                 data = f.read().splitlines()
-            return data
-        else:
-            try:
-                with open(filepath) as f:
-                    data = f.read().splitlines()
-                return data
-            except FileNotFoundError as e:
-                print(e)
-                print("FileNotFoundError: filename=", filepath, e)
-                return []
-            except Exception as e:
-                print(e)
-                print("Exception: filename=", filepath, e)
-                return []
+            self.data = data
+        elif outfile == self.outfile and self.data is not None:
+            data = self.data
+        return data
 
     def read_structure(self, structurefile, fmt="cif", use_bravais=True, use_primitive=True,
                        cif_primitive=True):
@@ -483,7 +444,6 @@ class AkaikkrJob:
                         result.append(" "+" ".join([key+"=", value]))
                 result.append("end_option")
                 result.append("")
-            print("debug, option", result)
             return result
 
         card = []
@@ -603,7 +563,7 @@ class AkaikkrJob:
         else:
             return False
 
-    def check_convergence_go(self, outfile):
+    def get_convergence(self, outfile):
         """check convergence for go calculation.
         converged if sbtime report is found.
         not converged if *** no convergence is found.
@@ -617,7 +577,6 @@ class AkaikkrJob:
         Returns:
             bool: converged or not
         """
-        # check convergence for go calcualtion
         data = self._read(outfile)
 
         flag = True
@@ -999,7 +958,89 @@ class AkaikkrJob:
             raise KKRValueAquisitionError("failed to get type of site")
         return self.conversion_block_list(block_list)
 
-    def cut_pdos_all(self, dosfile, output_format="sequential"):
+    def get_dos_as_list(self, dosfile, keyword="total DOS", save=False):
+        """get DOS as float values.
+
+        Args:
+            dosfile (str): output filename.
+            keyword (str, optional): keyword to find DOS. Defaults to "total DOS".
+            save (bool, optional): save DOS file or not as csv. Defaults to False.
+
+        Raises:
+            KKRValueAquisitionError: failed to get keyword
+
+        Returns:
+            [float],[[float],[float]]: energies, DOS up, DOS down
+        """
+        # cut dos (beta version)
+        data = self._read(dosfile)
+
+        e = []
+        dos_up = []
+        dos_dn = []
+        nspin = 0
+        check = False
+        for line in data:
+            line = line.strip()
+            if keyword in line:
+                check = True
+                nspin += 1
+            if not line:
+                check = False
+            if check and keyword not in line:
+                if nspin == 1:
+                    e.append(float(line.split()[0]))
+                    dos_up.append(float(line.split()[1]))
+                else:
+                    dos_dn.append(float(line.split()[1]))
+
+        if len(e) == 0 or len(dos_up) == 0:
+            raise KKRValueAquisitionError("failed to get dos")
+
+        if save:
+            filename = os.path.join(
+                self.path_dir, keyword.replace(" ", "_")+".csv")
+            if nspin == 2:
+                df = pd.DataFrame(
+                    {"energy": e, "dos_up": dos_up, "dos_dn": dos_dn})
+            else:
+                df = pd.DataFrame(
+                    {"energy": e, "dos_up": dos_up, })
+            df.to_csv(filename, index=False)
+            print("save to", filename)
+
+        if len(dos_dn) > 0:
+            dos_block = [dos_up, dos_dn]
+        else:
+            dos_block = [dos_up]
+        return e, dos_block
+
+    def get_dos_as_dataframe(self, dosfile):
+        """get DOS as DataFrame
+
+        Args:
+            dosfile (str): output filename.
+            keyword (str, optional): keyword to find DOS. Defaults to "total DOS".
+            save (bool, optional): save DOS file or not as csv. Defaults to False.
+
+        Raises:
+            KKRValueAquisitionError: failed to get keyword
+
+        Returns:
+            pd.DataFrame: energies, DOS up, DOS down if there is.
+        """
+        energy, dos_block = self.get_dos_as_list(dosfile)
+
+        if len(dos_block) == 1:
+            df = pd.DataFrame({"energy": energy, "dos_up": dos_block[0]})
+        elif len(dos_block) == 2:
+            df = pd.DataFrame({"energy": energy, "dos_up": dos_block[0],
+                               "dos_dn": dos_block[1]})
+        else:
+            raise ValueError("Internal error: dos_block must 1 or 2.")
+        return df
+
+    def get_pdos_as_list(self, dosfile, output_format="spin_separation"):
         """cut PDOS
 
           '-2.0550       0.0219    0.0598    0.089912188.5942' occurs.
@@ -1026,88 +1067,43 @@ class AkaikkrJob:
         value_positions_list = _analyze_pdos_format(keyword, data)
         energy = None
 
-        if True:
-            pdos_up_list = []
-            pdos_dn_list = []
-            for icmp, value_positions in enumerate(value_positions_list):
-                data_iter = iter(data)
-                search_keyword = " {}{:2d}".format(keyword, icmp+1)
+        pdos_up_list = []
+        pdos_dn_list = []
+        for icmp, value_positions in enumerate(value_positions_list):
+            data_iter = iter(data)
+            search_keyword = " {}{:2d}".format(keyword, icmp+1)
 
-                e, pdos = _cut_a_pdos_block(
-                    data_iter, search_keyword, value_positions)
-                pdos_up_list.append(pdos)
-                if e is not None:
-                    energy = e
-                e, pdos = _cut_a_pdos_block(
-                    data_iter, search_keyword, value_positions)
-                if pdos is not None:
-                    pdos_dn_list.append(pdos)
+            e, pdos = _cut_a_pdos_block(
+                data_iter, search_keyword, value_positions)
+            pdos_up_list.append(pdos)
+            if e is not None:
+                energy = e
+            e, pdos = _cut_a_pdos_block(
+                data_iter, search_keyword, value_positions)
+            if pdos is not None:
+                pdos_dn_list.append(pdos)
 
-            if len(pdos_up_list) == 0:
-                raise KKRValueAquisitionError("failed to get pdos")
+        if len(pdos_up_list) == 0:
+            raise KKRValueAquisitionError("failed to get pdos")
 
-            if output_format == "spin_separation":
-                if len(pdos_dn_list) > 0:
-                    pdos_block = [pdos_up_list, pdos_dn_list]
-                else:
-                    pdos_block = [pdos_up_list]
-            elif output_format == "sequential":
-                pdos_block = []
-                for pdos in pdos_up_list:
-                    pdos_block.append(pdos)
-                for pdos in pdos_dn_list:
-                    pdos_block.append(pdos)
-
-            if len(pdos_block) == 0:
-                raise KKRValueAquisitionError("failed to get pdos")
-
-            return energy, pdos_block
-        else:
-            icmp = 0
+        if output_format == "spin_separation":
+            if len(pdos_dn_list) > 0:
+                pdos_block = [pdos_up_list, pdos_dn_list]
+            else:
+                pdos_block = [pdos_up_list]
+        elif output_format == "sequential":
             pdos_block = []
-            e = []
-            pdos = []
-            check = False
-            for line in data:
-                if keyword in line:
-                    check = True
-                    continue
-                if check and len(line.strip()) == 0:
-                    check = False
-                    pdos_block.append(pdos)
-                    energy = e
-                    e = []
-                    pdos = []
-                    icmp += 1
-                    continue
-                if check:
-                    value_positions = value_positions_list[icmp]
-                    values = [line[istart:iend]
-                              for istart, iend in value_positions]
-                    e.append(float(values[0]))
-                    v2 = []
-                    for s in values[1:]:
-                        if s.startswith("**********"):
-                            v2.append("1000.0")
-                        else:
-                            v2.append(s)
-                    try:
-                        v = list(map(float, v2))
-                    except ValueError:
-                        print("\nerror in cutpdos_all, path_dir=",
-                              self.path_dir, "filename=", dosfile)
-                        print("return None, None\n")
-                        raise KKRValueAquisitionError("failed to get pdos")
-                        return None, None
-                    pdos.append(v)
-            if energy is None:
-                print("get_pdos_all() failed. path=", self.path_dir, dosfile)
-                print("return None, None\n")
-                raise KKRValueAquisitionError("failed to get pdos")
-                return None, None
+            for pdos in pdos_up_list:
+                pdos_block.append(pdos)
+            for pdos in pdos_dn_list:
+                pdos_block.append(pdos)
+
+        if len(pdos_block) == 0:
+            raise KKRValueAquisitionError("failed to get pdos")
+
         return energy, pdos_block
 
-    def make_pdos_all_df(self, dosfile):
+    def get_pdos_as_dictdataframe(self, dosfile):
         """get pdos all as DataFrame
         output contains dict["up"], and dict["dn"]
 
@@ -1127,21 +1123,21 @@ class AkaikkrJob:
             df_pdosup = pd.concat([df_energy, df_up], axis=1)
             return df_pdosup
 
-        updn_label = ["up", "dn"]  # shoule be outside of the member.
-        l_label = ["s", "p", "d", "f", "g"]
+        updn_label = ["pdos_up", "pdos_dn"]  # shoule be outside of the member.
+        l_label = ["s", "p", "d", "f", "g", "h", "i", "j", "k", "l", "m"]
         outputformat = "spin_separation"
-        energy, pdos_block = self.cut_pdos_all(
+        energy, pdos_block = self.get_pdos_as_list(
             dosfile, output_format=outputformat)
         pdos_up_list = []
         pdos_dn_list = []
-        if len(pdos_block) > 1:
+        if len(pdos_block) > 1:  # mag
             for up, dn in zip(pdos_block[0], pdos_block[1]):
                 df_pdosup = pdos2df(energy, up)
                 pdos_up_list.append(df_pdosup)
                 df_pdosdn = pdos2df(energy, dn)
                 pdos_dn_list.append(df_pdosdn)
             return {updn_label[0]: pdos_up_list, updn_label[1]: pdos_dn_list}
-        else:
+        else:  # nmag
             for up in pdos_block[0]:
                 df_pdosup = pdos2df(energy, up)
                 pdos_up_list.append(df_pdosup)
@@ -1684,7 +1680,7 @@ StructureWriter.poscar(struc)."""
             raise KKRValueAquisitionError("failed to get resistivity")
         return resistivity
 
-    def get_conductivity_spin(self, outfile):
+    def get_conductivity(self, outfile):
         """get conductivity per spin
 
         Args:
@@ -1711,8 +1707,8 @@ StructureWriter.poscar(struc)."""
             conductivity_spin = None
         return conductivity_spin
 
-    def check_core_level(self, outfile, core_state=["3d", "4d", "4f"]):
-        """check core states defined by core_state.
+    def get_core_level(self, outfile, core_state=["3d", "4d", "4f"]):
+        """get core states defined by core_state.
 
         Args:
             outfile (str): filename to analyze
@@ -1740,124 +1736,6 @@ StructureWriter.poscar(struc)."""
 
         # accept that they are none
         return core_exist, core_level
-
-    def cut_dos_float(self, dosfile, keyword="total DOS", save=False):
-        """get DOS as float values.
-        The filename of the DOS csv file is keyword.replace(" ","_").csv.
-
-        Args:
-            dosfile (str): filename to analyze
-            keyword (str, optional): keyword to find DOS. Defaults to "total DOS".
-            save (bool, optional): save DOS file or not as csv. Defaults to False.
-
-        Raises:
-            KKRValueAquisitionError: failed to get keyword
-
-        Returns:
-            [float],[float],[float]: energies, DOS up, DOS down
-        """
-        # cut dos (beta version)
-        data = self._read(dosfile)
-
-        e = []
-        dos_up = []
-        dos_dn = []
-        nspin = 0
-        check = False
-        for line in data:
-            line = line.strip()
-            if keyword in line:
-                check = True
-                nspin += 1
-            if not line:
-                check = False
-            if check and keyword not in line:
-                if nspin == 1:
-                    e.append(float(line.split()[0]))
-                    dos_up.append(float(line.split()[1]))
-                else:
-                    dos_dn.append(float(line.split()[1]))
-
-        if len(e) == 0 or len(dos_up) == 0:
-            raise KKRValueAquisitionError("failed to get dos")
-
-        if save:
-            filename = os.path.join(
-                self.path_dir, keyword.replace(" ", "_")+".csv")
-            if nspin == 2:
-                df = pd.DataFrame(
-                    {"energy": e, "dos_up": dos_up, "dos_dn": dos_dn})
-            else:
-                df = pd.DataFrame(
-                    {"energy": e, "dos_up": dos_up, })
-            df.to_csv(filename, index=False)
-            print("save to", filename)
-
-        return e, dos_up, dos_dn
-
-    def cut_dos(self, dosfile, keyword="total DOS", save=False):
-        """get DOS as float values (same as cut_dos_float()).
-        The filename of the DOS csv file is keyword.replace(" ","_").csv.
-
-        Args:
-            dosfile (str): filename to analyze
-            keyword (str, optional): keyword to find DOS. Defaults to "total DOS".
-            save (bool, optional): save DOS file or not as csv. Defaults to False.
-
-        Raises:
-            KKRValueAquisitionError: failed to get keyword
-
-        Returns:
-            [float],[float],[float]: energies, DOS up, DOS down
-        """
-        self.cut_dos_float(dosfile, keyword, save)
-
-    def cut_dos_raw(self, dosfile, keyword, save=False):
-        """get DOS as lines.
-        Please use this routine if cut_dos_float() doesn't work.
-
-        Args:
-            dosfile (str): filename to analyze
-            keyword (str): keyword to find DOS
-            save (bool, optional): save the DOS csv file or not. Defaults to False.
-
-        Raises:
-            KKRValueAquisitionError: failed to get keyword
-
-        Returns:
-            [str], [str]: a list of DOS up lines, a list of DOS down lines
-        """
-        # cut dos
-        data = self._read(dosfile)
-
-        dos_up = []
-        dos_dn = []
-        nspin = 0
-        check = False
-        for line in data:
-            line = line.strip()
-            if keyword in line:
-                check = True
-                nspin += 1
-            if not line:
-                check = False
-            if check and keyword not in line:
-                if nspin == 1:
-                    dos_up.append(line)
-                else:
-                    dos_dn.append(line)
-
-        if (dos_up) == 0:
-            raise KKRValueAquisitionError("failed to get dos in the raw mode")
-
-        if save:
-            with open(self.path_dir+"/"+keyword.replace(" ", "_")+"_up.dat", "w") as f:
-                f.write("\n".join(dos_up)+"\n")
-            if len(dos_dn) > 0:
-                with open(self.path_dir+"/"+keyword.replace(" ", "_")+"_dn.dat", "w") as f:
-                    f.write("\n".join(dos_dn)+"\n")
-        else:
-            return dos_up, dos_dn
 
     def _jij_lines_dataframe(self, lines):
         """convert jij lines to dataframe
@@ -1892,7 +1770,7 @@ StructureWriter.poscar(struc)."""
         df["type2"] = label2
         return df
 
-    def cut_jij_dataframe(self, jijfile):
+    def get_jij_as_dataframe(self, jijfile):
         """cut jij section and make dataframe
 
         Args:
@@ -1937,8 +1815,10 @@ StructureWriter.poscar(struc)."""
         del df["index"]  # delete the original index of the file
         return df
 
-    def cut_jij_raw(self, jijfile, keyword, comp1=1, comp2=1, save=False):
-        """get Jij.
+    def get_jij_as_lines(self, jijfile, keyword, comp1=1, comp2=1, save=False):
+        """This function is obsolete.
+
+        get Jij.
         The filename of the Jij is keyword.replace(" ","_").dat.
 
         Args:
@@ -1954,6 +1834,9 @@ StructureWriter.poscar(struc)."""
         Returns:
             list: a list of string lines only for (comp1,comp2)
         """
+
+        print("This function becomes obsolte. Please use .get_jij_as_dataframe().")
+
         # cut jij
         data = self._read(jijfile)
 
@@ -1999,7 +1882,7 @@ StructureWriter.poscar(struc)."""
         if go == "tc" or go[0] == "j":
             print("  Tc: ", self.get_curie_temperature(outfile), "K")
         if go == "dos":
-            ene, dos_up, dos_dn = self.cut_dos_float(outfile)
+            ene, dos_up, dos_dn = self.get_dos_as_list(outfile)
             ene = np.array(ene)
             dos_up = np.array(dos_up)
             dos_dn = np.array(dos_dn)
@@ -2017,106 +1900,3 @@ StructureWriter.poscar(struc)."""
             print("  Resistivity: ", self.get_resistivity(
                 outfile), " micro ohm cm")
         print()
-
-    def get_result_testrun(self, outfile, Awk_k=None):
-        """get result for testrun
-
-        Args:
-            outfile (str): output filename of akaikkr to analyze
-            Awk_k (int, optional): k index to save A(w,k). Defaults to None.
-
-        Returns:
-            dict: result summary
-        """
-
-        go = self.get_go(outfile)
-
-        dic = {"go": go, "te": self.get_total_energy(outfile),
-               "rms": self.get_rms_error(outfile)[-1],
-               "tm": self.get_total_moment(outfile),
-               "spinlocalmoment": self.get_local_moment(outfile, mode="spin"),
-               "orbitallocalmoment": self.get_local_moment(outfile, mode="orbital"),
-               "threads": self.get_threads_openmp(outfile),
-               "conv": self.check_convergence_go(outfile)}
-        if go == "fsm":
-            dic.update({"fspin": self.get_fixed_spin_moment(outfile)})
-        if go[0] == "j":
-            dic.update({"Tc": self.get_curie_temperature(outfile)})
-            _jijdf = self.cut_jij_dataframe(outfile)
-            jijselect = _cut_only_nn(_jijdf)
-            dic.update({"jij": jijselect})
-        if go == "tc":
-            dic.update({"Tc": self.get_curie_temperature(outfile)})
-        if go == "dos":
-            ene, dos_up, dos_dn = self.cut_dos_float(outfile)
-            dos_dic = {"energy": ene, "up": dos_up, "dn": dos_dn}
-            dic.update({"totalDOS": dos_dic})
-
-            pdos = self.make_pdos_all_df(outfile)
-            iatom = 0
-            l_label = "d"
-            updn = "up"
-            df = pdos[updn][iatom]
-            ene = df.loc[:, "energy"].values.tolist()
-            pdos_up_d = df.loc[:, l_label].values.tolist()
-            updn = "dn"
-            pdos_dn_d = []
-            if len(pdos[updn]) >= 1:
-                df = pdos[updn][iatom]
-                pdos_dn_d = df.loc[:, l_label].values.tolist()
-            pdos_dic = {"energy": ene, "up": pdos_up_d, "dn": pdos_dn_d,
-                        "atom": iatom, "l": l_label}
-            dic.update({"pdos": pdos_dic})
-
-        if go == "cnd":
-            resistivity = self.get_resistivity(outfile)
-            conduct = self.get_conductivity_spin(outfile)
-            dic.update({"resis": resistivity, "cnd": conduct})
-        if go[:3] == "spc":
-            magtyp = self.get_magtyp(outfile)
-            pot = self.get_potentialfile(outfile)
-            Awk_dic = {}
-            if magtyp[0] == "m":  # nspin = 2
-                filename = "{}_up.spc".format(pot)
-                filepath = os.path.join(self.path_dir, filename)
-                Awk = AwkReader(filepath)
-                if Awk_k is None:
-                    Awk_dic["kpath"] = Awk.kcrt.tolist()
-                    Awk_dic["kdist"] = Awk.kdist.tolist()
-                    Awk_dic["energy"] = Awk.energy.tolist()
-                    Awk_dic["Awk_up"] = Awk.Awk.tolist()
-                    filename = "{}_dn.spc".format(pot)
-                    filepath = os.path.join(self.path_dir, filename)
-                    Awk = AwkReader(filepath)
-                    Awk_dic["Awk_dn"] = Awk.Awk.tolist()
-                else:
-                    Awk_dic["energy"] = Awk.energy.tolist()
-                    Awk_dic["Aw_up"] = Awk.Awk[Awk_k].tolist()
-                    Awk_dic["Awk_k"] = Awk_k
-                    if Awk.kpath is not None:
-                        Awk_dic["Awk_kpoint"] = Awk.kpath[Awk_k]
-                    else:
-                        Awk_dic["Awk_kpoint"] = None
-                    filename = "{}_dn.spc".format(pot)
-                    filepath = os.path.join(self.path_dir, filename)
-                    Awk = AwkReader(filepath)
-                    Awk_dic["Aw_dn"] = Awk.Awk[Awk_k].tolist()
-            else:  # nspin = 1
-                filename = "{}_up.spc".format(pot)
-                filepath = os.path.join(self.path_dir, filename)
-                Awk = AwkReader(filepath)
-                if Awk_k is None:
-                    Awk_dic["kpath"] = Awk.kcrt.tolist()
-                    Awk_dic["kdist"] = Awk.kdist.tolist()
-                    Awk_dic["energy"] = Awk.energy.tolist()
-                    Awk_dic["Awk_up"] = Awk.Awk.tolist()
-                else:
-                    Awk_dic["energy"] = Awk.energy.tolist()
-                    Awk_dic["Aw_up"] = Awk.Awk[Awk_k].tolist()
-                    Awk_dic["Awk_k"] = Awk_k
-                    if Awk.kpath is not None:
-                        Awk_dic["Awk_kpoint"] = Awk.kpath[Awk_k]
-                    else:
-                        Awk_dic["Awk_kpoint"] = None
-            dic.update({"Awk": Awk_dic})
-        return dic

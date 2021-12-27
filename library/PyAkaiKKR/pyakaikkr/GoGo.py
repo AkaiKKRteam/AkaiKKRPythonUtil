@@ -3,10 +3,13 @@
 # Distributed under the terms of the Apache License, Version 2.0.
 
 
-
 import os
 from abc import abstractmethod
-from pyakaikkr import plotband, KLABEL_FILENAME_, AkaikkrJob, HighSymKPath, plot_dos, plot_pdos_all, Fmg
+import pandas as pd
+import numpy as np
+
+from pyakaikkr import KLABEL_FILENAME_, AkaikkrJob, HighSymKPath, PDosEXPlotter, \
+    DosEXPlotter, Fmg, AwkReader, AwkEXPlotter
 
 
 def _make_displc(anclr, displc=[0, 0, 0]):
@@ -17,6 +20,67 @@ def _make_displc(anclr, displc=[0, 0, 0]):
             displc1_list.append(displc)
         displc_list.append(displc1_list)
     return displc_list
+
+
+def _sort_types_inside_row(df):
+    """exchange type1 and type2 as type1<type2 to compare with another data.
+    and add pair column.
+    """
+    df = df.copy().reset_index(drop=True)
+    type1 = df["type1"].values
+    type2 = df["type2"].values
+    t1t2_list = []
+    for t1, t2 in zip(type1, type2):
+        _t1t2 = [t1, t2]
+        _t1t2.sort()
+        t1t2_list.append(_t1t2)
+    df[["type1", "type2"]] = t1t2_list
+
+    # add pair column
+    comp1 = df["comp1"].values
+    comp2 = df["comp2"].values
+    type1 = df["type1"].values
+    type2 = df["type2"].values
+    typepair = []
+    for t1, t2, c1, c2 in zip(type1, type2, comp1, comp2):
+        typepair.append("-".join([t1, t2, c1, c2]))
+    df_pair = pd.DataFrame({"pair": typepair})
+
+    jijdf = pd.concat([df, df_pair], axis=1)
+    return jijdf
+
+
+def _cut_only_nn(_jijdf):
+    """cut only the first columns if jij DataFrame
+
+    Args:
+        _jijdf (pd.DataFrame): Jij DataFrame
+
+    Returns:
+        pd.DataFrame: Jij only the first n.n. neighbor
+    """
+
+    jijdf = _sort_types_inside_row(_jijdf)
+
+    typepair = np.unique(jijdf["pair"].values).tolist()
+    typepair.sort()
+    df_list = []
+    for pair in typepair:
+        _df = jijdf.query("pair=='{}'".format(pair)).sort_values(
+            by="distance").reset_index(drop=True)
+        _dist = _df.loc[0, "distance"]
+        df = _df[_df["distance"] == _dist]
+        df_list.append(df)
+    dfsmall = pd.concat(df_list, axis=0)
+
+    # in the order of distance
+    dfsmall.sort_values(by="distance", inplace=True)
+    dfsmall.reset_index(drop=True, inplace=True)
+
+    jijnn = [list(dfsmall.columns)]
+    v = dfsmall.values.tolist()
+    jijnn.extend(v)
+    return jijnn
 
 
 def _make_inputcard(go):
@@ -32,7 +96,7 @@ class GoGo:
     """
 
     def __init__(self, prog,
-                 directory,  common_param, comment,
+                 directory, common_param, comment,
                  go="go", inputcard=None, outputcard=None, **args):
         """initial routine
 
@@ -73,6 +137,115 @@ class GoGo:
         if self.args:
             self.param.update(self.args)
 
+    def get_result_testrun(self, outfile, Awk_k=None):
+        """get result for testrun
+
+        Args:
+            outfile (str): output filename of akaikkr to analyze
+            Awk_k (int, optional): k index to save A(w,k). Defaults to None.
+
+        Returns:
+            dict: result summary
+        """
+
+        job = AkaikkrJob(self.directory)
+        go = job.get_go(outfile)
+
+        dic = {"go": go, "te": job.get_total_energy(outfile),
+               "rms": job.get_rms_error(outfile)[-1],
+               "tm": job.get_total_moment(outfile),
+               "spinlocalmoment": job.get_local_moment(outfile, mode="spin"),
+               "orbitallocalmoment": job.get_local_moment(outfile, mode="orbital"),
+               "threads": job.get_threads_openmp(outfile),
+               "conv": job.get_convergence(outfile)}
+        if go == "fsm":
+            dic.update({"fspin": job.get_fixed_spin_moment(outfile)})
+        if go[0] == "j":
+            dic.update({"Tc": job.get_curie_temperature(outfile)})
+            _jijdf = job.get_jij_as_dataframe(outfile)
+            jijselect = _cut_only_nn(_jijdf)
+            dic.update({"jij": jijselect})
+        if go == "tc":
+            dic.update({"Tc": job.get_curie_temperature(outfile)})
+        if go == "dos":
+            ene, dos_block = job.get_dos_as_list(outfile)
+            dos_up = dos_block[0]
+            if len(dos_block) > 1:
+                dos_dn = dos_block[1]
+            else:
+                dos_dn = []
+            dos_dic = {"energy": ene, "up": dos_up, "dn": dos_dn}
+            dic.update({"totalDOS": dos_dic})
+
+            pdos = job.get_pdos_as_dictdataframe(outfile)
+            iatom = 0
+            l_label = "d"
+            updn = "pdos_up"
+            df = pdos[updn][iatom]
+            ene = df.loc[:, "energy"].values.tolist()
+            pdos_up_d = df.loc[:, l_label].values.tolist()
+            updn = "pdos_dn"
+            pdos_dn_d = []
+            if len(pdos[updn]) >= 1:
+                df = pdos[updn][iatom]
+                pdos_dn_d = df.loc[:, l_label].values.tolist()
+            pdos_dic = {"energy": ene, "up": pdos_up_d, "dn": pdos_dn_d,
+                        "atom": iatom, "l": l_label}
+            dic.update({"pdos": pdos_dic})
+
+        if go == "cnd":
+            resistivity = job.get_resistivity(outfile)
+            conduct = job.get_conductivity(outfile)
+            dic.update({"resis": resistivity, "cnd": conduct})
+        if go[:3] == "spc":
+            magtyp = job.get_magtyp(outfile)
+            pot = job.get_potentialfile(outfile)
+            Awk_dic = {}
+            if magtyp[0] == "m":  # nspin = 2
+                filename = "{}_up.spc".format(pot)
+                filepath = os.path.join(job.path_dir, filename)
+                Awk = AwkReader(filepath)
+                if Awk_k is None:
+                    Awk_dic["kpath"] = Awk.kcrt.tolist()
+                    Awk_dic["kdist"] = Awk.kdist.tolist()
+                    Awk_dic["energy"] = Awk.energy.tolist()
+                    Awk_dic["Awk_up"] = Awk.Awk.tolist()
+                    filename = "{}_dn.spc".format(pot)
+                    filepath = os.path.join(job.path_dir, filename)
+                    Awk = AwkReader(filepath)
+                    Awk_dic["Awk_dn"] = Awk.Awk.tolist()
+                else:
+                    Awk_dic["energy"] = Awk.energy.tolist()
+                    Awk_dic["Aw_up"] = Awk.Awk[Awk_k].tolist()
+                    Awk_dic["Awk_k"] = Awk_k
+                    if Awk.kpath is not None:
+                        Awk_dic["Awk_kpoint"] = Awk.kpath[Awk_k]
+                    else:
+                        Awk_dic["Awk_kpoint"] = None
+                    filename = "{}_dn.spc".format(pot)
+                    filepath = os.path.join(job.path_dir, filename)
+                    Awk = AwkReader(filepath)
+                    Awk_dic["Aw_dn"] = Awk.Awk[Awk_k].tolist()
+            else:  # nspin = 1
+                filename = "{}_up.spc".format(pot)
+                filepath = os.path.join(job.path_dir, filename)
+                Awk = AwkReader(filepath)
+                if Awk_k is None:
+                    Awk_dic["kpath"] = Awk.kcrt.tolist()
+                    Awk_dic["kdist"] = Awk.kdist.tolist()
+                    Awk_dic["energy"] = Awk.energy.tolist()
+                    Awk_dic["Awk_up"] = Awk.Awk.tolist()
+                else:
+                    Awk_dic["energy"] = Awk.energy.tolist()
+                    Awk_dic["Aw_up"] = Awk.Awk[Awk_k].tolist()
+                    Awk_dic["Awk_k"] = Awk_k
+                    if Awk.kpath is not None:
+                        Awk_dic["Awk_kpoint"] = Awk.kpath[Awk_k]
+                    else:
+                        Awk_dic["Awk_kpoint"] = None
+            dic.update({"Awk": Awk_dic})
+        return dic
+
     def execute(self, displc=False, execute_postscript=True):
         """execute Akaikkr
 
@@ -103,7 +276,7 @@ class GoGo:
 
         print("  directory: ", job.path_dir, "  output file: ", outputcard)
 
-        result = job.get_result_testrun(outputcard, Awk_k=0)
+        result = self.get_result_testrun(outputcard, Awk_k=0)
         result["comment"] = self._make_comment()
         self.result = result
         if execute_postscript:
@@ -174,14 +347,18 @@ class GoDos(GoGo):
     def prescript(self,):
         self.param["go"] = self.go
         self.param["record"] = "2nd"
-        self.param["ewidth"] = 2.0
+        self.param["ewidth"] = 2.0  # Default value. It will be updated.
         args = self.args
         if args:
             self.param.update(args)
 
     def postscript(self):
-        plot_dos(self.directory, self.outputcard)
-        plot_pdos_all(self.directory, self.outputcard)
+        dosplotter = DosEXPlotter(
+            self.directory, self.outputcard, self.directory)
+        dosplotter.make()
+        pdosplotter = PDosEXPlotter(
+            self.directory, self.outputcard, self.directory)
+        pdosplotter.make()
 
 
 class GoTc(GoGo):
@@ -220,16 +397,19 @@ class Goj30(GoGo):
 
     def postscript(self):
         job = AkaikkrJob(self.directory)
-        df = job.cut_jij_dataframe(self.outputcard)
+        df = job.get_jij_as_dataframe(self.outputcard)
         filename = "jij.csv"
         filepath = os.path.join(self.directory, filename)
         df.to_csv(filepath, index=False)
         print("  saved to", filepath)
         print()
+        self.df_jij = df
 
 
 class Goj(GoGo):
     """run Akaikkr as go="j"
+
+    obsolete
     """
 
     def __init__(self, akaikkr_exe, directory, common_param, comment,
@@ -245,7 +425,7 @@ class Goj(GoGo):
 
     def postscript(self):
         job = AkaikkrJob(self.directory)
-        df = job.cut_jij_dataframe(self.outputcard)
+        df = job.get_jij_as_dataframe(self.outputcard)
         filename = "jij.csv"
         filepath = os.path.join(self.directory, filename)
         df.to_csv(filepath, index=False)
@@ -286,8 +466,8 @@ class GoCnd(GoGo):
     def prescript(self, **args):
         self.param["go"] = " "+self.go  # extran " " is necessary.
         self.param["record"] = "2nd"
-        self.param["ewidth"] = 0.01
-        self.param["bzqlty"] = 40
+        self.param["ewidth"] = 0.01  # default value.
+        self.param["bzqlty"] = 40  # default value. It will be updated later.
         args = self.args
         if args:
             self.param.update(args)
@@ -340,4 +520,6 @@ class GoSpc(GoGo):
             self.param.update(args)
 
     def postscript(self):
-        plotband(self.directory)
+        awkplotter = AwkEXPlotter(
+            self.directory, self.outputcard, self.directory)
+        awkplotter.make()

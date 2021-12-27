@@ -48,7 +48,7 @@ def converged(filename):
     """Extract converged or not"""
     job = AkaikkrJob(".")
     tos = job.get_type_of_site(filename)
-    v = job.check_convergence_go(filename)
+    v = job.get_convergence(filename)
     print(sys._getframe().f_code.co_name, v)
 
 
@@ -169,7 +169,7 @@ def histall(filename, outputpath, outputtype):
     elif outputtype == "png":
         iterplotter = IterPlotter(xs)
         os.makedirs(outputpath, exist_ok=True)
-        iterplotter.show(outputpath, filename="hist.png",
+        iterplotter.make(outputpath, filename="hist.png",
                          ylabels=labels, figsize=(5, 8))
 
 
@@ -194,7 +194,7 @@ def momenthist(filename, outputpath, outputtype):
     elif outputtype == "png":
         os.makedirs(outputpath, exist_ok=True)
         rmsplotter = IterPlotter(tm)
-        rmsplotter.show(outputpath, "moment", "momenthist.png")
+        rmsplotter.make(outputpath, "moment", "momenthist.png")
 
 
 @ hist.command("err")
@@ -218,7 +218,7 @@ def errhist(filename, outputpath, outputtype):
     elif outputtype == "png":
         os.makedirs(outputpath, exist_ok=True)
         rmsplotter = IterPlotter(tm)
-        rmsplotter.show(outputpath, "err", "errhist.png")
+        rmsplotter.make(outputpath, "err", "errhist.png")
 
 
 @ hist.command("te")
@@ -242,7 +242,7 @@ def tehist(filename, outputpath, outputtype):
     elif outputtype == "png":
         os.makedirs(outputpath, exist_ok=True)
         rmsplotter = IterPlotter(tm)
-        rmsplotter.show(outputpath, "te", "tehist.png")
+        rmsplotter.make(outputpath, "te", "tehist.png")
 
 
 @ cmd.command()
@@ -339,7 +339,7 @@ def R(filename,):
     job = AkaikkrJob(".")
     v = job.get_resistivity(filename)
     print("R", v)
-    v = job.get_conductivity_spin(filename)
+    v = job.get_conductivity(filename)
     print("cnd", v)
 
 
@@ -356,28 +356,28 @@ def Jij(filename, outputpath, outputtype):
     os.makedirs(outputpath, exist_ok=True)
 
     if outputtype == "csv":
-        df = job.cut_jij_dataframe(filename)
+        df = job.get_jij_as_dataframe(filename)
         jij_filename = os.path.join(outputpath, "Jij.csv")
         df.to_csv(jij_filename, index=False)
         print(jij_filename, "is made.")
     elif outputtype == "console":
-        df = job.cut_jij_dataframe(filename)
+        df = job.get_jij_as_dataframe(filename)
         print(df)
     elif outputtype == "png":
         typeofsite = job.get_type_of_site(filename)
-        df = job.cut_jij_dataframe(filename)
+        df = job.get_jij_as_dataframe(filename)
         jij_filename = os.path.join(outputpath, "Jij.csv")
         df.to_csv(jij_filename, index=False)
         print(jij_filename, "is made.")
-        jijplotter = JijPlotter(outputpath, filename="Jij.csv")
-        jijplotter.plot_typepair(output_directory=outputpath)
+        jijplotter = JijPlotter(directory=outputpath, outfile="Jij.csv")
+        jijplotter.make_typepair(output_directory=outputpath)
         typepairs = []
         for type1, type2 in zip(df["type1"], df["type2"]):
             typepairs.append("{}-{}".format(type1, type2))
         typepairs = list(set(typepairs))
         for typepair in typepairs:
             types = typepair.split("-")
-            jijplotter.plot_comppair(
+            jijplotter.make_comppair(
                 types[0], types[1], typeofsite,
                 output_directory=outputpath)
 
@@ -391,8 +391,8 @@ def dos(filename, outputpath,):
     """
     job = AkaikkrJob(".")
     os.makedirs(outputpath, exist_ok=True)
-    dosplot = DosPlotter(".")
-    dosplot.show(filename, outputpath)
+    dosplot = DosEXPlotter(directory=".", outfile=filename)
+    dosplot.make_dos(output_directory=outputpath)
 
 
 @ cmd.command()
@@ -410,9 +410,9 @@ def spc(filename, outputpath, klabelfile):
     filename_ = s[-1]
     print(dir_part, filename_)
 
-    plotband(dir_part, outfile=filename_,
-             output_directory=outputpath,
-             klabel_filename=klabelfile)
+    plotter = AwkEXPlotter(dir_part, outfile=filename_)
+    plotter.make(output_directory=outputpath,
+                 klabel_filename=klabelfile)
 
 
 if __name__ == '__main__':

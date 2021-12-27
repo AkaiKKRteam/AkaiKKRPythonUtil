@@ -15,11 +15,11 @@ import subprocess
 
 from pyakaikkr import AkaikkrJob, JijPlotter
 from pyakaikkr.CompareCifKkr import CompareCifKkr
+from pyakaikkr.GoGo import *
 
 from .exeutil import ExeUtil
 from .resultutil import ResultUtil
 from .OutputAnalyzer import *
-from .GoGo import *
 from .loadmeta import make_meta
 
 _REFERENCE_PATH_ = "reference"
@@ -243,36 +243,17 @@ def _Cu_common_param(
         dict: kkr input parameters
     """
 
-    if True:
-        param = get_kkr_struc_from_cif(
-            ciffilepath=ciffilepath, akaikkr_exe=akaikkr_exe["specx"], displc=displc,
-            use_bravais=use_bravais, remove_temperaryfiles=remove_temperaryfiles,
-            directory=directory)
+    param = get_kkr_struc_from_cif(
+        ciffilepath=ciffilepath, akaikkr_exe=akaikkr_exe["specx"], displc=displc,
+        use_bravais=use_bravais, remove_temperaryfiles=remove_temperaryfiles,
+        directory=directory)
 
-        param["a"] = 6.82
-        param["magtyp"] = "nmag"
+    # param["a"] = 6.82
+    param["magtyp"] = "nmag"
 
-        if _CHANGE_TYPE_IN_CIF_:
-            # to compare the results with reference
-            param = _change_type(param, {"Cu_4a_0": "Cu"})
+    # to compare the results with reference
+    param = _change_type(param, {"Cu_4a_0": "Cu"})
 
-    else:
-        param = {}
-        param["brvtyp"] = "fcc"
-        param["a"] = 6.82
-        param["magtyp"] = "nmag"
-        param["ntyp"] = 1
-        param["type"] = ["Cu"]
-        param["ncmp"] = [1]
-        param["rmt"] = [1.0]
-        param["field"] = [0.0]
-        param["mxl"] = [2]
-        param["anclr"] = [[29]]
-        param["conc"] = [[100]]
-        param["natm"] = 1
-        param["atmicx"] = [
-            ["0.0a", "0.0b", "0.0c", "Cu"]
-        ]
     return param
 
 
@@ -335,36 +316,15 @@ def _Fe_common_param(
         use_bravais=True, remove_temperaryfiles=False,
         directory="temporary") -> dict:
 
-    if True:
-        param = get_kkr_struc_from_cif(
-            ciffilepath=ciffilepath, akaikkr_exe=akaikkr_exe["specx"], displc=displc,
-            use_bravais=use_bravais, remove_temperaryfiles=remove_temperaryfiles,
-            directory=directory)
+    param = get_kkr_struc_from_cif(
+        ciffilepath=ciffilepath, akaikkr_exe=akaikkr_exe["specx"], displc=displc,
+        use_bravais=use_bravais, remove_temperaryfiles=remove_temperaryfiles,
+        directory=directory)
 
-        param["a"] = 5.27
-        param["magtyp"] = "mag"
-        param["rmt"] = [1.0 for i in param["ncmp"]]
+    # param["a"] = 5.27
+    param["magtyp"] = "mag"
+    param["rmt"] = [1.0 for i in param["ncmp"]]
 
-        if _CHANGE_TYPE_IN_CIF_:
-            # to compare the results with reference
-            param = _change_type(param, {"Fe_2a_0": "Fe"})
-    else:
-        param = {}
-        param["brvtyp"] = "bcc"
-        param["a"] = 5.27
-        param["magtyp"] = "mag"
-        param["ntyp"] = 1
-        param["type"] = ["Fe"]
-        param["ncmp"] = [1]
-        param["rmt"] = [1.0]
-        param["field"] = [0.0]
-        param["mxl"] = [2]
-        param["anclr"] = [[26]]
-        param["conc"] = [[100]]
-        param["natm"] = 1
-        param["atmicx"] = [
-            ["0.0a", "0.0b", "0.0c", "Fe"]
-        ]
     return param
 
 
@@ -403,19 +363,6 @@ def Fe_tc(akaikkr_exe,  directory="Fe", comment=_Fe_COMMENT_,
     return label, gogo.result
 
 
-def Fe_j(akaikkr_exe, directory="Fe", comment=_Fe_COMMENT_,
-         displc=False, execute_postscript=True):
-    gogo = Goj(akaikkr_exe, directory,
-               _Fe_common_param(akaikkr_exe=akaikkr_exe,
-                                displc=displc, directory=directory), comment)
-    gogo.execute(displc=displc, execute_postscript=execute_postscript)
-    if execute_postscript:
-        jijplotter = JijPlotter(directory)
-        jijplotter.plot_typepair()
-    label = "{}_{}".format(directory, gogo.go)
-    return label, gogo.result
-
-
 def Fe_j30(akaikkr_exe, directory="Fe", comment=_Fe_COMMENT_,
            displc=False, execute_postscript=True):
     gogo = Goj30(akaikkr_exe, directory,
@@ -423,8 +370,8 @@ def Fe_j30(akaikkr_exe, directory="Fe", comment=_Fe_COMMENT_,
                                   displc=displc, directory=directory), comment)
     gogo.execute(displc=displc, execute_postscript=execute_postscript)
     if execute_postscript:
-        jijplotter = JijPlotter(directory)
-        jijplotter.plot_typepair()
+        jijplotter = JijPlotter(gogo.df_jij, directory)
+        jijplotter.make_typepair()
     label = "{}_{}".format(directory, gogo.go)
     return label, gogo.result
 
@@ -455,45 +402,16 @@ def _Co_common_param(
         use_bravais=True, remove_temperaryfiles=False,
         directory="temporary"):
 
-    if True:
-        param = get_kkr_struc_from_cif(
-            ciffilepath=ciffilepath, akaikkr_exe=akaikkr_exe["specx"], displc=displc,
-            use_bravais=use_bravais, remove_temperaryfiles=remove_temperaryfiles,
-            directory=directory)
+    param = get_kkr_struc_from_cif(
+        ciffilepath=ciffilepath, akaikkr_exe=akaikkr_exe["specx"], displc=displc,
+        use_bravais=use_bravais, remove_temperaryfiles=remove_temperaryfiles,
+        directory=directory)
 
-        param["a"] = 4.74
-        param["c/a"] = 1.6215
-        param["magtyp"] = "mag"
-        param["rmt"] = [1.0 for i in param["ncmp"]]
+    # param["a"] = 4.74
+    # param["c/a"] = 1.6215
+    param["magtyp"] = "mag"
+    param["rmt"] = [1.0 for i in param["ncmp"]]
 
-        if _CHANGE_TYPE_IN_CIF_:
-            # to compare the results with reference
-            param = _change_type(param, {"Co_2c_0": "Co"})
-            param["atmicx"] = _atmicx_float2frac(param["atmicx"])
-
-    else:
-        param = {}
-        param["brvtyp"] = "hcp"
-        param["a"] = 4.74
-        param["c/a"] = 1.6215
-        param["b/a"] = 1.0
-        param["alpha"] = 90
-        param["beta"] = 90
-        param["gamma"] = 120
-        param["magtyp"] = "mag"
-        param["ntyp"] = 1
-        param["type"] = ["Co"]
-        param["ncmp"] = [1]
-        param["rmt"] = [1.0]
-        param["field"] = [0.0]
-        param["mxl"] = [2]
-        param["anclr"] = [[27]]
-        param["conc"] = [[100]]
-        param["natm"] = 2
-        param["atmicx"] = [
-            ["0.0a", "0.0b", "0.0c", "Co"],
-            ["1/3a", "2/3b", "1/2c", "Co"],
-        ]
     return param
 
 
@@ -534,20 +452,6 @@ def Co_tc(akaikkr_exe, directory="Co", comment=_Co_COMMENT_,
     return label, gogo.result
 
 
-def Co_j(akaikkr_exe, directory="Co", comment=_Co_COMMENT_,
-         displc=False, execute_postscript=True):
-    gogo = Goj(akaikkr_exe, directory,
-               _Co_common_param(akaikkr_exe=akaikkr_exe,
-                                displc=displc, directory=directory),
-               comment)
-    gogo.execute(displc=displc, execute_postscript=execute_postscript)
-    label = "{}_{}".format(directory, gogo.go)
-    if execute_postscript:
-        jijplotter = JijPlotter(directory)
-        jijplotter.plot_typepair()
-    return label, gogo.result
-
-
 def Co_j30(akaikkr_exe,  directory="Co", comment=_Co_COMMENT_,
            displc=False, execute_postscript=True):
     gogo = Goj30(akaikkr_exe, directory,
@@ -557,8 +461,8 @@ def Co_j30(akaikkr_exe,  directory="Co", comment=_Co_COMMENT_,
     gogo.execute(displc=displc, execute_postscript=execute_postscript)
     label = "{}_{}".format(directory, gogo.go)
     if execute_postscript:
-        jijplotter = JijPlotter(directory)
-        jijplotter.plot_typepair()
+        jijplotter = JijPlotter(gogo.df_jij, directory)
+        jijplotter.make_typepair()
     return label, gogo.result
 
 
@@ -602,37 +506,14 @@ def _Ni_common_param(akaikkr_exe: dict, displc: bool, ciffilepath="../structure/
                      use_bravais=True, remove_temperaryfiles=False,
                      directory="temporary"):
 
-    if True:
-        param = get_kkr_struc_from_cif(
-            ciffilepath=ciffilepath, akaikkr_exe=akaikkr_exe["specx"], displc=displc,
-            use_bravais=use_bravais, remove_temperaryfiles=remove_temperaryfiles,
-            directory=directory)
+    param = get_kkr_struc_from_cif(
+        ciffilepath=ciffilepath, akaikkr_exe=akaikkr_exe["specx"], displc=displc,
+        use_bravais=use_bravais, remove_temperaryfiles=remove_temperaryfiles,
+        directory=directory)
 
-        param["a"] = 6.65
-        param["magtyp"] = "mag"
-        param["rmt"] = [1.0 for i in param["ncmp"]]
+    param["magtyp"] = "mag"
+    param["rmt"] = [1.0 for i in param["ncmp"]]
 
-        if _CHANGE_TYPE_IN_CIF_:
-            # to compare the results with reference
-            param = _change_type(param, {"Ni_4a_0": "Ni"})
-
-    else:
-        param = {}
-        param["brvtyp"] = "fcc"
-        param["a"] = 6.65
-        param["magtyp"] = "mag"
-        param["ntyp"] = 1
-        param["type"] = ["Ni"]
-        param["ncmp"] = [1]
-        param["rmt"] = [1.0]
-        param["field"] = [0.0]
-        param["mxl"] = [2]
-        param["anclr"] = [[28]]
-        param["conc"] = [[100]]
-        param["natm"] = 1
-        param["atmicx"] = [
-            ["0.0a", "0.0b", "0.0c", "Ni"]
-        ]
     return param
 
 
@@ -674,19 +555,6 @@ def Ni_tc(akaikkr_exe,  directory="Ni", comment=_Ni_COMMENT_,
     return label, gogo.result
 
 
-def Ni_j(akaikkr_exe, directory="Ni", comment=_Ni_COMMENT_,
-         displc=False, execute_postscript=True):
-    gogo = Goj(akaikkr_exe, directory,
-               _Ni_common_param(akaikkr_exe=akaikkr_exe,
-                                displc=displc, directory=directory),
-               comment)
-    gogo.execute(displc=displc, execute_postscript=execute_postscript)
-    jijplotter = JijPlotter(directory)
-    jijplotter.plot_typepair()
-    label = "{}_{}".format(directory, gogo.go)
-    return label, gogo.result
-
-
 def Ni_j30(akaikkr_exe,  directory="Ni", comment=_Ni_COMMENT_,
            displc=False, execute_postscript=True):
     gogo = Goj30(akaikkr_exe, directory,
@@ -695,8 +563,8 @@ def Ni_j30(akaikkr_exe,  directory="Ni", comment=_Ni_COMMENT_,
                  comment)
     gogo.execute(displc=displc, execute_postscript=execute_postscript)
     if execute_postscript:
-        jijplotter = JijPlotter(directory)
-        jijplotter.plot_typepair()
+        jijplotter = JijPlotter(gogo.df_jij, directory)
+        jijplotter.make_typepair()
     label = "{}_{}".format(directory, gogo.go)
     return label, gogo.result
 
@@ -728,48 +596,21 @@ def _AlMnFeCo_bcc_common_param(akaikkr_exe: dict, displc: bool, ciffilepath="../
                                use_bravais=True, remove_temperaryfiles=False,
                                directory="temporary"):
 
-    if True:
-        param = get_kkr_struc_from_cif(
-            ciffilepath=ciffilepath, akaikkr_exe=akaikkr_exe["specx"], displc=displc,
-            use_bravais=use_bravais, remove_temperaryfiles=remove_temperaryfiles,
-            directory=directory)
+    param = get_kkr_struc_from_cif(
+        ciffilepath=ciffilepath, akaikkr_exe=akaikkr_exe["specx"], displc=displc,
+        use_bravais=use_bravais, remove_temperaryfiles=remove_temperaryfiles,
+        directory=directory)
 
-        param["a"] = 1000000
-        param["magtyp"] = "mag"
-        param["reltyp"] = "sra"
-        param["magtyp"] = "mag"
-        param["sdftyp"] = "pbeasa"
-        param["ewidth"] = 1.3
-        param["pmix"] = 0.01
-        param["rmt"] = [1.0]
-        param["mxl"] = [3]
+    param["a"] = 1000000
+    param["magtyp"] = "mag"
+    param["reltyp"] = "sra"
+    param["magtyp"] = "mag"
+    param["sdftyp"] = "pbeasa"
+    param["ewidth"] = 1.3
+    param["pmix"] = 0.01
+    param["rmt"] = [1.0]
+    param["mxl"] = [3]
 
-        if _CHANGE_TYPE_IN_CIF_:
-            # to compare the results with reference
-            param = _change_type(
-                param, {"Mn0.25Al0.25Fe0.25Co0.25_2a_0": "HEA"})
-
-    else:
-        param = {}
-        param["brvtyp"] = "bcc"
-        param["a"] = 1000000
-        param["reltyp"] = "sra"
-        param["magtyp"] = "mag"
-        param["sdftyp"] = "pbeasa"
-        param["ewidth"] = 1.3
-        param["pmix"] = 0.01
-        param["ntyp"] = 1
-        param["type"] = ["HEA"]
-        param["ncmp"] = [4]
-        param["rmt"] = [1.0]
-        param["field"] = [0.0]
-        param["mxl"] = [3]
-        param["anclr"] = [[13, 25, 26, 27]]
-        param["conc"] = [[25, 25, 25, 25]]
-        param["natm"] = 1
-        param["atmicx"] = [
-            ["0.0a", "0.0b", "0.0c", "HEA"],
-        ]
     return param
 
 
@@ -837,27 +678,10 @@ def AlMnFeCo_bcc_j30(akaikkr_exe,  directory="AlMnFeCo_bcc", comment=_AlMnFeCo_b
         job = AkaikkrJob(directory)
         outfile = "out_go.log"
         typeofsite = job.get_type_of_site(outfile)
-        jijplotter = JijPlotter(directory)
-        jijplotter.plot_comppair(
-            "HEA", "HEA", typeofsite)
-    return label, gogo.result
-
-
-def AlMnFeCo_bcc_j(akaikkr_exe, directory="AlMnFeCo_bcc", comment=_AlMnFeCo_bcc_COMMENT_,
-                   displc=False, execute_postscript=True):
-    gogo = Goj(akaikkr_exe, directory,
-               _AlMnFeCo_bcc_common_param(akaikkr_exe=akaikkr_exe,
-                                          displc=displc, directory=directory),
-               comment)
-    gogo.execute(displc=displc, execute_postscript=execute_postscript)
-    if execute_postscript:
-        outfile = "out_go.log"
-        job = AkaikkrJob(directory)
-        typeofsite = job.get_type_of_site(outfile)
-        jijplotter = JijPlotter(directory)
-        jijplotter.plot_comppair(
-            "HEA", "HEA", typeofsite)
-    label = "{}_{}".format(directory, gogo.go)
+        jijplotter = JijPlotter(gogo.df_jij, directory)
+        jijplotter.make_comppair(
+            "Mn0.25Al0.25Fe0.25Co0.25_2a_0", "Mn0.25Al0.25Fe0.25Co0.25_2a_0", typeofsite,
+        )
     return label, gogo.result
 
 
@@ -899,50 +723,21 @@ def _FeRh05Pt05_common_param(akaikkr_exe: dict, displc: bool, ciffilepath="../st
                              use_bravais=True, remove_temperaryfiles=False,
                              directory="temporary"):
 
-    if True:
-        param = get_kkr_struc_from_cif(
-            ciffilepath=ciffilepath, akaikkr_exe=akaikkr_exe["specx"], displc=displc,
-            use_bravais=use_bravais, remove_temperaryfiles=remove_temperaryfiles,
-            directory=directory)
+    param = get_kkr_struc_from_cif(
+        ciffilepath=ciffilepath, akaikkr_exe=akaikkr_exe["specx"], displc=displc,
+        use_bravais=use_bravais, remove_temperaryfiles=remove_temperaryfiles,
+        directory=directory)
 
-        param["a"] = 5.2043
-        param["c/a"] = 1.2817
-        param["magtyp"] = "mag"
-        param["sdftyp"] = "pbeasa"
-        param["ewidth"] = 1.0
-        param["pmix"] = "0.02ch"
-        param["bzqlty"] = 8
-        param["rmt"] = [1.0 for i in range(param["ntyp"])]
-        param["mxl"] = [3 for i in range(param["ntyp"])]
+    # param["a"] = 5.2043
+    # param["c/a"] = 1.2817
+    param["magtyp"] = "mag"
+    param["sdftyp"] = "pbeasa"
+    param["ewidth"] = 1.0
+    param["pmix"] = "0.02ch"
+    param["bzqlty"] = 8
+    param["rmt"] = [1.0 for i in range(param["ntyp"])]
+    param["mxl"] = [3 for i in range(param["ntyp"])]
 
-        if _CHANGE_TYPE_IN_CIF_:
-            # to compare the results with reference
-            param = _change_type(
-                param, {"Fe_1a_0": "Fe", "Rh0.5Pt0.5_1d_1": "RhPt"})
-
-    else:
-        param = {}
-        param["brvtyp"] = "st"
-        param["a"] = 5.2043
-        param["c/a"] = 1.2817
-        param["magtyp"] = "mag"
-        param["sdftyp"] = "pbeasa"
-        param["ewidth"] = 1.0
-        param["pmix"] = "0.02ch"
-        param["bzqlty"] = 8
-        param["ntyp"] = 2
-        param["type"] = ["Fe", "RhPt"]
-        param["ncmp"] = [1, 2]
-        param["rmt"] = [1.0, 1.0]
-        param["field"] = [0.0, 0.0]
-        param["mxl"] = [3, 3]  # increase mxl
-        param["anclr"] = [[26], [45, 78]]
-        param["conc"] = [[100], [50, 50]]
-        param["natm"] = 2
-        param["atmicx"] = [
-            ["0.0a", "0.0b", "0.0c", "Fe"],
-            ["0.5a", "0.5b", "0.5c", "RhPt"]
-        ]
     return param
 
 
@@ -1013,28 +808,11 @@ def FeRh05Pt05_j30(akaikkr_exe,  directory="FeRh05Pt05",
         outfile = "out_go.log"
         job = AkaikkrJob(directory)
         typeofsite = job.get_type_of_site(outfile)
-        jijplotter = JijPlotter(directory)
-        jijplotter.plot_comppair("Fe", "RhPt", typeofsite)
-        jijplotter.plot_comppair("Fe", "Fe", typeofsite)
-
-    label = "{}_{}".format(directory, gogo.go)
-    return label, gogo.result
-
-
-def FeRh05Pt05_j(akaikkr_exe,  directory="FeRh05Pt05",
-                 comment=_FeRh05Pt05_COMMENT_,
-                 displc=False, execute_postscript=True):
-    gogo = Goj(akaikkr_exe, directory, _FeRh05Pt05_common_param(akaikkr_exe=akaikkr_exe,
-                                                                displc=displc, directory=directory),
-               comment)
-    gogo.execute(displc=displc, execute_postscript=execute_postscript)
-    if execute_postscript:
-        outfile = "out_go.log"
-        job = AkaikkrJob(directory)
-        typeofsite = job.get_type_of_site(outfile)
-        jijplotter = JijPlotter(directory)
-        jijplotter.plot_comppair("Fe", "RhPt", typeofsite)
-        jijplotter.plot_comppair("Fe", "Fe", typeofsite)
+        jijplotter = JijPlotter(gogo.df_jij, directory)
+        jijplotter.make_comppair(
+            "Fe_1a_0", "Rh0.5Pt0.5_1d_1", typeofsite, )
+        jijplotter.make_comppair("Fe_1a_0", "Fe_1a_0",
+                                 typeofsite,)
 
     label = "{}_{}".format(directory, gogo.go)
     return label, gogo.result
@@ -1066,43 +844,20 @@ def _NiFe_common_param(akaikkr_exe: dict, displc: bool, ciffilepath="../structur
                        use_bravais=True, remove_temperaryfiles=False,
                        directory="temporary"):
 
-    if True:
-        param = get_kkr_struc_from_cif(
-            ciffilepath=ciffilepath, akaikkr_exe=akaikkr_exe["specx"], displc=displc,
-            use_bravais=use_bravais, remove_temperaryfiles=remove_temperaryfiles,
-            directory=directory)
+    param = get_kkr_struc_from_cif(
+        ciffilepath=ciffilepath, akaikkr_exe=akaikkr_exe["specx"], displc=displc,
+        use_bravais=use_bravais, remove_temperaryfiles=remove_temperaryfiles,
+        directory=directory)
 
-        param["a"] = 6.65
-        param["magtyp"] = "mag"
-        param["sdftyp"] = "pbeasa"
-        param["bzqlty"] = 8  # =6 is NG
-        if param["ntyp"] != 1:
-            raise ValueError("ntyp must be 1 for NiFe.")
-        param["rmt"] = [1.0 for i in range(param["ntyp"])]
-        param["mxl"] = [3 for i in range(param["ntyp"])]
+    # param["a"] = 6.65
+    param["magtyp"] = "mag"
+    param["sdftyp"] = "pbeasa"
+    param["bzqlty"] = 8  # =6 is NG
+    if param["ntyp"] != 1:
+        raise ValueError("ntyp must be 1 for NiFe.")
+    param["rmt"] = [1.0 for i in range(param["ntyp"])]
+    param["mxl"] = [3 for i in range(param["ntyp"])]
 
-        if _CHANGE_TYPE_IN_CIF_:
-            # Because it's a pain to change type in the reference, the type is changed.
-            param = _change_type(param, {"Fe0.1Ni0.9_4a_0": "NiFe"})
-    else:
-        param = {}
-        param["brvtyp"] = "fcc"
-        param["a"] = 6.65
-        param["magtyp"] = "mag"
-        param["sdftyp"] = "pbeasa"
-        param["bzqlty"] = 8  # =6 is NG
-        param["ntyp"] = 1
-        param["type"] = ["NiFe"]
-        param["ncmp"] = [2]
-        param["rmt"] = [1.0]
-        param["field"] = [0.0]
-        param["mxl"] = [3]  # increase mxl
-        param["anclr"] = [[26, 28]]
-        param["conc"] = [[10, 90]]
-        param["natm"] = 1
-        param["atmicx"] = [
-            ["0.0a", "0.0b", "0.0c", "NiFe"],
-        ]
     return param
 
 
@@ -1143,23 +898,6 @@ def NiFe_tc(akaikkr_exe,  directory="NiFe", comment=_NiFe_COMMENT_,
     return label, gogo.result
 
 
-def NiFe_j(akaikkr_exe,  directory="NiFe", comment=_NiFe_COMMENT_,
-           displc=False, execute_postscript=True):
-    gogo = Goj(akaikkr_exe, directory,
-               _NiFe_common_param(akaikkr_exe=akaikkr_exe,
-                                  displc=displc, directory=directory),
-               comment)
-    gogo.execute(displc=displc, execute_postscript=execute_postscript)
-    if execute_postscript:
-        outfile = "out_go.log"
-        job = AkaikkrJob(directory)
-        typeofsite = job.get_type_of_site(outfile)
-        jijplotter = JijPlotter(directory)
-        jijplotter.plot_comppair("NiFe", "NiFe", typeofsite)
-    label = "{}_{}".format(directory, gogo.go)
-    return label, gogo.result
-
-
 def NiFe_j30(akaikkr_exe,  directory="NiFe", comment=_NiFe_COMMENT_,
              displc=False, execute_postscript=True):
     gogo = Goj30(akaikkr_exe, directory,
@@ -1171,8 +909,9 @@ def NiFe_j30(akaikkr_exe,  directory="NiFe", comment=_NiFe_COMMENT_,
         outfile = "out_go.log"
         job = AkaikkrJob(directory)
         typeofsite = job.get_type_of_site(outfile)
-        jijplotter = JijPlotter(directory)
-        jijplotter.plot_comppair("NiFe", "NiFe", typeofsite)
+        jijplotter = JijPlotter(gogo.df_jij, directory)
+        jijplotter.make_comppair(
+            "Fe0.1Ni0.9_4a_0", "Fe0.1Ni0.9_4a_0", typeofsite, )
     label = "{}_{}".format(directory, gogo.go)
     return label, gogo.result
 
@@ -1215,40 +954,45 @@ def _Fe_lmd_common_param(akaikkr_exe: dict, displc: bool, ciffilepath="../struct
                          use_bravais=True, remove_temperaryfiles=False,
                          directory="temporary"):
 
-    if True:
-        param = get_kkr_struc_from_cif(
-            ciffilepath=ciffilepath, akaikkr_exe=akaikkr_exe["specx"], displc=displc,
-            use_bravais=use_bravais, remove_temperaryfiles=remove_temperaryfiles,
-            directory=directory)
+    param = get_kkr_struc_from_cif(
+        ciffilepath=ciffilepath, akaikkr_exe=akaikkr_exe["specx"], displc=displc,
+        use_bravais=use_bravais, remove_temperaryfiles=remove_temperaryfiles,
+        directory=directory)
 
-        param["a"] = 5.27
-        param["magtyp"] = "lmd"
-        param["rmt"] = [1.0 for i in range(param["ntyp"])]
-        param["ncmp"] = [2]
-        param["anclr"] = [[26, 26]]
-        param["conc"] = [[50, 50]]
+    # param["a"] = 5.27
+    param["magtyp"] = "lmd"
+    param["rmt"] = [1.0 for i in range(param["ntyp"])]
 
-        if _CHANGE_TYPE_IN_CIF_:
-            # to compare the results with reference
-            param = _change_type(param, {"Fe_2a_0": "Fe"})
+    # lmd must increase ncomp
+    ncmp_list = []
+    for ncmp in param["ncmp"]:
+        if not isinstance(ncmp, int):
+            raise ValueError("Each ncmp must be type int.")
+        ncmp_list.append([ncmp, ncmp])
+    param["ncmp"] = [ncmp]
 
-    else:
-        param = {}
-        param["brvtyp"] = "bcc"
-        param["a"] = 5.27
-        param["magtyp"] = "lmd"
-        param["ntyp"] = 1
-        param["type"] = ["Fe"]
-        param["ncmp"] = [2]
-        param["rmt"] = [1.0]
-        param["field"] = [0.0]
-        param["mxl"] = [2]
-        param["anclr"] = [[26, 26]]
-        param["conc"] = [[50, 50]]
-        param["natm"] = 1
-        param["atmicx"] = [
-            ["0.0a", "0.0b", "0.0c", "Fe"],
-        ]
+    # alloy isn't allowed now.
+    # extend sizes twice
+    anclr_list = []
+    for anclr in param["anclr"]:
+        _x = anclr
+        if len(_x) != 1:
+            raise ValueError("Each anclr must be 1.")
+        _x.extend(_x)
+        anclr_list.append(_x)
+    param["anclr"] = anclr_list
+
+    conc_list = []
+    for conc in param["conc"]:
+        conc = np.array(conc)
+        _x = conc*0.5
+        _x = _x.tolist()
+        if len(_x) != 1:
+            raise ValueError("Each conc must be 1.")
+        _x.extend(_x)
+        conc_list.append(_x)
+    param["conc"] = conc_list
+
     return param
 
 
@@ -1320,7 +1064,7 @@ def _FeB195_common_param(akaikkr_exe: dict, displc: bool,
     return param
 
 
-_FeB195_COMMENT_ = "FeN1.95 (magnetic, mjw, {})"
+_FeB195_COMMENT_ = "FeB1.95 (magnetic, mjw, {})"
 
 
 def FeB195_go(akaikkr_exe,  directory="FeB195", comment=_FeB195_COMMENT_,
@@ -1361,47 +1105,24 @@ def _GaAs_common_param(akaikkr_exe: dict, displc: bool,
                        use_bravais=True, remove_temperaryfiles=False,
                        directory="temporary"):
 
-    if True:
-        param = get_kkr_struc_from_cif(
-            ciffilepath=ciffilepath, akaikkr_exe=akaikkr_exe["specx"], displc=displc,
-            use_bravais=use_bravais, remove_temperaryfiles=remove_temperaryfiles,
-            Vc="Og", directory=directory)
+    param = get_kkr_struc_from_cif(
+        ciffilepath=ciffilepath, akaikkr_exe=akaikkr_exe["specx"], displc=displc,
+        use_bravais=use_bravais, remove_temperaryfiles=remove_temperaryfiles,
+        Vc="Og", directory=directory)
 
-        param["a"] = 10.684
-        param["edelt"] = 1e-3
-        param["ewidth"] = 1.5
-        param["magtyp"] = "nmag"
+    # param["a"] = 10.684
+    param["edelt"] = 1e-3
+    param["ewidth"] = 1.5
+    param["magtyp"] = "nmag"
 
-        param["ncmp"] = []
-        param["rmt"] = []
-        param["mxl"] = []
-        for ityp in range(param["ntyp"]):
-            param["ncmp"].append(1)
-            param["rmt"].append(1.0)
-            param["mxl"].append(2)
+    param["ncmp"] = []
+    param["rmt"] = []
+    param["mxl"] = []
+    for ityp in range(param["ntyp"]):
+        param["ncmp"].append(1)
+        param["rmt"].append(1.0)
+        param["mxl"].append(2)
 
-    else:
-        param = {}
-        param["brvtyp"] = "fcc"
-        param["a"] = 10.684
-        param["edelt"] = 1e-3
-        param["ewidth"] = 1.5
-        param["magtyp"] = "nmag"
-        param["ntyp"] = 4
-        param["type"] = ["Ga", "As", "Vc1", "Vc2"]
-        param["ncmp"] = [1, 1, 1, 1]
-        param["rmt"] = [1.0, 1.0, 1.0, 1.0]
-        param["field"] = [0.0, 0.0, 0.0, 0.0]
-        param["mxl"] = [2, 2, 2, 2]
-        param["anclr"] = [[31], [33], [0], [0]]
-        param["conc"] = [[100], [100], [100], [100]]
-        param["natm"] = 4
-        param["atmicx"] = [
-            ["0.00a", "0.00b", "0.00c", "Ga"],
-            ["0.25a", "0.25b", "0.25c", "As"],
-            ["0.50a", "0.50b", "0.50c", "Vc1"],
-            ["0.75a", "0.75b", "0.75c", "Vc2"],
-        ]
     return param
 
 
@@ -1449,58 +1170,18 @@ def _Co2MnSi_common_param(akaikkr_exe: dict, displc: bool,
                           use_bravais=True, remove_temperaryfiles=False,
                           directory="temporary"):
 
-    if True:
-        param = get_kkr_struc_from_cif(
-            ciffilepath=ciffilepath, akaikkr_exe=akaikkr_exe["specx"], displc=displc,
-            use_bravais=use_bravais, remove_temperaryfiles=remove_temperaryfiles,
-            directory=directory)
+    param = get_kkr_struc_from_cif(
+        ciffilepath=ciffilepath, akaikkr_exe=akaikkr_exe["specx"], displc=displc,
+        use_bravais=use_bravais, remove_temperaryfiles=remove_temperaryfiles,
+        directory=directory)
 
-        param["a"] = 10.6675
-        param["edelt"] = 1e-4
-        param["ewidth"] = 1.2
-        param["magtyp"] = "mag"
-        param["sdftyp"] = "pbe"
-        param["rmt"] = [1.0 for i in range(param["ntyp"])]
+    # param["a"] = 10.6675
+    param["edelt"] = 1e-4
+    param["ewidth"] = 1.2
+    param["magtyp"] = "mag"
+    param["sdftyp"] = "pbe"
+    param["rmt"] = [1.0 for i in range(param["ntyp"])]
 
-        if _CHANGE_TYPE_IN_CIF_:
-            # change type in the inputcard for simplicity and compare the result with reference
-            param = _change_type(
-                param, {"Mn_4b_0": "Mn", "Co_8c_4": "Co", "Si_4a_12": "Si"})
-            param = _reorder_type(param, ["Co", "Mn", "Si"])
-
-            for atmicx in param["atmicx"]:
-                s = atmicx[3].split("_")
-                atmicx[3] = s[0]
-
-            param["atmicx"] = _reorder_atmicx(
-                [["0.00a", "0.00b", "0.00c", "Mn"],
-                 ["0.25a", "0.25b", "0.25c", "Co"],
-                 ["0.50a", "0.50b", "0.50c", "Si"],
-                 ["0.75a", "0.75b", "0.75c", "Co"]],
-                param["atmicx"])
-    else:
-        param = {}
-        param["brvtyp"] = "fcc"
-        param["a"] = 10.6675
-        param["edelt"] = 1e-4
-        param["ewidth"] = 1.2
-        param["magtyp"] = "mag"
-        param["sdftyp"] = "pbe"
-        param["ntyp"] = 3
-        param["type"] = ["Co", "Mn", "Si"]
-        param["ncmp"] = [1, 1, 1]
-        param["rmt"] = [1.0, 1.0, 1.0]
-        param["field"] = [0.0, 0.0, 0.0]
-        param["mxl"] = [2, 2, 2]
-        param["anclr"] = [[27], [25], [14]]
-        param["conc"] = [[100], [100], [100]]
-        param["natm"] = 4
-        param["atmicx"] = [
-            ["0.00a", "0.00b", "0.00c", "Mn"],
-            ["0.25a", "0.25b", "0.25c", "Co"],
-            ["0.50a", "0.50b", "0.50c", "Si"],
-            ["0.75a", "0.75b", "0.75c", "Co"],
-        ]
     return param
 
 
@@ -1543,26 +1224,14 @@ def Co2MnSi_tc(akaikkr_exe,  directory="Co2MnSi", comment=_Co2MnSi_COMMENT_,
     return label, gogo.result
 
 
-def Co2MnSi_j(akaikkr_exe,   directory="Co2MnSi", comment=_Co2MnSi_COMMENT_,
-              displc=False, execute_postscript=True):
-    gogo = Goj(akaikkr_exe, directory,  _Co2MnSi_common_param(akaikkr_exe=akaikkr_exe,
-                                                              displc=displc, directory=directory),  comment, )
-    gogo.execute(displc=displc, execute_postscript=execute_postscript)
-    if execute_postscript:
-        jijplotter = JijPlotter(directory)
-        jijplotter.plot_typepair()
-    label = "{}_{}".format(directory, gogo.go)
-    return label, gogo.result
-
-
 def Co2MnSi_j30(akaikkr_exe,  directory="Co2MnSi", comment=_Co2MnSi_COMMENT_,
                 displc=False, execute_postscript=True):
     gogo = Goj30(akaikkr_exe, directory,  _Co2MnSi_common_param(akaikkr_exe=akaikkr_exe,
                                                                 displc=displc, directory=directory),  comment, )
     gogo.execute(displc=displc, execute_postscript=execute_postscript)
     if execute_postscript:
-        jijplotter = JijPlotter(directory)
-        jijplotter.plot_typepair()
+        jijplotter = JijPlotter(gogo.df_jij, directory)
+        jijplotter.make_typepair()
     label = "{}_{}".format(directory, gogo.go)
     return label, gogo.result
 
@@ -1591,74 +1260,20 @@ def _SmCo5_oc_common_param(akaikkr_exe: dict, displc: bool, ciffilepath="../stru
                            use_bravais=True, remove_temperaryfiles=False,
                            directory="temporary"):
 
-    if True:
-        param = get_kkr_struc_from_cif(
-            ciffilepath=ciffilepath, akaikkr_exe=akaikkr_exe["specx"], displc=displc,
-            use_bravais=use_bravais, remove_temperaryfiles=remove_temperaryfiles,
-            directory=directory)
+    param = get_kkr_struc_from_cif(
+        ciffilepath=ciffilepath, akaikkr_exe=akaikkr_exe["specx"], displc=displc,
+        use_bravais=use_bravais, remove_temperaryfiles=remove_temperaryfiles,
+        directory=directory)
 
-        param["a"] = 9.415
-        param["c/a"] = 0.798
+    # param["a"] = 9.415
+    # param["c/a"] = 0.798
 
-        param["ewidth"] = 1.7
-        param["reltyp"] = "srals"
-        param["sdftyp"] = "mjwasa"
-        param["magtyp"] = "mag"
-        param["rmt"] = [0.0 for i in range(param["ntyp"])]
+    param["ewidth"] = 1.7
+    param["reltyp"] = "srals"
+    param["sdftyp"] = "mjwasa"
+    param["magtyp"] = "mag"
+    param["rmt"] = [0.0 for i in range(param["ntyp"])]
 
-        if _CHANGE_TYPE_IN_CIF_:
-            # This reodering is to compare results with references
-            type_rep = {"Sm_1a_0": "Sm", "Co_3g_1": "Co3g", "Co_2c_4": "Co2c"}
-            param = _change_type(param, type_rep)
-
-            param["atmicx"] = _atmicx_float2frac(param["atmicx"])
-            print(param["atmicx"])
-
-            param = _reorder_type(param,  ["Co3g", "Co2c", "Sm"])
-            param["mxl"] = [2, 2, 3]
-
-            param["atmicx"] = _reorder_atmicx(
-                [
-                    ["0.50a", "0.00b", "0.50c", "Co3g"],
-                    ["0.00a", "0.50b", "0.50c", "Co3g"],
-                    ["0.50a", "0.50b", "0.50c", "Co3g"],
-                    ["1/3a", "2/3b", "0.00c", "Co2c"],
-                    ["2/3a", "1/3b", "0.00c", "Co2c"],
-                    ["0.00a", "0.00b", "0.00c", "Sm"]
-                ],
-                param["atmicx"])
-
-    else:
-        param = {}
-        param["brvtyp"] = "hcp"
-        param["a"] = 9.415
-        param["c/a"] = 0.798
-        param["b/a"] = 1.0
-        param["alpha"] = 90
-        param["beta"] = 90
-        param["gamma"] = 120
-        param["ewidth"] = 1.7
-        param["reltyp"] = "srals"
-        param["sdftyp"] = "mjwasa"
-        param["magtyp"] = "mag"
-        param["ntyp"] = 3
-        param["type"] = ["Co3g", "Co2c", "Sm"]
-        param["ncmp"] = [1, 1, 1]
-        param["rmt"] = [0.0, 0.0, 0.0]
-        param["field"] = [0.0, 0.0, 0.0]
-        param["mxl"] = [2, 2, 3]
-
-        param["anclr"] = [[27], [27], [62]]
-        param["conc"] = [[100], [100], [100]]
-        param["natm"] = 6
-        param["atmicx"] = [
-            ["0.50a", "0.00b", "0.50c", "Co3g"],
-            ["0.00a", "0.50b", "0.50c", "Co3g"],
-            ["0.50a", "0.50b", "0.50c", "Co3g"],
-            ["1/3a", "2/3b", "0.00c", "Co2c"],
-            ["2/3a", "1/3b", "0.00c", "Co2c"],
-            ["0.00a", "0.00b", "0.00c", "Sm"],
-        ]
     return param
 
 
@@ -1700,26 +1315,14 @@ def SmCo5_oc_tc(akaikkr_exe,  directory="SmCo5_oc", comment=_SmCo5_oc_COMMENT_,
     return label, gogo.result
 
 
-def SmCo5_oc_j(akaikkr_exe,  directory="SmCo5_oc", comment=_SmCo5_oc_COMMENT_,
-               displc=False, execute_postscript=True):
-    gogo = Goj(akaikkr_exe, directory,  _SmCo5_oc_common_param(akaikkr_exe=akaikkr_exe,
-                                                               displc=displc, directory=directory),  comment, )
-    gogo.execute(displc=displc, execute_postscript=execute_postscript)
-    if execute_postscript:
-        jijplotter = JijPlotter(directory)
-        jijplotter.plot_typepair()
-    label = "{}_{}".format(directory, gogo.go)
-    return label, gogo.result
-
-
 def SmCo5_oc_j30(akaikkr_exe,  directory="SmCo5_oc", comment=_SmCo5_oc_COMMENT_,
                  displc=False, execute_postscript=True):
     gogo = Goj30(akaikkr_exe, directory,  _SmCo5_oc_common_param(akaikkr_exe=akaikkr_exe,
                                                                  displc=displc, directory=directory),  comment, )
     gogo.execute(displc=displc, execute_postscript=execute_postscript)
     if execute_postscript:
-        jijplotter = JijPlotter(directory)
-        jijplotter.plot_typepair()
+        jijplotter = JijPlotter(gogo.df_jij, directory)
+        jijplotter.make_typepair()
     label = "{}_{}".format(directory, gogo.go)
     return label, gogo.result
 
@@ -1748,74 +1351,20 @@ def _SmCo5_noc_common_param(akaikkr_exe: dict, displc: bool,
                             use_bravais=True, remove_temperaryfiles=False,
                             directory="temporary"):
 
-    if True:
-        param = get_kkr_struc_from_cif(
-            ciffilepath=ciffilepath, akaikkr_exe=akaikkr_exe["specx"], displc=displc,
-            use_bravais=use_bravais, remove_temperaryfiles=remove_temperaryfiles,
-            directory=directory)
+    param = get_kkr_struc_from_cif(
+        ciffilepath=ciffilepath, akaikkr_exe=akaikkr_exe["specx"], displc=displc,
+        use_bravais=use_bravais, remove_temperaryfiles=remove_temperaryfiles,
+        directory=directory)
 
-        param["a"] = 9.415
-        param["c/a"] = 0.798
+    #param["a"] = 9.415
+    #param["c/a"] = 0.798
 
-        param["ewidth"] = "1.7noc"
-        param["reltyp"] = "srals"
-        param["sdftyp"] = "mjwasa"
-        param["magtyp"] = "mag"
-        param["rmt"] = [0.0 for i in range(param["ntyp"])]
+    param["ewidth"] = "1.7noc"
+    param["reltyp"] = "srals"
+    param["sdftyp"] = "mjwasa"
+    param["magtyp"] = "mag"
+    param["rmt"] = [0.0 for i in range(param["ntyp"])]
 
-        if _CHANGE_TYPE_IN_CIF_:
-            # These change and reodering of types are to compare results with references
-            type_rep = {"Sm_1a_0": "Sm", "Co_3g_1": "Co3g", "Co_2c_4": "Co2c"}
-            param = _change_type(param, type_rep)
-
-            param["atmicx"] = _atmicx_float2frac(param["atmicx"])
-            print(param["atmicx"])
-
-            param = _reorder_type(param,  ["Co3g", "Co2c", "Sm"])
-            param["mxl"] = [2, 2, 3]
-
-            param["atmicx"] = _reorder_atmicx(
-                [
-                    ["0.50a", "0.00b", "0.50c", "Co3g"],
-                    ["0.00a", "0.50b", "0.50c", "Co3g"],
-                    ["0.50a", "0.50b", "0.50c", "Co3g"],
-                    ["1/3a", "2/3b", "0.00c", "Co2c"],
-                    ["2/3a", "1/3b", "0.00c", "Co2c"],
-                    ["0.00a", "0.00b", "0.00c", "Sm"]
-                ],
-                param["atmicx"])
-
-    else:
-        param = {}
-        param["brvtyp"] = "hcp"
-        param["a"] = 9.415
-        param["c/a"] = 0.798
-        param["b/a"] = 1.0
-        param["alpha"] = 90
-        param["beta"] = 90
-        param["gamma"] = 120
-        param["ewidth"] = "1.7noc"
-        param["reltyp"] = "srals"
-        param["sdftyp"] = "mjwasa"
-        param["magtyp"] = "mag"
-        param["pmix"] = 0.01
-        param["ntyp"] = 3
-        param["type"] = ["Co3g", "Co2c", "Sm"]
-        param["ncmp"] = [1, 1, 1]
-        param["rmt"] = [0.0, 0.0, 0.0]
-        param["field"] = [0.0, 0.0, 0.0]
-        param["mxl"] = [2, 2, 3]
-        param["anclr"] = [[27], [27], [62]]
-        param["conc"] = [[100], [100], [100]]
-        param["natm"] = 6
-        param["atmicx"] = [
-            ["0.50a", "0.00b", "0.50c", "Co3g"],
-            ["0.00a", "0.50b", "0.50c", "Co3g"],
-            ["0.50a", "0.50b", "0.50c", "Co3g"],
-            ["1/3a", "2/3b", "0.00c", "Co2c"],
-            ["2/3a", "1/3b", "0.00c", "Co2c"],
-            ["0.00a", "0.00b", "0.00c", "Sm"],
-        ]
     return param
 
 
@@ -1824,10 +1373,10 @@ _SmCo5_noc_COMMENT_ = "SmCo5 (magnetic, srals, mjw-asa, {})"
 
 def SmCo5_noc_go(akaikkr_exe,  directory="SmCo5_noc", comment=_SmCo5_noc_COMMENT_,
                  displc=False, execute_postscript=True):
-    gogo = GoGo(akaikkr_exe, directory, 
-            _SmCo5_noc_common_param(akaikkr_exe=akaikkr_exe,
-                                    displc=displc, directory=directory),  
-            comment, )
+    gogo = GoGo(akaikkr_exe, directory,
+                _SmCo5_noc_common_param(akaikkr_exe=akaikkr_exe,
+                                        displc=displc, directory=directory),
+                comment, )
     gogo.execute(displc=displc, execute_postscript=execute_postscript)
     label = "{}_{}".format(directory, gogo.go)
     return label, gogo.result

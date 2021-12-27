@@ -1,6 +1,6 @@
 reference/ifort.json
-metadata {'date': 'Thu Nov 25 06:42:03 2021', 'user': 'kino', 'hostname': 'mygarden1', 'platform': 'Linux-5.11.0-40-generic-x86_64-with-glibc2.31', 'processorname': 'Intel(R) Core(TM) i7-9700 CPU @ 3.00GHz'}
-Namespace(program_path='/home/kino/kino/kit/AkaiKKRprogram.current.gfortran/', create_ref=True, compiler='ifort', no_run=True, no_postscript=True, set='all') all
+metadata {'date': 'Thu Dec  9 03:14:12 2021', 'user': 'kino', 'hostname': 'mygarden2', 'platform': 'Linux-5.11.0-40-generic-x86_64-with-glibc2.31', 'processorname': 'Intel(R) Core(TM) i7-9700 CPU @ 3.00GHz'}
+Namespace(program_path='/home/kino/kino/kit/AkaiKKRprogram.current.ifort/', create_ref=False, compiler='ifort', no_run=False, no_postscript=False, set='all') all
              go dos spc fsm tc j30 cnd gofmg
 Cu            -   -   -                     
 Co            -   -   -   -  -   -          
@@ -15,8 +15,8 @@ Co2MnSi       -   -   -   -  -   -
 SmCo5_oc      -   -   -   -  -   -          
 
 executable files
-/home/kino/kino/kit/AkaiKKRprogram.current.gfortran/akaikkr_cnd/specx
-/home/kino/kino/kit/AkaiKKRprogram.current.gfortran/akaikkr_cnd/fmg
+/home/kino/kino/kit/AkaiKKRprogram.current.ifort/akaikkr_cnd/specx
+/home/kino/kino/kit/AkaiKKRprogram.current.ifort/akaikkr_cnd/fmg
 
 get_structures(primitive=False), symmetry, nsite ('Fm-3m', 225) 4
 get_structures(primitive=True), symmetry, nsite ('Fm-3m', 225) 1
@@ -28,7 +28,6 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=1, nsite_kkr=1
 save to Cu/215293bf32134ff2fd287e6add7ec86e/structure.json
-debug, option []
 saved to Cu/215293bf32134ff2fd287e6add7ec86e/inputcard_geom
 kkr_struc, symmetry, nsite ('Fm-3m', 225) 1
 kkr space group symbol, nsite 225 1
@@ -38,9 +37,25 @@ kkr   prim structure num_site 1
 ----------------------------------
 ### fcc Cu (non-magnetic, mjw, go)
   directory:  Cu   output file:  out_go.log
-           conv orbitallocalmoment spinlocalmoment        te       tm
-  current  True              [0.0]           [0.0] -3.30e+03 0.00e+00
+             conv orbitallocalmoment spinlocalmoment        te       tm
+  current    True              [0.0]           [0.0] -3.30e+03 0.00e+00
+  reference  True              [0.0]           [0.0] -3.30e+03 0.00e+00
+  and        True                  -               -         -        -
+  and_th     True                  -               -         -        -
+  diff          -              [0.0]           [0.0]         - 0.00e+00
+  diff_th       -           1.00e-05        1.00e-05         - 1.00e-05
+  rdiff         -                  -               -  0.00e+00        -
+  rdiff_th      -                  -               -  1.00e-11        -
 
+   summary
+                            chk
+  and_conv                 True
+  rdiff_te                 True
+  diff_tm                  True
+  diff_spinlocalmoment     True
+  diff_orbitallocalmoment  True
+
+   final: True
 get_structures(primitive=False), symmetry, nsite ('Fm-3m', 225) 4
 get_structures(primitive=True), symmetry, nsite ('Fm-3m', 225) 1
 prim_stand_struc, symmetry, nsite ('Fm-3m', 225) 1
@@ -51,7 +66,6 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=1, nsite_kkr=1
 save to Cu/215293bf32134ff2fd287e6add7ec86e/structure.json
-debug, option []
 saved to Cu/215293bf32134ff2fd287e6add7ec86e/inputcard_geom
 kkr_struc, symmetry, nsite ('Fm-3m', 225) 1
 kkr space group symbol, nsite 225 1
@@ -61,17 +75,38 @@ kkr   prim structure num_site 1
 -----------------------------------
 ### fcc Cu (non-magnetic, mjw, dos)
   directory:  Cu   output file:  out_dos.log
+  saved to Cu/dos.png
+  saved to Cu/pdos_0.png
+
    totalDOS (up)
-  energy   -9.95e-01  -9.85e-01  -9.75e-01  ...  9.75e-01   9.85e-01   9.95e-01 
-  current   3.60e-03   3.71e-03   3.81e-03  ...   3.86e+00   2.78e+00   3.62e+00
+  energy     -9.95e-01  -9.85e-01  -9.75e-01  ...  9.75e-01   9.85e-01   9.95e-01 
+  current     3.59e-03   3.69e-03   3.80e-03  ...   3.88e+00   1.66e+00   3.46e+00
+  reference   3.59e-03   3.69e-03   3.80e-03  ...   3.88e+00   1.66e+00   3.46e+00
+  diff        0.00e+00   0.00e+00   0.00e+00  ...   0.00e+00   0.00e+00   0.00e+00
   
-  [1 rows x 200 columns]
+  [3 rows x 200 columns]
+
+        diff_max      mae
+  value 0.00e+00 0.00e+00
+  thres 2.50e-03 2.50e-04
+  chk       True     True
+
+   vector diff: True
 
    pdos (up), atom=0, l=d
-  energy   -1.00e+00  -9.90e-01  -9.80e-01  ...  9.80e-01   9.90e-01   1.00e+00 
-  current   3.30e-03   3.30e-03   3.40e-03  ...   3.99e-01   1.34e-01   5.13e-01
+  energy     -1.00e+00  -9.90e-01  -9.80e-01  ...  9.80e-01   9.90e-01   1.00e+00 
+  current     3.20e-03   3.20e-03   3.30e-03  ...   1.17e+00   7.73e-01   3.48e-01
+  reference   3.20e-03   3.20e-03   3.30e-03  ...   1.17e+00   7.73e-01   3.48e-01
+  diff        0.00e+00   0.00e+00   0.00e+00  ...   0.00e+00   0.00e+00   0.00e+00
   
-  [1 rows x 201 columns]
+  [3 rows x 201 columns]
+
+        diff_max      mae
+  value 0.00e+00 0.00e+00
+  thres 2.50e-03 2.50e-04
+  chk       True     True
+
+   vector diff: True
 
    final: True
 
@@ -85,7 +120,6 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=1, nsite_kkr=1
 save to Cu/215293bf32134ff2fd287e6add7ec86e/structure.json
-debug, option []
 saved to Cu/215293bf32134ff2fd287e6add7ec86e/inputcard_geom
 kkr_struc, symmetry, nsite ('Fm-3m', 225) 1
 kkr space group symbol, nsite 225 1
@@ -96,11 +130,23 @@ kkr   prim structure num_site 1
 ### fcc Cu (non-magnetic, mjw, spc31)
 kpath is made by HighSymmKpath
   directory:  Cu   output file:  out_spc31.log
+debug: file, loaded content Cu/klabel.json {'kpath': [[{'\\Gamma': [0.0, 0.0, 0.0]}, {'X': [0.5, 0.0, 0.5]}, {'W': [0.5, 0.25, 0.75]}, {'K': [0.375, 0.375, 0.75]}, {'\\Gamma': [0.0, 0.0, 0.0]}, {'L': [0.5, 0.5, 0.5]}, {'U': [0.625, 0.25, 0.625]}, {'W': [0.5, 0.25, 0.75]}, {'L': [0.5, 0.5, 0.5]}, {'K': [0.375, 0.375, 0.75]}]]}
+  saved to Cu/Awk_up.png
+
    Aw(w,k) k=0 0 0, up
-  energy   -4.97e-01  -4.92e-01  -4.87e-01  ...  4.87e-01   4.92e-01   4.97e-01 
-  current   2.71e-02   2.73e-02   2.77e-02  ...   5.89e-03   5.82e-03   5.76e-03
+  energy     -4.97e-01  -4.92e-01  -4.87e-01  ...  4.87e-01   4.92e-01   4.97e-01 
+  current     2.72e-02   2.74e-02   2.77e-02  ...   5.90e-03   5.84e-03   5.78e-03
+  reference   2.72e-02   2.74e-02   2.77e-02  ...   5.90e-03   5.84e-03   5.78e-03
+  diff        0.00e+00   0.00e+00   0.00e+00  ...   0.00e+00   0.00e+00   0.00e+00
   
-  [1 rows x 200 columns]
+  [3 rows x 200 columns]
+
+        diff_max      mae
+  value 0.00e+00 0.00e+00
+  thres 3.00e-03 1.00e-04
+  chk       True     True
+
+   vector diff: True
 
 get_structures(primitive=False), symmetry, nsite ('P6_3/mmc', 194) 2
 get_structures(primitive=True), symmetry, nsite ('P6_3/mmc', 194) 2
@@ -112,7 +158,6 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=2, nsite_kkr=2
 save to Co/f39668f3f568e1ca11eaf47ff22fd05c/structure.json
-debug, option []
 saved to Co/f39668f3f568e1ca11eaf47ff22fd05c/inputcard_geom
 kkr_struc, symmetry, nsite ('P6_3/mmc', 194) 2
 kkr space group symbol, nsite 194 2
@@ -122,9 +167,25 @@ kkr   prim structure num_site 2
 ------------------------------
 ### hcp Co (magnetic, mjw, go)
   directory:  Co   output file:  out_go.log
-           conv orbitallocalmoment spinlocalmoment        te       tm
-  current  True              [0.0]       [1.59594] -5.56e+03 3.11e+00
+             conv orbitallocalmoment spinlocalmoment        te       tm
+  current    True              [0.0]       [1.59321] -5.56e+03 3.10e+00
+  reference  True              [0.0]       [1.59321] -5.56e+03 3.10e+00
+  and        True                  -               -         -        -
+  and_th     True                  -               -         -        -
+  diff          -              [0.0]           [0.0]         - 0.00e+00
+  diff_th       -           1.00e-05        1.00e-05         - 1.00e-05
+  rdiff         -                  -               -  0.00e+00        -
+  rdiff_th      -                  -               -  1.00e-11        -
 
+   summary
+                            chk
+  and_conv                 True
+  rdiff_te                 True
+  diff_tm                  True
+  diff_spinlocalmoment     True
+  diff_orbitallocalmoment  True
+
+   final: True
 get_structures(primitive=False), symmetry, nsite ('P6_3/mmc', 194) 2
 get_structures(primitive=True), symmetry, nsite ('P6_3/mmc', 194) 2
 prim_stand_struc, symmetry, nsite ('P6_3/mmc', 194) 2
@@ -135,7 +196,6 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=2, nsite_kkr=2
 save to Co/f39668f3f568e1ca11eaf47ff22fd05c/structure.json
-debug, option []
 saved to Co/f39668f3f568e1ca11eaf47ff22fd05c/inputcard_geom
 kkr_struc, symmetry, nsite ('P6_3/mmc', 194) 2
 kkr space group symbol, nsite 194 2
@@ -145,9 +205,25 @@ kkr   prim structure num_site 2
 -------------------------------
 ### hcp Co (magnetic, mjw, fsm)
   directory:  Co   output file:  out_fsm.log
-           conv orbitallocalmoment spinlocalmoment        te       tm
-  current  True              [0.0]       [0.51771] -5.56e+03 1.00e+00
+             conv orbitallocalmoment spinlocalmoment        te       tm
+  current    True              [0.0]       [0.51764] -5.56e+03 1.00e+00
+  reference  True              [0.0]       [0.51764] -5.56e+03 1.00e+00
+  and        True                  -               -         -        -
+  and_th     True                  -               -         -        -
+  diff          -              [0.0]           [0.0]         - 0.00e+00
+  diff_th       -           1.00e-05        1.00e-05         - 1.00e-05
+  rdiff         -                  -               -  0.00e+00        -
+  rdiff_th      -                  -               -  1.00e-11        -
 
+   summary
+                            chk
+  and_conv                 True
+  rdiff_te                 True
+  diff_tm                  True
+  diff_spinlocalmoment     True
+  diff_orbitallocalmoment  True
+
+   final: True
 get_structures(primitive=False), symmetry, nsite ('P6_3/mmc', 194) 2
 get_structures(primitive=True), symmetry, nsite ('P6_3/mmc', 194) 2
 prim_stand_struc, symmetry, nsite ('P6_3/mmc', 194) 2
@@ -158,7 +234,6 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=2, nsite_kkr=2
 save to Co/f39668f3f568e1ca11eaf47ff22fd05c/structure.json
-debug, option []
 saved to Co/f39668f3f568e1ca11eaf47ff22fd05c/inputcard_geom
 kkr_struc, symmetry, nsite ('P6_3/mmc', 194) 2
 kkr space group symbol, nsite 194 2
@@ -168,9 +243,17 @@ kkr   prim structure num_site 2
 ------------------------------
 ### hcp Co (magnetic, mjw, tc)
   directory:  Co   output file:  out_tc.log
-                Tc
-  current 1.36e+03
+                  Tc
+  current   1.35e+03
+  reference 1.35e+03
+  rdiff     0.00e+00
+  rdiff_th  1.00e-05
 
+   summary
+             chk
+  rdiff_Tc  True
+
+   final: True
 get_structures(primitive=False), symmetry, nsite ('P6_3/mmc', 194) 2
 get_structures(primitive=True), symmetry, nsite ('P6_3/mmc', 194) 2
 prim_stand_struc, symmetry, nsite ('P6_3/mmc', 194) 2
@@ -181,7 +264,6 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=2, nsite_kkr=2
 save to Co/f39668f3f568e1ca11eaf47ff22fd05c/structure.json
-debug, option []
 saved to Co/f39668f3f568e1ca11eaf47ff22fd05c/inputcard_geom
 kkr_struc, symmetry, nsite ('P6_3/mmc', 194) 2
 kkr space group symbol, nsite 194 2
@@ -191,13 +273,41 @@ kkr   prim structure num_site 2
 --------------------------------
 ### hcp Co (magnetic, mjw, j3.0)
   directory:  Co   output file:  out_j3.0.log
-                Tc
-  current 1.30e+03
+  saved to Co/jij.csv
+
+  saved to Co/Jij_Co_2c_0-Co_2c_0.png
+                  Tc
+  current   1.30e+03
+  reference 1.30e+03
+  rdiff     0.00e+00
+  rdiff_th  1.00e-05
+
+   summary
+             chk
+  rdiff_Tc  True
+
+   final: True
+
+debug df_result_jij
+  comp1 comp2 current_J_ij current_J_ij(meV)                 pair
+0     1     1     0.000978         13.307036  Co_2c_0-Co_2c_0-1-1
+debug df_ref_jij
+  comp1 comp2 reference_J_ij reference_J_ij(meV)                 pair
+0     1     1       0.000978           13.307036  Co_2c_0-Co_2c_0-1-1
 
    J_ij(meV) at the shortest distance
-  typecomp  Co-Co_1_1
-  current   13.371770
+  typecomp   Co_2c_0-Co_2c_0-1-1_1_1
+  current                   1.33e+01
+  reference                 1.33e+01
+  diff                      0.00e+00
 
+   jij summary
+        diff_max      mae
+  value 0.00e+00 0.00e+00
+  thres 1.00e-04 1.00e-04
+  chk       True     True
+
+   final: True
 get_structures(primitive=False), symmetry, nsite ('P6_3/mmc', 194) 2
 get_structures(primitive=True), symmetry, nsite ('P6_3/mmc', 194) 2
 prim_stand_struc, symmetry, nsite ('P6_3/mmc', 194) 2
@@ -208,7 +318,6 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=2, nsite_kkr=2
 save to Co/f39668f3f568e1ca11eaf47ff22fd05c/structure.json
-debug, option []
 saved to Co/f39668f3f568e1ca11eaf47ff22fd05c/inputcard_geom
 kkr_struc, symmetry, nsite ('P6_3/mmc', 194) 2
 kkr space group symbol, nsite 194 2
@@ -218,29 +327,64 @@ kkr   prim structure num_site 2
 -------------------------------
 ### hcp Co (magnetic, mjw, dos)
   directory:  Co   output file:  out_dos.log
+  saved to Co/dos.png
+  saved to Co/pdos_0.png
+
    totalDOS (up)
-  energy   -9.95e-01  -9.85e-01  -9.75e-01  ...  9.75e-01   9.85e-01   9.95e-01 
-  current   6.56e-03   6.74e-03   6.93e-03  ...   6.03e+00   5.48e+00   6.67e+00
+  energy     -9.95e-01  -9.85e-01  -9.75e-01  ...  9.75e-01   9.85e-01   9.95e-01 
+  current     6.56e-03   6.74e-03   6.93e-03  ...   5.46e+00   6.02e+00   5.77e+00
+  reference   6.56e-03   6.74e-03   6.93e-03  ...   5.46e+00   6.02e+00   5.77e+00
+  diff        0.00e+00   0.00e+00   0.00e+00  ...   0.00e+00   0.00e+00   0.00e+00
   
-  [1 rows x 200 columns]
+  [3 rows x 200 columns]
+
+        diff_max      mae
+  value 0.00e+00 0.00e+00
+  thres 2.50e-03 2.50e-04
+  chk       True     True
 
    totalDOS (dn)
-  energy   -9.95e-01  -9.85e-01  -9.75e-01  ...  9.75e-01   9.85e-01   9.95e-01 
-  current   5.36e-03   5.50e-03   5.64e-03  ...   3.24e+00   4.35e+00   2.46e+00
+  energy     -9.95e-01  -9.85e-01  -9.75e-01  ...  9.75e-01   9.85e-01   9.95e-01 
+  current     5.36e-03   5.50e-03   5.64e-03  ...   2.35e+00   5.20e+00   2.69e+00
+  reference   5.36e-03   5.50e-03   5.64e-03  ...   2.35e+00   5.20e+00   2.69e+00
+  diff        0.00e+00   0.00e+00   0.00e+00  ...   0.00e+00   0.00e+00   0.00e+00
   
-  [1 rows x 200 columns]
+  [3 rows x 200 columns]
+
+        diff_max      mae
+  value 0.00e+00 0.00e+00
+  thres 2.50e-03 2.50e-04
+  chk       True     True
+
+   vector diff: True
 
    pdos (up), atom=0, l=d
-  energy   -1.00e+00  -9.90e-01  -9.80e-01  ...  9.80e-01   9.90e-01   1.00e+00 
-  current   3.60e-03   3.70e-03   3.80e-03  ...   1.30e+00   1.00e+00   1.41e+00
+  energy     -1.00e+00  -9.90e-01  -9.80e-01  ...  9.80e-01   9.90e-01   1.00e+00 
+  current     3.60e-03   3.70e-03   3.80e-03  ...   1.15e+00   1.07e+00   1.72e+00
+  reference   3.60e-03   3.70e-03   3.80e-03  ...   1.15e+00   1.07e+00   1.72e+00
+  diff        0.00e+00   0.00e+00   0.00e+00  ...   0.00e+00   0.00e+00   0.00e+00
   
-  [1 rows x 201 columns]
+  [3 rows x 201 columns]
+
+        diff_max      mae
+  value 0.00e+00 0.00e+00
+  thres 2.50e-03 2.50e-04
+  chk       True     True
 
    pdos (dn), atom=0, l=d
-  energy   -1.00e+00  -9.90e-01  -9.80e-01  ...  9.80e-01   9.90e-01   1.00e+00 
-  current   3.40e-03   3.40e-03   3.50e-03  ...   1.63e+00   1.41e-01   3.44e-01
+  energy     -1.00e+00  -9.90e-01  -9.80e-01  ...  9.80e-01   9.90e-01   1.00e+00 
+  current     3.40e-03   3.40e-03   3.50e-03  ...   7.87e-01   1.24e-01   6.35e-01
+  reference   3.40e-03   3.40e-03   3.50e-03  ...   7.87e-01   1.24e-01   6.35e-01
+  diff        0.00e+00   0.00e+00   0.00e+00  ...   0.00e+00   0.00e+00   0.00e+00
   
-  [1 rows x 201 columns]
+  [3 rows x 201 columns]
+
+        diff_max      mae
+  value 0.00e+00 0.00e+00
+  thres 2.50e-03 2.50e-04
+  chk       True     True
+
+   vector diff: True
 
    final: True
 
@@ -254,7 +398,6 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=2, nsite_kkr=2
 save to Co/f39668f3f568e1ca11eaf47ff22fd05c/structure.json
-debug, option []
 saved to Co/f39668f3f568e1ca11eaf47ff22fd05c/inputcard_geom
 kkr_struc, symmetry, nsite ('P6_3/mmc', 194) 2
 kkr space group symbol, nsite 194 2
@@ -265,17 +408,38 @@ kkr   prim structure num_site 2
 ### hcp Co (magnetic, mjw, spc31)
 kpath is made by HighSymmKpath
   directory:  Co   output file:  out_spc31.log
+debug: file, loaded content Co/klabel.json {'kpath': [[{'\\Gamma': [0.0, 0.0, 0.0]}, {'M': [0.5, 0.0, 0.0]}, {'K': [0.3333333333333333, 0.3333333333333333, 0.0]}, {'\\Gamma': [0.0, 0.0, 0.0]}, {'A': [0.0, 0.0, 0.5]}, {'L': [0.5, 0.0, 0.5]}, {'H': [0.3333333333333333, 0.3333333333333333, 0.5]}, {'A': [0.0, 0.0, 0.5]}]]}
+  saved to Co/Awk_up.png
+  saved to Co/Awk_dn.png
+  saved to Co/Awk_both.png
+
    Aw(w,k) k=0 0 0, up
-  energy   -4.97e-01  -4.92e-01  -4.87e-01  ...  4.87e-01   4.92e-01   4.97e-01 
-  current   5.77e-02   5.95e-02   6.15e-02  ...   2.14e-01   1.71e-01   1.41e-01
+  energy     -4.97e-01  -4.92e-01  -4.87e-01  ...  4.87e-01   4.92e-01   4.97e-01 
+  current     5.77e-02   5.95e-02   6.16e-02  ...   2.04e-01   1.65e-01   1.36e-01
+  reference   5.77e-02   5.95e-02   6.16e-02  ...   2.04e-01   1.65e-01   1.36e-01
+  diff        0.00e+00   0.00e+00   0.00e+00  ...   0.00e+00   0.00e+00   0.00e+00
   
-  [1 rows x 200 columns]
+  [3 rows x 200 columns]
+
+        diff_max      mae
+  value 0.00e+00 0.00e+00
+  thres 3.00e-03 1.00e-04
+  chk       True     True
 
    Aw(w,k) k=0 0 0, dn
-  energy   -4.97e-01  -4.92e-01  -4.87e-01  ...  4.87e-01   4.92e-01   4.97e-01 
-  current   3.73e-02   3.73e-02   3.74e-02  ...   2.93e-01   3.95e-01   5.68e-01
+  energy     -4.97e-01  -4.92e-01  -4.87e-01  ...  4.87e-01   4.92e-01   4.97e-01 
+  current     3.73e-02   3.73e-02   3.75e-02  ...   3.10e-01   4.24e-01   6.20e-01
+  reference   3.73e-02   3.73e-02   3.75e-02  ...   3.10e-01   4.24e-01   6.20e-01
+  diff        0.00e+00   0.00e+00   0.00e+00  ...   0.00e+00   0.00e+00   0.00e+00
   
-  [1 rows x 200 columns]
+  [3 rows x 200 columns]
+
+        diff_max      mae
+  value 0.00e+00 0.00e+00
+  thres 3.00e-03 1.00e-04
+  chk       True     True
+
+   vector diff: True
 
 get_structures(primitive=False), symmetry, nsite ('Im-3m', 229) 2
 get_structures(primitive=True), symmetry, nsite ('Im-3m', 229) 1
@@ -287,7 +451,6 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=1, nsite_kkr=1
 save to Fe/caf80bdd15f4dc9f486d4724ecd18076/structure.json
-debug, option []
 saved to Fe/caf80bdd15f4dc9f486d4724ecd18076/inputcard_geom
 kkr_struc, symmetry, nsite ('Im-3m', 229) 1
 kkr space group symbol, nsite 229 1
@@ -297,9 +460,25 @@ kkr   prim structure num_site 1
 ------------------------------
 ### bcc Fe (magnetic, mjw, go)
   directory:  Fe   output file:  out_go.log
-           conv orbitallocalmoment spinlocalmoment        te       tm
-  current  True              [0.0]         [2.119] -2.54e+03 2.10e+00
+             conv orbitallocalmoment spinlocalmoment        te       tm
+  current    True              [0.0]       [2.36112] -2.54e+03 2.32e+00
+  reference  True              [0.0]       [2.36112] -2.54e+03 2.32e+00
+  and        True                  -               -         -        -
+  and_th     True                  -               -         -        -
+  diff          -              [0.0]           [0.0]         - 0.00e+00
+  diff_th       -           1.00e-05        1.00e-05         - 1.00e-05
+  rdiff         -                  -               -  0.00e+00        -
+  rdiff_th      -                  -               -  1.00e-11        -
 
+   summary
+                            chk
+  and_conv                 True
+  rdiff_te                 True
+  diff_tm                  True
+  diff_spinlocalmoment     True
+  diff_orbitallocalmoment  True
+
+   final: True
 get_structures(primitive=False), symmetry, nsite ('Im-3m', 229) 2
 get_structures(primitive=True), symmetry, nsite ('Im-3m', 229) 1
 prim_stand_struc, symmetry, nsite ('Im-3m', 229) 1
@@ -310,7 +489,6 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=1, nsite_kkr=1
 save to Fe/caf80bdd15f4dc9f486d4724ecd18076/structure.json
-debug, option []
 saved to Fe/caf80bdd15f4dc9f486d4724ecd18076/inputcard_geom
 kkr_struc, symmetry, nsite ('Im-3m', 229) 1
 kkr space group symbol, nsite 229 1
@@ -320,9 +498,25 @@ kkr   prim structure num_site 1
 -------------------------------
 ### bcc Fe (magnetic, mjw, fsm)
   directory:  Fe   output file:  out_fsm.log
-           conv orbitallocalmoment spinlocalmoment        te       tm
-  current  True              [0.0]       [1.01778] -2.54e+03 1.00e+00
+             conv orbitallocalmoment spinlocalmoment        te       tm
+  current    True              [0.0]       [1.02524] -2.54e+03 1.00e+00
+  reference  True              [0.0]       [1.02524] -2.54e+03 1.00e+00
+  and        True                  -               -         -        -
+  and_th     True                  -               -         -        -
+  diff          -              [0.0]           [0.0]         - 0.00e+00
+  diff_th       -           1.00e-05        1.00e-05         - 1.00e-05
+  rdiff         -                  -               -  0.00e+00        -
+  rdiff_th      -                  -               -  1.00e-11        -
 
+   summary
+                            chk
+  and_conv                 True
+  rdiff_te                 True
+  diff_tm                  True
+  diff_spinlocalmoment     True
+  diff_orbitallocalmoment  True
+
+   final: True
 get_structures(primitive=False), symmetry, nsite ('Im-3m', 229) 2
 get_structures(primitive=True), symmetry, nsite ('Im-3m', 229) 1
 prim_stand_struc, symmetry, nsite ('Im-3m', 229) 1
@@ -333,7 +527,6 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=1, nsite_kkr=1
 save to Fe/caf80bdd15f4dc9f486d4724ecd18076/structure.json
-debug, option []
 saved to Fe/caf80bdd15f4dc9f486d4724ecd18076/inputcard_geom
 kkr_struc, symmetry, nsite ('Im-3m', 229) 1
 kkr space group symbol, nsite 229 1
@@ -343,9 +536,17 @@ kkr   prim structure num_site 1
 ------------------------------
 ### bcc Fe (magnetic, mjw, tc)
   directory:  Fe   output file:  out_tc.log
-                Tc
-  current 9.43e+02
+                  Tc
+  current   1.24e+03
+  reference 1.24e+03
+  rdiff     0.00e+00
+  rdiff_th  1.00e-05
 
+   summary
+             chk
+  rdiff_Tc  True
+
+   final: True
 get_structures(primitive=False), symmetry, nsite ('Im-3m', 229) 2
 get_structures(primitive=True), symmetry, nsite ('Im-3m', 229) 1
 prim_stand_struc, symmetry, nsite ('Im-3m', 229) 1
@@ -356,7 +557,6 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=1, nsite_kkr=1
 save to Fe/caf80bdd15f4dc9f486d4724ecd18076/structure.json
-debug, option []
 saved to Fe/caf80bdd15f4dc9f486d4724ecd18076/inputcard_geom
 kkr_struc, symmetry, nsite ('Im-3m', 229) 1
 kkr space group symbol, nsite 229 1
@@ -366,13 +566,41 @@ kkr   prim structure num_site 1
 --------------------------------
 ### bcc Fe (magnetic, mjw, j3.0)
   directory:  Fe   output file:  out_j3.0.log
-                Tc
-  current 9.19e+02
+  saved to Fe/jij.csv
+
+  saved to Fe/Jij_Fe_2a_0-Fe_2a_0.png
+                  Tc
+  current   1.33e+03
+  reference 1.33e+03
+  rdiff     0.00e+00
+  rdiff_th  1.00e-05
+
+   summary
+             chk
+  rdiff_Tc  True
+
+   final: True
+
+debug df_result_jij
+  comp1 comp2 current_J_ij current_J_ij(meV)                 pair
+0     1     1     0.001162         15.811491  Fe_2a_0-Fe_2a_0-1-1
+debug df_ref_jij
+  comp1 comp2 reference_J_ij reference_J_ij(meV)                 pair
+0     1     1       0.001162           15.811491  Fe_2a_0-Fe_2a_0-1-1
 
    J_ij(meV) at the shortest distance
-  typecomp  Fe-Fe_1_1
-  current   15.605724
+  typecomp   Fe_2a_0-Fe_2a_0-1-1_1_1
+  current                   1.58e+01
+  reference                 1.58e+01
+  diff                      0.00e+00
 
+   jij summary
+        diff_max      mae
+  value 0.00e+00 0.00e+00
+  thres 1.00e-04 1.00e-04
+  chk       True     True
+
+   final: True
 get_structures(primitive=False), symmetry, nsite ('Im-3m', 229) 2
 get_structures(primitive=True), symmetry, nsite ('Im-3m', 229) 1
 prim_stand_struc, symmetry, nsite ('Im-3m', 229) 1
@@ -383,7 +611,6 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=1, nsite_kkr=1
 save to Fe/caf80bdd15f4dc9f486d4724ecd18076/structure.json
-debug, option []
 saved to Fe/caf80bdd15f4dc9f486d4724ecd18076/inputcard_geom
 kkr_struc, symmetry, nsite ('Im-3m', 229) 1
 kkr space group symbol, nsite 229 1
@@ -393,29 +620,64 @@ kkr   prim structure num_site 1
 -------------------------------
 ### bcc Fe (magnetic, mjw, dos)
   directory:  Fe   output file:  out_dos.log
+  saved to Fe/dos.png
+  saved to Fe/pdos_0.png
+
    totalDOS (up)
-  energy   -9.95e-01  -9.85e-01  -9.75e-01  ...  9.75e-01   9.85e-01   9.95e-01 
-  current   3.30e-03   3.39e-03   3.48e-03  ...   3.75e+00   3.50e-01   9.09e-01
+  energy     -9.95e-01  -9.85e-01  -9.75e-01  ...  9.75e-01   9.85e-01   9.95e-01 
+  current     3.16e-03   3.24e-03   3.32e-03  ...   4.85e+00   2.40e+00   1.47e+00
+  reference   3.16e-03   3.24e-03   3.32e-03  ...   4.85e+00   2.40e+00   1.47e+00
+  diff        0.00e+00   0.00e+00   0.00e+00  ...   0.00e+00   0.00e+00   0.00e+00
   
-  [1 rows x 200 columns]
+  [3 rows x 200 columns]
+
+        diff_max      mae
+  value 0.00e+00 0.00e+00
+  thres 2.50e-03 2.50e-04
+  chk       True     True
 
    totalDOS (dn)
-  energy   -9.95e-01  -9.85e-01  -9.75e-01  ...  9.75e-01   9.85e-01   9.95e-01 
-  current   2.56e-03   2.62e-03   2.68e-03  ...   7.52e-01   3.32e+00   2.52e+00
+  energy     -9.95e-01  -9.85e-01  -9.75e-01  ...  9.75e-01   9.85e-01   9.95e-01 
+  current     2.40e-03   2.46e-03   2.52e-03  ...   5.38e-01   2.55e+00   4.34e-01
+  reference   2.40e-03   2.46e-03   2.52e-03  ...   5.38e-01   2.55e+00   4.34e-01
+  diff        0.00e+00   0.00e+00   0.00e+00  ...   0.00e+00   0.00e+00   0.00e+00
   
-  [1 rows x 200 columns]
+  [3 rows x 200 columns]
+
+        diff_max      mae
+  value 0.00e+00 0.00e+00
+  thres 2.50e-03 2.50e-04
+  chk       True     True
+
+   vector diff: True
 
    pdos (up), atom=0, l=d
-  energy   -1.00e+00  -9.90e-01  -9.80e-01  ...  9.80e-01   9.90e-01   1.00e+00 
-  current   3.50e-03   3.60e-03   3.60e-03  ...   1.03e-01   2.13e-01   6.46e-02
+  energy     -1.00e+00  -9.90e-01  -9.80e-01  ...  9.80e-01   9.90e-01   1.00e+00 
+  current     4.10e-03   4.10e-03   4.10e-03  ...   1.96e-01   1.99e+00   2.07e-01
+  reference   4.10e-03   4.10e-03   4.10e-03  ...   1.96e-01   1.99e+00   2.07e-01
+  diff        0.00e+00   0.00e+00   0.00e+00  ...   0.00e+00   0.00e+00   0.00e+00
   
-  [1 rows x 201 columns]
+  [3 rows x 201 columns]
+
+        diff_max      mae
+  value 0.00e+00 0.00e+00
+  thres 2.50e-03 2.50e-04
+  chk       True     True
 
    pdos (dn), atom=0, l=d
-  energy   -1.00e+00  -9.90e-01  -9.80e-01  ...  9.80e-01   9.90e-01   1.00e+00 
-  current   2.90e-03   3.00e-03   3.00e-03  ...   3.54e-01   1.30e+00   1.35e+00
+  energy     -1.00e+00  -9.90e-01  -9.80e-01  ...  9.80e-01   9.90e-01   1.00e+00 
+  current     2.80e-03   2.90e-03   2.90e-03  ...   1.28e-01   2.58e-01   1.19e-01
+  reference   2.80e-03   2.90e-03   2.90e-03  ...   1.28e-01   2.58e-01   1.19e-01
+  diff        0.00e+00   0.00e+00   0.00e+00  ...   0.00e+00   0.00e+00   0.00e+00
   
-  [1 rows x 201 columns]
+  [3 rows x 201 columns]
+
+        diff_max      mae
+  value 0.00e+00 0.00e+00
+  thres 2.50e-03 2.50e-04
+  chk       True     True
+
+   vector diff: True
 
    final: True
 
@@ -429,7 +691,6 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=1, nsite_kkr=1
 save to Fe/caf80bdd15f4dc9f486d4724ecd18076/structure.json
-debug, option []
 saved to Fe/caf80bdd15f4dc9f486d4724ecd18076/inputcard_geom
 kkr_struc, symmetry, nsite ('Im-3m', 229) 1
 kkr space group symbol, nsite 229 1
@@ -440,17 +701,38 @@ kkr   prim structure num_site 1
 ### bcc Fe (magnetic, mjw, spc31)
 kpath is made by HighSymmKpath
   directory:  Fe   output file:  out_spc31.log
+debug: file, loaded content Fe/klabel.json {'kpath': [[{'\\Gamma': [0.0, 0.0, 0.0]}, {'H': [0.5, -0.5, 0.5]}, {'N': [0.0, 0.0, 0.5]}, {'\\Gamma': [0.0, 0.0, 0.0]}, {'P': [0.25, 0.25, 0.25]}, {'H': [0.5, -0.5, 0.5]}]]}
+  saved to Fe/Awk_up.png
+  saved to Fe/Awk_dn.png
+  saved to Fe/Awk_both.png
+
    Aw(w,k) k=0 0 0, up
-  energy   -4.97e-01  -4.92e-01  -4.87e-01  ...  4.87e-01   4.92e-01   4.97e-01 
-  current   2.54e-02   2.51e-02   2.49e-02  ...   6.64e-03   6.57e-03   6.50e-03
+  energy     -4.97e-01  -4.92e-01  -4.87e-01  ...  4.87e-01   4.92e-01   4.97e-01 
+  current     3.25e-02   3.15e-02   3.06e-02  ...   6.99e-03   6.91e-03   6.84e-03
+  reference   3.25e-02   3.15e-02   3.06e-02  ...   6.99e-03   6.91e-03   6.84e-03
+  diff        0.00e+00   0.00e+00   0.00e+00  ...   0.00e+00   0.00e+00   0.00e+00
   
-  [1 rows x 200 columns]
+  [3 rows x 200 columns]
+
+        diff_max      mae
+  value 0.00e+00 0.00e+00
+  thres 3.00e-03 1.00e-04
+  chk       True     True
 
    Aw(w,k) k=0 0 0, dn
-  energy   -4.97e-01  -4.92e-01  -4.87e-01  ...  4.87e-01   4.92e-01   4.97e-01 
-  current   2.39e-02   2.29e-02   2.20e-02  ...   9.93e-03   9.77e-03   9.62e-03
+  energy     -4.97e-01  -4.92e-01  -4.87e-01  ...  4.87e-01   4.92e-01   4.97e-01 
+  current     3.84e-02   3.55e-02   3.31e-02  ...   1.10e-02   1.08e-02   1.07e-02
+  reference   3.84e-02   3.55e-02   3.31e-02  ...   1.10e-02   1.08e-02   1.07e-02
+  diff        0.00e+00   0.00e+00   0.00e+00  ...   0.00e+00   0.00e+00   0.00e+00
   
-  [1 rows x 200 columns]
+  [3 rows x 200 columns]
+
+        diff_max      mae
+  value 0.00e+00 0.00e+00
+  thres 3.00e-03 1.00e-04
+  chk       True     True
+
+   vector diff: True
 
 get_structures(primitive=False), symmetry, nsite ('Fm-3m', 225) 4
 get_structures(primitive=True), symmetry, nsite ('Fm-3m', 225) 1
@@ -462,7 +744,6 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=1, nsite_kkr=1
 save to Ni/95dddf03f8f08e074850c45b9301c51f/structure.json
-debug, option []
 saved to Ni/95dddf03f8f08e074850c45b9301c51f/inputcard_geom
 kkr_struc, symmetry, nsite ('Fm-3m', 225) 1
 kkr space group symbol, nsite 225 1
@@ -471,10 +752,27 @@ kkr   prim structure num_site 1
 ('Fm-3m', 225) ('Fm-3m', 225)
 ------------------------------
 ### fcc Ni (magnetic, mjw, go)
+  comment: total moment<0. rerun it.
   directory:  Ni   output file:  out_go.log
-           conv orbitallocalmoment spinlocalmoment        te       tm
-  current  True              [0.0]       [0.68464] -3.04e+03 6.60e-01
+             conv orbitallocalmoment spinlocalmoment        te       tm
+  current    True              [0.0]       [0.68653] -3.04e+03 6.61e-01
+  reference  True              [0.0]       [0.68653] -3.04e+03 6.61e-01
+  and        True                  -               -         -        -
+  and_th     True                  -               -         -        -
+  diff          -              [0.0]           [0.0]         - 0.00e+00
+  diff_th       -           1.00e-05        1.00e-05         - 1.00e-05
+  rdiff         -                  -               -  0.00e+00        -
+  rdiff_th      -                  -               -  1.00e-11        -
 
+   summary
+                            chk
+  and_conv                 True
+  rdiff_te                 True
+  diff_tm                  True
+  diff_spinlocalmoment     True
+  diff_orbitallocalmoment  True
+
+   final: True
 get_structures(primitive=False), symmetry, nsite ('Fm-3m', 225) 4
 get_structures(primitive=True), symmetry, nsite ('Fm-3m', 225) 1
 prim_stand_struc, symmetry, nsite ('Fm-3m', 225) 1
@@ -485,7 +783,6 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=1, nsite_kkr=1
 save to Ni/95dddf03f8f08e074850c45b9301c51f/structure.json
-debug, option []
 saved to Ni/95dddf03f8f08e074850c45b9301c51f/inputcard_geom
 kkr_struc, symmetry, nsite ('Fm-3m', 225) 1
 kkr space group symbol, nsite 225 1
@@ -495,9 +792,25 @@ kkr   prim structure num_site 1
 -------------------------------
 ### fcc Ni (magnetic, mjw, fsm)
   directory:  Ni   output file:  out_fsm.log
-           conv orbitallocalmoment spinlocalmoment        te       tm
-  current  True              [0.0]       [0.99784] -3.04e+03 1.00e+00
+             conv orbitallocalmoment spinlocalmoment        te       tm
+  current    True              [0.0]       [0.99859] -3.04e+03 1.00e+00
+  reference  True              [0.0]       [0.99859] -3.04e+03 1.00e+00
+  and        True                  -               -         -        -
+  and_th     True                  -               -         -        -
+  diff          -              [0.0]           [0.0]         - 0.00e+00
+  diff_th       -           1.00e-05        1.00e-05         - 1.00e-05
+  rdiff         -                  -               -  0.00e+00        -
+  rdiff_th      -                  -               -  1.00e-11        -
 
+   summary
+                            chk
+  and_conv                 True
+  rdiff_te                 True
+  diff_tm                  True
+  diff_spinlocalmoment     True
+  diff_orbitallocalmoment  True
+
+   final: True
 get_structures(primitive=False), symmetry, nsite ('Fm-3m', 225) 4
 get_structures(primitive=True), symmetry, nsite ('Fm-3m', 225) 1
 prim_stand_struc, symmetry, nsite ('Fm-3m', 225) 1
@@ -508,7 +821,6 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=1, nsite_kkr=1
 save to Ni/95dddf03f8f08e074850c45b9301c51f/structure.json
-debug, option []
 saved to Ni/95dddf03f8f08e074850c45b9301c51f/inputcard_geom
 kkr_struc, symmetry, nsite ('Fm-3m', 225) 1
 kkr space group symbol, nsite 225 1
@@ -518,9 +830,17 @@ kkr   prim structure num_site 1
 ------------------------------
 ### fcc Ni (magnetic, mjw, tc)
   directory:  Ni   output file:  out_tc.log
-                Tc
-  current 4.59e+02
+                  Tc
+  current   4.61e+02
+  reference 4.61e+02
+  rdiff     0.00e+00
+  rdiff_th  1.00e-05
 
+   summary
+             chk
+  rdiff_Tc  True
+
+   final: True
 get_structures(primitive=False), symmetry, nsite ('Fm-3m', 225) 4
 get_structures(primitive=True), symmetry, nsite ('Fm-3m', 225) 1
 prim_stand_struc, symmetry, nsite ('Fm-3m', 225) 1
@@ -531,7 +851,6 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=1, nsite_kkr=1
 save to Ni/95dddf03f8f08e074850c45b9301c51f/structure.json
-debug, option []
 saved to Ni/95dddf03f8f08e074850c45b9301c51f/inputcard_geom
 kkr_struc, symmetry, nsite ('Fm-3m', 225) 1
 kkr space group symbol, nsite 225 1
@@ -541,13 +860,41 @@ kkr   prim structure num_site 1
 --------------------------------
 ### fcc Ni (magnetic, mjw, j3.0)
   directory:  Ni   output file:  out_j3.0.log
-                Tc
-  current 4.36e+02
+  saved to Ni/jij.csv
+
+  saved to Ni/Jij_Ni_4a_0-Ni_4a_0.png
+                  Tc
+  current   4.36e+02
+  reference 4.36e+02
+  rdiff     0.00e+00
+  rdiff_th  1.00e-05
+
+   summary
+             chk
+  rdiff_Tc  True
+
+   final: True
+
+debug df_result_jij
+  comp1 comp2 current_J_ij current_J_ij(meV)                 pair
+0     1     1     0.000256          3.483586  Ni_4a_0-Ni_4a_0-1-1
+debug df_ref_jij
+  comp1 comp2 reference_J_ij reference_J_ij(meV)                 pair
+0     1     1       0.000256            3.483586  Ni_4a_0-Ni_4a_0-1-1
 
    J_ij(meV) at the shortest distance
-  typecomp Ni-Ni_1_1
-  current   3.502029
+  typecomp   Ni_4a_0-Ni_4a_0-1-1_1_1
+  current                   3.48e+00
+  reference                 3.48e+00
+  diff                      0.00e+00
 
+   jij summary
+        diff_max      mae
+  value 0.00e+00 0.00e+00
+  thres 1.00e-04 1.00e-04
+  chk       True     True
+
+   final: True
 get_structures(primitive=False), symmetry, nsite ('Fm-3m', 225) 4
 get_structures(primitive=True), symmetry, nsite ('Fm-3m', 225) 1
 prim_stand_struc, symmetry, nsite ('Fm-3m', 225) 1
@@ -558,7 +905,6 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=1, nsite_kkr=1
 save to Ni/95dddf03f8f08e074850c45b9301c51f/structure.json
-debug, option []
 saved to Ni/95dddf03f8f08e074850c45b9301c51f/inputcard_geom
 kkr_struc, symmetry, nsite ('Fm-3m', 225) 1
 kkr space group symbol, nsite 225 1
@@ -568,29 +914,64 @@ kkr   prim structure num_site 1
 -------------------------------
 ### fcc Ni (magnetic, mjw, dos)
   directory:  Ni   output file:  out_dos.log
+  saved to Ni/dos.png
+  saved to Ni/pdos_0.png
+
    totalDOS (up)
-  energy   -9.95e-01  -9.85e-01  -9.75e-01  ...  9.75e-01   9.85e-01   9.95e-01 
-  current   3.28e-03   3.37e-03   3.46e-03  ...   2.89e+00   3.75e+00   1.98e+00
+  energy     -9.95e-01  -9.85e-01  -9.75e-01  ...  9.75e-01   9.85e-01   9.95e-01 
+  current     3.26e-03   3.35e-03   3.44e-03  ...   3.74e+00   1.81e+00   1.57e+00
+  reference   3.26e-03   3.35e-03   3.44e-03  ...   3.74e+00   1.81e+00   1.57e+00
+  diff        0.00e+00   0.00e+00   0.00e+00  ...   0.00e+00   0.00e+00   0.00e+00
   
-  [1 rows x 200 columns]
+  [3 rows x 200 columns]
+
+        diff_max      mae
+  value 0.00e+00 0.00e+00
+  thres 2.50e-03 2.50e-04
+  chk       True     True
 
    totalDOS (dn)
-  energy   -9.95e-01  -9.85e-01  -9.75e-01  ...  9.75e-01   9.85e-01   9.95e-01 
-  current   3.00e-03   3.08e-03   3.16e-03  ...   2.86e+00   2.01e+00   3.88e+00
+  energy     -9.95e-01  -9.85e-01  -9.75e-01  ...  9.75e-01   9.85e-01   9.95e-01 
+  current     2.98e-03   3.06e-03   3.14e-03  ...   1.46e+00   2.74e+00   4.06e+00
+  reference   2.98e-03   3.06e-03   3.14e-03  ...   1.46e+00   2.74e+00   4.06e+00
+  diff        0.00e+00   0.00e+00   0.00e+00  ...   0.00e+00   0.00e+00   0.00e+00
   
-  [1 rows x 200 columns]
+  [3 rows x 200 columns]
+
+        diff_max      mae
+  value 0.00e+00 0.00e+00
+  thres 2.50e-03 2.50e-04
+  chk       True     True
+
+   vector diff: True
 
    pdos (up), atom=0, l=d
-  energy   -1.00e+00  -9.90e-01  -9.80e-01  ...  9.80e-01   9.90e-01   1.00e+00 
-  current   3.60e-03   3.60e-03   3.70e-03  ...   5.38e-01   1.60e+00   2.66e-01
+  energy     -1.00e+00  -9.90e-01  -9.80e-01  ...  9.80e-01   9.90e-01   1.00e+00 
+  current     3.60e-03   3.60e-03   3.70e-03  ...   5.43e-01   1.79e-01   2.75e-01
+  reference   3.60e-03   3.60e-03   3.70e-03  ...   5.43e-01   1.79e-01   2.75e-01
+  diff        0.00e+00   0.00e+00   0.00e+00  ...   0.00e+00   0.00e+00   0.00e+00
   
-  [1 rows x 201 columns]
+  [3 rows x 201 columns]
+
+        diff_max      mae
+  value 0.00e+00 0.00e+00
+  thres 2.50e-03 2.50e-04
+  chk       True     True
 
    pdos (dn), atom=0, l=d
-  energy   -1.00e+00  -9.90e-01  -9.80e-01  ...  9.80e-01   9.90e-01   1.00e+00 
-  current   3.80e-03   3.90e-03   3.90e-03  ...   1.36e-01   1.21e+00   8.72e-01
+  energy     -1.00e+00  -9.90e-01  -9.80e-01  ...  9.80e-01   9.90e-01   1.00e+00 
+  current     3.80e-03   3.80e-03   3.90e-03  ...   6.71e-01   9.56e-01   7.90e-01
+  reference   3.80e-03   3.80e-03   3.90e-03  ...   6.71e-01   9.56e-01   7.90e-01
+  diff        0.00e+00   0.00e+00   0.00e+00  ...   0.00e+00   0.00e+00   0.00e+00
   
-  [1 rows x 201 columns]
+  [3 rows x 201 columns]
+
+        diff_max      mae
+  value 0.00e+00 0.00e+00
+  thres 2.50e-03 2.50e-04
+  chk       True     True
+
+   vector diff: True
 
    final: True
 
@@ -604,7 +985,6 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=1, nsite_kkr=1
 save to Ni/95dddf03f8f08e074850c45b9301c51f/structure.json
-debug, option []
 saved to Ni/95dddf03f8f08e074850c45b9301c51f/inputcard_geom
 kkr_struc, symmetry, nsite ('Fm-3m', 225) 1
 kkr space group symbol, nsite 225 1
@@ -615,17 +995,38 @@ kkr   prim structure num_site 1
 ### fcc Ni (magnetic, mjw, spc31)
 kpath is made by HighSymmKpath
   directory:  Ni   output file:  out_spc31.log
+debug: file, loaded content Ni/klabel.json {'kpath': [[{'\\Gamma': [0.0, 0.0, 0.0]}, {'X': [0.5, 0.0, 0.5]}, {'W': [0.5, 0.25, 0.75]}, {'K': [0.375, 0.375, 0.75]}, {'\\Gamma': [0.0, 0.0, 0.0]}, {'L': [0.5, 0.5, 0.5]}, {'U': [0.625, 0.25, 0.625]}, {'W': [0.5, 0.25, 0.75]}, {'L': [0.5, 0.5, 0.5]}, {'K': [0.375, 0.375, 0.75]}]]}
+  saved to Ni/Awk_up.png
+  saved to Ni/Awk_dn.png
+  saved to Ni/Awk_both.png
+
    Aw(w,k) k=0 0 0, up
-  energy   -4.97e-01  -4.92e-01  -4.87e-01  ...  4.87e-01   4.92e-01   4.97e-01 
-  current   2.37e-02   2.36e-02   2.36e-02  ...   6.51e-03   6.44e-03   6.37e-03
+  energy     -4.97e-01  -4.92e-01  -4.87e-01  ...  4.87e-01   4.92e-01   4.97e-01 
+  current     2.42e-02   2.40e-02   2.39e-02  ...   6.55e-03   6.47e-03   6.40e-03
+  reference   2.42e-02   2.40e-02   2.39e-02  ...   6.55e-03   6.47e-03   6.40e-03
+  diff        0.00e+00   0.00e+00   0.00e+00  ...   0.00e+00   0.00e+00   0.00e+00
   
-  [1 rows x 200 columns]
+  [3 rows x 200 columns]
+
+        diff_max      mae
+  value 0.00e+00 0.00e+00
+  thres 3.00e-03 1.00e-04
+  chk       True     True
 
    Aw(w,k) k=0 0 0, dn
-  energy   -4.97e-01  -4.92e-01  -4.87e-01  ...  4.87e-01   4.92e-01   4.97e-01 
-  current   2.07e-02   2.04e-02   2.02e-02  ...   7.42e-03   7.33e-03   7.24e-03
+  energy     -4.97e-01  -4.92e-01  -4.87e-01  ...  4.87e-01   4.92e-01   4.97e-01 
+  current     2.11e-02   2.08e-02   2.06e-02  ...   7.47e-03   7.37e-03   7.28e-03
+  reference   2.11e-02   2.08e-02   2.06e-02  ...   7.47e-03   7.37e-03   7.28e-03
+  diff        0.00e+00   0.00e+00   0.00e+00  ...   0.00e+00   0.00e+00   0.00e+00
   
-  [1 rows x 200 columns]
+  [3 rows x 200 columns]
+
+        diff_max      mae
+  value 0.00e+00 0.00e+00
+  thres 3.00e-03 1.00e-04
+  chk       True     True
+
+   vector diff: True
 
 get_structures(primitive=False), symmetry, nsite ('Fm-3m', 225) 4
 get_structures(primitive=True), symmetry, nsite ('Fm-3m', 225) 1
@@ -638,7 +1039,6 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=1, nsite_kkr=1
 save to NiFe/e549f3977f740dcac4cb82224b952d66/structure.json
-debug, option []
 saved to NiFe/e549f3977f740dcac4cb82224b952d66/inputcard_geom
 kkr_struc, symmetry, nsite ('Fm-3m', 225) 1
 kkr space group symbol, nsite 225 1
@@ -648,9 +1048,25 @@ kkr   prim structure num_site 1
 -----------------------------------
 ### fcc NiFe (magnetic, pbeasa, go)
   directory:  NiFe   output file:  out_go.log
-           conv orbitallocalmoment     spinlocalmoment        te       tm
-  current  True         [0.0, 0.0]  [2.62297, 0.57349] -2.99e+03 7.78e-01
+             conv orbitallocalmoment     spinlocalmoment        te       tm
+  current    True         [0.0, 0.0]  [2.69711, 0.57138] -2.99e+03 7.84e-01
+  reference  True         [0.0, 0.0]  [2.69711, 0.57138] -2.99e+03 7.84e-01
+  and        True                  -                   -         -        -
+  and_th     True                  -                   -         -        -
+  diff          -         [0.0, 0.0]          [0.0, 0.0]         - 0.00e+00
+  diff_th       -           1.00e-05            1.00e-05         - 1.00e-05
+  rdiff         -                  -                   -  0.00e+00        -
+  rdiff_th      -                  -                   -  1.00e-11        -
 
+   summary
+                            chk
+  and_conv                 True
+  rdiff_te                 True
+  diff_tm                  True
+  diff_spinlocalmoment     True
+  diff_orbitallocalmoment  True
+
+   final: True
 get_structures(primitive=False), symmetry, nsite ('Fm-3m', 225) 4
 get_structures(primitive=True), symmetry, nsite ('Fm-3m', 225) 1
 failed to use SpacegroupAnalyzer. Probably it is an alloy.
@@ -662,7 +1078,6 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=1, nsite_kkr=1
 save to NiFe/e549f3977f740dcac4cb82224b952d66/structure.json
-debug, option []
 saved to NiFe/e549f3977f740dcac4cb82224b952d66/inputcard_geom
 kkr_struc, symmetry, nsite ('Fm-3m', 225) 1
 kkr space group symbol, nsite 225 1
@@ -672,9 +1087,25 @@ kkr   prim structure num_site 1
 ------------------------------------
 ### fcc NiFe (magnetic, pbeasa, fsm)
   directory:  NiFe   output file:  out_fsm.log
-           conv orbitallocalmoment     spinlocalmoment        te       tm
-  current  True         [0.0, 0.0]  [2.78161, 0.80204] -2.99e+03 1.00e+00
+             conv orbitallocalmoment    spinlocalmoment        te       tm
+  current    True         [0.0, 0.0]  [2.84139, 0.7954] -2.99e+03 1.00e+00
+  reference  True         [0.0, 0.0]  [2.84139, 0.7954] -2.99e+03 1.00e+00
+  and        True                  -                  -         -        -
+  and_th     True                  -                  -         -        -
+  diff          -         [0.0, 0.0]         [0.0, 0.0]         - 0.00e+00
+  diff_th       -           1.00e-05           1.00e-05         - 1.00e-05
+  rdiff         -                  -                  -  0.00e+00        -
+  rdiff_th      -                  -                  -  1.00e-11        -
 
+   summary
+                            chk
+  and_conv                 True
+  rdiff_te                 True
+  diff_tm                  True
+  diff_spinlocalmoment     True
+  diff_orbitallocalmoment  True
+
+   final: True
 get_structures(primitive=False), symmetry, nsite ('Fm-3m', 225) 4
 get_structures(primitive=True), symmetry, nsite ('Fm-3m', 225) 1
 failed to use SpacegroupAnalyzer. Probably it is an alloy.
@@ -686,7 +1117,6 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=1, nsite_kkr=1
 save to NiFe/e549f3977f740dcac4cb82224b952d66/structure.json
-debug, option []
 saved to NiFe/e549f3977f740dcac4cb82224b952d66/inputcard_geom
 kkr_struc, symmetry, nsite ('Fm-3m', 225) 1
 kkr space group symbol, nsite 225 1
@@ -696,9 +1126,17 @@ kkr   prim structure num_site 1
 -----------------------------------
 ### fcc NiFe (magnetic, pbeasa, tc)
   directory:  NiFe   output file:  out_tc.log
-                Tc
-  current 5.72e+02
+                  Tc
+  current   5.60e+02
+  reference 5.60e+02
+  rdiff     0.00e+00
+  rdiff_th  1.00e-05
 
+   summary
+             chk
+  rdiff_Tc  True
+
+   final: True
 get_structures(primitive=False), symmetry, nsite ('Fm-3m', 225) 4
 get_structures(primitive=True), symmetry, nsite ('Fm-3m', 225) 1
 failed to use SpacegroupAnalyzer. Probably it is an alloy.
@@ -710,7 +1148,6 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=1, nsite_kkr=1
 save to NiFe/e549f3977f740dcac4cb82224b952d66/structure.json
-debug, option []
 saved to NiFe/e549f3977f740dcac4cb82224b952d66/inputcard_geom
 kkr_struc, symmetry, nsite ('Fm-3m', 225) 1
 kkr space group symbol, nsite 225 1
@@ -720,13 +1157,53 @@ kkr   prim structure num_site 1
 -------------------------------------
 ### fcc NiFe (magnetic, pbeasa, j3.0)
   directory:  NiFe   output file:  out_j3.0.log
-                Tc
-  current 5.54e+02
+  saved to NiFe/jij.csv
+
+  saved to NiFe/Jij_Fe0.1Ni0.9_4a_0_Fe0.1Ni0.9_4a_0_1-2.png
+  saved to NiFe/Jij_Fe0.1Ni0.9_4a_0_Fe0.1Ni0.9_4a_0_1-1.png
+  saved to NiFe/Jij_Fe0.1Ni0.9_4a_0_Fe0.1Ni0.9_4a_0_2-2.png
+                  Tc
+  current   5.38e+02
+  reference 5.38e+02
+  rdiff     0.00e+00
+  rdiff_th  1.00e-05
+
+   summary
+             chk
+  rdiff_Tc  True
+
+   final: True
+
+debug df_result_jij
+  comp1 comp2  ... current_J_ij(meV)                                 pair
+0     1     1  ...         10.728495  Fe0.1Ni0.9_4a_0-Fe0.1Ni0.9_4a_0-1-1
+1     1     2  ...          9.203157  Fe0.1Ni0.9_4a_0-Fe0.1Ni0.9_4a_0-1-2
+2     2     2  ...          2.527407  Fe0.1Ni0.9_4a_0-Fe0.1Ni0.9_4a_0-2-2
+
+[3 rows x 5 columns]
+debug df_ref_jij
+  comp1 comp2  ... reference_J_ij(meV)                                 pair
+0     1     1  ...           10.728495  Fe0.1Ni0.9_4a_0-Fe0.1Ni0.9_4a_0-1-1
+1     1     2  ...            9.203157  Fe0.1Ni0.9_4a_0-Fe0.1Ni0.9_4a_0-1-2
+2     2     2  ...            2.527407  Fe0.1Ni0.9_4a_0-Fe0.1Ni0.9_4a_0-2-2
+
+[3 rows x 5 columns]
 
    J_ij(meV) at the shortest distance
-  typecomp NiFe-NiFe_1_1 NiFe-NiFe_1_2 NiFe-NiFe_2_2
-  current       9.588697      9.327952      2.539465
+  typecomp   Fe0.1Ni0.9_4a_0-Fe0.1Ni0.9_4a_0-1-1_1_1  ...  Fe0.1Ni0.9_4a_0-Fe0.1Ni0.9_4a_0-2-2_2_2
+  current                                   1.07e+01  ...                                 2.53e+00
+  reference                                 1.07e+01  ...                                 2.53e+00
+  diff                                      0.00e+00  ...                                 0.00e+00
+  
+  [3 rows x 3 columns]
 
+   jij summary
+        diff_max      mae
+  value 0.00e+00 0.00e+00
+  thres 1.00e-04 1.00e-04
+  chk       True     True
+
+   final: True
 get_structures(primitive=False), symmetry, nsite ('Fm-3m', 225) 4
 get_structures(primitive=True), symmetry, nsite ('Fm-3m', 225) 1
 failed to use SpacegroupAnalyzer. Probably it is an alloy.
@@ -738,7 +1215,6 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=1, nsite_kkr=1
 save to NiFe/e549f3977f740dcac4cb82224b952d66/structure.json
-debug, option []
 saved to NiFe/e549f3977f740dcac4cb82224b952d66/inputcard_geom
 kkr_struc, symmetry, nsite ('Fm-3m', 225) 1
 kkr space group symbol, nsite 225 1
@@ -748,29 +1224,65 @@ kkr   prim structure num_site 1
 ------------------------------------
 ### fcc NiFe (magnetic, pbeasa, dos)
   directory:  NiFe   output file:  out_dos.log
+  saved to NiFe/dos.png
+  saved to NiFe/pdos_0.png
+  saved to NiFe/pdos_1.png
+
    totalDOS (up)
-  energy   -9.95e-01  -9.85e-01  -9.75e-01  ...  9.75e-01   9.85e-01   9.95e-01 
-  current   3.04e-03   3.11e-03   3.19e-03  ...   1.55e+00   1.18e+00   2.02e+00
+  energy     -9.95e-01  -9.85e-01  -9.75e-01  ...  9.75e-01   9.85e-01   9.95e-01 
+  current     2.95e-03   3.01e-03   3.07e-03  ...   4.75e+00   2.90e+00   3.46e+00
+  reference   2.95e-03   3.01e-03   3.07e-03  ...   4.75e+00   2.90e+00   3.46e+00
+  diff        0.00e+00   0.00e+00   0.00e+00  ...   0.00e+00   0.00e+00   0.00e+00
   
-  [1 rows x 200 columns]
+  [3 rows x 200 columns]
+
+        diff_max      mae
+  value 0.00e+00 0.00e+00
+  thres 2.50e-03 2.50e-04
+  chk       True     True
 
    totalDOS (dn)
-  energy   -9.95e-01  -9.85e-01  -9.75e-01  ...  9.75e-01   9.85e-01   9.95e-01 
-  current   2.73e-03   2.80e-03   2.87e-03  ...   2.86e+00   1.45e+00   1.42e+00
+  energy     -9.95e-01  -9.85e-01  -9.75e-01  ...  9.75e-01   9.85e-01   9.95e-01 
+  current     2.65e-03   2.71e-03   2.76e-03  ...   2.66e+00   4.25e+00   3.19e+00
+  reference   2.65e-03   2.71e-03   2.76e-03  ...   2.66e+00   4.25e+00   3.19e+00
+  diff        0.00e+00   0.00e+00   0.00e+00  ...   0.00e+00   0.00e+00   0.00e+00
   
-  [1 rows x 200 columns]
+  [3 rows x 200 columns]
+
+        diff_max      mae
+  value 0.00e+00 0.00e+00
+  thres 2.50e-03 2.50e-04
+  chk       True     True
+
+   vector diff: True
 
    pdos (up), atom=0, l=d
-  energy   -1.00e+00  -9.90e-01  -9.80e-01  ...  9.80e-01   9.90e-01   1.00e+00 
-  current   3.90e-03   4.00e-03   4.00e-03  ...   5.01e-01   6.52e-01   1.22e+00
+  energy     -1.00e+00  -9.90e-01  -9.80e-01  ...  9.80e-01   9.90e-01   1.00e+00 
+  current     3.10e-03   3.20e-03   3.20e-03  ...   4.04e-01   1.30e+00   5.33e-01
+  reference   3.10e-03   3.20e-03   3.20e-03  ...   4.04e-01   1.30e+00   5.33e-01
+  diff        0.00e+00   0.00e+00   0.00e+00  ...   0.00e+00   0.00e+00   0.00e+00
   
-  [1 rows x 201 columns]
+  [3 rows x 201 columns]
+
+        diff_max      mae
+  value 0.00e+00 0.00e+00
+  thres 2.50e-03 2.50e-04
+  chk       True     True
 
    pdos (dn), atom=0, l=d
-  energy   -1.00e+00  -9.90e-01  -9.80e-01  ...  9.80e-01   9.90e-01   1.00e+00 
-  current   3.10e-03   3.10e-03   3.20e-03  ...   6.14e-01   6.04e-01   6.60e-01
+  energy     -1.00e+00  -9.90e-01  -9.80e-01  ...  9.80e-01   9.90e-01   1.00e+00 
+  current     2.80e-03   2.90e-03   2.90e-03  ...   7.50e-01   1.74e+00   1.37e+00
+  reference   2.80e-03   2.90e-03   2.90e-03  ...   7.50e-01   1.74e+00   1.37e+00
+  diff        0.00e+00   0.00e+00   0.00e+00  ...   0.00e+00   0.00e+00   0.00e+00
   
-  [1 rows x 201 columns]
+  [3 rows x 201 columns]
+
+        diff_max      mae
+  value 0.00e+00 0.00e+00
+  thres 2.50e-03 2.50e-04
+  chk       True     True
+
+   vector diff: True
 
    final: True
 
@@ -785,7 +1297,6 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=1, nsite_kkr=1
 save to NiFe/e549f3977f740dcac4cb82224b952d66/structure.json
-debug, option []
 saved to NiFe/e549f3977f740dcac4cb82224b952d66/inputcard_geom
 kkr_struc, symmetry, nsite ('Fm-3m', 225) 1
 kkr space group symbol, nsite 225 1
@@ -795,9 +1306,18 @@ kkr   prim structure num_site 1
 ------------------------------------
 ### fcc NiFe (magnetic, pbeasa, cnd)
   directory:  NiFe   output file:  out_cnd.log
-                          cnd    resis
-  current  [6.85009, 0.80425] 5.68e+00
+                            cnd    resis
+  current    [5.39373, 1.01045] 6.79e+00
+  reference  [5.39373, 1.01045] 6.79e+00
+  rdiff              [0.0, 0.0] 0.00e+00
+  rdiff_th             1.00e-05 1.00e-05
 
+   summary
+                chk
+  rdiff_resis  True
+  rdiff_cnd    True
+
+   final: True
 get_structures(primitive=False), symmetry, nsite ('Fm-3m', 225) 4
 get_structures(primitive=True), symmetry, nsite ('Fm-3m', 225) 1
 failed to use SpacegroupAnalyzer. Probably it is an alloy.
@@ -809,7 +1329,6 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=1, nsite_kkr=1
 save to NiFe/e549f3977f740dcac4cb82224b952d66/structure.json
-debug, option []
 saved to NiFe/e549f3977f740dcac4cb82224b952d66/inputcard_geom
 kkr_struc, symmetry, nsite ('Fm-3m', 225) 1
 kkr space group symbol, nsite 225 1
@@ -820,17 +1339,38 @@ kkr   prim structure num_site 1
 ### fcc NiFe (magnetic, pbeasa, spc31)
 kpath is made by HighSymmKpath
   directory:  NiFe   output file:  out_spc31.log
+debug: file, loaded content NiFe/klabel.json {'kpath': [[{'\\Gamma': [0.0, 0.0, 0.0]}, {'X': [0.5, 0.0, 0.5]}, {'W': [0.5, 0.25, 0.75]}, {'K': [0.375, 0.375, 0.75]}, {'\\Gamma': [0.0, 0.0, 0.0]}, {'L': [0.5, 0.5, 0.5]}, {'U': [0.625, 0.25, 0.625]}, {'W': [0.5, 0.25, 0.75]}, {'L': [0.5, 0.5, 0.5]}, {'K': [0.375, 0.375, 0.75]}]]}
+  saved to NiFe/Awk_up.png
+  saved to NiFe/Awk_dn.png
+  saved to NiFe/Awk_both.png
+
    Aw(w,k) k=0 0 0, up
-  energy   -4.97e-01  -4.92e-01  -4.87e-01  ...  4.87e-01   4.92e-01   4.97e-01 
-  current   9.83e-02   2.13e-02   8.22e-03  ...   0.00e+00   5.62e-02   2.33e-01
+  energy     -4.97e-01  -4.92e-01  -4.87e-01  ...  4.87e-01   4.92e-01   4.97e-01 
+  current     0.00e+00   6.90e-02   0.00e+00  ...   0.00e+00   1.19e-02   0.00e+00
+  reference   0.00e+00   6.90e-02   0.00e+00  ...   0.00e+00   1.19e-02   0.00e+00
+  diff        0.00e+00   0.00e+00   0.00e+00  ...   0.00e+00   0.00e+00   0.00e+00
   
-  [1 rows x 200 columns]
+  [3 rows x 200 columns]
+
+        diff_max      mae
+  value 0.00e+00 0.00e+00
+  thres 3.00e-03 1.00e-04
+  chk       True     True
 
    Aw(w,k) k=0 0 0, dn
-  energy   -4.97e-01  -4.92e-01  -4.87e-01  ...  4.87e-01   4.92e-01   4.97e-01 
-  current   1.95e-01   1.05e-01   0.00e+00  ...   0.00e+00   0.00e+00   4.30e-01
+  energy     -4.97e-01  -4.92e-01  -4.87e-01  ...  4.87e-01   4.92e-01   4.97e-01 
+  current     1.97e-02   2.37e-02   0.00e+00  ...   0.00e+00   0.00e+00   0.00e+00
+  reference   1.97e-02   2.37e-02   0.00e+00  ...   0.00e+00   0.00e+00   0.00e+00
+  diff        0.00e+00   0.00e+00   0.00e+00  ...   0.00e+00   0.00e+00   0.00e+00
   
-  [1 rows x 200 columns]
+  [3 rows x 200 columns]
+
+        diff_max      mae
+  value 0.00e+00 0.00e+00
+  thres 3.00e-03 1.00e-04
+  chk       True     True
+
+   vector diff: True
 
 get_structures(primitive=False), symmetry, nsite ('P4/mmm', 123) 2
 get_structures(primitive=True), symmetry, nsite ('P4/mmm', 123) 2
@@ -842,7 +1382,6 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=2, nsite_kkr=2
 save to FeRh05Pt05/7db1320a85961ebc66c790147b5d3a3d/structure.json
-debug, option []
 saved to FeRh05Pt05/7db1320a85961ebc66c790147b5d3a3d/inputcard_geom
 kkr_struc, symmetry, nsite ('P4/mmm', 123) 2
 kkr space group symbol, nsite 123 2
@@ -852,11 +1391,27 @@ kkr   prim structure num_site 2
 -------------------------------------------
 ### so FeRh0.5Pt0.5. (magnetic, pbeasa, go)
   directory:  FeRh05Pt05   output file:  out_go.log
-           conv orbitallocalmoment  ...        te       tm
-  current  True    [0.0, 0.0, 0.0]  ... -2.57e+04 3.45e+00
+             conv orbitallocalmoment  ...        te       tm
+  current    True    [0.0, 0.0, 0.0]  ... -2.57e+04 3.45e+00
+  reference  True    [0.0, 0.0, 0.0]  ... -2.57e+04 3.45e+00
+  and        True                  -  ...         -        -
+  and_th     True                  -  ...         -        -
+  diff          -    [0.0, 0.0, 0.0]  ...         - 0.00e+00
+  diff_th       -           1.00e-05  ...         - 1.00e-05
+  rdiff         -                  -  ...  0.00e+00        -
+  rdiff_th      -                  -  ...  1.00e-11        -
   
-  [1 rows x 5 columns]
+  [8 rows x 5 columns]
 
+   summary
+                            chk
+  and_conv                 True
+  rdiff_te                 True
+  diff_tm                  True
+  diff_spinlocalmoment     True
+  diff_orbitallocalmoment  True
+
+   final: True
 get_structures(primitive=False), symmetry, nsite ('P4/mmm', 123) 2
 get_structures(primitive=True), symmetry, nsite ('P4/mmm', 123) 2
 prim_stand_struc, symmetry, nsite ('P4/mmm', 123) 2
@@ -867,7 +1422,6 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=2, nsite_kkr=2
 save to FeRh05Pt05/7db1320a85961ebc66c790147b5d3a3d/structure.json
-debug, option []
 saved to FeRh05Pt05/7db1320a85961ebc66c790147b5d3a3d/inputcard_geom
 kkr_struc, symmetry, nsite ('P4/mmm', 123) 2
 kkr space group symbol, nsite 123 2
@@ -877,15 +1431,59 @@ kkr   prim structure num_site 2
 ---------------------------------------------
 ### so FeRh0.5Pt0.5. (magnetic, pbeasa, j3.0)
   directory:  FeRh05Pt05   output file:  out_j3.0.log
-                Tc
-  current 2.17e+02
+  saved to FeRh05Pt05/jij.csv
+
+  saved to FeRh05Pt05/Jij_Fe_1a_0_Rh0.5Pt0.5_1d_1_1-2.png
+  saved to FeRh05Pt05/Jij_Fe_1a_0_Rh0.5Pt0.5_1d_1_1-1.png
+  saved to FeRh05Pt05/Jij_Fe_1a_0_Fe_1a_0_1-1.png
+                  Tc
+  current   2.17e+02
+  reference 2.17e+02
+  rdiff     0.00e+00
+  rdiff_th  1.00e-05
+
+   summary
+             chk
+  rdiff_Tc  True
+
+   final: True
+
+debug df_result_jij
+  comp1 comp2  ... current_J_ij(meV)                                 pair
+0     1     1  ...          6.173600          Fe_1a_0-Rh0.5Pt0.5_1d_1-1-1
+1     1     2  ...          2.792763          Fe_1a_0-Rh0.5Pt0.5_1d_1-1-2
+2     1     1  ...          0.492600                  Fe_1a_0-Fe_1a_0-1-1
+3     1     1  ...          0.079555  Rh0.5Pt0.5_1d_1-Rh0.5Pt0.5_1d_1-1-1
+4     1     2  ...          0.165015  Rh0.5Pt0.5_1d_1-Rh0.5Pt0.5_1d_1-1-2
+5     2     2  ...          0.201495  Rh0.5Pt0.5_1d_1-Rh0.5Pt0.5_1d_1-2-2
+
+[6 rows x 5 columns]
+debug df_ref_jij
+  comp1 comp2  ... reference_J_ij(meV)                                 pair
+0     1     1  ...            6.173600          Fe_1a_0-Rh0.5Pt0.5_1d_1-1-1
+1     1     2  ...            2.792763          Fe_1a_0-Rh0.5Pt0.5_1d_1-1-2
+2     1     1  ...            0.492600                  Fe_1a_0-Fe_1a_0-1-1
+3     1     1  ...            0.079555  Rh0.5Pt0.5_1d_1-Rh0.5Pt0.5_1d_1-1-1
+4     1     2  ...            0.165015  Rh0.5Pt0.5_1d_1-Rh0.5Pt0.5_1d_1-1-2
+5     2     2  ...            0.201495  Rh0.5Pt0.5_1d_1-Rh0.5Pt0.5_1d_1-2-2
+
+[6 rows x 5 columns]
 
    J_ij(meV) at the shortest distance
-  typecomp Fe-Fe_1_1 Fe-RhPt_1_1  ... RhPt-RhPt_1_2 RhPt-RhPt_2_2
-  current   0.492974    6.174156  ...      0.165000      0.201584
+  typecomp   Fe_1a_0-Rh0.5Pt0.5_1d_1-1-1_1_1  ...  Rh0.5Pt0.5_1d_1-Rh0.5Pt0.5_1d_1-2-2_2_2
+  current                           6.17e+00  ...                                 2.01e-01
+  reference                         6.17e+00  ...                                 2.01e-01
+  diff                              0.00e+00  ...                                 0.00e+00
   
-  [1 rows x 6 columns]
+  [3 rows x 6 columns]
 
+   jij summary
+        diff_max      mae
+  value 0.00e+00 0.00e+00
+  thres 1.00e-04 1.00e-04
+  chk       True     True
+
+   final: True
 get_structures(primitive=False), symmetry, nsite ('P4/mmm', 123) 2
 get_structures(primitive=True), symmetry, nsite ('P4/mmm', 123) 2
 prim_stand_struc, symmetry, nsite ('P4/mmm', 123) 2
@@ -896,7 +1494,6 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=2, nsite_kkr=2
 save to FeRh05Pt05/7db1320a85961ebc66c790147b5d3a3d/structure.json
-debug, option []
 saved to FeRh05Pt05/7db1320a85961ebc66c790147b5d3a3d/inputcard_geom
 kkr_struc, symmetry, nsite ('P4/mmm', 123) 2
 kkr space group symbol, nsite 123 2
@@ -906,11 +1503,27 @@ kkr   prim structure num_site 2
 --------------------------------------------
 ### so FeRh0.5Pt0.5. (magnetic, pbeasa, fsm)
   directory:  FeRh05Pt05   output file:  out_fsm.log
-           conv orbitallocalmoment  ...        te       tm
-  current  True    [0.0, 0.0, 0.0]  ... -2.57e+04 3.00e+00
+             conv orbitallocalmoment  ...        te       tm
+  current    True    [0.0, 0.0, 0.0]  ... -2.57e+04 3.00e+00
+  reference  True    [0.0, 0.0, 0.0]  ... -2.57e+04 3.00e+00
+  and        True                  -  ...         -        -
+  and_th     True                  -  ...         -        -
+  diff          -    [0.0, 0.0, 0.0]  ...         - 0.00e+00
+  diff_th       -           1.00e-05  ...         - 1.00e-05
+  rdiff         -                  -  ...  0.00e+00        -
+  rdiff_th      -                  -  ...  1.00e-11        -
   
-  [1 rows x 5 columns]
+  [8 rows x 5 columns]
 
+   summary
+                            chk
+  and_conv                 True
+  rdiff_te                 True
+  diff_tm                  True
+  diff_spinlocalmoment     True
+  diff_orbitallocalmoment  True
+
+   final: True
 get_structures(primitive=False), symmetry, nsite ('P4/mmm', 123) 2
 get_structures(primitive=True), symmetry, nsite ('P4/mmm', 123) 2
 prim_stand_struc, symmetry, nsite ('P4/mmm', 123) 2
@@ -921,7 +1534,6 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=2, nsite_kkr=2
 save to FeRh05Pt05/7db1320a85961ebc66c790147b5d3a3d/structure.json
-debug, option []
 saved to FeRh05Pt05/7db1320a85961ebc66c790147b5d3a3d/inputcard_geom
 kkr_struc, symmetry, nsite ('P4/mmm', 123) 2
 kkr space group symbol, nsite 123 2
@@ -931,9 +1543,17 @@ kkr   prim structure num_site 2
 -------------------------------------------
 ### so FeRh0.5Pt0.5. (magnetic, pbeasa, tc)
   directory:  FeRh05Pt05   output file:  out_tc.log
-                Tc
-  current 2.19e+02
+                  Tc
+  current   2.19e+02
+  reference 2.19e+02
+  rdiff     0.00e+00
+  rdiff_th  1.00e-05
 
+   summary
+             chk
+  rdiff_Tc  True
+
+   final: True
 get_structures(primitive=False), symmetry, nsite ('P4/mmm', 123) 2
 get_structures(primitive=True), symmetry, nsite ('P4/mmm', 123) 2
 prim_stand_struc, symmetry, nsite ('P4/mmm', 123) 2
@@ -944,7 +1564,6 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=2, nsite_kkr=2
 save to FeRh05Pt05/7db1320a85961ebc66c790147b5d3a3d/structure.json
-debug, option []
 saved to FeRh05Pt05/7db1320a85961ebc66c790147b5d3a3d/inputcard_geom
 kkr_struc, symmetry, nsite ('P4/mmm', 123) 2
 kkr space group symbol, nsite 123 2
@@ -954,29 +1573,66 @@ kkr   prim structure num_site 2
 --------------------------------------------
 ### so FeRh0.5Pt0.5. (magnetic, pbeasa, dos)
   directory:  FeRh05Pt05   output file:  out_dos.log
+  saved to FeRh05Pt05/dos.png
+  saved to FeRh05Pt05/pdos_0.png
+  saved to FeRh05Pt05/pdos_1.png
+  saved to FeRh05Pt05/pdos_2.png
+
    totalDOS (up)
-  energy   -9.95e-01  -9.85e-01  -9.75e-01  ...  9.75e-01   9.85e-01   9.95e-01 
-  current   7.10e-03   7.30e-03   7.50e-03  ...   5.33e+00   6.91e+00   3.76e+00
+  energy     -9.95e-01  -9.85e-01  -9.75e-01  ...  9.75e-01   9.85e-01   9.95e-01 
+  current     7.10e-03   7.29e-03   7.50e-03  ...   5.33e+00   6.90e+00   3.77e+00
+  reference   7.10e-03   7.29e-03   7.50e-03  ...   5.33e+00   6.90e+00   3.77e+00
+  diff        0.00e+00   0.00e+00   0.00e+00  ...   0.00e+00   0.00e+00   0.00e+00
   
-  [1 rows x 200 columns]
+  [3 rows x 200 columns]
+
+        diff_max      mae
+  value 0.00e+00 0.00e+00
+  thres 2.50e-03 2.50e-04
+  chk       True     True
 
    totalDOS (dn)
-  energy   -9.95e-01  -9.85e-01  -9.75e-01  ...  9.75e-01   9.85e-01   9.95e-01 
-  current   5.81e-03   5.98e-03   6.16e-03  ...   7.29e+00   7.56e+00   5.28e+00
+  energy     -9.95e-01  -9.85e-01  -9.75e-01  ...  9.75e-01   9.85e-01   9.95e-01 
+  current     5.81e-03   5.98e-03   6.16e-03  ...   7.28e+00   7.56e+00   5.27e+00
+  reference   5.81e-03   5.98e-03   6.16e-03  ...   7.28e+00   7.56e+00   5.27e+00
+  diff        0.00e+00   0.00e+00   0.00e+00  ...   0.00e+00   0.00e+00   0.00e+00
   
-  [1 rows x 200 columns]
+  [3 rows x 200 columns]
+
+        diff_max      mae
+  value 0.00e+00 0.00e+00
+  thres 2.50e-03 2.50e-04
+  chk       True     True
+
+   vector diff: True
 
    pdos (up), atom=0, l=d
-  energy   -1.00e+00  -9.90e-01  -9.80e-01  ...  9.80e-01   9.90e-01   1.00e+00 
-  current   4.10e-03   4.20e-03   4.30e-03  ...   1.05e+00   9.07e-01   8.82e-01
+  energy     -1.00e+00  -9.90e-01  -9.80e-01  ...  9.80e-01   9.90e-01   1.00e+00 
+  current     4.10e-03   4.20e-03   4.30e-03  ...   1.05e+00   9.05e-01   8.91e-01
+  reference   4.10e-03   4.20e-03   4.30e-03  ...   1.05e+00   9.05e-01   8.91e-01
+  diff        0.00e+00   0.00e+00   0.00e+00  ...   0.00e+00   0.00e+00   0.00e+00
   
-  [1 rows x 201 columns]
+  [3 rows x 201 columns]
+
+        diff_max      mae
+  value 0.00e+00 0.00e+00
+  thres 2.50e-03 2.50e-04
+  chk       True     True
 
    pdos (dn), atom=0, l=d
-  energy   -1.00e+00  -9.90e-01  -9.80e-01  ...  9.80e-01   9.90e-01   1.00e+00 
-  current   2.60e-03   2.70e-03   2.70e-03  ...   1.36e+00   1.08e+00   9.98e-01
+  energy     -1.00e+00  -9.90e-01  -9.80e-01  ...  9.80e-01   9.90e-01   1.00e+00 
+  current     2.60e-03   2.70e-03   2.70e-03  ...   1.36e+00   1.07e+00   9.97e-01
+  reference   2.60e-03   2.70e-03   2.70e-03  ...   1.36e+00   1.07e+00   9.97e-01
+  diff        0.00e+00   0.00e+00   0.00e+00  ...   0.00e+00   0.00e+00   0.00e+00
   
-  [1 rows x 201 columns]
+  [3 rows x 201 columns]
+
+        diff_max      mae
+  value 0.00e+00 0.00e+00
+  thres 2.50e-03 2.50e-04
+  chk       True     True
+
+   vector diff: True
 
    final: True
 
@@ -990,7 +1646,6 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=2, nsite_kkr=2
 save to FeRh05Pt05/7db1320a85961ebc66c790147b5d3a3d/structure.json
-debug, option []
 saved to FeRh05Pt05/7db1320a85961ebc66c790147b5d3a3d/inputcard_geom
 kkr_struc, symmetry, nsite ('P4/mmm', 123) 2
 kkr space group symbol, nsite 123 2
@@ -1001,17 +1656,38 @@ kkr   prim structure num_site 2
 ### so FeRh0.5Pt0.5. (magnetic, pbeasa, spc31)
 kpath is made by HighSymmKpath
   directory:  FeRh05Pt05   output file:  out_spc31.log
+debug: file, loaded content FeRh05Pt05/klabel.json {'kpath': [[{'\\Gamma': [0.0, 0.0, 0.0]}, {'X': [0.0, 0.5, 0.0]}, {'M': [0.5, 0.5, 0.0]}, {'\\Gamma': [0.0, 0.0, 0.0]}, {'Z': [0.0, 0.0, 0.5]}, {'R': [0.0, 0.5, 0.5]}, {'A': [0.5, 0.5, 0.5]}, {'Z': [0.0, 0.0, 0.5]}]]}
+  saved to FeRh05Pt05/Awk_up.png
+  saved to FeRh05Pt05/Awk_dn.png
+  saved to FeRh05Pt05/Awk_both.png
+
    Aw(w,k) k=0 0 0, up
-  energy   -4.97e-01  -4.92e-01  -4.87e-01  ...  4.87e-01   4.92e-01   4.97e-01 
-  current   4.42e-01   7.16e-01   1.62e+00  ...   9.59e-01   8.44e-01   5.66e-01
+  energy     -4.97e-01  -4.92e-01  -4.87e-01  ...  4.87e-01   4.92e-01   4.97e-01 
+  current     4.45e-01   7.10e-01   1.61e+00  ...   9.69e-01   8.39e-01   5.65e-01
+  reference   4.45e-01   7.10e-01   1.61e+00  ...   9.69e-01   8.39e-01   5.65e-01
+  diff        0.00e+00   0.00e+00   0.00e+00  ...   0.00e+00   0.00e+00   0.00e+00
   
-  [1 rows x 200 columns]
+  [3 rows x 200 columns]
+
+        diff_max      mae
+  value 0.00e+00 0.00e+00
+  thres 3.00e-03 1.00e-04
+  chk       True     True
 
    Aw(w,k) k=0 0 0, dn
-  energy   -4.97e-01  -4.92e-01  -4.87e-01  ...  4.87e-01   4.92e-01   4.97e-01 
-  current   2.10e-01   2.31e-01   3.11e-01  ...   0.00e+00   1.23e-02   0.00e+00
+  energy     -4.97e-01  -4.92e-01  -4.87e-01  ...  4.87e-01   4.92e-01   4.97e-01 
+  current     2.10e-01   2.30e-01   3.11e-01  ...   0.00e+00   0.00e+00   0.00e+00
+  reference   2.10e-01   2.30e-01   3.11e-01  ...   0.00e+00   0.00e+00   0.00e+00
+  diff        0.00e+00   0.00e+00   0.00e+00  ...   0.00e+00   0.00e+00   0.00e+00
   
-  [1 rows x 200 columns]
+  [3 rows x 200 columns]
+
+        diff_max      mae
+  value 0.00e+00 0.00e+00
+  thres 3.00e-03 1.00e-04
+  chk       True     True
+
+   vector diff: True
 
 get_structures(primitive=False), symmetry, nsite ('P4/mmm', 123) 2
 get_structures(primitive=True), symmetry, nsite ('P4/mmm', 123) 2
@@ -1023,7 +1699,6 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=2, nsite_kkr=2
 save to FeRh05Pt05/7db1320a85961ebc66c790147b5d3a3d/structure.json
-debug, option []
 saved to FeRh05Pt05/7db1320a85961ebc66c790147b5d3a3d/inputcard_geom
 kkr_struc, symmetry, nsite ('P4/mmm', 123) 2
 kkr space group symbol, nsite 123 2
@@ -1033,9 +1708,18 @@ kkr   prim structure num_site 2
 --------------------------------------------
 ### so FeRh0.5Pt0.5. (magnetic, pbeasa, cnd)
   directory:  FeRh05Pt05   output file:  out_cnd.log
-                          cnd    resis
-  current  [1.96414, 1.52646] 1.25e+01
+                            cnd    resis
+  current    [1.96377, 1.52573] 1.25e+01
+  reference  [1.96377, 1.52573] 1.25e+01
+  rdiff              [0.0, 0.0] 0.00e+00
+  rdiff_th             1.00e-05 1.00e-05
 
+   summary
+                chk
+  rdiff_resis  True
+  rdiff_cnd    True
+
+   final: True
 get_structures(primitive=False), symmetry, nsite ('Im-3m', 229) 2
 get_structures(primitive=True), symmetry, nsite ('Im-3m', 229) 1
 failed to use SpacegroupAnalyzer. Probably it is an alloy.
@@ -1047,7 +1731,6 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=1, nsite_kkr=1
 save to AlMnFeCo_bcc/c795171a55fa7f9ca0350bcb25387435/structure.json
-debug, option []
 saved to AlMnFeCo_bcc/c795171a55fa7f9ca0350bcb25387435/inputcard_geom
 kkr_struc, symmetry, nsite ('Im-3m', 229) 1
 kkr space group symbol, nsite 229 1
@@ -1057,11 +1740,27 @@ kkr   prim structure num_site 1
 ---------------------------------------
 ### bcc AlMnFeCo (magnetic, pbeasa, go)
   directory:  AlMnFeCo_bcc   output file:  out_go.log
-           conv    orbitallocalmoment  ...        te       tm
-  current  True  [0.0, 0.0, 0.0, 0.0]  ... -2.03e+03 1.66e+00
+             conv    orbitallocalmoment  ...        te       tm
+  current    True  [0.0, 0.0, 0.0, 0.0]  ... -2.03e+03 1.66e+00
+  reference  True  [0.0, 0.0, 0.0, 0.0]  ... -2.03e+03 1.66e+00
+  and        True                     -  ...         -        -
+  and_th     True                     -  ...         -        -
+  diff          -  [0.0, 0.0, 0.0, 0.0]  ...         - 0.00e+00
+  diff_th       -              1.00e-05  ...         - 1.00e-05
+  rdiff         -                     -  ...  0.00e+00        -
+  rdiff_th      -                     -  ...  1.00e-11        -
   
-  [1 rows x 5 columns]
+  [8 rows x 5 columns]
 
+   summary
+                            chk
+  and_conv                 True
+  rdiff_te                 True
+  diff_tm                  True
+  diff_spinlocalmoment     True
+  diff_orbitallocalmoment  True
+
+   final: True
 get_structures(primitive=False), symmetry, nsite ('Im-3m', 229) 2
 get_structures(primitive=True), symmetry, nsite ('Im-3m', 229) 1
 failed to use SpacegroupAnalyzer. Probably it is an alloy.
@@ -1073,7 +1772,6 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=1, nsite_kkr=1
 save to AlMnFeCo_bcc/c795171a55fa7f9ca0350bcb25387435/structure.json
-debug, option []
 saved to AlMnFeCo_bcc/c795171a55fa7f9ca0350bcb25387435/inputcard_geom
 kkr_struc, symmetry, nsite ('Im-3m', 229) 1
 kkr space group symbol, nsite 229 1
@@ -1083,11 +1781,27 @@ kkr   prim structure num_site 1
 ----------------------------------------
 ### bcc AlMnFeCo (magnetic, pbeasa, fsm)
   directory:  AlMnFeCo_bcc   output file:  out_fsm.log
-           conv    orbitallocalmoment  ...        te       tm
-  current  True  [0.0, 0.0, 0.0, 0.0]  ... -2.03e+03 1.00e+00
+             conv    orbitallocalmoment  ...        te       tm
+  current    True  [0.0, 0.0, 0.0, 0.0]  ... -2.03e+03 1.00e+00
+  reference  True  [0.0, 0.0, 0.0, 0.0]  ... -2.03e+03 1.00e+00
+  and        True                     -  ...         -        -
+  and_th     True                     -  ...         -        -
+  diff          -  [0.0, 0.0, 0.0, 0.0]  ...         - 0.00e+00
+  diff_th       -              1.00e-05  ...         - 1.00e-05
+  rdiff         -                     -  ...  0.00e+00        -
+  rdiff_th      -                     -  ...  1.00e-11        -
   
-  [1 rows x 5 columns]
+  [8 rows x 5 columns]
 
+   summary
+                            chk
+  and_conv                 True
+  rdiff_te                 True
+  diff_tm                  True
+  diff_spinlocalmoment     True
+  diff_orbitallocalmoment  True
+
+   final: True
 get_structures(primitive=False), symmetry, nsite ('Im-3m', 229) 2
 get_structures(primitive=True), symmetry, nsite ('Im-3m', 229) 1
 failed to use SpacegroupAnalyzer. Probably it is an alloy.
@@ -1099,7 +1813,6 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=1, nsite_kkr=1
 save to AlMnFeCo_bcc/c795171a55fa7f9ca0350bcb25387435/structure.json
-debug, option []
 saved to AlMnFeCo_bcc/c795171a55fa7f9ca0350bcb25387435/inputcard_geom
 kkr_struc, symmetry, nsite ('Im-3m', 229) 1
 kkr space group symbol, nsite 229 1
@@ -1108,12 +1821,29 @@ kkr   prim structure num_site 1
 ('Im-3m', 229) ('Im-3m', 229)
 -----------------------------------------------------------
 ### bcc AlMnFeCo (magnetic, pbeasa, spin flipped Mn, gofmg)
+  save to AlMnFeCo_bcc/fmg.input
   directory:  AlMnFeCo_bcc   output file:  out_gofmg.log
-           conv    orbitallocalmoment  ...        te       tm
-  current  True  [0.0, 0.0, 0.0, 0.0]  ... -2.03e+03 2.76e-01
+             conv    orbitallocalmoment  ...        te       tm
+  current    True  [0.0, 0.0, 0.0, 0.0]  ... -2.03e+03 1.66e+00
+  reference  True  [0.0, 0.0, 0.0, 0.0]  ... -2.03e+03 1.66e+00
+  and        True                     -  ...         -        -
+  and_th     True                     -  ...         -        -
+  diff          -  [0.0, 0.0, 0.0, 0.0]  ...         - 0.00e+00
+  diff_th       -              1.00e-05  ...         - 1.00e-05
+  rdiff         -                     -  ...  0.00e+00        -
+  rdiff_th      -                     -  ...  1.00e-11        -
   
-  [1 rows x 5 columns]
+  [8 rows x 5 columns]
 
+   summary
+                            chk
+  and_conv                 True
+  rdiff_te                 True
+  diff_tm                  True
+  diff_spinlocalmoment     True
+  diff_orbitallocalmoment  True
+
+   final: True
 get_structures(primitive=False), symmetry, nsite ('Im-3m', 229) 2
 get_structures(primitive=True), symmetry, nsite ('Im-3m', 229) 1
 failed to use SpacegroupAnalyzer. Probably it is an alloy.
@@ -1125,7 +1855,6 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=1, nsite_kkr=1
 save to AlMnFeCo_bcc/c795171a55fa7f9ca0350bcb25387435/structure.json
-debug, option []
 saved to AlMnFeCo_bcc/c795171a55fa7f9ca0350bcb25387435/inputcard_geom
 kkr_struc, symmetry, nsite ('Im-3m', 229) 1
 kkr space group symbol, nsite 229 1
@@ -1135,9 +1864,17 @@ kkr   prim structure num_site 1
 ------------------------------
 ### fcc Ni (magnetic, mjw, tc)
   directory:  AlMnFeCo_bcc   output file:  out_tc.log
-                Tc
-  current 9.74e+02
+                  Tc
+  current   9.74e+02
+  reference 9.74e+02
+  rdiff     0.00e+00
+  rdiff_th  1.00e-05
 
+   summary
+             chk
+  rdiff_Tc  True
+
+   final: True
 get_structures(primitive=False), symmetry, nsite ('Im-3m', 229) 2
 get_structures(primitive=True), symmetry, nsite ('Im-3m', 229) 1
 failed to use SpacegroupAnalyzer. Probably it is an alloy.
@@ -1149,7 +1886,6 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=1, nsite_kkr=1
 save to AlMnFeCo_bcc/c795171a55fa7f9ca0350bcb25387435/structure.json
-debug, option []
 saved to AlMnFeCo_bcc/c795171a55fa7f9ca0350bcb25387435/inputcard_geom
 kkr_struc, symmetry, nsite ('Im-3m', 229) 1
 kkr space group symbol, nsite 229 1
@@ -1159,15 +1895,74 @@ kkr   prim structure num_site 1
 -----------------------------------------
 ### bcc AlMnFeCo (magnetic, pbeasa, j3.0)
   directory:  AlMnFeCo_bcc   output file:  out_j3.0.log
-                Tc
-  current 9.76e+02
+  saved to AlMnFeCo_bcc/jij.csv
+
+  saved to AlMnFeCo_bcc/Jij_Mn0.25Al0.25Fe0.25Co0.25_2a_0_Mn0.25Al0.25Fe0.25Co0.25_2a_0_3-3.png
+  saved to AlMnFeCo_bcc/Jij_Mn0.25Al0.25Fe0.25Co0.25_2a_0_Mn0.25Al0.25Fe0.25Co0.25_2a_0_1-3.png
+  saved to AlMnFeCo_bcc/Jij_Mn0.25Al0.25Fe0.25Co0.25_2a_0_Mn0.25Al0.25Fe0.25Co0.25_2a_0_2-3.png
+  saved to AlMnFeCo_bcc/Jij_Mn0.25Al0.25Fe0.25Co0.25_2a_0_Mn0.25Al0.25Fe0.25Co0.25_2a_0_1-2.png
+  saved to AlMnFeCo_bcc/Jij_Mn0.25Al0.25Fe0.25Co0.25_2a_0_Mn0.25Al0.25Fe0.25Co0.25_2a_0_4-4.png
+  saved to AlMnFeCo_bcc/Jij_Mn0.25Al0.25Fe0.25Co0.25_2a_0_Mn0.25Al0.25Fe0.25Co0.25_2a_0_3-4.png
+  saved to AlMnFeCo_bcc/Jij_Mn0.25Al0.25Fe0.25Co0.25_2a_0_Mn0.25Al0.25Fe0.25Co0.25_2a_0_2-2.png
+  saved to AlMnFeCo_bcc/Jij_Mn0.25Al0.25Fe0.25Co0.25_2a_0_Mn0.25Al0.25Fe0.25Co0.25_2a_0_1-4.png
+  saved to AlMnFeCo_bcc/Jij_Mn0.25Al0.25Fe0.25Co0.25_2a_0_Mn0.25Al0.25Fe0.25Co0.25_2a_0_2-4.png
+  saved to AlMnFeCo_bcc/Jij_Mn0.25Al0.25Fe0.25Co0.25_2a_0_Mn0.25Al0.25Fe0.25Co0.25_2a_0_1-1.png
+                  Tc
+  current   9.76e+02
+  reference 9.76e+02
+  rdiff     0.00e+00
+  rdiff_th  1.00e-05
+
+   summary
+             chk
+  rdiff_Tc  True
+
+   final: True
+
+debug df_result_jij
+  comp1  ...                                               pair
+0     1  ...  Mn0.25Al0.25Fe0.25Co0.25_2a_0-Mn0.25Al0.25Fe0....
+1     1  ...  Mn0.25Al0.25Fe0.25Co0.25_2a_0-Mn0.25Al0.25Fe0....
+2     1  ...  Mn0.25Al0.25Fe0.25Co0.25_2a_0-Mn0.25Al0.25Fe0....
+3     1  ...  Mn0.25Al0.25Fe0.25Co0.25_2a_0-Mn0.25Al0.25Fe0....
+4     2  ...  Mn0.25Al0.25Fe0.25Co0.25_2a_0-Mn0.25Al0.25Fe0....
+5     2  ...  Mn0.25Al0.25Fe0.25Co0.25_2a_0-Mn0.25Al0.25Fe0....
+6     2  ...  Mn0.25Al0.25Fe0.25Co0.25_2a_0-Mn0.25Al0.25Fe0....
+7     3  ...  Mn0.25Al0.25Fe0.25Co0.25_2a_0-Mn0.25Al0.25Fe0....
+8     3  ...  Mn0.25Al0.25Fe0.25Co0.25_2a_0-Mn0.25Al0.25Fe0....
+9     4  ...  Mn0.25Al0.25Fe0.25Co0.25_2a_0-Mn0.25Al0.25Fe0....
+
+[10 rows x 5 columns]
+debug df_ref_jij
+  comp1  ...                                               pair
+0     1  ...  Mn0.25Al0.25Fe0.25Co0.25_2a_0-Mn0.25Al0.25Fe0....
+1     1  ...  Mn0.25Al0.25Fe0.25Co0.25_2a_0-Mn0.25Al0.25Fe0....
+2     1  ...  Mn0.25Al0.25Fe0.25Co0.25_2a_0-Mn0.25Al0.25Fe0....
+3     1  ...  Mn0.25Al0.25Fe0.25Co0.25_2a_0-Mn0.25Al0.25Fe0....
+4     2  ...  Mn0.25Al0.25Fe0.25Co0.25_2a_0-Mn0.25Al0.25Fe0....
+5     2  ...  Mn0.25Al0.25Fe0.25Co0.25_2a_0-Mn0.25Al0.25Fe0....
+6     2  ...  Mn0.25Al0.25Fe0.25Co0.25_2a_0-Mn0.25Al0.25Fe0....
+7     3  ...  Mn0.25Al0.25Fe0.25Co0.25_2a_0-Mn0.25Al0.25Fe0....
+8     3  ...  Mn0.25Al0.25Fe0.25Co0.25_2a_0-Mn0.25Al0.25Fe0....
+9     4  ...  Mn0.25Al0.25Fe0.25Co0.25_2a_0-Mn0.25Al0.25Fe0....
+
+[10 rows x 5 columns]
 
    J_ij(meV) at the shortest distance
-  typecomp HEA-HEA_1_1 HEA-HEA_1_2  ... HEA-HEA_3_4 HEA-HEA_4_4
-  current     0.093975    0.388043  ...   24.941582   18.571370
+  typecomp   Mn0.25Al0.25Fe0.25Co0.25_2a_0-Mn0.25Al0.25Fe0.25Co0.25_2a_0-1-1_1_1  ...  Mn0.25Al0.25Fe0.25Co0.25_2a_0-Mn0.25Al0.25Fe0.25Co0.25_2a_0-4-4_4_4
+  current                                             9.40e-02                    ...                                           1.86e+01                  
+  reference                                           9.40e-02                    ...                                           1.86e+01                  
+  diff                                                0.00e+00                    ...                                           0.00e+00                  
   
-  [1 rows x 10 columns]
+  [3 rows x 10 columns]
 
+   jij summary
+        diff_max      mae
+  value 0.00e+00 0.00e+00
+  thres 1.00e-04 1.00e-04
+  chk       True     True
+
+   final: True
 get_structures(primitive=False), symmetry, nsite ('Im-3m', 229) 2
 get_structures(primitive=True), symmetry, nsite ('Im-3m', 229) 1
 failed to use SpacegroupAnalyzer. Probably it is an alloy.
@@ -1179,7 +1974,6 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=1, nsite_kkr=1
 save to AlMnFeCo_bcc/c795171a55fa7f9ca0350bcb25387435/structure.json
-debug, option []
 saved to AlMnFeCo_bcc/c795171a55fa7f9ca0350bcb25387435/inputcard_geom
 kkr_struc, symmetry, nsite ('Im-3m', 229) 1
 kkr space group symbol, nsite 229 1
@@ -1189,29 +1983,67 @@ kkr   prim structure num_site 1
 ----------------------------------------
 ### bcc AlMnFeCo (magnetic, pbeasa, dos)
   directory:  AlMnFeCo_bcc   output file:  out_dos.log
+  saved to AlMnFeCo_bcc/dos.png
+  saved to AlMnFeCo_bcc/pdos_0.png
+  saved to AlMnFeCo_bcc/pdos_1.png
+  saved to AlMnFeCo_bcc/pdos_2.png
+  saved to AlMnFeCo_bcc/pdos_3.png
+
    totalDOS (up)
-  energy   -9.95e-01  -9.85e-01  -9.75e-01  ...  9.75e-01   9.85e-01   9.95e-01 
-  current   2.72e-03   2.78e-03   2.85e-03  ...   2.94e+00   2.94e+00   2.95e+00
+  energy     -9.95e-01  -9.85e-01  -9.75e-01  ...  9.75e-01   9.85e-01   9.95e-01 
+  current     2.72e-03   2.78e-03   2.85e-03  ...   2.94e+00   2.94e+00   2.95e+00
+  reference   2.72e-03   2.78e-03   2.85e-03  ...   2.94e+00   2.94e+00   2.95e+00
+  diff        0.00e+00   0.00e+00   0.00e+00  ...   0.00e+00   0.00e+00   0.00e+00
   
-  [1 rows x 200 columns]
+  [3 rows x 200 columns]
+
+        diff_max      mae
+  value 0.00e+00 0.00e+00
+  thres 2.50e-03 2.50e-04
+  chk       True     True
 
    totalDOS (dn)
-  energy   -9.95e-01  -9.85e-01  -9.75e-01  ...  9.75e-01   9.85e-01   9.95e-01 
-  current   2.18e-03   2.25e-03   2.31e-03  ...   2.99e+00   3.00e+00   3.00e+00
+  energy     -9.95e-01  -9.85e-01  -9.75e-01  ...  9.75e-01   9.85e-01   9.95e-01 
+  current     2.18e-03   2.25e-03   2.31e-03  ...   2.99e+00   3.00e+00   3.00e+00
+  reference   2.18e-03   2.25e-03   2.31e-03  ...   2.99e+00   3.00e+00   3.00e+00
+  diff        0.00e+00   0.00e+00   0.00e+00  ...   0.00e+00   0.00e+00   0.00e+00
   
-  [1 rows x 200 columns]
+  [3 rows x 200 columns]
+
+        diff_max      mae
+  value 0.00e+00 0.00e+00
+  thres 2.50e-03 2.50e-04
+  chk       True     True
+
+   vector diff: True
 
    pdos (up), atom=0, l=d
-  energy   -1.00e+00  -9.90e-01  -9.80e-01  ...  9.80e-01   9.90e-01   1.00e+00 
-  current   5.00e-04   5.00e-04   5.00e-04  ...   1.89e+00   1.88e+00   1.88e+00
+  energy     -1.00e+00  -9.90e-01  -9.80e-01  ...  9.80e-01   9.90e-01   1.00e+00 
+  current     5.00e-04   5.00e-04   5.00e-04  ...   1.89e+00   1.88e+00   1.88e+00
+  reference   5.00e-04   5.00e-04   5.00e-04  ...   1.89e+00   1.88e+00   1.88e+00
+  diff        0.00e+00   0.00e+00   0.00e+00  ...   0.00e+00   0.00e+00   0.00e+00
   
-  [1 rows x 201 columns]
+  [3 rows x 201 columns]
+
+        diff_max      mae
+  value 0.00e+00 0.00e+00
+  thres 2.50e-03 2.50e-04
+  chk       True     True
 
    pdos (dn), atom=0, l=d
-  energy   -1.00e+00  -9.90e-01  -9.80e-01  ...  9.80e-01   9.90e-01   1.00e+00 
-  current   5.00e-04   6.00e-04   6.00e-04  ...   1.95e+00   1.95e+00   1.95e+00
+  energy     -1.00e+00  -9.90e-01  -9.80e-01  ...  9.80e-01   9.90e-01   1.00e+00 
+  current     5.00e-04   6.00e-04   6.00e-04  ...   1.95e+00   1.95e+00   1.95e+00
+  reference   5.00e-04   6.00e-04   6.00e-04  ...   1.95e+00   1.95e+00   1.95e+00
+  diff        0.00e+00   0.00e+00   0.00e+00  ...   0.00e+00   0.00e+00   0.00e+00
   
-  [1 rows x 201 columns]
+  [3 rows x 201 columns]
+
+        diff_max      mae
+  value 0.00e+00 0.00e+00
+  thres 2.50e-03 2.50e-04
+  chk       True     True
+
+   vector diff: True
 
    final: True
 
@@ -1226,7 +2058,6 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=1, nsite_kkr=1
 save to AlMnFeCo_bcc/c795171a55fa7f9ca0350bcb25387435/structure.json
-debug, option []
 saved to AlMnFeCo_bcc/c795171a55fa7f9ca0350bcb25387435/inputcard_geom
 kkr_struc, symmetry, nsite ('Im-3m', 229) 1
 kkr space group symbol, nsite 229 1
@@ -1236,9 +2067,18 @@ kkr   prim structure num_site 1
 ----------------------------------------
 ### bcc AlMnFeCo (magnetic, pbeasa, cnd)
   directory:  AlMnFeCo_bcc   output file:  out_cnd.log
-                          cnd    resis
-  current  [0.38687, 0.12289] 8.53e+01
+                            cnd    resis
+  current    [0.38687, 0.12289] 8.53e+01
+  reference  [0.38687, 0.12289] 8.53e+01
+  rdiff              [0.0, 0.0] 0.00e+00
+  rdiff_th             1.00e-05 1.00e-05
 
+   summary
+                chk
+  rdiff_resis  True
+  rdiff_cnd    True
+
+   final: True
 get_structures(primitive=False), symmetry, nsite ('Im-3m', 229) 2
 get_structures(primitive=True), symmetry, nsite ('Im-3m', 229) 1
 failed to use SpacegroupAnalyzer. Probably it is an alloy.
@@ -1250,7 +2090,6 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=1, nsite_kkr=1
 save to AlMnFeCo_bcc/c795171a55fa7f9ca0350bcb25387435/structure.json
-debug, option []
 saved to AlMnFeCo_bcc/c795171a55fa7f9ca0350bcb25387435/inputcard_geom
 kkr_struc, symmetry, nsite ('Im-3m', 229) 1
 kkr space group symbol, nsite 229 1
@@ -1261,17 +2100,38 @@ kkr   prim structure num_site 1
 ### bcc AlMnFeCo (magnetic, pbeasa, spc31)
 kpath is made by HighSymmKpath
   directory:  AlMnFeCo_bcc   output file:  out_spc31.log
+debug: file, loaded content AlMnFeCo_bcc/klabel.json {'kpath': [[{'\\Gamma': [0.0, 0.0, 0.0]}, {'H': [0.5, -0.5, 0.5]}, {'N': [0.0, 0.0, 0.5]}, {'\\Gamma': [0.0, 0.0, 0.0]}, {'P': [0.25, 0.25, 0.25]}, {'H': [0.5, -0.5, 0.5]}]]}
+  saved to AlMnFeCo_bcc/Awk_up.png
+  saved to AlMnFeCo_bcc/Awk_dn.png
+  saved to AlMnFeCo_bcc/Awk_both.png
+
    Aw(w,k) k=0 0 0, up
-  energy   -6.47e-01  -6.40e-01  -6.34e-01  ...  6.34e-01   6.40e-01   6.47e-01 
-  current   4.97e-01   4.09e-01   3.15e-01  ...   3.07e-01   2.69e-01   2.24e-01
+  energy     -6.47e-01  -6.40e-01  -6.34e-01  ...  6.34e-01   6.40e-01   6.47e-01 
+  current     4.97e-01   4.09e-01   3.15e-01  ...   3.07e-01   2.69e-01   2.24e-01
+  reference   4.97e-01   4.09e-01   3.15e-01  ...   3.07e-01   2.69e-01   2.24e-01
+  diff        0.00e+00   0.00e+00   0.00e+00  ...   0.00e+00   0.00e+00   0.00e+00
   
-  [1 rows x 200 columns]
+  [3 rows x 200 columns]
+
+        diff_max      mae
+  value 0.00e+00 0.00e+00
+  thres 3.00e-03 1.00e-04
+  chk       True     True
 
    Aw(w,k) k=0 0 0, dn
-  energy   -6.47e-01  -6.40e-01  -6.34e-01  ...  6.34e-01   6.40e-01   6.47e-01 
-  current   4.80e-01   3.81e-01   3.10e-01  ...   3.63e-01   3.53e-01   3.45e-01
+  energy     -6.47e-01  -6.40e-01  -6.34e-01  ...  6.34e-01   6.40e-01   6.47e-01 
+  current     4.80e-01   3.81e-01   3.10e-01  ...   3.63e-01   3.53e-01   3.45e-01
+  reference   4.80e-01   3.81e-01   3.10e-01  ...   3.63e-01   3.53e-01   3.45e-01
+  diff        0.00e+00   0.00e+00   0.00e+00  ...   0.00e+00   0.00e+00   0.00e+00
   
-  [1 rows x 200 columns]
+  [3 rows x 200 columns]
+
+        diff_max      mae
+  value 0.00e+00 0.00e+00
+  thres 3.00e-03 1.00e-04
+  chk       True     True
+
+   vector diff: True
 
 get_structures(primitive=False), symmetry, nsite ('Im-3m', 229) 2
 get_structures(primitive=True), symmetry, nsite ('Im-3m', 229) 1
@@ -1283,7 +2143,6 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=1, nsite_kkr=1
 save to Fe_lmd/caf80bdd15f4dc9f486d4724ecd18076/structure.json
-debug, option []
 saved to Fe_lmd/caf80bdd15f4dc9f486d4724ecd18076/inputcard_geom
 kkr_struc, symmetry, nsite ('Im-3m', 229) 1
 kkr space group symbol, nsite 229 1
@@ -1293,9 +2152,25 @@ kkr   prim structure num_site 1
 ------------------------
 ### bcc Fe(lmd, mjw, go)
   directory:  Fe_lmd   output file:  out_go.log
-           conv orbitallocalmoment spinlocalmoment        te       tm
-  current  True         [0.0, 0.0]  [2.119, 2.119] -2.54e+03 2.10e+00
+             conv orbitallocalmoment spinlocalmoment        te       tm
+  current    True              [0.0]       [2.36112] -2.54e+03 2.32e+00
+  reference  True              [0.0]       [2.36112] -2.54e+03 2.32e+00
+  and        True                  -               -         -        -
+  and_th     True                  -               -         -        -
+  diff          -              [0.0]           [0.0]         - 0.00e+00
+  diff_th       -           1.00e-05        1.00e-05         - 1.00e-05
+  rdiff         -                  -               -  0.00e+00        -
+  rdiff_th      -                  -               -  1.00e-11        -
 
+   summary
+                            chk
+  and_conv                 True
+  rdiff_te                 True
+  diff_tm                  True
+  diff_spinlocalmoment     True
+  diff_orbitallocalmoment  True
+
+   final: True
 get_structures(primitive=False), symmetry, nsite ('Im-3m', 229) 2
 get_structures(primitive=True), symmetry, nsite ('Im-3m', 229) 1
 prim_stand_struc, symmetry, nsite ('Im-3m', 229) 1
@@ -1306,7 +2181,6 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=1, nsite_kkr=1
 save to Fe_lmd/caf80bdd15f4dc9f486d4724ecd18076/structure.json
-debug, option []
 saved to Fe_lmd/caf80bdd15f4dc9f486d4724ecd18076/inputcard_geom
 kkr_struc, symmetry, nsite ('Im-3m', 229) 1
 kkr space group symbol, nsite 229 1
@@ -1316,29 +2190,64 @@ kkr   prim structure num_site 1
 -------------------------
 ### bcc Fe(lmd, mjw, dos)
   directory:  Fe_lmd   output file:  out_dos.log
+  saved to Fe_lmd/dos.png
+  saved to Fe_lmd/pdos_0.png
+
    totalDOS (up)
-  energy   -9.95e-01  -9.85e-01  -9.75e-01  ...  9.75e-01   9.85e-01   9.95e-01 
-  current   3.30e-03   3.39e-03   3.48e-03  ...   3.75e+00   3.50e-01   9.09e-01
+  energy     -9.95e-01  -9.85e-01  -9.75e-01  ...  9.75e-01   9.85e-01   9.95e-01 
+  current     3.16e-03   3.24e-03   3.32e-03  ...   4.85e+00   2.40e+00   1.47e+00
+  reference   3.16e-03   3.24e-03   3.32e-03  ...   4.85e+00   2.40e+00   1.47e+00
+  diff        0.00e+00   0.00e+00   0.00e+00  ...   0.00e+00   0.00e+00   0.00e+00
   
-  [1 rows x 200 columns]
+  [3 rows x 200 columns]
+
+        diff_max      mae
+  value 0.00e+00 0.00e+00
+  thres 2.50e-03 2.50e-04
+  chk       True     True
 
    totalDOS (dn)
-  energy   -9.95e-01  -9.85e-01  -9.75e-01  ...  9.75e-01   9.85e-01   9.95e-01 
-  current   2.56e-03   2.62e-03   2.68e-03  ...   7.52e-01   3.32e+00   2.52e+00
+  energy     -9.95e-01  -9.85e-01  -9.75e-01  ...  9.75e-01   9.85e-01   9.95e-01 
+  current     2.40e-03   2.46e-03   2.52e-03  ...   5.38e-01   2.55e+00   4.34e-01
+  reference   2.40e-03   2.46e-03   2.52e-03  ...   5.38e-01   2.55e+00   4.34e-01
+  diff        0.00e+00   0.00e+00   0.00e+00  ...   0.00e+00   0.00e+00   0.00e+00
   
-  [1 rows x 200 columns]
+  [3 rows x 200 columns]
+
+        diff_max      mae
+  value 0.00e+00 0.00e+00
+  thres 2.50e-03 2.50e-04
+  chk       True     True
+
+   vector diff: True
 
    pdos (up), atom=0, l=d
-  energy   -1.00e+00  -9.90e-01  -9.80e-01  ...  9.80e-01   9.90e-01   1.00e+00 
-  current   3.50e-03   3.60e-03   3.60e-03  ...   1.03e-01   2.13e-01   6.46e-02
+  energy     -1.00e+00  -9.90e-01  -9.80e-01  ...  9.80e-01   9.90e-01   1.00e+00 
+  current     4.10e-03   4.10e-03   4.10e-03  ...   1.96e-01   1.99e+00   2.07e-01
+  reference   4.10e-03   4.10e-03   4.10e-03  ...   1.96e-01   1.99e+00   2.07e-01
+  diff        0.00e+00   0.00e+00   0.00e+00  ...   0.00e+00   0.00e+00   0.00e+00
   
-  [1 rows x 201 columns]
+  [3 rows x 201 columns]
+
+        diff_max      mae
+  value 0.00e+00 0.00e+00
+  thres 2.50e-03 2.50e-04
+  chk       True     True
 
    pdos (dn), atom=0, l=d
-  energy   -1.00e+00  -9.90e-01  -9.80e-01  ...  9.80e-01   9.90e-01   1.00e+00 
-  current   2.90e-03   3.00e-03   3.00e-03  ...   3.55e-01   1.30e+00   1.36e+00
+  energy     -1.00e+00  -9.90e-01  -9.80e-01  ...  9.80e-01   9.90e-01   1.00e+00 
+  current     2.80e-03   2.90e-03   2.90e-03  ...   1.28e-01   2.58e-01   1.19e-01
+  reference   2.80e-03   2.90e-03   2.90e-03  ...   1.28e-01   2.58e-01   1.19e-01
+  diff        0.00e+00   0.00e+00   0.00e+00  ...   0.00e+00   0.00e+00   0.00e+00
   
-  [1 rows x 201 columns]
+  [3 rows x 201 columns]
+
+        diff_max      mae
+  value 0.00e+00 0.00e+00
+  thres 2.50e-03 2.50e-04
+  chk       True     True
+
+   vector diff: True
 
    final: True
 
@@ -1352,7 +2261,6 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=1, nsite_kkr=1
 save to Fe_lmd/caf80bdd15f4dc9f486d4724ecd18076/structure.json
-debug, option []
 saved to Fe_lmd/caf80bdd15f4dc9f486d4724ecd18076/inputcard_geom
 kkr_struc, symmetry, nsite ('Im-3m', 229) 1
 kkr space group symbol, nsite 229 1
@@ -1363,11 +2271,23 @@ kkr   prim structure num_site 1
 ### bcc Fe(lmd, mjw, spc31)
 kpath is made by HighSymmKpath
   directory:  Fe_lmd   output file:  out_spc31.log
+debug: file, loaded content Fe_lmd/klabel.json {'kpath': [[{'\\Gamma': [0.0, 0.0, 0.0]}, {'H': [0.5, -0.5, 0.5]}, {'N': [0.0, 0.0, 0.5]}, {'\\Gamma': [0.0, 0.0, 0.0]}, {'P': [0.25, 0.25, 0.25]}, {'H': [0.5, -0.5, 0.5]}]]}
+  saved to Fe_lmd/Awk_up.png
+
    Aw(w,k) k=0 0 0, up
-  energy   -4.97e-01  -4.92e-01  -4.87e-01  ...  4.87e-01   4.92e-01   4.97e-01 
-  current   2.54e-02   2.51e-02   2.49e-02  ...   6.64e-03   6.57e-03   6.50e-03
+  energy     -4.97e-01  -4.92e-01  -4.87e-01  ...  4.87e-01   4.92e-01   4.97e-01 
+  current     3.25e-02   3.15e-02   3.06e-02  ...   6.99e-03   6.91e-03   6.84e-03
+  reference   3.25e-02   3.15e-02   3.06e-02  ...   6.99e-03   6.91e-03   6.84e-03
+  diff        0.00e+00   0.00e+00   0.00e+00  ...   0.00e+00   0.00e+00   0.00e+00
   
-  [1 rows x 200 columns]
+  [3 rows x 200 columns]
+
+        diff_max      mae
+  value 0.00e+00 0.00e+00
+  thres 3.00e-03 1.00e-04
+  chk       True     True
+
+   vector diff: True
 
 get_structures(primitive=False), symmetry, nsite ('F-43m', 216) 16
 get_structures(primitive=True), symmetry, nsite ('F-43m', 216) 4
@@ -1379,7 +2299,6 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=4, nsite_kkr=4
 save to GaAs/29c8bc9fb0bb8e1c8ce7e69a3cb3aa47/structure.json
-debug, option []
 saved to GaAs/29c8bc9fb0bb8e1c8ce7e69a3cb3aa47/inputcard_geom
 kkr_struc, symmetry, nsite ('F-43m', 216) 4
 kkr space group symbol, nsite 216 4
@@ -1398,9 +2317,25 @@ np.all(diff == 0) True
 --------------------------------
 ### GaAs (non-magnetic, mjw, go)
   directory:  GaAs   output file:  out_go.log
-           conv    orbitallocalmoment        spinlocalmoment        te       tm
-  current  True  [0.0, 0.0, 0.0, 0.0]  [0.0, 0.0, 0.0, -0.0] -8.40e+03 0.00e+00
+             conv    orbitallocalmoment        spinlocalmoment        te       tm
+  current    True  [0.0, 0.0, 0.0, 0.0]  [0.0, -0.0, 0.0, 0.0] -8.40e+03 0.00e+00
+  reference  True  [0.0, 0.0, 0.0, 0.0]  [0.0, -0.0, 0.0, 0.0] -8.40e+03 0.00e+00
+  and        True                     -                      -         -        -
+  and_th     True                     -                      -         -        -
+  diff          -  [0.0, 0.0, 0.0, 0.0]   [0.0, 0.0, 0.0, 0.0]         - 0.00e+00
+  diff_th       -              1.00e-05               1.00e-05         - 1.00e-05
+  rdiff         -                     -                      -  0.00e+00        -
+  rdiff_th      -                     -                      -  1.00e-11        -
 
+   summary
+                            chk
+  and_conv                 True
+  rdiff_te                 True
+  diff_tm                  True
+  diff_spinlocalmoment     True
+  diff_orbitallocalmoment  True
+
+   final: True
 get_structures(primitive=False), symmetry, nsite ('F-43m', 216) 16
 get_structures(primitive=True), symmetry, nsite ('F-43m', 216) 4
 prim_stand_struc, symmetry, nsite ('F-43m', 216) 4
@@ -1411,7 +2346,6 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=4, nsite_kkr=4
 save to GaAs/29c8bc9fb0bb8e1c8ce7e69a3cb3aa47/structure.json
-debug, option []
 saved to GaAs/29c8bc9fb0bb8e1c8ce7e69a3cb3aa47/inputcard_geom
 kkr_struc, symmetry, nsite ('F-43m', 216) 4
 kkr space group symbol, nsite 216 4
@@ -1430,17 +2364,41 @@ np.all(diff == 0) True
 ---------------------------------
 ### GaAs (non-magnetic, mjw, dos)
   directory:  GaAs   output file:  out_dos.log
+  saved to GaAs/dos.png
+  saved to GaAs/pdos_0.png
+  saved to GaAs/pdos_1.png
+  saved to GaAs/pdos_2.png
+  saved to GaAs/pdos_3.png
+
    totalDOS (up)
-  energy   -9.95e-01  -9.85e-01  -9.75e-01  ...  9.75e-01   9.85e-01   9.95e-01 
-  current   4.94e-02   5.10e-02   5.46e-02  ...   9.62e+00   8.35e+00   1.33e+01
+  energy     -9.95e-01  -9.85e-01  -9.75e-01  ...  9.75e-01   9.85e-01   9.95e-01 
+  current     4.95e-02   5.10e-02   5.47e-02  ...   9.65e+00   8.23e+00   1.34e+01
+  reference   4.95e-02   5.10e-02   5.47e-02  ...   9.65e+00   8.23e+00   1.34e+01
+  diff        0.00e+00   0.00e+00   0.00e+00  ...   0.00e+00   0.00e+00   0.00e+00
   
-  [1 rows x 200 columns]
+  [3 rows x 200 columns]
+
+        diff_max      mae
+  value 0.00e+00 0.00e+00
+  thres 2.50e-03 2.50e-04
+  chk       True     True
+
+   vector diff: True
 
    pdos (up), atom=0, l=d
-  energy   -1.00e+00  -9.90e-01  -9.80e-01  ...  9.80e-01   9.90e-01   1.00e+00 
-  current   2.35e-02   2.14e-02   1.95e-02  ...   2.04e-01   9.79e-01   5.23e-01
+  energy     -1.00e+00  -9.90e-01  -9.80e-01  ...  9.80e-01   9.90e-01   1.00e+00 
+  current     2.35e-02   2.14e-02   1.95e-02  ...   2.15e-01   1.00e+00   5.13e-01
+  reference   2.35e-02   2.14e-02   1.95e-02  ...   2.15e-01   1.00e+00   5.13e-01
+  diff        0.00e+00   0.00e+00   0.00e+00  ...   0.00e+00   0.00e+00   0.00e+00
   
-  [1 rows x 201 columns]
+  [3 rows x 201 columns]
+
+        diff_max      mae
+  value 0.00e+00 0.00e+00
+  thres 2.50e-03 2.50e-04
+  chk       True     True
+
+   vector diff: True
 
    final: True
 
@@ -1454,7 +2412,6 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=4, nsite_kkr=4
 save to GaAs/29c8bc9fb0bb8e1c8ce7e69a3cb3aa47/structure.json
-debug, option []
 saved to GaAs/29c8bc9fb0bb8e1c8ce7e69a3cb3aa47/inputcard_geom
 kkr_struc, symmetry, nsite ('F-43m', 216) 4
 kkr space group symbol, nsite 216 4
@@ -1474,11 +2431,23 @@ np.all(diff == 0) True
 ### GaAs (non-magnetic, mjw, spc31)
 kpath is made by HighSymmKpath
   directory:  GaAs   output file:  out_spc31.log
+debug: file, loaded content GaAs/klabel.json {'kpath': [[{'\\Gamma': [0.0, 0.0, 0.0]}, {'X': [0.5, 0.0, 0.5]}, {'W': [0.5, 0.25, 0.75]}, {'K': [0.375, 0.375, 0.75]}, {'\\Gamma': [0.0, 0.0, 0.0]}, {'L': [0.5, 0.5, 0.5]}, {'U': [0.625, 0.25, 0.625]}, {'W': [0.5, 0.25, 0.75]}, {'L': [0.5, 0.5, 0.5]}, {'K': [0.375, 0.375, 0.75]}]]}
+  saved to GaAs/Awk_up.png
+
    Aw(w,k) k=0 0 0, up
-  energy   -7.46e-01  -7.39e-01  -7.31e-01  ...  7.31e-01   7.39e-01   7.46e-01 
-  current   2.08e-02   2.01e-02   1.95e-02  ...   7.84e+01   1.66e+02   6.42e+00
+  energy     -7.46e-01  -7.39e-01  -7.31e-01  ...  7.31e-01   7.39e-01   7.46e-01 
+  current     2.08e-02   2.01e-02   1.95e-02  ...   7.58e+01   1.68e+02   6.48e+00
+  reference   2.08e-02   2.01e-02   1.95e-02  ...   7.58e+01   1.68e+02   6.48e+00
+  diff        0.00e+00   0.00e+00   0.00e+00  ...   0.00e+00   0.00e+00   0.00e+00
   
-  [1 rows x 200 columns]
+  [3 rows x 200 columns]
+
+        diff_max      mae
+  value 0.00e+00 0.00e+00
+  thres 3.00e-03 1.00e-04
+  chk       True     True
+
+   vector diff: True
 
 get_structures(primitive=False), symmetry, nsite ('Fm-3m', 225) 16
 get_structures(primitive=True), symmetry, nsite ('Fm-3m', 225) 4
@@ -1490,7 +2459,6 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=4, nsite_kkr=4
 save to Co2MnSi/f004c18c44f33831824ae67414f00215/structure.json
-debug, option []
 saved to Co2MnSi/f004c18c44f33831824ae67414f00215/inputcard_geom
 kkr_struc, symmetry, nsite ('Fm-3m', 225) 4
 kkr space group symbol, nsite 225 4
@@ -1500,11 +2468,27 @@ kkr   prim structure num_site 4
 -------------------------------
 ### Co2MnSi (magnetic, pbe, go)
   directory:  Co2MnSi   output file:  out_go.log
-           conv orbitallocalmoment  ...        te       tm
-  current  True    [0.0, 0.0, 0.0]  ... -8.47e+03 5.00e+00
+             conv orbitallocalmoment  ...        te       tm
+  current    True    [0.0, 0.0, 0.0]  ... -8.47e+03 5.00e+00
+  reference  True    [0.0, 0.0, 0.0]  ... -8.47e+03 5.00e+00
+  and        True                  -  ...         -        -
+  and_th     True                  -  ...         -        -
+  diff          -    [0.0, 0.0, 0.0]  ...         - 0.00e+00
+  diff_th       -           1.00e-05  ...         - 1.00e-05
+  rdiff         -                  -  ...  0.00e+00        -
+  rdiff_th      -                  -  ...  1.00e-11        -
   
-  [1 rows x 5 columns]
+  [8 rows x 5 columns]
 
+   summary
+                            chk
+  and_conv                 True
+  rdiff_te                 True
+  diff_tm                  True
+  diff_spinlocalmoment     True
+  diff_orbitallocalmoment  True
+
+   final: True
 get_structures(primitive=False), symmetry, nsite ('Fm-3m', 225) 16
 get_structures(primitive=True), symmetry, nsite ('Fm-3m', 225) 4
 prim_stand_struc, symmetry, nsite ('Fm-3m', 225) 4
@@ -1515,7 +2499,6 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=4, nsite_kkr=4
 save to Co2MnSi/f004c18c44f33831824ae67414f00215/structure.json
-debug, option []
 saved to Co2MnSi/f004c18c44f33831824ae67414f00215/inputcard_geom
 kkr_struc, symmetry, nsite ('Fm-3m', 225) 4
 kkr space group symbol, nsite 225 4
@@ -1525,11 +2508,27 @@ kkr   prim structure num_site 4
 --------------------------------
 ### Co2MnSi (magnetic, pbe, fsm)
   directory:  Co2MnSi   output file:  out_fsm.log
-           conv orbitallocalmoment  ...        te       tm
-  current  True    [0.0, 0.0, 0.0]  ... -8.47e+03 4.50e+00
+             conv orbitallocalmoment  ...        te       tm
+  current    True    [0.0, 0.0, 0.0]  ... -8.47e+03 4.50e+00
+  reference  True    [0.0, 0.0, 0.0]  ... -8.47e+03 4.50e+00
+  and        True                  -  ...         -        -
+  and_th     True                  -  ...         -        -
+  diff          -    [0.0, 0.0, 0.0]  ...         - 0.00e+00
+  diff_th       -           1.00e-05  ...         - 1.00e-05
+  rdiff         -                  -  ...  0.00e+00        -
+  rdiff_th      -                  -  ...  1.00e-11        -
   
-  [1 rows x 5 columns]
+  [8 rows x 5 columns]
 
+   summary
+                            chk
+  and_conv                 True
+  rdiff_te                 True
+  diff_tm                  True
+  diff_spinlocalmoment     True
+  diff_orbitallocalmoment  True
+
+   final: True
 get_structures(primitive=False), symmetry, nsite ('Fm-3m', 225) 16
 get_structures(primitive=True), symmetry, nsite ('Fm-3m', 225) 4
 prim_stand_struc, symmetry, nsite ('Fm-3m', 225) 4
@@ -1540,7 +2539,6 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=4, nsite_kkr=4
 save to Co2MnSi/f004c18c44f33831824ae67414f00215/structure.json
-debug, option []
 saved to Co2MnSi/f004c18c44f33831824ae67414f00215/inputcard_geom
 kkr_struc, symmetry, nsite ('Fm-3m', 225) 4
 kkr space group symbol, nsite 225 4
@@ -1550,9 +2548,17 @@ kkr   prim structure num_site 4
 -------------------------------
 ### Co2MnSi (magnetic, pbe, tc)
   directory:  Co2MnSi   output file:  out_tc.log
-                Tc
-  current 8.49e+02
+                  Tc
+  current   9.03e+02
+  reference 9.03e+02
+  rdiff     0.00e+00
+  rdiff_th  1.00e-05
 
+   summary
+             chk
+  rdiff_Tc  True
+
+   final: True
 get_structures(primitive=False), symmetry, nsite ('Fm-3m', 225) 16
 get_structures(primitive=True), symmetry, nsite ('Fm-3m', 225) 4
 prim_stand_struc, symmetry, nsite ('Fm-3m', 225) 4
@@ -1563,7 +2569,6 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=4, nsite_kkr=4
 save to Co2MnSi/f004c18c44f33831824ae67414f00215/structure.json
-debug, option []
 saved to Co2MnSi/f004c18c44f33831824ae67414f00215/inputcard_geom
 kkr_struc, symmetry, nsite ('Fm-3m', 225) 4
 kkr space group symbol, nsite 225 4
@@ -1573,13 +2578,58 @@ kkr   prim structure num_site 4
 ---------------------------------
 ### Co2MnSi (magnetic, pbe, j3.0)
   directory:  Co2MnSi   output file:  out_j3.0.log
-                Tc
-  current 8.48e+02
+  saved to Co2MnSi/jij.csv
+
+  saved to Co2MnSi/Jij_Mn_4b_0-Co_8c_4.png
+  saved to Co2MnSi/Jij_Mn_4b_0-Mn_4b_0.png
+  saved to Co2MnSi/Jij_Co_8c_4-Si_4a_12.png
+  saved to Co2MnSi/Jij_Si_4a_12-Si_4a_12.png
+  saved to Co2MnSi/Jij_Mn_4b_0-Si_4a_12.png
+  saved to Co2MnSi/Jij_Co_8c_4-Co_8c_4.png
+                  Tc
+  current   9.03e+02
+  reference 9.03e+02
+  rdiff     0.00e+00
+  rdiff_th  1.00e-05
+
+   summary
+             chk
+  rdiff_Tc  True
+
+   final: True
+
+debug df_result_jij
+  comp1 comp2 current_J_ij current_J_ij(meV)                   pair
+0     1     1     0.001053         14.333237    Co_8c_4-Mn_4b_0-1-1
+1     1     1     0.000013          0.177178   Co_8c_4-Si_4a_12-1-1
+2     1     1     0.000181          2.461966    Co_8c_4-Co_8c_4-1-1
+3     1     1     0.000014          0.188972   Mn_4b_0-Si_4a_12-1-1
+4     1     1     0.000104          1.419687    Mn_4b_0-Mn_4b_0-1-1
+5     1     1    -0.000000         -0.000088  Si_4a_12-Si_4a_12-1-1
+debug df_ref_jij
+  comp1 comp2 reference_J_ij reference_J_ij(meV)                   pair
+0     1     1       0.001053           14.333237    Co_8c_4-Mn_4b_0-1-1
+1     1     1       0.000013            0.177178   Co_8c_4-Si_4a_12-1-1
+2     1     1       0.000181            2.461966    Co_8c_4-Co_8c_4-1-1
+3     1     1       0.000014            0.188972   Mn_4b_0-Si_4a_12-1-1
+4     1     1       0.000104            1.419687    Mn_4b_0-Mn_4b_0-1-1
+5     1     1      -0.000000           -0.000088  Si_4a_12-Si_4a_12-1-1
 
    J_ij(meV) at the shortest distance
-  typecomp Co-Co_1_1  Co-Mn_1_1 Co-Si_1_1 Mn-Mn_1_1 Mn-Si_1_1  Si-Si_1_1
-  current   2.396693  13.250628  0.230961  1.393172  0.258222  -0.001327
+  typecomp   Co_8c_4-Mn_4b_0-1-1_1_1  ...  Si_4a_12-Si_4a_12-1-1_1_1
+  current                   1.43e+01  ...                  -8.80e-05
+  reference                 1.43e+01  ...                  -8.80e-05
+  diff                      0.00e+00  ...                   0.00e+00
+  
+  [3 rows x 6 columns]
 
+   jij summary
+        diff_max      mae
+  value 0.00e+00 0.00e+00
+  thres 1.00e-04 1.00e-04
+  chk       True     True
+
+   final: True
 get_structures(primitive=False), symmetry, nsite ('Fm-3m', 225) 16
 get_structures(primitive=True), symmetry, nsite ('Fm-3m', 225) 4
 prim_stand_struc, symmetry, nsite ('Fm-3m', 225) 4
@@ -1590,7 +2640,6 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=4, nsite_kkr=4
 save to Co2MnSi/f004c18c44f33831824ae67414f00215/structure.json
-debug, option []
 saved to Co2MnSi/f004c18c44f33831824ae67414f00215/inputcard_geom
 kkr_struc, symmetry, nsite ('Fm-3m', 225) 4
 kkr space group symbol, nsite 225 4
@@ -1600,29 +2649,66 @@ kkr   prim structure num_site 4
 --------------------------------
 ### Co2MnSi (magnetic, pbe, dos)
   directory:  Co2MnSi   output file:  out_dos.log
+  saved to Co2MnSi/dos.png
+  saved to Co2MnSi/pdos_0.png
+  saved to Co2MnSi/pdos_1.png
+  saved to Co2MnSi/pdos_2.png
+
    totalDOS (up)
-  energy   -9.95e-01  -9.85e-01  -9.75e-01  ...  9.75e-01   9.85e-01   9.95e-01 
-  current   1.66e-03   1.74e-03   1.84e-03  ...   1.25e+01   5.13e+00   1.00e+01
+  energy     -9.95e-01  -9.85e-01  -9.75e-01  ...  9.75e-01   9.85e-01   9.95e-01 
+  current     1.74e-03   1.83e-03   1.94e-03  ...   8.35e+00   1.20e+01   1.13e+01
+  reference   1.74e-03   1.83e-03   1.94e-03  ...   8.35e+00   1.20e+01   1.13e+01
+  diff        0.00e+00   0.00e+00   0.00e+00  ...   0.00e+00   0.00e+00   0.00e+00
   
-  [1 rows x 200 columns]
+  [3 rows x 200 columns]
+
+        diff_max      mae
+  value 0.00e+00 0.00e+00
+  thres 2.50e-03 2.50e-04
+  chk       True     True
 
    totalDOS (dn)
-  energy   -9.95e-01  -9.85e-01  -9.75e-01  ...  9.75e-01   9.85e-01   9.95e-01 
-  current   1.43e-03   1.50e-03   1.58e-03  ...   9.08e+00   3.42e+00   1.10e+01
+  energy     -9.95e-01  -9.85e-01  -9.75e-01  ...  9.75e-01   9.85e-01   9.95e-01 
+  current     1.50e-03   1.57e-03   1.66e-03  ...   1.34e+01   8.24e+00   6.28e+00
+  reference   1.50e-03   1.57e-03   1.66e-03  ...   1.34e+01   8.24e+00   6.28e+00
+  diff        0.00e+00   0.00e+00   0.00e+00  ...   0.00e+00   0.00e+00   0.00e+00
   
-  [1 rows x 200 columns]
+  [3 rows x 200 columns]
+
+        diff_max      mae
+  value 0.00e+00 0.00e+00
+  thres 2.50e-03 2.50e-04
+  chk       True     True
+
+   vector diff: True
 
    pdos (up), atom=0, l=d
-  energy   -1.00e+00  -9.90e-01  -9.80e-01  ...  9.80e-01   9.90e-01   1.00e+00 
-  current   4.00e-04   4.00e-04   4.00e-04  ...   2.72e-01   2.88e-02   3.64e-01
+  energy     -1.00e+00  -9.90e-01  -9.80e-01  ...  9.80e-01   9.90e-01   1.00e+00 
+  current     4.00e-04   4.00e-04   4.00e-04  ...   5.93e-02   1.39e-01   2.88e-02
+  reference   4.00e-04   4.00e-04   4.00e-04  ...   5.93e-02   1.39e-01   2.88e-02
+  diff        0.00e+00   0.00e+00   0.00e+00  ...   0.00e+00   0.00e+00   0.00e+00
   
-  [1 rows x 201 columns]
+  [3 rows x 201 columns]
+
+        diff_max      mae
+  value 0.00e+00 0.00e+00
+  thres 2.50e-03 2.50e-04
+  chk       True     True
 
    pdos (dn), atom=0, l=d
-  energy   -1.00e+00  -9.90e-01  -9.80e-01  ...  9.80e-01   9.90e-01   1.00e+00 
-  current   3.00e-04   4.00e-04   4.00e-04  ...   7.22e-01   1.39e-02   1.80e-01
+  energy     -1.00e+00  -9.90e-01  -9.80e-01  ...  9.80e-01   9.90e-01   1.00e+00 
+  current     3.00e-04   3.00e-04   3.00e-04  ...   3.98e-01   3.96e-02   1.31e-01
+  reference   3.00e-04   3.00e-04   3.00e-04  ...   3.98e-01   3.96e-02   1.31e-01
+  diff        0.00e+00   0.00e+00   0.00e+00  ...   0.00e+00   0.00e+00   0.00e+00
   
-  [1 rows x 201 columns]
+  [3 rows x 201 columns]
+
+        diff_max      mae
+  value 0.00e+00 0.00e+00
+  thres 2.50e-03 2.50e-04
+  chk       True     True
+
+   vector diff: True
 
    final: True
 
@@ -1636,7 +2722,6 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=4, nsite_kkr=4
 save to Co2MnSi/f004c18c44f33831824ae67414f00215/structure.json
-debug, option []
 saved to Co2MnSi/f004c18c44f33831824ae67414f00215/inputcard_geom
 kkr_struc, symmetry, nsite ('Fm-3m', 225) 4
 kkr space group symbol, nsite 225 4
@@ -1647,17 +2732,38 @@ kkr   prim structure num_site 4
 ### Co2MnSi (magnetic, pbe, spc31)
 kpath is made by HighSymmKpath
   directory:  Co2MnSi   output file:  out_spc31.log
+debug: file, loaded content Co2MnSi/klabel.json {'kpath': [[{'\\Gamma': [0.0, 0.0, 0.0]}, {'X': [0.5, 0.0, 0.5]}, {'W': [0.5, 0.25, 0.75]}, {'K': [0.375, 0.375, 0.75]}, {'\\Gamma': [0.0, 0.0, 0.0]}, {'L': [0.5, 0.5, 0.5]}, {'U': [0.625, 0.25, 0.625]}, {'W': [0.5, 0.25, 0.75]}, {'L': [0.5, 0.5, 0.5]}, {'K': [0.375, 0.375, 0.75]}]]}
+  saved to Co2MnSi/Awk_up.png
+  saved to Co2MnSi/Awk_dn.png
+  saved to Co2MnSi/Awk_both.png
+
    Aw(w,k) k=0 0 0, up
-  energy   -5.97e-01  -5.91e-01  -5.85e-01  ...  5.85e-01   5.91e-01   5.97e-01 
-  current   4.86e-03   5.01e-03   5.16e-03  ...   2.60e-02   2.94e-02   3.39e-02
+  energy     -5.97e-01  -5.91e-01  -5.85e-01  ...  5.85e-01   5.91e-01   5.97e-01 
+  current     5.04e-03   5.20e-03   5.37e-03  ...   2.14e-02   2.36e-02   2.64e-02
+  reference   5.04e-03   5.20e-03   5.37e-03  ...   2.14e-02   2.36e-02   2.64e-02
+  diff        0.00e+00   0.00e+00   0.00e+00  ...   0.00e+00   0.00e+00   0.00e+00
   
-  [1 rows x 200 columns]
+  [3 rows x 200 columns]
+
+        diff_max      mae
+  value 0.00e+00 0.00e+00
+  thres 3.00e-03 1.00e-04
+  chk       True     True
 
    Aw(w,k) k=0 0 0, dn
-  energy   -5.97e-01  -5.91e-01  -5.85e-01  ...  5.85e-01   5.91e-01   5.97e-01 
-  current   3.47e-03   3.54e-03   3.61e-03  ...   1.87e-02   1.85e-02   1.86e-02
+  energy     -5.97e-01  -5.91e-01  -5.85e-01  ...  5.85e-01   5.91e-01   5.97e-01 
+  current     3.54e-03   3.62e-03   3.70e-03  ...   1.85e-02   1.80e-02   1.78e-02
+  reference   3.54e-03   3.62e-03   3.70e-03  ...   1.85e-02   1.80e-02   1.78e-02
+  diff        0.00e+00   0.00e+00   0.00e+00  ...   0.00e+00   0.00e+00   0.00e+00
   
-  [1 rows x 200 columns]
+  [3 rows x 200 columns]
+
+        diff_max      mae
+  value 0.00e+00 0.00e+00
+  thres 3.00e-03 1.00e-04
+  chk       True     True
+
+   vector diff: True
 
 get_structures(primitive=False), symmetry, nsite ('P6/mmm', 191) 6
 get_structures(primitive=True), symmetry, nsite ('P6/mmm', 191) 6
@@ -1669,22 +2775,36 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=6, nsite_kkr=6
 save to SmCo5_oc/b8260bd2a71fea65131fe090346c6003/structure.json
-debug, option []
 saved to SmCo5_oc/b8260bd2a71fea65131fe090346c6003/inputcard_geom
 kkr_struc, symmetry, nsite ('P6/mmm', 191) 6
 kkr space group symbol, nsite 191 6
 input prim structure num_site 6
 kkr   prim structure num_site 6
 ('P6/mmm', 191) ('P6/mmm', 191)
-[['0.0a', '0.0b', '0.0c', 'Sm'], ['0.5a', '0.0b', '0.5c', 'Co3g'], ['0.0a', '0.5b', '0.5c', 'Co3g'], ['0.5a', '0.5b', '0.5c', 'Co3g'], ['1/3a', '2/3b', '0.0c', 'Co2c'], ['2/3a', '1/3b', '0.0c', 'Co2c']]
 ------------------------------------------------------------
 ### SmCo5(magnetic, open core for Sm-4f, srals, mjw-asa, go)
   directory:  SmCo5_oc   output file:  out_go.log
-           conv           orbitallocalmoment  ...        te       tm
-  current  True  [0.11229, 0.13317, 0.07409]  ... -3.48e+04 6.93e+00
+             conv           orbitallocalmoment  ...        te       tm
+  current    True  [0.03987, 0.11069, 0.13569]  ... -3.48e+04 7.04e+00
+  reference  True  [0.03987, 0.11069, 0.13569]  ... -3.48e+04 7.04e+00
+  and        True                            -  ...         -        -
+  and_th     True                            -  ...         -        -
+  diff          -              [0.0, 0.0, 0.0]  ...         - 0.00e+00
+  diff_th       -                     1.00e-05  ...         - 1.00e-05
+  rdiff         -                            -  ...  0.00e+00        -
+  rdiff_th      -                            -  ...  1.00e-11        -
   
-  [1 rows x 5 columns]
+  [8 rows x 5 columns]
 
+   summary
+                            chk
+  and_conv                 True
+  rdiff_te                 True
+  diff_tm                  True
+  diff_spinlocalmoment     True
+  diff_orbitallocalmoment  True
+
+   final: True
 get_structures(primitive=False), symmetry, nsite ('P6/mmm', 191) 6
 get_structures(primitive=True), symmetry, nsite ('P6/mmm', 191) 6
 prim_stand_struc, symmetry, nsite ('P6/mmm', 191) 6
@@ -1695,22 +2815,36 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=6, nsite_kkr=6
 save to SmCo5_oc/b8260bd2a71fea65131fe090346c6003/structure.json
-debug, option []
 saved to SmCo5_oc/b8260bd2a71fea65131fe090346c6003/inputcard_geom
 kkr_struc, symmetry, nsite ('P6/mmm', 191) 6
 kkr space group symbol, nsite 191 6
 input prim structure num_site 6
 kkr   prim structure num_site 6
 ('P6/mmm', 191) ('P6/mmm', 191)
-[['0.0a', '0.0b', '0.0c', 'Sm'], ['0.5a', '0.0b', '0.5c', 'Co3g'], ['0.0a', '0.5b', '0.5c', 'Co3g'], ['0.5a', '0.5b', '0.5c', 'Co3g'], ['1/3a', '2/3b', '0.0c', 'Co2c'], ['2/3a', '1/3b', '0.0c', 'Co2c']]
 -------------------------------------------------------------
 ### SmCo5(magnetic, open core for Sm-4f, srals, mjw-asa, fsm)
   directory:  SmCo5_oc   output file:  out_fsm.log
-           conv           orbitallocalmoment  ...        te       tm
-  current  True  [0.10694, 0.13193, 0.08133]  ... -3.48e+04 6.50e+00
+             conv           orbitallocalmoment  ...        te       tm
+  current    True  [0.05459, 0.10322, 0.13302]  ... -3.48e+04 6.50e+00
+  reference  True  [0.05459, 0.10322, 0.13302]  ... -3.48e+04 6.50e+00
+  and        True                            -  ...         -        -
+  and_th     True                            -  ...         -        -
+  diff          -              [0.0, 0.0, 0.0]  ...         - 0.00e+00
+  diff_th       -                     1.00e-05  ...         - 1.00e-05
+  rdiff         -                            -  ...  0.00e+00        -
+  rdiff_th      -                            -  ...  1.00e-11        -
   
-  [1 rows x 5 columns]
+  [8 rows x 5 columns]
 
+   summary
+                            chk
+  and_conv                 True
+  rdiff_te                 True
+  diff_tm                  True
+  diff_spinlocalmoment     True
+  diff_orbitallocalmoment  True
+
+   final: True
 get_structures(primitive=False), symmetry, nsite ('P6/mmm', 191) 6
 get_structures(primitive=True), symmetry, nsite ('P6/mmm', 191) 6
 prim_stand_struc, symmetry, nsite ('P6/mmm', 191) 6
@@ -1721,20 +2855,26 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=6, nsite_kkr=6
 save to SmCo5_oc/b8260bd2a71fea65131fe090346c6003/structure.json
-debug, option []
 saved to SmCo5_oc/b8260bd2a71fea65131fe090346c6003/inputcard_geom
 kkr_struc, symmetry, nsite ('P6/mmm', 191) 6
 kkr space group symbol, nsite 191 6
 input prim structure num_site 6
 kkr   prim structure num_site 6
 ('P6/mmm', 191) ('P6/mmm', 191)
-[['0.0a', '0.0b', '0.0c', 'Sm'], ['0.5a', '0.0b', '0.5c', 'Co3g'], ['0.0a', '0.5b', '0.5c', 'Co3g'], ['0.5a', '0.5b', '0.5c', 'Co3g'], ['1/3a', '2/3b', '0.0c', 'Co2c'], ['2/3a', '1/3b', '0.0c', 'Co2c']]
 ------------------------------------------------------------
 ### SmCo5(magnetic, open core for Sm-4f, srals, mjw-asa, tc)
   directory:  SmCo5_oc   output file:  out_tc.log
-                Tc
-  current 1.05e+03
+                  Tc
+  current   1.07e+03
+  reference 1.07e+03
+  rdiff     0.00e+00
+  rdiff_th  1.00e-05
 
+   summary
+             chk
+  rdiff_Tc  True
+
+   final: True
 get_structures(primitive=False), symmetry, nsite ('P6/mmm', 191) 6
 get_structures(primitive=True), symmetry, nsite ('P6/mmm', 191) 6
 prim_stand_struc, symmetry, nsite ('P6/mmm', 191) 6
@@ -1745,26 +2885,67 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=6, nsite_kkr=6
 save to SmCo5_oc/b8260bd2a71fea65131fe090346c6003/structure.json
-debug, option []
 saved to SmCo5_oc/b8260bd2a71fea65131fe090346c6003/inputcard_geom
 kkr_struc, symmetry, nsite ('P6/mmm', 191) 6
 kkr space group symbol, nsite 191 6
 input prim structure num_site 6
 kkr   prim structure num_site 6
 ('P6/mmm', 191) ('P6/mmm', 191)
-[['0.0a', '0.0b', '0.0c', 'Sm'], ['0.5a', '0.0b', '0.5c', 'Co3g'], ['0.0a', '0.5b', '0.5c', 'Co3g'], ['0.5a', '0.5b', '0.5c', 'Co3g'], ['1/3a', '2/3b', '0.0c', 'Co2c'], ['2/3a', '1/3b', '0.0c', 'Co2c']]
 --------------------------------------------------------------
 ### SmCo5(magnetic, open core for Sm-4f, srals, mjw-asa, j3.0)
   directory:  SmCo5_oc   output file:  out_j3.0.log
-                Tc
-  current 1.03e+03
+  saved to SmCo5_oc/jij.csv
+
+  saved to SmCo5_oc/Jij_Sm_1a_0-Co_2c_4.png
+  saved to SmCo5_oc/Jij_Co_3g_1-Co_3g_1.png
+  saved to SmCo5_oc/Jij_Sm_1a_0-Co_3g_1.png
+  saved to SmCo5_oc/Jij_Sm_1a_0-Sm_1a_0.png
+  saved to SmCo5_oc/Jij_Co_3g_1-Co_2c_4.png
+  saved to SmCo5_oc/Jij_Co_2c_4-Co_2c_4.png
+                  Tc
+  current   1.06e+03
+  reference 1.06e+03
+  rdiff     0.00e+00
+  rdiff_th  1.00e-05
+
+   summary
+             chk
+  rdiff_Tc  True
+
+   final: True
+
+debug df_result_jij
+  comp1 comp2 current_J_ij current_J_ij(meV)                 pair
+0     1     1     0.001084         14.747643  Co_2c_4-Co_3g_1-1-1
+1     1     1     0.000996         13.554262  Co_3g_1-Co_3g_1-1-1
+2     1     1     0.000391          5.314158  Co_2c_4-Co_2c_4-1-1
+3     1     1     0.000177          2.411821  Co_2c_4-Sm_1a_0-1-1
+4     1     1     0.000175          2.387633  Co_3g_1-Sm_1a_0-1-1
+5     1     1    -0.000002         -0.029975  Sm_1a_0-Sm_1a_0-1-1
+debug df_ref_jij
+  comp1 comp2 reference_J_ij reference_J_ij(meV)                 pair
+0     1     1       0.001084           14.747643  Co_2c_4-Co_3g_1-1-1
+1     1     1       0.000996           13.554262  Co_3g_1-Co_3g_1-1-1
+2     1     1       0.000391            5.314158  Co_2c_4-Co_2c_4-1-1
+3     1     1       0.000177            2.411821  Co_2c_4-Sm_1a_0-1-1
+4     1     1       0.000175            2.387633  Co_3g_1-Sm_1a_0-1-1
+5     1     1      -0.000002           -0.029975  Sm_1a_0-Sm_1a_0-1-1
 
    J_ij(meV) at the shortest distance
-  typecomp Co2c-Co2c_1_1 Co2c-Sm_1_1  ... Co3g-Sm_1_1 Sm-Sm_1_1
-  current       4.955130    2.762603  ...    2.778315  0.280167
+  typecomp   Co_2c_4-Co_3g_1-1-1_1_1  ...  Sm_1a_0-Sm_1a_0-1-1_1_1
+  current                   1.47e+01  ...                -3.00e-02
+  reference                 1.47e+01  ...                -3.00e-02
+  diff                      0.00e+00  ...                 0.00e+00
   
-  [1 rows x 6 columns]
+  [3 rows x 6 columns]
 
+   jij summary
+        diff_max      mae
+  value 0.00e+00 0.00e+00
+  thres 1.00e-04 1.00e-04
+  chk       True     True
+
+   final: True
 get_structures(primitive=False), symmetry, nsite ('P6/mmm', 191) 6
 get_structures(primitive=True), symmetry, nsite ('P6/mmm', 191) 6
 prim_stand_struc, symmetry, nsite ('P6/mmm', 191) 6
@@ -1775,40 +2956,75 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=6, nsite_kkr=6
 save to SmCo5_oc/b8260bd2a71fea65131fe090346c6003/structure.json
-debug, option []
 saved to SmCo5_oc/b8260bd2a71fea65131fe090346c6003/inputcard_geom
 kkr_struc, symmetry, nsite ('P6/mmm', 191) 6
 kkr space group symbol, nsite 191 6
 input prim structure num_site 6
 kkr   prim structure num_site 6
 ('P6/mmm', 191) ('P6/mmm', 191)
-[['0.0a', '0.0b', '0.0c', 'Sm'], ['0.5a', '0.0b', '0.5c', 'Co3g'], ['0.0a', '0.5b', '0.5c', 'Co3g'], ['0.5a', '0.5b', '0.5c', 'Co3g'], ['1/3a', '2/3b', '0.0c', 'Co2c'], ['2/3a', '1/3b', '0.0c', 'Co2c']]
 -------------------------------------------------------------
 ### SmCo5(magnetic, open core for Sm-4f, srals, mjw-asa, dos)
   directory:  SmCo5_oc   output file:  out_dos.log
+  saved to SmCo5_oc/dos.png
+  saved to SmCo5_oc/pdos_0.png
+  saved to SmCo5_oc/pdos_1.png
+  saved to SmCo5_oc/pdos_2.png
+
    totalDOS (up)
-  energy   -9.95e-01  -9.85e-01  -9.75e-01  ...  9.75e-01   9.85e-01   9.95e-01 
-  current   2.63e-02   2.61e-02   2.61e-02  ...   1.19e+01   2.33e+01   2.23e+01
+  energy     -9.95e-01  -9.85e-01  -9.75e-01  ...  9.75e-01   9.85e-01   9.95e-01 
+  current     2.55e-02   2.54e-02   2.52e-02  ...   1.35e+01   1.26e+01   1.04e+01
+  reference   2.55e-02   2.54e-02   2.52e-02  ...   1.35e+01   1.26e+01   1.04e+01
+  diff        0.00e+00   0.00e+00   0.00e+00  ...   0.00e+00   0.00e+00   0.00e+00
   
-  [1 rows x 200 columns]
+  [3 rows x 200 columns]
+
+        diff_max      mae
+  value 0.00e+00 0.00e+00
+  thres 2.50e-03 2.50e-04
+  chk       True     True
 
    totalDOS (dn)
-  energy   -9.95e-01  -9.85e-01  -9.75e-01  ...  9.75e-01   9.85e-01   9.95e-01 
-  current   1.89e-02   1.91e-02   1.93e-02  ...   1.30e+01   1.46e+01   2.26e+01
+  energy     -9.95e-01  -9.85e-01  -9.75e-01  ...  9.75e-01   9.85e-01   9.95e-01 
+  current     1.83e-02   1.84e-02   1.85e-02  ...   1.77e+01   1.53e+01   1.16e+01
+  reference   1.83e-02   1.84e-02   1.85e-02  ...   1.77e+01   1.53e+01   1.16e+01
+  diff        0.00e+00   0.00e+00   0.00e+00  ...   0.00e+00   0.00e+00   0.00e+00
   
-  [1 rows x 200 columns]
+  [3 rows x 200 columns]
+
+        diff_max      mae
+  value 0.00e+00 0.00e+00
+  thres 2.50e-03 2.50e-04
+  chk       True     True
+
+   vector diff: True
 
    pdos (up), atom=0, l=d
-  energy   -1.00e+00  -9.90e-01  -9.80e-01  ...  9.80e-01   9.90e-01   1.00e+00 
-  current   3.30e-03   3.30e-03   3.40e-03  ...   4.38e-01   9.44e-01   1.33e+00
+  energy     -1.00e+00  -9.90e-01  -9.80e-01  ...  9.80e-01   9.90e-01   1.00e+00 
+  current    -7.00e-04  -7.00e-04  -7.00e-04  ...   9.86e-01   9.31e-01   6.45e-01
+  reference  -7.00e-04  -7.00e-04  -7.00e-04  ...   9.86e-01   9.31e-01   6.45e-01
+  diff        0.00e+00   0.00e+00   0.00e+00  ...   0.00e+00   0.00e+00   0.00e+00
   
-  [1 rows x 201 columns]
+  [3 rows x 201 columns]
+
+        diff_max      mae
+  value 0.00e+00 0.00e+00
+  thres 2.50e-03 2.50e-04
+  chk       True     True
 
    pdos (dn), atom=0, l=d
-  energy   -1.00e+00  -9.90e-01  -9.80e-01  ...  9.80e-01   9.90e-01   1.00e+00 
-  current   3.70e-03   3.80e-03   3.80e-03  ...   4.54e-01   3.58e-01   9.91e-01
+  energy     -1.00e+00  -9.90e-01  -9.80e-01  ...  9.80e-01   9.90e-01   1.00e+00 
+  current     8.00e-04   8.00e-04   8.00e-04  ...   7.98e-01   6.44e-01   4.23e-01
+  reference   8.00e-04   8.00e-04   8.00e-04  ...   7.98e-01   6.44e-01   4.23e-01
+  diff        0.00e+00   0.00e+00   0.00e+00  ...   0.00e+00   0.00e+00   0.00e+00
   
-  [1 rows x 201 columns]
+  [3 rows x 201 columns]
+
+        diff_max      mae
+  value 0.00e+00 0.00e+00
+  thres 2.50e-03 2.50e-04
+  chk       True     True
+
+   vector diff: True
 
    final: True
 
@@ -1822,31 +3038,74 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=6, nsite_kkr=6
 save to SmCo5_oc/b8260bd2a71fea65131fe090346c6003/structure.json
-debug, option []
 saved to SmCo5_oc/b8260bd2a71fea65131fe090346c6003/inputcard_geom
 kkr_struc, symmetry, nsite ('P6/mmm', 191) 6
 kkr space group symbol, nsite 191 6
 input prim structure num_site 6
 kkr   prim structure num_site 6
 ('P6/mmm', 191) ('P6/mmm', 191)
-[['0.0a', '0.0b', '0.0c', 'Sm'], ['0.5a', '0.0b', '0.5c', 'Co3g'], ['0.0a', '0.5b', '0.5c', 'Co3g'], ['0.5a', '0.5b', '0.5c', 'Co3g'], ['1/3a', '2/3b', '0.0c', 'Co2c'], ['2/3a', '1/3b', '0.0c', 'Co2c']]
 ---------------------------------------------------------------
 ### SmCo5(magnetic, open core for Sm-4f, srals, mjw-asa, spc31)
 kpath is made by HighSymmKpath
   directory:  SmCo5_oc   output file:  out_spc31.log
+debug: file, loaded content SmCo5_oc/klabel.json {'kpath': [[{'\\Gamma': [0.0, 0.0, 0.0]}, {'M': [0.5, 0.0, 0.0]}, {'K': [0.3333333333333333, 0.3333333333333333, 0.0]}, {'\\Gamma': [0.0, 0.0, 0.0]}, {'A': [0.0, 0.0, 0.5]}, {'L': [0.5, 0.0, 0.5]}, {'H': [0.3333333333333333, 0.3333333333333333, 0.5]}, {'A': [0.0, 0.0, 0.5]}]]}
+  saved to SmCo5_oc/Awk_up.png
+  saved to SmCo5_oc/Awk_dn.png
+  saved to SmCo5_oc/Awk_both.png
+
    Aw(w,k) k=0 0 0, up
-  energy   -8.46e-01  -8.37e-01  -8.29e-01  ...  8.29e-01   8.37e-01   8.46e-01 
-  current   3.27e-02   3.36e-02   3.44e-02  ...   5.11e+00   3.24e+00   7.91e+00
+  energy     -8.46e-01  -8.37e-01  -8.29e-01  ...  8.29e-01   8.37e-01   8.46e-01 
+  current     3.17e-02   3.25e-02   3.33e-02  ...   2.46e+00   3.29e+00   2.62e+01
+  reference   3.17e-02   3.25e-02   3.33e-02  ...   2.46e+00   3.29e+00   2.62e+01
+  diff        0.00e+00   0.00e+00   0.00e+00  ...   0.00e+00   0.00e+00   0.00e+00
   
-  [1 rows x 200 columns]
+  [3 rows x 200 columns]
+
+        diff_max      mae
+  value 0.00e+00 0.00e+00
+  thres 3.00e-03 1.00e-04
+  chk       True     True
 
    Aw(w,k) k=0 0 0, dn
-  energy   -8.46e-01  -8.37e-01  -8.29e-01  ...  8.29e-01   8.37e-01   8.46e-01 
-  current   2.71e-02   2.80e-02   2.89e-02  ...   2.61e+00   6.04e+00   1.01e+02
+  energy     -8.46e-01  -8.37e-01  -8.29e-01  ...  8.29e-01   8.37e-01   8.46e-01 
+  current     2.53e-02   2.60e-02   2.67e-02  ...   1.25e+01   1.56e+02   1.65e+02
+  reference   2.53e-02   2.60e-02   2.67e-02  ...   1.25e+01   1.56e+02   1.65e+02
+  diff        0.00e+00   0.00e+00   0.00e+00  ...   0.00e+00   0.00e+00   0.00e+00
   
-  [1 rows x 200 columns]
+  [3 rows x 200 columns]
+
+        diff_max      mae
+  value 0.00e+00 0.00e+00
+  thres 3.00e-03 1.00e-04
+  chk       True     True
+
+   vector diff: True
 
 
 ================
 
-saved to reference/ifort.json
+ALL TESTS PASSED.
+
+SHORT SUMMARY
+             cnd dos fsm go gofmg j3.0 spc31 tc
+AlMnFeCo_bcc   O   O   O  O     O    O     O  O
+Co                 O   O  O          O     O  O
+Co2MnSi            O   O  O          O     O  O
+Cu                 O      O                O   
+Fe                 O   O  O          O     O  O
+FeRh05Pt05     O   O   O  O          O     O  O
+Fe_lmd             O      O                O   
+GaAs               O      O                O   
+Ni                 O   O  O          O     O  O
+NiFe           O   O   O  O          O     O  O
+SmCo5_oc           O   O  O          O     O  O
+O: passed. X: failed, -: no reference
+
+# reference:
+date: Wed Dec  8 11:02:03 2021
+user: kino
+hostname: mygarden2
+platform: Linux-5.11.0-40-generic-x86_64-with-glibc2.31
+processorname: Intel(R) Core(TM) i7-9700 CPU @ 3.00GHz
+
+# result saved to result.json

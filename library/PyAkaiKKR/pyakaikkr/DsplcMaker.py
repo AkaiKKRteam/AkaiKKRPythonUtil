@@ -214,6 +214,8 @@ class DsplcMaker:
 
     def get_displc_as_periodicsite(self,
                                    xyz: list,
+                                   value: list = [
+                                        ("x", 1), ("y", 1), ("z", 1)],
                                    cart_len=0.01,
                                    frac=True,
                                    show_detail=False):
@@ -221,13 +223,14 @@ class DsplcMaker:
 
         For example, xyz and xyzvalue is given by, 
             xyz = ["x","x","0"]
-
+        The ratios among x,y and z are given by value. 
         Now frac must be True.
 
         exception of SpacegroupAnalyzer(struc) should be catched... 
 
         Args:
-            xyz ([[str]]) : xyz
+            xyz ([[str]]) : xyz.
+            value ([(str,float)], optional) : values of xyz. Defaults to [("x", 1), ("y", 1), ("z", 1)].
             cart_len (float, optional): lenght of dx in cartesian. Defaults to 0.01.
             frac (bool, optional): direction is given by fractional or not. Defaults to True.
             show_detail (bool, optional): print detail or not. Defaults to True.
@@ -253,7 +256,7 @@ class DsplcMaker:
         operatedsites = []
         for _xyz in xyz:
             fraclist = _make_wyckoff_position_as_sympy(
-                ops, _xyz, frac=frac)
+                ops, _xyz, frac=frac, value=value)
 
             prmrconverter = PrmrConverter()
             prmvec = prmrconverter.apply(self.kkrstruc["brvtyp"],
@@ -278,16 +281,18 @@ class DsplcMaker:
     def get_displc_as_cartesian(self, cart_len: float,
                                 xyz: list,
                                 alen: float,
+                                value = [("x", 1), ("y", 1), ("z", 1)],
                                 frac=True, show_detail=False):
         """get a list of displc as a list of [float,float,float]
 
            displc is scaled by alen
+           The ratios among x,y and z are given by value. 
 
         Args:
             cart_len (float): lenght of dx in cartesian. 
             xyz ([float,float,float]): ["x", "y", "z"].
-            xyzvalue ([(str,float)]) : values of xyz
             alen (float): lattice constant .
+            value ([(str,float)], optional) : values of xyz. Defaults to [("x", 1), ("y", 1), ("z", 1)].
             frac (bool, optional): direction is given by fractional or not. Defaults to True.
             show_detail (bool, optional): print detail or not. Defaults to True.
 
@@ -298,6 +303,7 @@ class DsplcMaker:
             cart_len=cart_len,
             xyz=xyz,
             frac=frac,
+            value=value,
             show_detail=show_detail)
         coords = []
         for sites in operatedsites:
@@ -345,10 +351,17 @@ class DsplcMaker:
         return u
 
 
+
 if __name__ == "__main__":
     import pprint
     import os
-    parent_dir = "/home/kino/kino/kit"
+    from os.path import expanduser
+    from pyakaikkr import AkaikkrJob , DsplcMaker
+    home = expanduser("~")
+
+    print("home", home)
+    parent_dir = os.path.join(home,"kino/kit")
+
     # path_dir = os.path.join(
     #    parent_dir, "AkaiKKRPythonUtil/tests/akaikkr_cnd/Co2MnSi")
     path_dir = os.path.join(
@@ -359,9 +372,12 @@ if __name__ == "__main__":
     # path_dir = os.path.join(
     #     parent_dir, "AkaiKKRPythonUtil/tests/akaikkr_cnd/Cu")
 
-    specx = "/home/kino/kit/Akaikkrprogram.current.gfortran/akaikkr_cnd/specx"
+    specx = os.path.join(home,"kino/kit/AkaiKKRprogram.current.gfortran/akaikkr_cnd/specx")
+
+    print("specx", specx)
     outgo = "out_go.log"
     cart_len = 0.01
+
 
     job = AkaikkrJob(path_dir)
     alen = job.get_lattice_constant(outgo)
@@ -383,6 +399,31 @@ if __name__ == "__main__":
         print("displc list")
         pp = pprint.PrettyPrinter(indent=1)
         pp.pprint(displc)
+
+    if True:
+        # "ab" direction
+        displc = dsplcmaker.get_displc_as_cartesian(
+            cart_len=0.01, alen=alen,
+            xyz=[["x", "y", "0"]],
+            value=[("x",1), ("y",1)],
+            frac=frac,
+            show_detail=show_detail)
+        print("displc list")
+        pp = pprint.PrettyPrinter(indent=1)
+        pp.pprint(displc)
+
+    if True:
+        # "ab" direction
+        displc = dsplcmaker.get_displc_as_cartesian(
+            cart_len=0.01, alen=alen,
+            xyz=[["x", "y", "0"]],
+            value=[("x",1), ("y",2)],
+            frac=frac,
+            show_detail=show_detail)
+        print("displc list")
+        pp = pprint.PrettyPrinter(indent=1)
+        pp.pprint(displc)
+
     if True:
         # "c" direction
         displc = dsplcmaker.get_displc_as_cartesian(
@@ -393,6 +434,7 @@ if __name__ == "__main__":
         print("displc list")
         pp = pprint.PrettyPrinter(indent=1)
         pp.pprint(displc)
+
     if True:
         # bcc direction
         displc = dsplcmaker.get_displc_as_cartesian(
