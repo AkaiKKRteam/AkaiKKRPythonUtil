@@ -22,6 +22,20 @@ if "test_script" not in sys.modules:
 
 
 def get_ciffiles(prefix, dataset="smallset"):
+    """load cif filenames.
+
+    dataset name can be "smallset", "all", "smallset_p1", "atomwork".
+
+    Args:
+        prefix (str): directory name
+        dataset (str, optional): data set name. Defaults to "smallset".
+
+    Returns:
+        output contains
+
+        - str: file names
+        - str: file format, cif or poscar for P1.
+    """
     fmt = "cif"
     # from list
 
@@ -32,6 +46,16 @@ def get_ciffiles(prefix, dataset="smallset"):
         files = []
         for datum in data:
             files.append(os.path.join(prefix, datum["filename"]))
+        print("datasize=", len(files))
+    # atomwork and additional data
+    elif dataset == "atomwork":
+        with open(os.path.join(prefix, "datacatalog/atomworkdata_content.json")) as f:
+            data = json.load(f)
+        files = []
+        for datum in data:
+            files.append(os.path.join(prefix, datum["filename"]))
+        print("datasize=", len(files))
+ 
     # all the materiallibrary
     elif dataset == "all":
         with open(os.path.join(prefix, "datacatalog/materiallibrary_content.json")) as f:
@@ -39,6 +63,7 @@ def get_ciffiles(prefix, dataset="smallset"):
         files = []
         for datum in data:
             files.append(os.path.join(prefix, datum["filename"]))
+        print("datasize=", len(files))
     # P1 cif generatef rom  materiallibrary_smallset
     elif dataset == "smallset_p1":
         datacatalogfile = os.path.join(
@@ -52,6 +77,7 @@ def get_ciffiles(prefix, dataset="smallset"):
             if key in datum:
                 files.append(os.path.join(prefix, datum[key]))
         fmt = "poscar"
+        print("datasize=", len(files))
 
     elif dataset == "set1":
         # spacial files which failed at some stage.
@@ -134,11 +160,25 @@ def get_ciffiles(prefix, dataset="smallset"):
 
 
 def append_result_to_json(results, resultfile="result.json"):
+    """append result to the json file.
+
+    Args:
+        results (dict): result of comparison
+        resultfile (str, optional): output filename. Defaults to "result.json".
+    """
     with open(resultfile, "w") as f:
         json.dump(results, f, indent=1)
 
 
 def load_results(resultfile="result.json"):
+    """load dict from the resultfile. 
+
+    Args:
+        resultfile (str, optional): result filename. Defaults to "result.json".
+
+    Returns:
+        dict: result dict
+    """
     results = []
     if os.path.isfile(resultfile):
         with open(resultfile, "r") as f:
@@ -147,7 +187,21 @@ def load_results(resultfile="result.json"):
 
 
 if __name__ == "__main__":
-    def main(path_prefix, datapath_prefix, akaikkr_type="akaikkr"):
+    def main(path_prefix, datapath_prefix, akaikkr_type="akaikkr", dataset="all"):
+        """main routine of this program.
+
+        It compares the structures from the input file and AkaiKKR output file.
+
+        akaikkr_type can be "akaikkr" or "akaikkr_cnd" because their input formats are different.
+
+        Args:
+            path_prefix (str): directory path for akaikkr specx program.
+            datapath_prefix (str): data path for structures
+            akaikkr_type (str, optional): akaiKKR program type. Defaults to "akaikkr".
+
+        Raises:
+            ValueError: _description_
+        """
         if akaikkr_type == "akaikkr":
             displc = False
         elif akaikkr_type == "akaikkr_cnd":
@@ -159,7 +213,7 @@ if __name__ == "__main__":
 
         use_bravais = True
 
-        ciffiles, fmt = get_ciffiles(datapath_prefix)
+        ciffiles, fmt = get_ciffiles(datapath_prefix, dataset)
 
         special_ciffiles = []
 
@@ -204,6 +258,21 @@ if __name__ == "__main__":
         print()
         print("all done")
 
+    def define_and_get_parse():
+        import argparse
+        parser = argparse.ArgumentParser()
+
+        parser.add_argument("--akaikkr", default= "kino/kit/AkaiKKRprogram.current.gfortran")
+        parser.add_argument("--prefix", default= "kino/kit/MaterialsLibrary")
+        parser.add_argument("--datatype", choices = ["smallset", "atomwork", "all", "smallset_p1"], default= "all")
+        parser.add_argument("--akaikkr_type", choices = ["akaikkr", "akaikkr_cnd"], default= "akaikkr")
+
+        args = parser.parse_args()
+        return args
+
     homedir = os.path.expanduser("~")
-    main(os.path.join(homedir, "kino/kit/AkaiKKRprogram.current.gfortran"),
-         os.path.join(homedir, "kino/kit/MaterialsLibrary"))
+    args = define_and_get_parse()
+
+    main(os.path.join(homedir, args.akaikkr),
+         os.path.join(homedir, args.prefix),
+         args.akaikkr_type, args.datatype)
