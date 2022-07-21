@@ -46,7 +46,7 @@ class JijPlotter(BasePlotter):
         xlim = (xlim[0]-dx, xlim[1]+dx)
         values = df[ylabel].astype(float).values
         ylim = (values.min(), values.max())
-        print("debug, ylim", ylim)
+        # print("debug, ylim", ylim)
         dy = (ylim[1]-ylim[0])*0.05
         ylim = (ylim[0]-dy, ylim[1]+dy)
 
@@ -65,7 +65,7 @@ class JijPlotter(BasePlotter):
             _df = df.query("typepair=='{}'".format(pair))
 
             distance = _df[xlabel].astype(float).values*a
-            Jij = _df[ylabel]
+            Jij = _df[ylabel].astype(float).values
 
             fig, ax = plt.subplots(figsize=figsize)
             ax.plot(distance, Jij, linestyle="-", marker=marker)
@@ -148,7 +148,7 @@ class JijPlotter(BasePlotter):
             _df = df.query("comppair=='{}'".format(pairname))
 
             distance = _df[xlabel].astype(float).values*a
-            Jij = _df[ylabel]
+            Jij = _df[ylabel].astpye(float).values
 
             fig, ax = plt.subplots(figsize=figsize)
             ax.plot(distance, Jij, linestyle="-", marker=marker, label=label)
