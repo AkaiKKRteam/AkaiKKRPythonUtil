@@ -1021,7 +1021,6 @@ class AkaikkrJob:
         Args:
             dosfile (str): output filename.
             keyword (str, optional): keyword to find DOS. Defaults to "total DOS".
-            save (bool, optional): save DOS file or not as csv. Defaults to False.
 
         Raises:
             KKRValueAquisitionError: failed to get keyword
@@ -1039,6 +1038,27 @@ class AkaikkrJob:
         else:
             raise ValueError("Internal error: dos_block must 1 or 2.")
         return df
+
+    def get_dos(self, dosfile, output_type="list"):
+        """get DOS as list or DataFrame
+
+        Args:
+            dosfile (str): output filename.
+            output_type (str, optional): output_type =list|dataframe. Defaults to "list"
+
+        Raises:
+            KKRValueAquisitionError: failed to get keyword.
+            ValueError: funknown keyword
+
+        Returns:
+            list, or pd.DataFrame: energies, DOS up, DOS down if there is.
+        """
+        if output_type == "list":
+            return self.get_dos_as_list(dosfile)
+        elif output_type == "dataframe":
+            return self.get_dos_as_dataframe(dosfile)
+        else:
+            raise ValueErorr("unknown output_type={}".format(output_type))
 
     def get_pdos_as_list(self, dosfile, output_format="spin_separation"):
         """cut PDOS
@@ -1142,6 +1162,27 @@ class AkaikkrJob:
                 df_pdosup = pdos2df(energy, up)
                 pdos_up_list.append(df_pdosup)
             return {updn_label[0]: pdos_up_list, updn_label[1]: []}
+
+    def get_pdos(self, dosfile, output_type="list"):
+        """get pdos as list or dictdataframe
+
+        Args:
+            dosfile (str): dos output filename
+            output_type (str, optional): output type = list|dictdatafraeme. Defaults to "list".
+
+        Raises:
+            KKRValueAquisitionError: failed to get keyword.
+            ValueError: unknown ouptut_type.
+
+        Returns:
+            list or dict: pdos up|dn and l-componetns.
+        """
+        if output_type == "list":
+            return self.get_pdos_as_list(dosfile)
+        elif output_type == "dictdataframe":
+            return self.get_pdos_as_dictdataframe(dosfile)
+        else:
+            raise ValueError("unknown output_type={}".format(output_type))
 
     def get_magtyp(self, outfile):
         """get magtype

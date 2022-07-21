@@ -19,4 +19,4 @@ class BaseEXPlotter:
         else:
             self.output_directory = output_directory
         if create_directory:
-            os.makedirs(output_directory, exist_ok=True)
+            os.makedirs(self.output_directory, exist_ok=True)

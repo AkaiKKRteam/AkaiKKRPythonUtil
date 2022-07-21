@@ -55,6 +55,20 @@ def get_kkr_struc_from_cif(ciffilepath: str, specx: str, displc: bool,
 
 if __name__ == "__main__":
     def main(path_prefix, ciffile_path, akaikkr_type="akaikkr",):
+        """load data from path_prefix and convert to the PyAkaiKKR dict format.
+
+        The output is printed to stdout.
+
+        akaikkr_type can be akaikkr or akaikkr_cnd.
+
+        Args:
+            path_prefix (str): path prefix to AkaiKKR
+            ciffile_path (st): the cif file name.
+            akaikkr_type (str, optional): type of AkaiKKR. Defaults to "akaikkr".
+
+        Raises:
+            ValueError: unknown fmt.
+        """
         if akaikkr_type == "akaikkr":
             displc = False
         elif akaikkr_type == "akaikkr_cnd":
@@ -76,6 +90,22 @@ if __name__ == "__main__":
         else:
             print(json.dumps(struc_param))
 
+    def define_and_get_parse():
+        import argparse
+        parser = argparse.ArgumentParser()
+
+        parser.add_argument("--akaikkr", default= "kino/kit/AkaiKKRprogram.current.gfortran")
+        parser.add_argument("--prefix", default= "kino/kit/MaterialsLibrary")
+        parser.add_argument("--akaikkr_type", choices = ["akaikkr", "akaikkr_and"], default= "akaikkr")
+
+        parser.add_argument("structure_file") 
+        # e.g. ="kino/kit/MaterialsLibrary/MaterialsLibrary/AtomWorkData/small_sites/made_by_kino/Co_P63mmc.cif"
+
+        args = parser.parse_args()
+        return args
+
     homedir = os.path.expanduser("~")
-    main(os.path.join(homedir, "kino/kit/AkaiKKRprogram.current.gfortran"),
-         os.path.join(homedir, "kino/kit/MaterialsLibrary/MaterialsLibrary/AtomWorkData/small_sites/made_by_kino/Co_P63mmc.cif"))
+    args = define_and_get_parse()
+    main(os.path.join(homedir, args.akaikkr),
+         os.path.join(homedir, args.prefix, args.structure_file), 
+         args.akaikkr_type)

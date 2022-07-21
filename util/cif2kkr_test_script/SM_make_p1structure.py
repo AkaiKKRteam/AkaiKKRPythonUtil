@@ -19,6 +19,15 @@ _PREFIX_ = os.getcwd()
 
 def get_ciffiles(datacatalog="datacatalog/materiallibrary_smallset.json",
                  prefix=_PREFIX_):
+    """load cif filenames from datacatalog.
+
+    Args:
+        datacatalog (str, optional): data catalog. Defaults to "datacatalog/materiallibrary_smallset.json".
+        prefix (str, optional): directory of the data catalog. Defaults to _PREFIX_.
+
+    Returns:
+        _type_: _description_
+    """
 
     if True:
         with open(os.path.join(prefix, datacatalog)) as f:
@@ -31,6 +40,21 @@ def get_ciffiles(datacatalog="datacatalog/materiallibrary_smallset.json",
 
 def cif2poscar(filename, primitive=True, directory=None,
                outputfilename=None, dry=False, fmt="poscar"):
+    """convert the cif file to P1 cif|poscar file.
+
+    The output format can be cif, or poscar.
+
+    Args:
+        filename (str): filename.
+        primitive (bool, optional): primitive|conventional to load the cif file. Defaults to True.
+        directory (str, optional): directory name of the poscar file. Defaults to None.
+        outputfilename (str, optional): poscar output filename. Defaults to None.
+        dry (bool, optional): dry run. Defaults to False.
+        fmt (str, optional): output format. Defaults to "poscar".
+
+    Returns:
+        str: output filename
+    """
     # input
     cirparser = CifParser(filename)
     struc = cirparser.get_structures(primitive=primitive)[0]
@@ -56,6 +80,14 @@ def cif2poscar(filename, primitive=True, directory=None,
 
 
 def read_poscar(filename, primitive=True):
+    """read poscar.
+
+    If primitive==True, get_primitive_standard_structure() is used. Otherwise, spa.get_conventional_standard_structure() is used to load the structure file.
+
+    Args:
+        filename (str): filename to load.
+        primitive (bool, optional): primitive|conventional. Defaults to True.
+    """
     # input
     struc = Structure.from_file(filename)
 
@@ -75,6 +107,16 @@ def read_poscar(filename, primitive=True):
 
 
 def sep_filename(filename):
+    """separate filename to directory, filename, base filename and extention.
+
+
+
+    Args:
+        filename (str): filename (with path)
+
+    Returns:
+        dict: dict containg "directory", "filename", "base" and "ext".
+    """
     s = os.path.split(filename)
     directory = s[0]
     filename = s[-1]
@@ -90,6 +132,21 @@ def make_p1structures(datacatalog,
                       newdirectory,
                       outputjson,
                       fmt="cif"):
+    """make P1 structures
+
+    Args:
+        datacatalog (str): data catalog filename
+        datapath_prefix (str): data path to load
+        newdirectory (str): data path to save
+        outputjson (str): output json file 
+        fmt (str, optional): output format. Defaults to "cif".
+
+    Raises:
+        ValueError: if unknown format (fmt) is given.
+
+    Returns:
+        _type_: _description_
+    """
 
     files = get_ciffiles(datacatalog=datacatalog)
 
@@ -118,11 +175,16 @@ def make_p1structures(datacatalog,
     with open(outputjson, "w") as f:
         json.dump(files, f, indent=1)
 
-    return file
+    return files
 
 
 if __name__ == "__main__":
     def main(datapath_prefix):
+        """load files from internally defined datacatalog and process them.
+
+        Args:
+            datapath_prefix (_type_): _description_
+        """
         originaldatacatalog = "datacatalog/materiallibrary_smallset.json"
         newdirectory = "MaterialsLibrary-P1-smallset"
         outputdatacatalog = "datacatalog/materiallibrary_smallset_p1.json"
