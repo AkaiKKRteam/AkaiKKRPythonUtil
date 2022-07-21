@@ -148,7 +148,7 @@ class JijPlotter(BasePlotter):
             _df = df.query("comppair=='{}'".format(pairname))
 
             distance = _df[xlabel].astype(float).values*a
-            Jij = _df[ylabel].astpye(float).values
+            Jij = _df[ylabel].astype(float).values
 
             fig, ax = plt.subplots(figsize=figsize)
             ax.plot(distance, Jij, linestyle="-", marker=marker, label=label)
