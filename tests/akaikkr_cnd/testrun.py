@@ -40,7 +40,7 @@ def make_exe():
     exe_dic.update({"Co": exe_list})
 
     exe_list = []
-    exe_list += [ Fe_go, Fe_j30 ]
+    exe_list += [ Fe_go, Fe_lmd_go, Fe_j30 ]
     exe_dic.update({"Fe": exe_list})
 
     exe_list = []

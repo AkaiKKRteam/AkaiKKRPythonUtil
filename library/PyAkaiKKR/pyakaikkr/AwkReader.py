@@ -2,6 +2,7 @@
 # Copyright (c) 2021 AkaiKKRteam.
 # Distributed under the terms of the Apache License, Version 2.0.
 
+import io
 from pymatgen.core.periodic_table import Element
 from collections import OrderedDict
 import matplotlib.pyplot as plt
@@ -110,7 +111,7 @@ def _load_spc_format_type_a_Awk(lines_iter: iter):
     return np.array(Awk2), np.array(kdist), np.array(energy)
 
 
-def _load_spc_format_type_a(filepath: str):
+def _load_spc_format_type_a(filepath: (str, io.TextIOBase)):
     """load A(w,k) in the spc format type a
 
     Args:
@@ -119,8 +120,14 @@ def _load_spc_format_type_a(filepath: str):
     Returns:
         np.ndarray, np.ndarray, np.ndarray, np.ndarray, np.ndarray: kcrt, Awk, kdist, energy, kpath
     """
-    with open(filepath) as f:
-        lines = f.readlines()
+    if isinstance(filepath, str):
+        with open(filepath) as f:
+            lines = f.readlines()
+    elif isinstance(filepath,  io.TextIOBase):
+        lines = filepath.readlines()
+    else:
+        raise ValueError(f'unknown type of file path={type(filepath)}')
+
     lines2 = []
     for line in lines:
         lines2.append(line.strip())
@@ -187,7 +194,7 @@ class AwkReader:
         """initialization routine
 
         Args:
-            filepath (str): filepath of Akaikkr output filename run as go="spc*"
+            filepath ((str,io.TextIOBase)): filepath of Akaikkr output filename run as go="spc*"
         """
 
         if fmt == 1:
