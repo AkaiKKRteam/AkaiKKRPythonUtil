@@ -36,7 +36,7 @@ if "test_script" not in sys.modules:
     from pyakaikkr import StructureSpeciesConverter
 
 
-def _make_displc(anclr, displc=[0, 0, 0]):
+def make_displc_list(anclr, displc=[0, 0, 0]):
     displc_list = []
     for anclr1 in anclr:
         displc1_list = []
@@ -111,7 +111,7 @@ def _run_it(specx, ciffile, directory, structurefile="structure.json",
 
     param.update(struc_param)
     if displc:
-        displc_param = {"displc": _make_displc(
+        displc_param = {"displc": make_displc_list(
             param["anclr"], displc=[0, 0, 0])}
         param.update(displc_param)
 

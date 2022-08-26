@@ -204,7 +204,7 @@ def _reorder_type(param: dict, typeorder: list) -> dict:
     return param
 
 
-def _change_type(param: dict, type_rep: dict) -> dict:
+def change_atomic_type(param: dict, type_rep: dict) -> dict:
     """change type by type_rep.
 
     change type param["type"] and param["atmicx"] according to type_rep = {"Cu_4a_0": "Cu"}.
@@ -252,7 +252,7 @@ def _Cu_common_param(
     param["magtyp"] = "nmag"
 
     # to compare the results with reference
-    param = _change_type(param, {"Cu_4a_0": "Cu"})
+    param = change_atomic_type(param, {"Cu_4a_0": "Cu"})
 
     return param
 
@@ -969,7 +969,7 @@ def _Fe_lmd_common_param(akaikkr_exe: dict, displc: bool, ciffilepath="../struct
         if not isinstance(ncmp, int):
             raise ValueError("Each ncmp must be type int.")
         ncmp_list.append([ncmp, ncmp])
-    param["ncmp"] = [ncmp]
+    param["ncmp"] = [ncmp*2]
 
     # alloy isn't allowed now.
     # extend sizes twice

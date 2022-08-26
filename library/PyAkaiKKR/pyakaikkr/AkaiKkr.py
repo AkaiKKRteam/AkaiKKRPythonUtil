@@ -15,6 +15,7 @@ from .AwkReader import AwkReader
 from .Cif2Kkr import ak_cif2kkrparam
 from .Error import KKRValueAquisitionError, KKRFailedExecutionError
 from .Unit import Unit
+import io
 
 # from .DsplcMaker import DsplcMaker
 
@@ -252,23 +253,31 @@ class AkaikkrJob:
         }
 
     def _read(self, outfile):
-        """read outfile
+        """read outfile and output a list of contents or return output directly if it is a list.
 
         Args:
-            outfile (str): output filename
+            outfile (str, list): output filename, or list of string
 
         Returns:
             list: newline splitted contents of the file
         """
-        if self.data is None:
-            self.outfile = outfile
-            filepath = os.path.join(self.path_dir, outfile)
-            data = None
-            with open(filepath) as f:
-                data = f.read().splitlines()
-            self.data = data
-        elif outfile == self.outfile and self.data is not None:
-            data = self.data
+        if isinstance(outfile, str):
+            if self.data is None:
+                self.outfile = outfile
+                filepath = os.path.join(self.path_dir, outfile)
+                data = None
+                with open(filepath) as f:
+                    data = f.read().splitlines()
+                self.data = data
+            elif outfile == self.outfile and self.data is not None:
+                data = self.data
+        elif isinstance(outfile, io.TextIOBase):
+            outfile.seek(0) # rewind must be done.
+            data = outfile.read().splitlines()
+        elif isinstance(outfile, list):
+            data = outfile
+        else:
+            raise TypeError(f'unknown type for outfile, type={type(outfile)}')
         return data
 
     def read_structure(self, structurefile, fmt="cif", use_bravais=True, use_primitive=True,
@@ -299,7 +308,7 @@ class AkaikkrJob:
 
         Args:
             dic (dict): parameter of akaikkr input
-            inputcard (str): input filename
+            inputcard (str, io.IOBase): input filename or file handle
         """
 
         def from_keylist(dic, keylist):
@@ -349,6 +358,8 @@ class AkaikkrJob:
             Returns:
                 [str]: lines in kkr input format
             """
+            print("dic", dic)
+            
             result = []
             nn = 0
             if "displc" in dic:
@@ -467,8 +478,13 @@ class AkaikkrJob:
         elif dic["go"][:3] == "spc":
             if "kpath_raw":
                 card += dic["kpath_raw"]
-        with open(self.path_dir+"/"+inputcard, mode="w") as f:
-            f.write("\n".join(card))
+        if isinstance(inputcard, str):
+            with open(self.path_dir+"/"+inputcard, mode="w") as f:
+                f.write("\n".join(card))
+        elif isinstance(inputcard, io.IOBase):
+            inputcard.write("\n".join(card))
+        else:
+            raise TypeError(f'unknown type of inputcard, type={type(inputcard)}')
 
     def run(self, akaikkr_exe, infile, outfile):
         """run akaikkr
@@ -950,9 +966,12 @@ class AkaikkrJob:
 
         if ntype is None:
             ntype = self.get_ntype(outfile)
-        filepath = os.path.join(self.path_dir, outfile)
-        with open(filepath) as f:
-            data = f.readlines()
+        if True:
+            data = self._read(outfile)
+        else:
+            filepath = os.path.join(self.path_dir, outfile)
+            with open(filepath) as f:
+                data = f.readlines()
         block_list = get_block_list(data)
         if len(block_list) == 0:
             raise KKRValueAquisitionError("failed to get type of site")

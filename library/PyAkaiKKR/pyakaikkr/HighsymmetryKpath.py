@@ -33,7 +33,7 @@ class HighSymKPath:
         Args:
             structure (Structure): pymatgen.core.Structure
             path_type (str): path_type. Defaults to None.
-            klabel_filename (str, optional): filename with klabel. Defaults to "kpath.json".
+            klabel_filename ((str,io.TextIOBase), optional): filename with klabel. Defaults to "kpath.json".
         """
         if path_type is None:
             print("kpath is made by HighSymmKpath")
@@ -124,10 +124,15 @@ class HighSymKPath:
         else:
             raise ValueError("unknown fmt={}".format(fmt))
 
+        
         if klabel_filename is not None:
-            with open(klabel_filename, "w") as f:
-                json.dump({"kpath": content}, f)
-            # print("  klabel saved to", klabel_filename)
+            import io
+            if isinstance(klabel_filename, str):
+                with open(klabel_filename, "w") as f:
+                    json.dump({"kpath": content}, f)
+                # print("  klabel saved to", klabel_filename)
+            elif isinstance(klabel_filename, io.TextIOBase):
+                json.dump({"kpath": content}, klabel_filename)
 
         if False:
             klist = []
