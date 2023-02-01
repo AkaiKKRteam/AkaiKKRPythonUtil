@@ -16,6 +16,7 @@ from pymatgen.core.periodic_table import Element
 import pandas as pd
 
 from .ElementKkr import ElementKKR
+from .fixatomiccharge import fix_charged_structure
 
 _kkr_bohr = Unit().length_au2ang
 
@@ -718,6 +719,8 @@ def ak_cif2kkrparam(filename: str, use_bravais: bool = True, use_primitive: bool
         except ValueError:
             raise CIF2KKRGetStructureError("failed in Struture.from_file.\n"
                                            + "please check occupancies and coordinates.")
+
+    structure_work = fix_charged_structure(structure_work)
 
     if _found_unknown_elements(structure_work):
         raise CIF2KKRUnknownElementError("unknown element in the cif file")
