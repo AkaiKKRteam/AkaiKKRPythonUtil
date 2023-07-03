@@ -1,6 +1,8 @@
 reference/gfortran.json
-metadata {'date': 'Thu Dec  9 08:42:55 2021', 'user': 'kino', 'hostname': 'mygarden1', 'platform': 'Linux-5.11.0-40-generic-x86_64-with-glibc2.31', 'processorname': 'Intel(R) Core(TM) i7-9700 CPU @ 3.00GHz'}
-Namespace(program_path='/home/kino/kino/kit/AkaiKKRprogram.current.gfortran', create_ref=True, compiler='gfortran', no_run=False, no_postscript=False, set='all') all
+metadata {'date': 'Sat Jul  1 11:08:11 2023', 'user': 'm004800', 'hostname': 'c15u03n1', 'platform': 'Linux-4.18.0-372.9.1.el8.x86_64-x86_64-with-glibc2.28', 'processorname': 'AMD EPYC 7702 64-Core Processor'}
+Namespace(program_path='/home/m0048/m004800/git/AkaiKKRprogram', create_ref=True, compiler='gfortran', no_run=False, no_postscript=False, set='all') all
+/home/m0048/m004800/git/tests/library/AkaiKKRTestScript/src/akaikkr_testscript/exeutil.py:16: FutureWarning: iteritems is deprecated and will be removed in a future version. Use .items instead.
+  for col_name, v in _df.iteritems():
              go dos spc fsm tc j30 cnd gofmg
 Cu            -   -   -                     
 Co            -   -   -   -  -   -          
@@ -15,8 +17,8 @@ Co2MnSi       -   -   -   -  -   -
 SmCo5_oc      -   -   -   -  -   -          
 
 executable files
-/home/kino/kino/kit/AkaiKKRprogram.current.gfortran/akaikkr_cnd/specx
-/home/kino/kino/kit/AkaiKKRprogram.current.gfortran/akaikkr_cnd/fmg
+/home/m0048/m004800/git/AkaiKKRprogram/akaikkr_cnd/specx
+/home/m0048/m004800/git/AkaiKKRprogram/akaikkr_cnd/fmg
 
 get_structures(primitive=False), symmetry, nsite ('Fm-3m', 225) 4
 get_structures(primitive=True), symmetry, nsite ('Fm-3m', 225) 1
@@ -28,7 +30,9 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=1, nsite_kkr=1
 save to Cu/215293bf32134ff2fd287e6add7ec86e/structure.json
+dic {'go': 'geom', 'potentialfile': 'pot.dat', 'brvtyp': 'fcc', 'a': 6.8313626631542945, 'c/a': 1.0, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'nmag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 0, 'pmix': '0.02', 'ntyp': 1, 'rmt': [0.0], 'field': [0.0], 'mxl': [2], 'type': ['Cu_4a_0'], 'ncmp': [1], 'anclr': [[29]], 'conc': [[100.0]], 'natm': 1, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Cu_4a_0']], 'r1': [8.040613248383182e-17, 0.5, 0.5], 'r2': [0.5, 0.0, 0.5], 'r3': [0.5000000000000001, 0.5, 6.123233995736766e-17], 'displc': [[[0, 0, 0]]]}
 saved to Cu/215293bf32134ff2fd287e6add7ec86e/inputcard_geom
+STOP by geom mode
 kkr_struc, symmetry, nsite ('Fm-3m', 225) 1
 kkr space group symbol, nsite 225 1
 input prim structure num_site 1
@@ -36,6 +40,7 @@ kkr   prim structure num_site 1
 ('Fm-3m', 225) ('Fm-3m', 225)
 ----------------------------------
 ### fcc Cu (non-magnetic, mjw, go)
+dic {'go': 'go', 'potentialfile': 'pot.dat', 'brvtyp': 'fcc', 'a': 6.8313626631542945, 'c/a': 1.0, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'nmag', 'record': 'init', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 200, 'pmix': '0.02', 'ntyp': 1, 'rmt': [0.0], 'field': [0.0], 'mxl': [2], 'type': ['Cu'], 'ncmp': [1], 'anclr': [[29]], 'conc': [[100.0]], 'natm': 1, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Cu']], 'r1': [8.040613248383182e-17, 0.5, 0.5], 'r2': [0.5, 0.0, 0.5], 'r3': [0.5000000000000001, 0.5, 6.123233995736766e-17], 'displc': [[[0, 0, 0]]]}
   directory:  Cu   output file:  out_go.log
            conv orbitallocalmoment spinlocalmoment        te       tm
   current  True              [0.0]           [0.0] -3.30e+03 0.00e+00
@@ -50,7 +55,9 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=1, nsite_kkr=1
 save to Cu/215293bf32134ff2fd287e6add7ec86e/structure.json
+dic {'go': 'geom', 'potentialfile': 'pot.dat', 'brvtyp': 'fcc', 'a': 6.8313626631542945, 'c/a': 1.0, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'nmag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 0, 'pmix': '0.02', 'ntyp': 1, 'rmt': [0.0], 'field': [0.0], 'mxl': [2], 'type': ['Cu_4a_0'], 'ncmp': [1], 'anclr': [[29]], 'conc': [[100.0]], 'natm': 1, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Cu_4a_0']], 'r1': [8.040613248383182e-17, 0.5, 0.5], 'r2': [0.5, 0.0, 0.5], 'r3': [0.5000000000000001, 0.5, 6.123233995736766e-17], 'displc': [[[0, 0, 0]]]}
 saved to Cu/215293bf32134ff2fd287e6add7ec86e/inputcard_geom
+STOP by geom mode
 kkr_struc, symmetry, nsite ('Fm-3m', 225) 1
 kkr space group symbol, nsite 225 1
 input prim structure num_site 1
@@ -58,6 +65,7 @@ kkr   prim structure num_site 1
 ('Fm-3m', 225) ('Fm-3m', 225)
 -----------------------------------
 ### fcc Cu (non-magnetic, mjw, dos)
+dic {'go': 'dos', 'potentialfile': 'pot.dat', 'brvtyp': 'fcc', 'a': 6.8313626631542945, 'c/a': 1.0, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 2.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'nmag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 200, 'pmix': '0.02', 'ntyp': 1, 'rmt': [0.0], 'field': [0.0], 'mxl': [2], 'type': ['Cu'], 'ncmp': [1], 'anclr': [[29]], 'conc': [[100.0]], 'natm': 1, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Cu']], 'r1': [8.040613248383182e-17, 0.5, 0.5], 'r2': [0.5, 0.0, 0.5], 'r3': [0.5000000000000001, 0.5, 6.123233995736766e-17], 'displc': [[[0, 0, 0]]]}
   directory:  Cu   output file:  out_dos.log
   saved to Cu/dos.png
   saved to Cu/pdos_0.png
@@ -70,7 +78,7 @@ kkr   prim structure num_site 1
 
    pdos (up), atom=0, l=d
   energy   -1.00e+00  -9.90e-01  -9.80e-01  ...  9.80e-01   9.90e-01   1.00e+00 
-  current   3.20e-03   3.20e-03   3.30e-03  ...   1.17e+00   7.73e-01   3.48e-01
+  current   3.20e-03   3.20e-03   3.30e-03  ...   1.16e+00   7.74e-01   3.48e-01
   
   [1 rows x 201 columns]
 
@@ -86,7 +94,9 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=1, nsite_kkr=1
 save to Cu/215293bf32134ff2fd287e6add7ec86e/structure.json
+dic {'go': 'geom', 'potentialfile': 'pot.dat', 'brvtyp': 'fcc', 'a': 6.8313626631542945, 'c/a': 1.0, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'nmag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 0, 'pmix': '0.02', 'ntyp': 1, 'rmt': [0.0], 'field': [0.0], 'mxl': [2], 'type': ['Cu_4a_0'], 'ncmp': [1], 'anclr': [[29]], 'conc': [[100.0]], 'natm': 1, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Cu_4a_0']], 'r1': [8.040613248383182e-17, 0.5, 0.5], 'r2': [0.5, 0.0, 0.5], 'r3': [0.5000000000000001, 0.5, 6.123233995736766e-17], 'displc': [[[0, 0, 0]]]}
 saved to Cu/215293bf32134ff2fd287e6add7ec86e/inputcard_geom
+STOP by geom mode
 kkr_struc, symmetry, nsite ('Fm-3m', 225) 1
 kkr space group symbol, nsite 225 1
 input prim structure num_site 1
@@ -95,9 +105,10 @@ kkr   prim structure num_site 1
 -------------------------------------
 ### fcc Cu (non-magnetic, mjw, spc31)
 kpath is made by HighSymmKpath
+dic {'go': 'spc31', 'potentialfile': 'pot.dat', 'brvtyp': 'fcc', 'a': 6.8313626631542945, 'c/a': 1.0, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'nmag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 200, 'pmix': '0.02', 'ntyp': 1, 'rmt': [0.0], 'field': [0.0], 'mxl': [2], 'type': ['Cu'], 'ncmp': [1], 'anclr': [[29]], 'conc': [[100.0]], 'natm': 1, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Cu']], 'r1': [8.040613248383182e-17, 0.5, 0.5], 'r2': [0.5, 0.0, 0.5], 'r3': [0.5000000000000001, 0.5, 6.123233995736766e-17], 'kpath_raw': ['150', 'c ---  \\Gamma X W K \\Gamma L U W L K', 'c ---  \\Gamma', '0.0 0.0 0.0', 'c ---  X', '0.5 0.0 0.5', 'c ---  W', '0.5 0.25 0.75', 'c ---  K', '0.375 0.375 0.75', 'c ---  \\Gamma', '0.0 0.0 0.0', 'c ---  L', '0.5 0.5 0.5', 'c ---  U', '0.625 0.25 0.625', 'c ---  W', '0.5 0.25 0.75', 'c ---  L', '0.5 0.5 0.5', 'c ---  K', '0.375 0.375 0.75'], 'displc': [[[0, 0, 0]]]}
   directory:  Cu   output file:  out_spc31.log
 debug: file, loaded content Cu/klabel.json {'kpath': [[{'\\Gamma': [0.0, 0.0, 0.0]}, {'X': [0.5, 0.0, 0.5]}, {'W': [0.5, 0.25, 0.75]}, {'K': [0.375, 0.375, 0.75]}, {'\\Gamma': [0.0, 0.0, 0.0]}, {'L': [0.5, 0.5, 0.5]}, {'U': [0.625, 0.25, 0.625]}, {'W': [0.5, 0.25, 0.75]}, {'L': [0.5, 0.5, 0.5]}, {'K': [0.375, 0.375, 0.75]}]]}
-  saved to Cu/Awk_up.png
+  saved to Awk_up.png
 
    Aw(w,k) k=0 0 0, up
   energy   -4.97e-01  -4.92e-01  -4.87e-01  ...  4.87e-01   4.92e-01   4.97e-01 
@@ -105,6 +116,8 @@ debug: file, loaded content Cu/klabel.json {'kpath': [[{'\\Gamma': [0.0, 0.0, 0.
   
   [1 rows x 200 columns]
 
+/home/m0048/m004800/.pyenv/versions/3.10.12/lib/python3.10/site-packages/pymatgen/io/cif.py:1120: UserWarning: Issues encountered while parsing CIF: Some fractional coordinates rounded to ideal values to avoid issues with finite precision.
+  warnings.warn("Issues encountered while parsing CIF: " + "\n".join(self.warnings))
 get_structures(primitive=False), symmetry, nsite ('P6_3/mmc', 194) 2
 get_structures(primitive=True), symmetry, nsite ('P6_3/mmc', 194) 2
 prim_stand_struc, symmetry, nsite ('P6_3/mmc', 194) 2
@@ -115,7 +128,9 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=2, nsite_kkr=2
 save to Co/f39668f3f568e1ca11eaf47ff22fd05c/structure.json
+dic {'go': 'geom', 'potentialfile': 'pot.dat', 'brvtyp': 'hcp', 'a': 4.737545282580308, 'c/a': 1.6234543278819307, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 119.99999999999999, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'nmag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 0, 'pmix': '0.02', 'ntyp': 1, 'rmt': [0.0], 'field': [0.0], 'mxl': [2], 'type': ['Co_2c_0'], 'ncmp': [1], 'anclr': [[27]], 'conc': [[100.0]], 'natm': 2, 'atmicx': [['0.33333333a', '0.66666667b', '0.25000000c', 'Co_2c_0'], ['0.66666667a', '0.33333333b', '0.75000000c', 'Co_2c_0']], 'r1': [0.5, -0.8660254037844386, 0.0], 'r2': [0.5, 0.8660254037844386, 0.0], 'r3': [0.0, 0.0, 1.6234543278819307], 'displc': [[[0, 0, 0]]]}
 saved to Co/f39668f3f568e1ca11eaf47ff22fd05c/inputcard_geom
+STOP by geom mode
 kkr_struc, symmetry, nsite ('P6_3/mmc', 194) 2
 kkr space group symbol, nsite 194 2
 input prim structure num_site 2
@@ -123,10 +138,13 @@ kkr   prim structure num_site 2
 ('P6_3/mmc', 194) ('P6_3/mmc', 194)
 ------------------------------
 ### hcp Co (magnetic, mjw, go)
+dic {'go': 'go', 'potentialfile': 'pot.dat', 'brvtyp': 'hcp', 'a': 4.737545282580308, 'c/a': 1.6234543278819307, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 119.99999999999999, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'mag', 'record': 'init', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 200, 'pmix': '0.02', 'ntyp': 1, 'rmt': [1.0], 'field': [0.0], 'mxl': [2], 'type': ['Co_2c_0'], 'ncmp': [1], 'anclr': [[27]], 'conc': [[100.0]], 'natm': 2, 'atmicx': [['0.33333333a', '0.66666667b', '0.25000000c', 'Co_2c_0'], ['0.66666667a', '0.33333333b', '0.75000000c', 'Co_2c_0']], 'r1': [0.5, -0.8660254037844386, 0.0], 'r2': [0.5, 0.8660254037844386, 0.0], 'r3': [0.0, 0.0, 1.6234543278819307], 'displc': [[[0, 0, 0]]]}
   directory:  Co   output file:  out_go.log
            conv orbitallocalmoment spinlocalmoment        te       tm
-  current  True              [0.0]       [1.59321] -5.56e+03 3.10e+00
+  current  True              [0.0]       [1.59322] -5.56e+03 3.10e+00
 
+/home/m0048/m004800/.pyenv/versions/3.10.12/lib/python3.10/site-packages/pymatgen/io/cif.py:1120: UserWarning: Issues encountered while parsing CIF: Some fractional coordinates rounded to ideal values to avoid issues with finite precision.
+  warnings.warn("Issues encountered while parsing CIF: " + "\n".join(self.warnings))
 get_structures(primitive=False), symmetry, nsite ('P6_3/mmc', 194) 2
 get_structures(primitive=True), symmetry, nsite ('P6_3/mmc', 194) 2
 prim_stand_struc, symmetry, nsite ('P6_3/mmc', 194) 2
@@ -137,7 +155,9 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=2, nsite_kkr=2
 save to Co/f39668f3f568e1ca11eaf47ff22fd05c/structure.json
+dic {'go': 'geom', 'potentialfile': 'pot.dat', 'brvtyp': 'hcp', 'a': 4.737545282580308, 'c/a': 1.6234543278819307, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 119.99999999999999, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'nmag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 0, 'pmix': '0.02', 'ntyp': 1, 'rmt': [0.0], 'field': [0.0], 'mxl': [2], 'type': ['Co_2c_0'], 'ncmp': [1], 'anclr': [[27]], 'conc': [[100.0]], 'natm': 2, 'atmicx': [['0.33333333a', '0.66666667b', '0.25000000c', 'Co_2c_0'], ['0.66666667a', '0.33333333b', '0.75000000c', 'Co_2c_0']], 'r1': [0.5, -0.8660254037844386, 0.0], 'r2': [0.5, 0.8660254037844386, 0.0], 'r3': [0.0, 0.0, 1.6234543278819307], 'displc': [[[0, 0, 0]]]}
 saved to Co/f39668f3f568e1ca11eaf47ff22fd05c/inputcard_geom
+STOP by geom mode
 kkr_struc, symmetry, nsite ('P6_3/mmc', 194) 2
 kkr space group symbol, nsite 194 2
 input prim structure num_site 2
@@ -145,10 +165,13 @@ kkr   prim structure num_site 2
 ('P6_3/mmc', 194) ('P6_3/mmc', 194)
 -------------------------------
 ### hcp Co (magnetic, mjw, fsm)
+dic {'go': 'fsm', 'potentialfile': 'pot_fsm.dat', 'brvtyp': 'hcp', 'a': 4.737545282580308, 'c/a': 1.6234543278819307, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 119.99999999999999, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'mag', 'record': 'init', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 200, 'pmix': '0.02ch', 'ntyp': 1, 'rmt': [1.0], 'field': [0.0], 'mxl': [2], 'type': ['Co_2c_0'], 'ncmp': [1], 'anclr': [[27]], 'conc': [[100.0]], 'natm': 2, 'atmicx': [['0.33333333a', '0.66666667b', '0.25000000c', 'Co_2c_0'], ['0.66666667a', '0.33333333b', '0.75000000c', 'Co_2c_0']], 'r1': [0.5, -0.8660254037844386, 0.0], 'r2': [0.5, 0.8660254037844386, 0.0], 'r3': [0.0, 0.0, 1.6234543278819307], 'fspin': 1.0, 'displc': [[[0, 0, 0]]]}
   directory:  Co   output file:  out_fsm.log
            conv orbitallocalmoment spinlocalmoment        te       tm
   current  True              [0.0]       [0.51764] -5.56e+03 1.00e+00
 
+/home/m0048/m004800/.pyenv/versions/3.10.12/lib/python3.10/site-packages/pymatgen/io/cif.py:1120: UserWarning: Issues encountered while parsing CIF: Some fractional coordinates rounded to ideal values to avoid issues with finite precision.
+  warnings.warn("Issues encountered while parsing CIF: " + "\n".join(self.warnings))
 get_structures(primitive=False), symmetry, nsite ('P6_3/mmc', 194) 2
 get_structures(primitive=True), symmetry, nsite ('P6_3/mmc', 194) 2
 prim_stand_struc, symmetry, nsite ('P6_3/mmc', 194) 2
@@ -159,7 +182,9 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=2, nsite_kkr=2
 save to Co/f39668f3f568e1ca11eaf47ff22fd05c/structure.json
+dic {'go': 'geom', 'potentialfile': 'pot.dat', 'brvtyp': 'hcp', 'a': 4.737545282580308, 'c/a': 1.6234543278819307, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 119.99999999999999, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'nmag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 0, 'pmix': '0.02', 'ntyp': 1, 'rmt': [0.0], 'field': [0.0], 'mxl': [2], 'type': ['Co_2c_0'], 'ncmp': [1], 'anclr': [[27]], 'conc': [[100.0]], 'natm': 2, 'atmicx': [['0.33333333a', '0.66666667b', '0.25000000c', 'Co_2c_0'], ['0.66666667a', '0.33333333b', '0.75000000c', 'Co_2c_0']], 'r1': [0.5, -0.8660254037844386, 0.0], 'r2': [0.5, 0.8660254037844386, 0.0], 'r3': [0.0, 0.0, 1.6234543278819307], 'displc': [[[0, 0, 0]]]}
 saved to Co/f39668f3f568e1ca11eaf47ff22fd05c/inputcard_geom
+STOP by geom mode
 kkr_struc, symmetry, nsite ('P6_3/mmc', 194) 2
 kkr space group symbol, nsite 194 2
 input prim structure num_site 2
@@ -167,10 +192,13 @@ kkr   prim structure num_site 2
 ('P6_3/mmc', 194) ('P6_3/mmc', 194)
 ------------------------------
 ### hcp Co (magnetic, mjw, tc)
+dic {'go': 'tc', 'potentialfile': 'pot.dat', 'brvtyp': 'hcp', 'a': 4.737545282580308, 'c/a': 1.6234543278819307, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 119.99999999999999, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'mag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 200, 'pmix': '0.02', 'ntyp': 1, 'rmt': [1.0], 'field': [0.0], 'mxl': [2], 'type': ['Co_2c_0'], 'ncmp': [1], 'anclr': [[27]], 'conc': [[100.0]], 'natm': 2, 'atmicx': [['0.33333333a', '0.66666667b', '0.25000000c', 'Co_2c_0'], ['0.66666667a', '0.33333333b', '0.75000000c', 'Co_2c_0']], 'r1': [0.5, -0.8660254037844386, 0.0], 'r2': [0.5, 0.8660254037844386, 0.0], 'r3': [0.0, 0.0, 1.6234543278819307], 'displc': [[[0, 0, 0]]]}
   directory:  Co   output file:  out_tc.log
                 Tc
   current 1.35e+03
 
+/home/m0048/m004800/.pyenv/versions/3.10.12/lib/python3.10/site-packages/pymatgen/io/cif.py:1120: UserWarning: Issues encountered while parsing CIF: Some fractional coordinates rounded to ideal values to avoid issues with finite precision.
+  warnings.warn("Issues encountered while parsing CIF: " + "\n".join(self.warnings))
 get_structures(primitive=False), symmetry, nsite ('P6_3/mmc', 194) 2
 get_structures(primitive=True), symmetry, nsite ('P6_3/mmc', 194) 2
 prim_stand_struc, symmetry, nsite ('P6_3/mmc', 194) 2
@@ -181,7 +209,9 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=2, nsite_kkr=2
 save to Co/f39668f3f568e1ca11eaf47ff22fd05c/structure.json
+dic {'go': 'geom', 'potentialfile': 'pot.dat', 'brvtyp': 'hcp', 'a': 4.737545282580308, 'c/a': 1.6234543278819307, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 119.99999999999999, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'nmag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 0, 'pmix': '0.02', 'ntyp': 1, 'rmt': [0.0], 'field': [0.0], 'mxl': [2], 'type': ['Co_2c_0'], 'ncmp': [1], 'anclr': [[27]], 'conc': [[100.0]], 'natm': 2, 'atmicx': [['0.33333333a', '0.66666667b', '0.25000000c', 'Co_2c_0'], ['0.66666667a', '0.33333333b', '0.75000000c', 'Co_2c_0']], 'r1': [0.5, -0.8660254037844386, 0.0], 'r2': [0.5, 0.8660254037844386, 0.0], 'r3': [0.0, 0.0, 1.6234543278819307], 'displc': [[[0, 0, 0]]]}
 saved to Co/f39668f3f568e1ca11eaf47ff22fd05c/inputcard_geom
+STOP by geom mode
 kkr_struc, symmetry, nsite ('P6_3/mmc', 194) 2
 kkr space group symbol, nsite 194 2
 input prim structure num_site 2
@@ -189,6 +219,7 @@ kkr   prim structure num_site 2
 ('P6_3/mmc', 194) ('P6_3/mmc', 194)
 --------------------------------
 ### hcp Co (magnetic, mjw, j3.0)
+dic {'go': 'j3.0', 'potentialfile': 'pot.dat', 'brvtyp': 'hcp', 'a': 4.737545282580308, 'c/a': 1.6234543278819307, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 119.99999999999999, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'mag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 200, 'pmix': '0.02', 'ntyp': 1, 'rmt': [1.0], 'field': [0.0], 'mxl': [2], 'type': ['Co_2c_0'], 'ncmp': [1], 'anclr': [[27]], 'conc': [[100.0]], 'natm': 2, 'atmicx': [['0.33333333a', '0.66666667b', '0.25000000c', 'Co_2c_0'], ['0.66666667a', '0.33333333b', '0.75000000c', 'Co_2c_0']], 'r1': [0.5, -0.8660254037844386, 0.0], 'r2': [0.5, 0.8660254037844386, 0.0], 'r3': [0.0, 0.0, 1.6234543278819307], 'displc': [[[0, 0, 0]]]}
   directory:  Co   output file:  out_j3.0.log
   saved to Co/jij.csv
 
@@ -199,14 +230,16 @@ kkr   prim structure num_site 2
 
 debug df_result_jij
   comp1 comp2 current_J_ij current_J_ij(meV)                 pair
-0     1     1     0.000978         13.307036  Co_2c_0-Co_2c_0-1-1
+0     1     1     0.000978         13.307898  Co_2c_0-Co_2c_0-1-1
 debug df_ref_jij
 None
 
    J_ij(meV) at the shortest distance
   typecomp Co_2c_0-Co_2c_0-1-1_1_1
-  current                13.307036
+  current                13.307898
 
+/home/m0048/m004800/.pyenv/versions/3.10.12/lib/python3.10/site-packages/pymatgen/io/cif.py:1120: UserWarning: Issues encountered while parsing CIF: Some fractional coordinates rounded to ideal values to avoid issues with finite precision.
+  warnings.warn("Issues encountered while parsing CIF: " + "\n".join(self.warnings))
 get_structures(primitive=False), symmetry, nsite ('P6_3/mmc', 194) 2
 get_structures(primitive=True), symmetry, nsite ('P6_3/mmc', 194) 2
 prim_stand_struc, symmetry, nsite ('P6_3/mmc', 194) 2
@@ -217,7 +250,9 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=2, nsite_kkr=2
 save to Co/f39668f3f568e1ca11eaf47ff22fd05c/structure.json
+dic {'go': 'geom', 'potentialfile': 'pot.dat', 'brvtyp': 'hcp', 'a': 4.737545282580308, 'c/a': 1.6234543278819307, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 119.99999999999999, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'nmag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 0, 'pmix': '0.02', 'ntyp': 1, 'rmt': [0.0], 'field': [0.0], 'mxl': [2], 'type': ['Co_2c_0'], 'ncmp': [1], 'anclr': [[27]], 'conc': [[100.0]], 'natm': 2, 'atmicx': [['0.33333333a', '0.66666667b', '0.25000000c', 'Co_2c_0'], ['0.66666667a', '0.33333333b', '0.75000000c', 'Co_2c_0']], 'r1': [0.5, -0.8660254037844386, 0.0], 'r2': [0.5, 0.8660254037844386, 0.0], 'r3': [0.0, 0.0, 1.6234543278819307], 'displc': [[[0, 0, 0]]]}
 saved to Co/f39668f3f568e1ca11eaf47ff22fd05c/inputcard_geom
+STOP by geom mode
 kkr_struc, symmetry, nsite ('P6_3/mmc', 194) 2
 kkr space group symbol, nsite 194 2
 input prim structure num_site 2
@@ -225,6 +260,7 @@ kkr   prim structure num_site 2
 ('P6_3/mmc', 194) ('P6_3/mmc', 194)
 -------------------------------
 ### hcp Co (magnetic, mjw, dos)
+dic {'go': 'dos', 'potentialfile': 'pot.dat', 'brvtyp': 'hcp', 'a': 4.737545282580308, 'c/a': 1.6234543278819307, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 119.99999999999999, 'edelt': 0.001, 'ewidth': 2.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'mag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 200, 'pmix': '0.02', 'ntyp': 1, 'rmt': [1.0], 'field': [0.0], 'mxl': [2], 'type': ['Co_2c_0'], 'ncmp': [1], 'anclr': [[27]], 'conc': [[100.0]], 'natm': 2, 'atmicx': [['0.33333333a', '0.66666667b', '0.25000000c', 'Co_2c_0'], ['0.66666667a', '0.33333333b', '0.75000000c', 'Co_2c_0']], 'r1': [0.5, -0.8660254037844386, 0.0], 'r2': [0.5, 0.8660254037844386, 0.0], 'r3': [0.0, 0.0, 1.6234543278819307], 'displc': [[[0, 0, 0]]]}
   directory:  Co   output file:  out_dos.log
   saved to Co/dos.png
   saved to Co/pdos_0.png
@@ -243,18 +279,20 @@ kkr   prim structure num_site 2
 
    pdos (up), atom=0, l=d
   energy   -1.00e+00  -9.90e-01  -9.80e-01  ...  9.80e-01   9.90e-01   1.00e+00 
-  current   3.60e-03   3.70e-03   3.80e-03  ...   1.15e+00   1.07e+00   1.72e+00
+  current   3.60e-03   3.70e-03   3.80e-03  ...   1.15e+00   1.07e+00   1.73e+00
   
   [1 rows x 201 columns]
 
    pdos (dn), atom=0, l=d
   energy   -1.00e+00  -9.90e-01  -9.80e-01  ...  9.80e-01   9.90e-01   1.00e+00 
-  current   3.40e-03   3.40e-03   3.50e-03  ...   7.87e-01   1.24e-01   6.35e-01
+  current   3.40e-03   3.40e-03   3.50e-03  ...   7.90e-01   1.24e-01   6.37e-01
   
   [1 rows x 201 columns]
 
    final: True
 
+/home/m0048/m004800/.pyenv/versions/3.10.12/lib/python3.10/site-packages/pymatgen/io/cif.py:1120: UserWarning: Issues encountered while parsing CIF: Some fractional coordinates rounded to ideal values to avoid issues with finite precision.
+  warnings.warn("Issues encountered while parsing CIF: " + "\n".join(self.warnings))
 get_structures(primitive=False), symmetry, nsite ('P6_3/mmc', 194) 2
 get_structures(primitive=True), symmetry, nsite ('P6_3/mmc', 194) 2
 prim_stand_struc, symmetry, nsite ('P6_3/mmc', 194) 2
@@ -265,7 +303,9 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=2, nsite_kkr=2
 save to Co/f39668f3f568e1ca11eaf47ff22fd05c/structure.json
+dic {'go': 'geom', 'potentialfile': 'pot.dat', 'brvtyp': 'hcp', 'a': 4.737545282580308, 'c/a': 1.6234543278819307, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 119.99999999999999, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'nmag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 0, 'pmix': '0.02', 'ntyp': 1, 'rmt': [0.0], 'field': [0.0], 'mxl': [2], 'type': ['Co_2c_0'], 'ncmp': [1], 'anclr': [[27]], 'conc': [[100.0]], 'natm': 2, 'atmicx': [['0.33333333a', '0.66666667b', '0.25000000c', 'Co_2c_0'], ['0.66666667a', '0.33333333b', '0.75000000c', 'Co_2c_0']], 'r1': [0.5, -0.8660254037844386, 0.0], 'r2': [0.5, 0.8660254037844386, 0.0], 'r3': [0.0, 0.0, 1.6234543278819307], 'displc': [[[0, 0, 0]]]}
 saved to Co/f39668f3f568e1ca11eaf47ff22fd05c/inputcard_geom
+STOP by geom mode
 kkr_struc, symmetry, nsite ('P6_3/mmc', 194) 2
 kkr space group symbol, nsite 194 2
 input prim structure num_site 2
@@ -274,11 +314,12 @@ kkr   prim structure num_site 2
 ---------------------------------
 ### hcp Co (magnetic, mjw, spc31)
 kpath is made by HighSymmKpath
+dic {'go': 'spc31', 'potentialfile': 'pot.dat', 'brvtyp': 'hcp', 'a': 4.737545282580308, 'c/a': 1.6234543278819307, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 119.99999999999999, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'mag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 200, 'pmix': '0.02', 'ntyp': 1, 'rmt': [1.0], 'field': [0.0], 'mxl': [2], 'type': ['Co_2c_0'], 'ncmp': [1], 'anclr': [[27]], 'conc': [[100.0]], 'natm': 2, 'atmicx': [['0.33333333a', '0.66666667b', '0.25000000c', 'Co_2c_0'], ['0.66666667a', '0.33333333b', '0.75000000c', 'Co_2c_0']], 'r1': [0.5, -0.8660254037844386, 0.0], 'r2': [0.5, 0.8660254037844386, 0.0], 'r3': [0.0, 0.0, 1.6234543278819307], 'kpath_raw': ['150', 'c ---  \\Gamma M K \\Gamma A L H A', 'c ---  \\Gamma', '0.0 0.0 0.0', 'c ---  M', '0.5 0.0 0.0', 'c ---  K', '0.3333333333333333 0.3333333333333333 0.0', 'c ---  \\Gamma', '0.0 0.0 0.0', 'c ---  A', '0.0 0.0 0.5', 'c ---  L', '0.5 0.0 0.5', 'c ---  H', '0.3333333333333333 0.3333333333333333 0.5', 'c ---  A', '0.0 0.0 0.5'], 'displc': [[[0, 0, 0]]]}
   directory:  Co   output file:  out_spc31.log
 debug: file, loaded content Co/klabel.json {'kpath': [[{'\\Gamma': [0.0, 0.0, 0.0]}, {'M': [0.5, 0.0, 0.0]}, {'K': [0.3333333333333333, 0.3333333333333333, 0.0]}, {'\\Gamma': [0.0, 0.0, 0.0]}, {'A': [0.0, 0.0, 0.5]}, {'L': [0.5, 0.0, 0.5]}, {'H': [0.3333333333333333, 0.3333333333333333, 0.5]}, {'A': [0.0, 0.0, 0.5]}]]}
-  saved to Co/Awk_up.png
-  saved to Co/Awk_dn.png
-  saved to Co/Awk_both.png
+  saved to Awk_up.png
+  saved to Awk_dn.png
+  saved to Awk_both.png
 
    Aw(w,k) k=0 0 0, up
   energy   -4.97e-01  -4.92e-01  -4.87e-01  ...  4.87e-01   4.92e-01   4.97e-01 
@@ -302,7 +343,9 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=1, nsite_kkr=1
 save to Fe/caf80bdd15f4dc9f486d4724ecd18076/structure.json
+dic {'go': 'geom', 'potentialfile': 'pot.dat', 'brvtyp': 'bcc', 'a': 5.415957231701302, 'c/a': 1.0, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'nmag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 0, 'pmix': '0.02', 'ntyp': 1, 'rmt': [0.0], 'field': [0.0], 'mxl': [2], 'type': ['Fe_2a_0'], 'ncmp': [1], 'anclr': [[26]], 'conc': [[100.0]], 'natm': 1, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Fe_2a_0']], 'r1': [-0.49999999999999994, 0.5, 0.5], 'r2': [0.49999999999999994, -0.5, 0.5], 'r3': [0.5000000000000001, 0.5, -0.49999999999999994], 'displc': [[[0, 0, 0]]]}
 saved to Fe/caf80bdd15f4dc9f486d4724ecd18076/inputcard_geom
+STOP by geom mode
 kkr_struc, symmetry, nsite ('Im-3m', 229) 1
 kkr space group symbol, nsite 229 1
 input prim structure num_site 1
@@ -310,6 +353,7 @@ kkr   prim structure num_site 1
 ('Im-3m', 229) ('Im-3m', 229)
 ------------------------------
 ### bcc Fe (magnetic, mjw, go)
+dic {'go': 'go', 'potentialfile': 'pot.dat', 'brvtyp': 'bcc', 'a': 5.415957231701302, 'c/a': 1.0, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'mag', 'record': 'init', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 200, 'pmix': '0.02', 'ntyp': 1, 'rmt': [1.0], 'field': [0.0], 'mxl': [2], 'type': ['Fe_2a_0'], 'ncmp': [1], 'anclr': [[26]], 'conc': [[100.0]], 'natm': 1, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Fe_2a_0']], 'r1': [-0.49999999999999994, 0.5, 0.5], 'r2': [0.49999999999999994, -0.5, 0.5], 'r3': [0.5000000000000001, 0.5, -0.49999999999999994], 'displc': [[[0, 0, 0]]]}
   directory:  Fe   output file:  out_go.log
            conv orbitallocalmoment spinlocalmoment        te       tm
   current  True              [0.0]       [2.36112] -2.54e+03 2.32e+00
@@ -324,7 +368,9 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=1, nsite_kkr=1
 save to Fe/caf80bdd15f4dc9f486d4724ecd18076/structure.json
+dic {'go': 'geom', 'potentialfile': 'pot.dat', 'brvtyp': 'bcc', 'a': 5.415957231701302, 'c/a': 1.0, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'nmag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 0, 'pmix': '0.02', 'ntyp': 1, 'rmt': [0.0], 'field': [0.0], 'mxl': [2], 'type': ['Fe_2a_0'], 'ncmp': [1], 'anclr': [[26]], 'conc': [[100.0]], 'natm': 1, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Fe_2a_0']], 'r1': [-0.49999999999999994, 0.5, 0.5], 'r2': [0.49999999999999994, -0.5, 0.5], 'r3': [0.5000000000000001, 0.5, -0.49999999999999994], 'displc': [[[0, 0, 0]]]}
 saved to Fe/caf80bdd15f4dc9f486d4724ecd18076/inputcard_geom
+STOP by geom mode
 kkr_struc, symmetry, nsite ('Im-3m', 229) 1
 kkr space group symbol, nsite 229 1
 input prim structure num_site 1
@@ -332,6 +378,7 @@ kkr   prim structure num_site 1
 ('Im-3m', 229) ('Im-3m', 229)
 -------------------------------
 ### bcc Fe (magnetic, mjw, fsm)
+dic {'go': 'fsm', 'potentialfile': 'pot_fsm.dat', 'brvtyp': 'bcc', 'a': 5.415957231701302, 'c/a': 1.0, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'mag', 'record': 'init', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 200, 'pmix': '0.02ch', 'ntyp': 1, 'rmt': [1.0], 'field': [0.0], 'mxl': [2], 'type': ['Fe_2a_0'], 'ncmp': [1], 'anclr': [[26]], 'conc': [[100.0]], 'natm': 1, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Fe_2a_0']], 'r1': [-0.49999999999999994, 0.5, 0.5], 'r2': [0.49999999999999994, -0.5, 0.5], 'r3': [0.5000000000000001, 0.5, -0.49999999999999994], 'fspin': 1.0, 'displc': [[[0, 0, 0]]]}
   directory:  Fe   output file:  out_fsm.log
            conv orbitallocalmoment spinlocalmoment        te       tm
   current  True              [0.0]       [1.02524] -2.54e+03 1.00e+00
@@ -346,7 +393,9 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=1, nsite_kkr=1
 save to Fe/caf80bdd15f4dc9f486d4724ecd18076/structure.json
+dic {'go': 'geom', 'potentialfile': 'pot.dat', 'brvtyp': 'bcc', 'a': 5.415957231701302, 'c/a': 1.0, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'nmag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 0, 'pmix': '0.02', 'ntyp': 1, 'rmt': [0.0], 'field': [0.0], 'mxl': [2], 'type': ['Fe_2a_0'], 'ncmp': [1], 'anclr': [[26]], 'conc': [[100.0]], 'natm': 1, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Fe_2a_0']], 'r1': [-0.49999999999999994, 0.5, 0.5], 'r2': [0.49999999999999994, -0.5, 0.5], 'r3': [0.5000000000000001, 0.5, -0.49999999999999994], 'displc': [[[0, 0, 0]]]}
 saved to Fe/caf80bdd15f4dc9f486d4724ecd18076/inputcard_geom
+STOP by geom mode
 kkr_struc, symmetry, nsite ('Im-3m', 229) 1
 kkr space group symbol, nsite 229 1
 input prim structure num_site 1
@@ -354,6 +403,7 @@ kkr   prim structure num_site 1
 ('Im-3m', 229) ('Im-3m', 229)
 ------------------------------
 ### bcc Fe (magnetic, mjw, tc)
+dic {'go': 'tc', 'potentialfile': 'pot.dat', 'brvtyp': 'bcc', 'a': 5.415957231701302, 'c/a': 1.0, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'mag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 200, 'pmix': '0.02', 'ntyp': 1, 'rmt': [1.0], 'field': [0.0], 'mxl': [2], 'type': ['Fe_2a_0'], 'ncmp': [1], 'anclr': [[26]], 'conc': [[100.0]], 'natm': 1, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Fe_2a_0']], 'r1': [-0.49999999999999994, 0.5, 0.5], 'r2': [0.49999999999999994, -0.5, 0.5], 'r3': [0.5000000000000001, 0.5, -0.49999999999999994], 'displc': [[[0, 0, 0]]]}
   directory:  Fe   output file:  out_tc.log
                 Tc
   current 1.24e+03
@@ -368,7 +418,9 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=1, nsite_kkr=1
 save to Fe/caf80bdd15f4dc9f486d4724ecd18076/structure.json
+dic {'go': 'geom', 'potentialfile': 'pot.dat', 'brvtyp': 'bcc', 'a': 5.415957231701302, 'c/a': 1.0, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'nmag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 0, 'pmix': '0.02', 'ntyp': 1, 'rmt': [0.0], 'field': [0.0], 'mxl': [2], 'type': ['Fe_2a_0'], 'ncmp': [1], 'anclr': [[26]], 'conc': [[100.0]], 'natm': 1, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Fe_2a_0']], 'r1': [-0.49999999999999994, 0.5, 0.5], 'r2': [0.49999999999999994, -0.5, 0.5], 'r3': [0.5000000000000001, 0.5, -0.49999999999999994], 'displc': [[[0, 0, 0]]]}
 saved to Fe/caf80bdd15f4dc9f486d4724ecd18076/inputcard_geom
+STOP by geom mode
 kkr_struc, symmetry, nsite ('Im-3m', 229) 1
 kkr space group symbol, nsite 229 1
 input prim structure num_site 1
@@ -376,6 +428,7 @@ kkr   prim structure num_site 1
 ('Im-3m', 229) ('Im-3m', 229)
 --------------------------------
 ### bcc Fe (magnetic, mjw, j3.0)
+dic {'go': 'j3.0', 'potentialfile': 'pot.dat', 'brvtyp': 'bcc', 'a': 5.415957231701302, 'c/a': 1.0, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'mag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 200, 'pmix': '0.02', 'ntyp': 1, 'rmt': [1.0], 'field': [0.0], 'mxl': [2], 'type': ['Fe_2a_0'], 'ncmp': [1], 'anclr': [[26]], 'conc': [[100.0]], 'natm': 1, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Fe_2a_0']], 'r1': [-0.49999999999999994, 0.5, 0.5], 'r2': [0.49999999999999994, -0.5, 0.5], 'r3': [0.5000000000000001, 0.5, -0.49999999999999994], 'displc': [[[0, 0, 0]]]}
   directory:  Fe   output file:  out_j3.0.log
   saved to Fe/jij.csv
 
@@ -386,13 +439,13 @@ kkr   prim structure num_site 1
 
 debug df_result_jij
   comp1 comp2 current_J_ij current_J_ij(meV)                 pair
-0     1     1     0.001162         15.811491  Fe_2a_0-Fe_2a_0-1-1
+0     1     1     0.001162         15.810172  Fe_2a_0-Fe_2a_0-1-1
 debug df_ref_jij
 None
 
    J_ij(meV) at the shortest distance
   typecomp Fe_2a_0-Fe_2a_0-1-1_1_1
-  current                15.811491
+  current                15.810172
 
 get_structures(primitive=False), symmetry, nsite ('Im-3m', 229) 2
 get_structures(primitive=True), symmetry, nsite ('Im-3m', 229) 1
@@ -404,7 +457,9 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=1, nsite_kkr=1
 save to Fe/caf80bdd15f4dc9f486d4724ecd18076/structure.json
+dic {'go': 'geom', 'potentialfile': 'pot.dat', 'brvtyp': 'bcc', 'a': 5.415957231701302, 'c/a': 1.0, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'nmag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 0, 'pmix': '0.02', 'ntyp': 1, 'rmt': [0.0], 'field': [0.0], 'mxl': [2], 'type': ['Fe_2a_0'], 'ncmp': [1], 'anclr': [[26]], 'conc': [[100.0]], 'natm': 1, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Fe_2a_0']], 'r1': [-0.49999999999999994, 0.5, 0.5], 'r2': [0.49999999999999994, -0.5, 0.5], 'r3': [0.5000000000000001, 0.5, -0.49999999999999994], 'displc': [[[0, 0, 0]]]}
 saved to Fe/caf80bdd15f4dc9f486d4724ecd18076/inputcard_geom
+STOP by geom mode
 kkr_struc, symmetry, nsite ('Im-3m', 229) 1
 kkr space group symbol, nsite 229 1
 input prim structure num_site 1
@@ -412,13 +467,14 @@ kkr   prim structure num_site 1
 ('Im-3m', 229) ('Im-3m', 229)
 -------------------------------
 ### bcc Fe (magnetic, mjw, dos)
+dic {'go': 'dos', 'potentialfile': 'pot.dat', 'brvtyp': 'bcc', 'a': 5.415957231701302, 'c/a': 1.0, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 2.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'mag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 200, 'pmix': '0.02', 'ntyp': 1, 'rmt': [1.0], 'field': [0.0], 'mxl': [2], 'type': ['Fe_2a_0'], 'ncmp': [1], 'anclr': [[26]], 'conc': [[100.0]], 'natm': 1, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Fe_2a_0']], 'r1': [-0.49999999999999994, 0.5, 0.5], 'r2': [0.49999999999999994, -0.5, 0.5], 'r3': [0.5000000000000001, 0.5, -0.49999999999999994], 'displc': [[[0, 0, 0]]]}
   directory:  Fe   output file:  out_dos.log
   saved to Fe/dos.png
   saved to Fe/pdos_0.png
 
    totalDOS (up)
   energy   -9.95e-01  -9.85e-01  -9.75e-01  ...  9.75e-01   9.85e-01   9.95e-01 
-  current   3.16e-03   3.24e-03   3.32e-03  ...   4.85e+00   2.40e+00   1.47e+00
+  current   3.16e-03   3.24e-03   3.32e-03  ...   4.85e+00   2.39e+00   1.47e+00
   
   [1 rows x 200 columns]
 
@@ -452,7 +508,9 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=1, nsite_kkr=1
 save to Fe/caf80bdd15f4dc9f486d4724ecd18076/structure.json
+dic {'go': 'geom', 'potentialfile': 'pot.dat', 'brvtyp': 'bcc', 'a': 5.415957231701302, 'c/a': 1.0, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'nmag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 0, 'pmix': '0.02', 'ntyp': 1, 'rmt': [0.0], 'field': [0.0], 'mxl': [2], 'type': ['Fe_2a_0'], 'ncmp': [1], 'anclr': [[26]], 'conc': [[100.0]], 'natm': 1, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Fe_2a_0']], 'r1': [-0.49999999999999994, 0.5, 0.5], 'r2': [0.49999999999999994, -0.5, 0.5], 'r3': [0.5000000000000001, 0.5, -0.49999999999999994], 'displc': [[[0, 0, 0]]]}
 saved to Fe/caf80bdd15f4dc9f486d4724ecd18076/inputcard_geom
+STOP by geom mode
 kkr_struc, symmetry, nsite ('Im-3m', 229) 1
 kkr space group symbol, nsite 229 1
 input prim structure num_site 1
@@ -461,11 +519,12 @@ kkr   prim structure num_site 1
 ---------------------------------
 ### bcc Fe (magnetic, mjw, spc31)
 kpath is made by HighSymmKpath
+dic {'go': 'spc31', 'potentialfile': 'pot.dat', 'brvtyp': 'bcc', 'a': 5.415957231701302, 'c/a': 1.0, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'mag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 200, 'pmix': '0.02', 'ntyp': 1, 'rmt': [1.0], 'field': [0.0], 'mxl': [2], 'type': ['Fe_2a_0'], 'ncmp': [1], 'anclr': [[26]], 'conc': [[100.0]], 'natm': 1, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Fe_2a_0']], 'r1': [-0.49999999999999994, 0.5, 0.5], 'r2': [0.49999999999999994, -0.5, 0.5], 'r3': [0.5000000000000001, 0.5, -0.49999999999999994], 'kpath_raw': ['150', 'c ---  \\Gamma H N \\Gamma P H', 'c ---  \\Gamma', '0.0 0.0 0.0', 'c ---  H', '0.5 -0.5 0.5', 'c ---  N', '0.0 0.0 0.5', 'c ---  \\Gamma', '0.0 0.0 0.0', 'c ---  P', '0.25 0.25 0.25', 'c ---  H', '0.5 -0.5 0.5'], 'displc': [[[0, 0, 0]]]}
   directory:  Fe   output file:  out_spc31.log
 debug: file, loaded content Fe/klabel.json {'kpath': [[{'\\Gamma': [0.0, 0.0, 0.0]}, {'H': [0.5, -0.5, 0.5]}, {'N': [0.0, 0.0, 0.5]}, {'\\Gamma': [0.0, 0.0, 0.0]}, {'P': [0.25, 0.25, 0.25]}, {'H': [0.5, -0.5, 0.5]}]]}
-  saved to Fe/Awk_up.png
-  saved to Fe/Awk_dn.png
-  saved to Fe/Awk_both.png
+  saved to Awk_up.png
+  saved to Awk_dn.png
+  saved to Awk_both.png
 
    Aw(w,k) k=0 0 0, up
   energy   -4.97e-01  -4.92e-01  -4.87e-01  ...  4.87e-01   4.92e-01   4.97e-01 
@@ -489,7 +548,9 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=1, nsite_kkr=1
 save to Ni/95dddf03f8f08e074850c45b9301c51f/structure.json
+dic {'go': 'geom', 'potentialfile': 'pot.dat', 'brvtyp': 'fcc', 'a': 6.670735878543474, 'c/a': 1.0, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'nmag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 0, 'pmix': '0.02', 'ntyp': 1, 'rmt': [0.0], 'field': [0.0], 'mxl': [2], 'type': ['Ni_4a_0'], 'ncmp': [1], 'anclr': [[28]], 'conc': [[100.0]], 'natm': 1, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Ni_4a_0']], 'r1': [8.040613248383182e-17, 0.5, 0.5], 'r2': [0.5, 0.0, 0.5], 'r3': [0.5000000000000001, 0.5, 6.123233995736766e-17], 'displc': [[[0, 0, 0]]]}
 saved to Ni/95dddf03f8f08e074850c45b9301c51f/inputcard_geom
+STOP by geom mode
 kkr_struc, symmetry, nsite ('Fm-3m', 225) 1
 kkr space group symbol, nsite 225 1
 input prim structure num_site 1
@@ -497,7 +558,7 @@ kkr   prim structure num_site 1
 ('Fm-3m', 225) ('Fm-3m', 225)
 ------------------------------
 ### fcc Ni (magnetic, mjw, go)
-  comment: total moment<0. rerun it.
+dic {'go': 'go', 'potentialfile': 'pot.dat', 'brvtyp': 'fcc', 'a': 6.670735878543474, 'c/a': 1.0, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'mag', 'record': 'init', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 200, 'pmix': '0.02', 'ntyp': 1, 'rmt': [1.0], 'field': [0.0], 'mxl': [2], 'type': ['Ni_4a_0'], 'ncmp': [1], 'anclr': [[28]], 'conc': [[100.0]], 'natm': 1, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Ni_4a_0']], 'r1': [8.040613248383182e-17, 0.5, 0.5], 'r2': [0.5, 0.0, 0.5], 'r3': [0.5000000000000001, 0.5, 6.123233995736766e-17], 'displc': [[[0, 0, 0]]]}
   directory:  Ni   output file:  out_go.log
            conv orbitallocalmoment spinlocalmoment        te       tm
   current  True              [0.0]       [0.68653] -3.04e+03 6.61e-01
@@ -512,7 +573,9 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=1, nsite_kkr=1
 save to Ni/95dddf03f8f08e074850c45b9301c51f/structure.json
+dic {'go': 'geom', 'potentialfile': 'pot.dat', 'brvtyp': 'fcc', 'a': 6.670735878543474, 'c/a': 1.0, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'nmag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 0, 'pmix': '0.02', 'ntyp': 1, 'rmt': [0.0], 'field': [0.0], 'mxl': [2], 'type': ['Ni_4a_0'], 'ncmp': [1], 'anclr': [[28]], 'conc': [[100.0]], 'natm': 1, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Ni_4a_0']], 'r1': [8.040613248383182e-17, 0.5, 0.5], 'r2': [0.5, 0.0, 0.5], 'r3': [0.5000000000000001, 0.5, 6.123233995736766e-17], 'displc': [[[0, 0, 0]]]}
 saved to Ni/95dddf03f8f08e074850c45b9301c51f/inputcard_geom
+STOP by geom mode
 kkr_struc, symmetry, nsite ('Fm-3m', 225) 1
 kkr space group symbol, nsite 225 1
 input prim structure num_site 1
@@ -520,6 +583,7 @@ kkr   prim structure num_site 1
 ('Fm-3m', 225) ('Fm-3m', 225)
 -------------------------------
 ### fcc Ni (magnetic, mjw, fsm)
+dic {'go': 'fsm', 'potentialfile': 'pot_fsm.dat', 'brvtyp': 'fcc', 'a': 6.670735878543474, 'c/a': 1.0, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'mag', 'record': 'init', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 200, 'pmix': '0.02ch', 'ntyp': 1, 'rmt': [1.0], 'field': [0.0], 'mxl': [2], 'type': ['Ni_4a_0'], 'ncmp': [1], 'anclr': [[28]], 'conc': [[100.0]], 'natm': 1, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Ni_4a_0']], 'r1': [8.040613248383182e-17, 0.5, 0.5], 'r2': [0.5, 0.0, 0.5], 'r3': [0.5000000000000001, 0.5, 6.123233995736766e-17], 'fspin': 1.0, 'displc': [[[0, 0, 0]]]}
   directory:  Ni   output file:  out_fsm.log
            conv orbitallocalmoment spinlocalmoment        te       tm
   current  True              [0.0]       [0.99859] -3.04e+03 1.00e+00
@@ -534,7 +598,9 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=1, nsite_kkr=1
 save to Ni/95dddf03f8f08e074850c45b9301c51f/structure.json
+dic {'go': 'geom', 'potentialfile': 'pot.dat', 'brvtyp': 'fcc', 'a': 6.670735878543474, 'c/a': 1.0, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'nmag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 0, 'pmix': '0.02', 'ntyp': 1, 'rmt': [0.0], 'field': [0.0], 'mxl': [2], 'type': ['Ni_4a_0'], 'ncmp': [1], 'anclr': [[28]], 'conc': [[100.0]], 'natm': 1, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Ni_4a_0']], 'r1': [8.040613248383182e-17, 0.5, 0.5], 'r2': [0.5, 0.0, 0.5], 'r3': [0.5000000000000001, 0.5, 6.123233995736766e-17], 'displc': [[[0, 0, 0]]]}
 saved to Ni/95dddf03f8f08e074850c45b9301c51f/inputcard_geom
+STOP by geom mode
 kkr_struc, symmetry, nsite ('Fm-3m', 225) 1
 kkr space group symbol, nsite 225 1
 input prim structure num_site 1
@@ -542,6 +608,7 @@ kkr   prim structure num_site 1
 ('Fm-3m', 225) ('Fm-3m', 225)
 ------------------------------
 ### fcc Ni (magnetic, mjw, tc)
+dic {'go': 'tc', 'potentialfile': 'pot.dat', 'brvtyp': 'fcc', 'a': 6.670735878543474, 'c/a': 1.0, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'mag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 200, 'pmix': '0.02', 'ntyp': 1, 'rmt': [1.0], 'field': [0.0], 'mxl': [2], 'type': ['Ni_4a_0'], 'ncmp': [1], 'anclr': [[28]], 'conc': [[100.0]], 'natm': 1, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Ni_4a_0']], 'r1': [8.040613248383182e-17, 0.5, 0.5], 'r2': [0.5, 0.0, 0.5], 'r3': [0.5000000000000001, 0.5, 6.123233995736766e-17], 'displc': [[[0, 0, 0]]]}
   directory:  Ni   output file:  out_tc.log
                 Tc
   current 4.61e+02
@@ -556,7 +623,9 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=1, nsite_kkr=1
 save to Ni/95dddf03f8f08e074850c45b9301c51f/structure.json
+dic {'go': 'geom', 'potentialfile': 'pot.dat', 'brvtyp': 'fcc', 'a': 6.670735878543474, 'c/a': 1.0, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'nmag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 0, 'pmix': '0.02', 'ntyp': 1, 'rmt': [0.0], 'field': [0.0], 'mxl': [2], 'type': ['Ni_4a_0'], 'ncmp': [1], 'anclr': [[28]], 'conc': [[100.0]], 'natm': 1, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Ni_4a_0']], 'r1': [8.040613248383182e-17, 0.5, 0.5], 'r2': [0.5, 0.0, 0.5], 'r3': [0.5000000000000001, 0.5, 6.123233995736766e-17], 'displc': [[[0, 0, 0]]]}
 saved to Ni/95dddf03f8f08e074850c45b9301c51f/inputcard_geom
+STOP by geom mode
 kkr_struc, symmetry, nsite ('Fm-3m', 225) 1
 kkr space group symbol, nsite 225 1
 input prim structure num_site 1
@@ -564,6 +633,7 @@ kkr   prim structure num_site 1
 ('Fm-3m', 225) ('Fm-3m', 225)
 --------------------------------
 ### fcc Ni (magnetic, mjw, j3.0)
+dic {'go': 'j3.0', 'potentialfile': 'pot.dat', 'brvtyp': 'fcc', 'a': 6.670735878543474, 'c/a': 1.0, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'mag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 200, 'pmix': '0.02', 'ntyp': 1, 'rmt': [1.0], 'field': [0.0], 'mxl': [2], 'type': ['Ni_4a_0'], 'ncmp': [1], 'anclr': [[28]], 'conc': [[100.0]], 'natm': 1, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Ni_4a_0']], 'r1': [8.040613248383182e-17, 0.5, 0.5], 'r2': [0.5, 0.0, 0.5], 'r3': [0.5000000000000001, 0.5, 6.123233995736766e-17], 'displc': [[[0, 0, 0]]]}
   directory:  Ni   output file:  out_j3.0.log
   saved to Ni/jij.csv
 
@@ -574,13 +644,13 @@ kkr   prim structure num_site 1
 
 debug df_result_jij
   comp1 comp2 current_J_ij current_J_ij(meV)                 pair
-0     1     1     0.000256          3.483586  Ni_4a_0-Ni_4a_0-1-1
+0     1     1     0.000256          3.483216  Ni_4a_0-Ni_4a_0-1-1
 debug df_ref_jij
 None
 
    J_ij(meV) at the shortest distance
   typecomp Ni_4a_0-Ni_4a_0-1-1_1_1
-  current                 3.483586
+  current                 3.483216
 
 get_structures(primitive=False), symmetry, nsite ('Fm-3m', 225) 4
 get_structures(primitive=True), symmetry, nsite ('Fm-3m', 225) 1
@@ -592,7 +662,9 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=1, nsite_kkr=1
 save to Ni/95dddf03f8f08e074850c45b9301c51f/structure.json
+dic {'go': 'geom', 'potentialfile': 'pot.dat', 'brvtyp': 'fcc', 'a': 6.670735878543474, 'c/a': 1.0, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'nmag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 0, 'pmix': '0.02', 'ntyp': 1, 'rmt': [0.0], 'field': [0.0], 'mxl': [2], 'type': ['Ni_4a_0'], 'ncmp': [1], 'anclr': [[28]], 'conc': [[100.0]], 'natm': 1, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Ni_4a_0']], 'r1': [8.040613248383182e-17, 0.5, 0.5], 'r2': [0.5, 0.0, 0.5], 'r3': [0.5000000000000001, 0.5, 6.123233995736766e-17], 'displc': [[[0, 0, 0]]]}
 saved to Ni/95dddf03f8f08e074850c45b9301c51f/inputcard_geom
+STOP by geom mode
 kkr_struc, symmetry, nsite ('Fm-3m', 225) 1
 kkr space group symbol, nsite 225 1
 input prim structure num_site 1
@@ -600,6 +672,7 @@ kkr   prim structure num_site 1
 ('Fm-3m', 225) ('Fm-3m', 225)
 -------------------------------
 ### fcc Ni (magnetic, mjw, dos)
+dic {'go': 'dos', 'potentialfile': 'pot.dat', 'brvtyp': 'fcc', 'a': 6.670735878543474, 'c/a': 1.0, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 2.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'mag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 200, 'pmix': '0.02', 'ntyp': 1, 'rmt': [1.0], 'field': [0.0], 'mxl': [2], 'type': ['Ni_4a_0'], 'ncmp': [1], 'anclr': [[28]], 'conc': [[100.0]], 'natm': 1, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Ni_4a_0']], 'r1': [8.040613248383182e-17, 0.5, 0.5], 'r2': [0.5, 0.0, 0.5], 'r3': [0.5000000000000001, 0.5, 6.123233995736766e-17], 'displc': [[[0, 0, 0]]]}
   directory:  Ni   output file:  out_dos.log
   saved to Ni/dos.png
   saved to Ni/pdos_0.png
@@ -624,7 +697,7 @@ kkr   prim structure num_site 1
 
    pdos (dn), atom=0, l=d
   energy   -1.00e+00  -9.90e-01  -9.80e-01  ...  9.80e-01   9.90e-01   1.00e+00 
-  current   3.80e-03   3.80e-03   3.90e-03  ...   6.71e-01   9.56e-01   7.90e-01
+  current   3.80e-03   3.80e-03   3.90e-03  ...   6.70e-01   9.57e-01   7.90e-01
   
   [1 rows x 201 columns]
 
@@ -640,7 +713,9 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=1, nsite_kkr=1
 save to Ni/95dddf03f8f08e074850c45b9301c51f/structure.json
+dic {'go': 'geom', 'potentialfile': 'pot.dat', 'brvtyp': 'fcc', 'a': 6.670735878543474, 'c/a': 1.0, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'nmag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 0, 'pmix': '0.02', 'ntyp': 1, 'rmt': [0.0], 'field': [0.0], 'mxl': [2], 'type': ['Ni_4a_0'], 'ncmp': [1], 'anclr': [[28]], 'conc': [[100.0]], 'natm': 1, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Ni_4a_0']], 'r1': [8.040613248383182e-17, 0.5, 0.5], 'r2': [0.5, 0.0, 0.5], 'r3': [0.5000000000000001, 0.5, 6.123233995736766e-17], 'displc': [[[0, 0, 0]]]}
 saved to Ni/95dddf03f8f08e074850c45b9301c51f/inputcard_geom
+STOP by geom mode
 kkr_struc, symmetry, nsite ('Fm-3m', 225) 1
 kkr space group symbol, nsite 225 1
 input prim structure num_site 1
@@ -649,11 +724,12 @@ kkr   prim structure num_site 1
 ---------------------------------
 ### fcc Ni (magnetic, mjw, spc31)
 kpath is made by HighSymmKpath
+dic {'go': 'spc31', 'potentialfile': 'pot.dat', 'brvtyp': 'fcc', 'a': 6.670735878543474, 'c/a': 1.0, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'mag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 200, 'pmix': '0.02', 'ntyp': 1, 'rmt': [1.0], 'field': [0.0], 'mxl': [2], 'type': ['Ni_4a_0'], 'ncmp': [1], 'anclr': [[28]], 'conc': [[100.0]], 'natm': 1, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Ni_4a_0']], 'r1': [8.040613248383182e-17, 0.5, 0.5], 'r2': [0.5, 0.0, 0.5], 'r3': [0.5000000000000001, 0.5, 6.123233995736766e-17], 'kpath_raw': ['150', 'c ---  \\Gamma X W K \\Gamma L U W L K', 'c ---  \\Gamma', '0.0 0.0 0.0', 'c ---  X', '0.5 0.0 0.5', 'c ---  W', '0.5 0.25 0.75', 'c ---  K', '0.375 0.375 0.75', 'c ---  \\Gamma', '0.0 0.0 0.0', 'c ---  L', '0.5 0.5 0.5', 'c ---  U', '0.625 0.25 0.625', 'c ---  W', '0.5 0.25 0.75', 'c ---  L', '0.5 0.5 0.5', 'c ---  K', '0.375 0.375 0.75'], 'displc': [[[0, 0, 0]]]}
   directory:  Ni   output file:  out_spc31.log
 debug: file, loaded content Ni/klabel.json {'kpath': [[{'\\Gamma': [0.0, 0.0, 0.0]}, {'X': [0.5, 0.0, 0.5]}, {'W': [0.5, 0.25, 0.75]}, {'K': [0.375, 0.375, 0.75]}, {'\\Gamma': [0.0, 0.0, 0.0]}, {'L': [0.5, 0.5, 0.5]}, {'U': [0.625, 0.25, 0.625]}, {'W': [0.5, 0.25, 0.75]}, {'L': [0.5, 0.5, 0.5]}, {'K': [0.375, 0.375, 0.75]}]]}
-  saved to Ni/Awk_up.png
-  saved to Ni/Awk_dn.png
-  saved to Ni/Awk_both.png
+  saved to Awk_up.png
+  saved to Awk_dn.png
+  saved to Awk_both.png
 
    Aw(w,k) k=0 0 0, up
   energy   -4.97e-01  -4.92e-01  -4.87e-01  ...  4.87e-01   4.92e-01   4.97e-01 
@@ -678,7 +754,9 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=1, nsite_kkr=1
 save to NiFe/e549f3977f740dcac4cb82224b952d66/structure.json
+dic {'go': 'geom', 'potentialfile': 'pot.dat', 'brvtyp': 'fcc', 'a': 6.7482146805322225, 'c/a': 1.0, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'nmag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 0, 'pmix': '0.02', 'ntyp': 1, 'rmt': [0.0], 'field': [0.0], 'mxl': [2], 'type': ['Fe0.1Ni0.9_4a_0'], 'ncmp': [2], 'anclr': [[26, 28]], 'conc': [[10.0, 90.0]], 'natm': 1, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Fe0.1Ni0.9_4a_0']], 'r1': [8.04061324838318e-17, 0.5, 0.5], 'r2': [0.5, 0.0, 0.5], 'r3': [0.5000000000000001, 0.5, 6.123233995736766e-17], 'displc': [[[0, 0, 0], [0, 0, 0]]]}
 saved to NiFe/e549f3977f740dcac4cb82224b952d66/inputcard_geom
+STOP by geom mode
 kkr_struc, symmetry, nsite ('Fm-3m', 225) 1
 kkr space group symbol, nsite 225 1
 input prim structure num_site 1
@@ -686,6 +764,7 @@ kkr   prim structure num_site 1
 ('Fm-3m', 225) ('Fm-3m', 225)
 -----------------------------------
 ### fcc NiFe (magnetic, pbeasa, go)
+dic {'go': 'go', 'potentialfile': 'pot.dat', 'brvtyp': 'fcc', 'a': 6.7482146805322225, 'c/a': 1.0, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'pbeasa', 'magtyp': 'mag', 'record': 'init', 'outtyp': 'update', 'bzqlty': 8, 'maxitr': 200, 'pmix': '0.02', 'ntyp': 1, 'rmt': [1.0], 'field': [0.0], 'mxl': [3], 'type': ['Fe0.1Ni0.9_4a_0'], 'ncmp': [2], 'anclr': [[26, 28]], 'conc': [[10.0, 90.0]], 'natm': 1, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Fe0.1Ni0.9_4a_0']], 'r1': [8.04061324838318e-17, 0.5, 0.5], 'r2': [0.5, 0.0, 0.5], 'r3': [0.5000000000000001, 0.5, 6.123233995736766e-17], 'displc': [[[0, 0, 0], [0, 0, 0]]]}
   directory:  NiFe   output file:  out_go.log
            conv orbitallocalmoment     spinlocalmoment        te       tm
   current  True         [0.0, 0.0]  [2.69711, 0.57138] -2.99e+03 7.84e-01
@@ -701,7 +780,9 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=1, nsite_kkr=1
 save to NiFe/e549f3977f740dcac4cb82224b952d66/structure.json
+dic {'go': 'geom', 'potentialfile': 'pot.dat', 'brvtyp': 'fcc', 'a': 6.7482146805322225, 'c/a': 1.0, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'nmag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 0, 'pmix': '0.02', 'ntyp': 1, 'rmt': [0.0], 'field': [0.0], 'mxl': [2], 'type': ['Fe0.1Ni0.9_4a_0'], 'ncmp': [2], 'anclr': [[26, 28]], 'conc': [[10.0, 90.0]], 'natm': 1, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Fe0.1Ni0.9_4a_0']], 'r1': [8.04061324838318e-17, 0.5, 0.5], 'r2': [0.5, 0.0, 0.5], 'r3': [0.5000000000000001, 0.5, 6.123233995736766e-17], 'displc': [[[0, 0, 0], [0, 0, 0]]]}
 saved to NiFe/e549f3977f740dcac4cb82224b952d66/inputcard_geom
+STOP by geom mode
 kkr_struc, symmetry, nsite ('Fm-3m', 225) 1
 kkr space group symbol, nsite 225 1
 input prim structure num_site 1
@@ -709,6 +790,7 @@ kkr   prim structure num_site 1
 ('Fm-3m', 225) ('Fm-3m', 225)
 ------------------------------------
 ### fcc NiFe (magnetic, pbeasa, fsm)
+dic {'go': 'fsm', 'potentialfile': 'pot_fsm.dat', 'brvtyp': 'fcc', 'a': 6.7482146805322225, 'c/a': 1.0, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'pbeasa', 'magtyp': 'mag', 'record': 'init', 'outtyp': 'update', 'bzqlty': 8, 'maxitr': 200, 'pmix': '0.02ch', 'ntyp': 1, 'rmt': [1.0], 'field': [0.0], 'mxl': [3], 'type': ['Fe0.1Ni0.9_4a_0'], 'ncmp': [2], 'anclr': [[26, 28]], 'conc': [[10.0, 90.0]], 'natm': 1, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Fe0.1Ni0.9_4a_0']], 'r1': [8.04061324838318e-17, 0.5, 0.5], 'r2': [0.5, 0.0, 0.5], 'r3': [0.5000000000000001, 0.5, 6.123233995736766e-17], 'fspin': 1.0, 'displc': [[[0, 0, 0], [0, 0, 0]]]}
   directory:  NiFe   output file:  out_fsm.log
            conv orbitallocalmoment    spinlocalmoment        te       tm
   current  True         [0.0, 0.0]  [2.84139, 0.7954] -2.99e+03 1.00e+00
@@ -724,7 +806,9 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=1, nsite_kkr=1
 save to NiFe/e549f3977f740dcac4cb82224b952d66/structure.json
+dic {'go': 'geom', 'potentialfile': 'pot.dat', 'brvtyp': 'fcc', 'a': 6.7482146805322225, 'c/a': 1.0, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'nmag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 0, 'pmix': '0.02', 'ntyp': 1, 'rmt': [0.0], 'field': [0.0], 'mxl': [2], 'type': ['Fe0.1Ni0.9_4a_0'], 'ncmp': [2], 'anclr': [[26, 28]], 'conc': [[10.0, 90.0]], 'natm': 1, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Fe0.1Ni0.9_4a_0']], 'r1': [8.04061324838318e-17, 0.5, 0.5], 'r2': [0.5, 0.0, 0.5], 'r3': [0.5000000000000001, 0.5, 6.123233995736766e-17], 'displc': [[[0, 0, 0], [0, 0, 0]]]}
 saved to NiFe/e549f3977f740dcac4cb82224b952d66/inputcard_geom
+STOP by geom mode
 kkr_struc, symmetry, nsite ('Fm-3m', 225) 1
 kkr space group symbol, nsite 225 1
 input prim structure num_site 1
@@ -732,6 +816,7 @@ kkr   prim structure num_site 1
 ('Fm-3m', 225) ('Fm-3m', 225)
 -----------------------------------
 ### fcc NiFe (magnetic, pbeasa, tc)
+dic {'go': 'tc', 'potentialfile': 'pot.dat', 'brvtyp': 'fcc', 'a': 6.7482146805322225, 'c/a': 1.0, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'pbeasa', 'magtyp': 'mag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 8, 'maxitr': 200, 'pmix': '0.02', 'ntyp': 1, 'rmt': [1.0], 'field': [0.0], 'mxl': [3], 'type': ['Fe0.1Ni0.9_4a_0'], 'ncmp': [2], 'anclr': [[26, 28]], 'conc': [[10.0, 90.0]], 'natm': 1, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Fe0.1Ni0.9_4a_0']], 'r1': [8.04061324838318e-17, 0.5, 0.5], 'r2': [0.5, 0.0, 0.5], 'r3': [0.5000000000000001, 0.5, 6.123233995736766e-17], 'displc': [[[0, 0, 0], [0, 0, 0]]]}
   directory:  NiFe   output file:  out_tc.log
                 Tc
   current 5.60e+02
@@ -747,7 +832,9 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=1, nsite_kkr=1
 save to NiFe/e549f3977f740dcac4cb82224b952d66/structure.json
+dic {'go': 'geom', 'potentialfile': 'pot.dat', 'brvtyp': 'fcc', 'a': 6.7482146805322225, 'c/a': 1.0, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'nmag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 0, 'pmix': '0.02', 'ntyp': 1, 'rmt': [0.0], 'field': [0.0], 'mxl': [2], 'type': ['Fe0.1Ni0.9_4a_0'], 'ncmp': [2], 'anclr': [[26, 28]], 'conc': [[10.0, 90.0]], 'natm': 1, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Fe0.1Ni0.9_4a_0']], 'r1': [8.04061324838318e-17, 0.5, 0.5], 'r2': [0.5, 0.0, 0.5], 'r3': [0.5000000000000001, 0.5, 6.123233995736766e-17], 'displc': [[[0, 0, 0], [0, 0, 0]]]}
 saved to NiFe/e549f3977f740dcac4cb82224b952d66/inputcard_geom
+STOP by geom mode
 kkr_struc, symmetry, nsite ('Fm-3m', 225) 1
 kkr space group symbol, nsite 225 1
 input prim structure num_site 1
@@ -755,12 +842,13 @@ kkr   prim structure num_site 1
 ('Fm-3m', 225) ('Fm-3m', 225)
 -------------------------------------
 ### fcc NiFe (magnetic, pbeasa, j3.0)
+dic {'go': 'j3.0', 'potentialfile': 'pot.dat', 'brvtyp': 'fcc', 'a': 6.7482146805322225, 'c/a': 1.0, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'pbeasa', 'magtyp': 'mag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 8, 'maxitr': 200, 'pmix': '0.02', 'ntyp': 1, 'rmt': [1.0], 'field': [0.0], 'mxl': [3], 'type': ['Fe0.1Ni0.9_4a_0'], 'ncmp': [2], 'anclr': [[26, 28]], 'conc': [[10.0, 90.0]], 'natm': 1, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Fe0.1Ni0.9_4a_0']], 'r1': [8.04061324838318e-17, 0.5, 0.5], 'r2': [0.5, 0.0, 0.5], 'r3': [0.5000000000000001, 0.5, 6.123233995736766e-17], 'displc': [[[0, 0, 0], [0, 0, 0]]]}
   directory:  NiFe   output file:  out_j3.0.log
   saved to NiFe/jij.csv
 
-  saved to NiFe/Jij_Fe0.1Ni0.9_4a_0_Fe0.1Ni0.9_4a_0_1-2.png
   saved to NiFe/Jij_Fe0.1Ni0.9_4a_0_Fe0.1Ni0.9_4a_0_2-2.png
   saved to NiFe/Jij_Fe0.1Ni0.9_4a_0_Fe0.1Ni0.9_4a_0_1-1.png
+  saved to NiFe/Jij_Fe0.1Ni0.9_4a_0_Fe0.1Ni0.9_4a_0_1-2.png
                 Tc
   current 5.38e+02
 
@@ -768,7 +856,7 @@ kkr   prim structure num_site 1
 debug df_result_jij
   comp1 comp2  ... current_J_ij(meV)                                 pair
 0     1     1  ...         10.728495  Fe0.1Ni0.9_4a_0-Fe0.1Ni0.9_4a_0-1-1
-1     1     2  ...          9.203157  Fe0.1Ni0.9_4a_0-Fe0.1Ni0.9_4a_0-1-2
+1     1     2  ...          9.203156  Fe0.1Ni0.9_4a_0-Fe0.1Ni0.9_4a_0-1-2
 2     2     2  ...          2.527407  Fe0.1Ni0.9_4a_0-Fe0.1Ni0.9_4a_0-2-2
 
 [3 rows x 5 columns]
@@ -792,7 +880,9 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=1, nsite_kkr=1
 save to NiFe/e549f3977f740dcac4cb82224b952d66/structure.json
+dic {'go': 'geom', 'potentialfile': 'pot.dat', 'brvtyp': 'fcc', 'a': 6.7482146805322225, 'c/a': 1.0, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'nmag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 0, 'pmix': '0.02', 'ntyp': 1, 'rmt': [0.0], 'field': [0.0], 'mxl': [2], 'type': ['Fe0.1Ni0.9_4a_0'], 'ncmp': [2], 'anclr': [[26, 28]], 'conc': [[10.0, 90.0]], 'natm': 1, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Fe0.1Ni0.9_4a_0']], 'r1': [8.04061324838318e-17, 0.5, 0.5], 'r2': [0.5, 0.0, 0.5], 'r3': [0.5000000000000001, 0.5, 6.123233995736766e-17], 'displc': [[[0, 0, 0], [0, 0, 0]]]}
 saved to NiFe/e549f3977f740dcac4cb82224b952d66/inputcard_geom
+STOP by geom mode
 kkr_struc, symmetry, nsite ('Fm-3m', 225) 1
 kkr space group symbol, nsite 225 1
 input prim structure num_site 1
@@ -800,6 +890,7 @@ kkr   prim structure num_site 1
 ('Fm-3m', 225) ('Fm-3m', 225)
 ------------------------------------
 ### fcc NiFe (magnetic, pbeasa, dos)
+dic {'go': 'dos', 'potentialfile': 'pot.dat', 'brvtyp': 'fcc', 'a': 6.7482146805322225, 'c/a': 1.0, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 2.0, 'reltyp': 'sra', 'sdftyp': 'pbeasa', 'magtyp': 'mag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 8, 'maxitr': 200, 'pmix': '0.02', 'ntyp': 1, 'rmt': [1.0], 'field': [0.0], 'mxl': [3], 'type': ['Fe0.1Ni0.9_4a_0'], 'ncmp': [2], 'anclr': [[26, 28]], 'conc': [[10.0, 90.0]], 'natm': 1, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Fe0.1Ni0.9_4a_0']], 'r1': [8.04061324838318e-17, 0.5, 0.5], 'r2': [0.5, 0.0, 0.5], 'r3': [0.5000000000000001, 0.5, 6.123233995736766e-17], 'displc': [[[0, 0, 0], [0, 0, 0]]]}
   directory:  NiFe   output file:  out_dos.log
   saved to NiFe/dos.png
   saved to NiFe/pdos_0.png
@@ -842,7 +933,9 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=1, nsite_kkr=1
 save to NiFe/e549f3977f740dcac4cb82224b952d66/structure.json
+dic {'go': 'geom', 'potentialfile': 'pot.dat', 'brvtyp': 'fcc', 'a': 6.7482146805322225, 'c/a': 1.0, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'nmag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 0, 'pmix': '0.02', 'ntyp': 1, 'rmt': [0.0], 'field': [0.0], 'mxl': [2], 'type': ['Fe0.1Ni0.9_4a_0'], 'ncmp': [2], 'anclr': [[26, 28]], 'conc': [[10.0, 90.0]], 'natm': 1, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Fe0.1Ni0.9_4a_0']], 'r1': [8.04061324838318e-17, 0.5, 0.5], 'r2': [0.5, 0.0, 0.5], 'r3': [0.5000000000000001, 0.5, 6.123233995736766e-17], 'displc': [[[0, 0, 0], [0, 0, 0]]]}
 saved to NiFe/e549f3977f740dcac4cb82224b952d66/inputcard_geom
+STOP by geom mode
 kkr_struc, symmetry, nsite ('Fm-3m', 225) 1
 kkr space group symbol, nsite 225 1
 input prim structure num_site 1
@@ -850,9 +943,10 @@ kkr   prim structure num_site 1
 ('Fm-3m', 225) ('Fm-3m', 225)
 ------------------------------------
 ### fcc NiFe (magnetic, pbeasa, cnd)
+dic {'go': ' cnd', 'potentialfile': 'pot.dat', 'brvtyp': 'fcc', 'a': 6.7482146805322225, 'c/a': 1.0, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 0.01, 'reltyp': 'sra', 'sdftyp': 'pbeasa', 'magtyp': 'mag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 40, 'maxitr': 200, 'pmix': '0.02', 'ntyp': 1, 'rmt': [1.0], 'field': [0.0], 'mxl': [3], 'type': ['Fe0.1Ni0.9_4a_0'], 'ncmp': [2], 'anclr': [[26, 28]], 'conc': [[10.0, 90.0]], 'natm': 1, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Fe0.1Ni0.9_4a_0']], 'r1': [8.04061324838318e-17, 0.5, 0.5], 'r2': [0.5, 0.0, 0.5], 'r3': [0.5000000000000001, 0.5, 6.123233995736766e-17], 'displc': [[[0, 0, 0], [0, 0, 0]]]}
   directory:  NiFe   output file:  out_cnd.log
                           cnd    resis
-  current  [5.39373, 1.01045] 6.79e+00
+  current  [5.39373, 1.01044] 6.79e+00
 
 get_structures(primitive=False), symmetry, nsite ('Fm-3m', 225) 4
 get_structures(primitive=True), symmetry, nsite ('Fm-3m', 225) 1
@@ -865,7 +959,9 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=1, nsite_kkr=1
 save to NiFe/e549f3977f740dcac4cb82224b952d66/structure.json
+dic {'go': 'geom', 'potentialfile': 'pot.dat', 'brvtyp': 'fcc', 'a': 6.7482146805322225, 'c/a': 1.0, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'nmag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 0, 'pmix': '0.02', 'ntyp': 1, 'rmt': [0.0], 'field': [0.0], 'mxl': [2], 'type': ['Fe0.1Ni0.9_4a_0'], 'ncmp': [2], 'anclr': [[26, 28]], 'conc': [[10.0, 90.0]], 'natm': 1, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Fe0.1Ni0.9_4a_0']], 'r1': [8.04061324838318e-17, 0.5, 0.5], 'r2': [0.5, 0.0, 0.5], 'r3': [0.5000000000000001, 0.5, 6.123233995736766e-17], 'displc': [[[0, 0, 0], [0, 0, 0]]]}
 saved to NiFe/e549f3977f740dcac4cb82224b952d66/inputcard_geom
+STOP by geom mode
 kkr_struc, symmetry, nsite ('Fm-3m', 225) 1
 kkr space group symbol, nsite 225 1
 input prim structure num_site 1
@@ -874,15 +970,16 @@ kkr   prim structure num_site 1
 --------------------------------------
 ### fcc NiFe (magnetic, pbeasa, spc31)
 kpath is made by HighSymmKpath
+dic {'go': 'spc31', 'potentialfile': 'pot.dat', 'brvtyp': 'fcc', 'a': 6.7482146805322225, 'c/a': 1.0, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'pbeasa', 'magtyp': 'mag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 8, 'maxitr': 200, 'pmix': '0.02', 'ntyp': 1, 'rmt': [1.0], 'field': [0.0], 'mxl': [3], 'type': ['Fe0.1Ni0.9_4a_0'], 'ncmp': [2], 'anclr': [[26, 28]], 'conc': [[10.0, 90.0]], 'natm': 1, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Fe0.1Ni0.9_4a_0']], 'r1': [8.04061324838318e-17, 0.5, 0.5], 'r2': [0.5, 0.0, 0.5], 'r3': [0.5000000000000001, 0.5, 6.123233995736766e-17], 'kpath_raw': ['150', 'c ---  \\Gamma X W K \\Gamma L U W L K', 'c ---  \\Gamma', '0.0 0.0 0.0', 'c ---  X', '0.5 0.0 0.5', 'c ---  W', '0.5 0.25 0.75', 'c ---  K', '0.375 0.375 0.75', 'c ---  \\Gamma', '0.0 0.0 0.0', 'c ---  L', '0.5 0.5 0.5', 'c ---  U', '0.625 0.25 0.625', 'c ---  W', '0.5 0.25 0.75', 'c ---  L', '0.5 0.5 0.5', 'c ---  K', '0.375 0.375 0.75'], 'displc': [[[0, 0, 0], [0, 0, 0]]]}
   directory:  NiFe   output file:  out_spc31.log
 debug: file, loaded content NiFe/klabel.json {'kpath': [[{'\\Gamma': [0.0, 0.0, 0.0]}, {'X': [0.5, 0.0, 0.5]}, {'W': [0.5, 0.25, 0.75]}, {'K': [0.375, 0.375, 0.75]}, {'\\Gamma': [0.0, 0.0, 0.0]}, {'L': [0.5, 0.5, 0.5]}, {'U': [0.625, 0.25, 0.625]}, {'W': [0.5, 0.25, 0.75]}, {'L': [0.5, 0.5, 0.5]}, {'K': [0.375, 0.375, 0.75]}]]}
-  saved to NiFe/Awk_up.png
-  saved to NiFe/Awk_dn.png
-  saved to NiFe/Awk_both.png
+  saved to Awk_up.png
+  saved to Awk_dn.png
+  saved to Awk_both.png
 
    Aw(w,k) k=0 0 0, up
   energy   -4.97e-01  -4.92e-01  -4.87e-01  ...  4.87e-01   4.92e-01   4.97e-01 
-  current   0.00e+00   6.90e-02   0.00e+00  ...   0.00e+00   1.19e-02   0.00e+00
+  current   0.00e+00   6.89e-02   0.00e+00  ...   0.00e+00   1.18e-02   0.00e+00
   
   [1 rows x 200 columns]
 
@@ -902,7 +999,9 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=2, nsite_kkr=2
 save to FeRh05Pt05/7db1320a85961ebc66c790147b5d3a3d/structure.json
+dic {'go': 'geom', 'potentialfile': 'pot.dat', 'brvtyp': 'st', 'a': 5.204307821390574, 'c/a': 1.2817719680464779, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'nmag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 0, 'pmix': '0.02', 'ntyp': 2, 'rmt': [0.0, 0.0], 'field': [0.0, 0.0], 'mxl': [2, 2], 'type': ['Fe_1a_0', 'Rh0.5Pt0.5_1d_1'], 'ncmp': [1, 2], 'anclr': [[26], [45, 78]], 'conc': [[100.0], [50.0, 50.0]], 'natm': 2, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Fe_1a_0'], ['0.50000000a', '0.50000000b', '0.50000000c', 'Rh0.5Pt0.5_1d_1']], 'r1': [1.0, 0.0, 6.123233995736766e-17], 'r2': [1.6081226496766364e-16, 1.0, 6.123233995736766e-17], 'r3': [0.0, 0.0, 1.2817719680464779], 'displc': [[[0, 0, 0]], [[0, 0, 0], [0, 0, 0]]]}
 saved to FeRh05Pt05/7db1320a85961ebc66c790147b5d3a3d/inputcard_geom
+STOP by geom mode
 kkr_struc, symmetry, nsite ('P4/mmm', 123) 2
 kkr space group symbol, nsite 123 2
 input prim structure num_site 2
@@ -910,6 +1009,7 @@ kkr   prim structure num_site 2
 ('P4/mmm', 123) ('P4/mmm', 123)
 -------------------------------------------
 ### so FeRh0.5Pt0.5. (magnetic, pbeasa, go)
+dic {'go': 'go', 'potentialfile': 'pot.dat', 'brvtyp': 'st', 'a': 5.204307821390574, 'c/a': 1.2817719680464779, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'pbeasa', 'magtyp': 'mag', 'record': 'init', 'outtyp': 'update', 'bzqlty': 8, 'maxitr': 200, 'pmix': '0.02ch', 'ntyp': 2, 'rmt': [1.0, 1.0], 'field': [0.0, 0.0], 'mxl': [3, 3], 'type': ['Fe_1a_0', 'Rh0.5Pt0.5_1d_1'], 'ncmp': [1, 2], 'anclr': [[26], [45, 78]], 'conc': [[100.0], [50.0, 50.0]], 'natm': 2, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Fe_1a_0'], ['0.50000000a', '0.50000000b', '0.50000000c', 'Rh0.5Pt0.5_1d_1']], 'r1': [1.0, 0.0, 6.123233995736766e-17], 'r2': [1.6081226496766364e-16, 1.0, 6.123233995736766e-17], 'r3': [0.0, 0.0, 1.2817719680464779], 'displc': [[[0, 0, 0]], [[0, 0, 0], [0, 0, 0]]]}
   directory:  FeRh05Pt05   output file:  out_go.log
            conv orbitallocalmoment  ...        te       tm
   current  True    [0.0, 0.0, 0.0]  ... -2.57e+04 3.45e+00
@@ -926,7 +1026,9 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=2, nsite_kkr=2
 save to FeRh05Pt05/7db1320a85961ebc66c790147b5d3a3d/structure.json
+dic {'go': 'geom', 'potentialfile': 'pot.dat', 'brvtyp': 'st', 'a': 5.204307821390574, 'c/a': 1.2817719680464779, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'nmag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 0, 'pmix': '0.02', 'ntyp': 2, 'rmt': [0.0, 0.0], 'field': [0.0, 0.0], 'mxl': [2, 2], 'type': ['Fe_1a_0', 'Rh0.5Pt0.5_1d_1'], 'ncmp': [1, 2], 'anclr': [[26], [45, 78]], 'conc': [[100.0], [50.0, 50.0]], 'natm': 2, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Fe_1a_0'], ['0.50000000a', '0.50000000b', '0.50000000c', 'Rh0.5Pt0.5_1d_1']], 'r1': [1.0, 0.0, 6.123233995736766e-17], 'r2': [1.6081226496766364e-16, 1.0, 6.123233995736766e-17], 'r3': [0.0, 0.0, 1.2817719680464779], 'displc': [[[0, 0, 0]], [[0, 0, 0], [0, 0, 0]]]}
 saved to FeRh05Pt05/7db1320a85961ebc66c790147b5d3a3d/inputcard_geom
+STOP by geom mode
 kkr_struc, symmetry, nsite ('P4/mmm', 123) 2
 kkr space group symbol, nsite 123 2
 input prim structure num_site 2
@@ -934,11 +1036,12 @@ kkr   prim structure num_site 2
 ('P4/mmm', 123) ('P4/mmm', 123)
 ---------------------------------------------
 ### so FeRh0.5Pt0.5. (magnetic, pbeasa, j3.0)
+dic {'go': 'j3.0', 'potentialfile': 'pot.dat', 'brvtyp': 'st', 'a': 5.204307821390574, 'c/a': 1.2817719680464779, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'pbeasa', 'magtyp': 'mag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 8, 'maxitr': 200, 'pmix': '0.02ch', 'ntyp': 2, 'rmt': [1.0, 1.0], 'field': [0.0, 0.0], 'mxl': [3, 3], 'type': ['Fe_1a_0', 'Rh0.5Pt0.5_1d_1'], 'ncmp': [1, 2], 'anclr': [[26], [45, 78]], 'conc': [[100.0], [50.0, 50.0]], 'natm': 2, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Fe_1a_0'], ['0.50000000a', '0.50000000b', '0.50000000c', 'Rh0.5Pt0.5_1d_1']], 'r1': [1.0, 0.0, 6.123233995736766e-17], 'r2': [1.6081226496766364e-16, 1.0, 6.123233995736766e-17], 'r3': [0.0, 0.0, 1.2817719680464779], 'displc': [[[0, 0, 0]], [[0, 0, 0], [0, 0, 0]]]}
   directory:  FeRh05Pt05   output file:  out_j3.0.log
   saved to FeRh05Pt05/jij.csv
 
-  saved to FeRh05Pt05/Jij_Fe_1a_0_Rh0.5Pt0.5_1d_1_1-2.png
   saved to FeRh05Pt05/Jij_Fe_1a_0_Rh0.5Pt0.5_1d_1_1-1.png
+  saved to FeRh05Pt05/Jij_Fe_1a_0_Rh0.5Pt0.5_1d_1_1-2.png
   saved to FeRh05Pt05/Jij_Fe_1a_0_Fe_1a_0_1-1.png
                 Tc
   current 2.17e+02
@@ -948,7 +1051,7 @@ debug df_result_jij
   comp1 comp2  ... current_J_ij(meV)                                 pair
 0     1     1  ...          6.173600          Fe_1a_0-Rh0.5Pt0.5_1d_1-1-1
 1     1     2  ...          2.792763          Fe_1a_0-Rh0.5Pt0.5_1d_1-1-2
-2     1     1  ...          0.492600                  Fe_1a_0-Fe_1a_0-1-1
+2     1     1  ...          0.492605                  Fe_1a_0-Fe_1a_0-1-1
 3     1     1  ...          0.079555  Rh0.5Pt0.5_1d_1-Rh0.5Pt0.5_1d_1-1-1
 4     1     2  ...          0.165015  Rh0.5Pt0.5_1d_1-Rh0.5Pt0.5_1d_1-1-2
 5     2     2  ...          0.201495  Rh0.5Pt0.5_1d_1-Rh0.5Pt0.5_1d_1-2-2
@@ -973,7 +1076,9 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=2, nsite_kkr=2
 save to FeRh05Pt05/7db1320a85961ebc66c790147b5d3a3d/structure.json
+dic {'go': 'geom', 'potentialfile': 'pot.dat', 'brvtyp': 'st', 'a': 5.204307821390574, 'c/a': 1.2817719680464779, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'nmag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 0, 'pmix': '0.02', 'ntyp': 2, 'rmt': [0.0, 0.0], 'field': [0.0, 0.0], 'mxl': [2, 2], 'type': ['Fe_1a_0', 'Rh0.5Pt0.5_1d_1'], 'ncmp': [1, 2], 'anclr': [[26], [45, 78]], 'conc': [[100.0], [50.0, 50.0]], 'natm': 2, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Fe_1a_0'], ['0.50000000a', '0.50000000b', '0.50000000c', 'Rh0.5Pt0.5_1d_1']], 'r1': [1.0, 0.0, 6.123233995736766e-17], 'r2': [1.6081226496766364e-16, 1.0, 6.123233995736766e-17], 'r3': [0.0, 0.0, 1.2817719680464779], 'displc': [[[0, 0, 0]], [[0, 0, 0], [0, 0, 0]]]}
 saved to FeRh05Pt05/7db1320a85961ebc66c790147b5d3a3d/inputcard_geom
+STOP by geom mode
 kkr_struc, symmetry, nsite ('P4/mmm', 123) 2
 kkr space group symbol, nsite 123 2
 input prim structure num_site 2
@@ -981,6 +1086,7 @@ kkr   prim structure num_site 2
 ('P4/mmm', 123) ('P4/mmm', 123)
 --------------------------------------------
 ### so FeRh0.5Pt0.5. (magnetic, pbeasa, fsm)
+dic {'go': 'fsm', 'potentialfile': 'pot_fsm.dat', 'brvtyp': 'st', 'a': 5.204307821390574, 'c/a': 1.2817719680464779, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'pbeasa', 'magtyp': 'mag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 8, 'maxitr': 200, 'pmix': '0.02ch', 'ntyp': 2, 'rmt': [1.0, 1.0], 'field': [0.0, 0.0], 'mxl': [3, 3], 'type': ['Fe_1a_0', 'Rh0.5Pt0.5_1d_1'], 'ncmp': [1, 2], 'anclr': [[26], [45, 78]], 'conc': [[100.0], [50.0, 50.0]], 'natm': 2, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Fe_1a_0'], ['0.50000000a', '0.50000000b', '0.50000000c', 'Rh0.5Pt0.5_1d_1']], 'r1': [1.0, 0.0, 6.123233995736766e-17], 'r2': [1.6081226496766364e-16, 1.0, 6.123233995736766e-17], 'r3': [0.0, 0.0, 1.2817719680464779], 'fspin': 3.0, 'displc': [[[0, 0, 0]], [[0, 0, 0], [0, 0, 0]]]}
   directory:  FeRh05Pt05   output file:  out_fsm.log
            conv orbitallocalmoment  ...        te       tm
   current  True    [0.0, 0.0, 0.0]  ... -2.57e+04 3.00e+00
@@ -997,7 +1103,9 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=2, nsite_kkr=2
 save to FeRh05Pt05/7db1320a85961ebc66c790147b5d3a3d/structure.json
+dic {'go': 'geom', 'potentialfile': 'pot.dat', 'brvtyp': 'st', 'a': 5.204307821390574, 'c/a': 1.2817719680464779, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'nmag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 0, 'pmix': '0.02', 'ntyp': 2, 'rmt': [0.0, 0.0], 'field': [0.0, 0.0], 'mxl': [2, 2], 'type': ['Fe_1a_0', 'Rh0.5Pt0.5_1d_1'], 'ncmp': [1, 2], 'anclr': [[26], [45, 78]], 'conc': [[100.0], [50.0, 50.0]], 'natm': 2, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Fe_1a_0'], ['0.50000000a', '0.50000000b', '0.50000000c', 'Rh0.5Pt0.5_1d_1']], 'r1': [1.0, 0.0, 6.123233995736766e-17], 'r2': [1.6081226496766364e-16, 1.0, 6.123233995736766e-17], 'r3': [0.0, 0.0, 1.2817719680464779], 'displc': [[[0, 0, 0]], [[0, 0, 0], [0, 0, 0]]]}
 saved to FeRh05Pt05/7db1320a85961ebc66c790147b5d3a3d/inputcard_geom
+STOP by geom mode
 kkr_struc, symmetry, nsite ('P4/mmm', 123) 2
 kkr space group symbol, nsite 123 2
 input prim structure num_site 2
@@ -1005,6 +1113,7 @@ kkr   prim structure num_site 2
 ('P4/mmm', 123) ('P4/mmm', 123)
 -------------------------------------------
 ### so FeRh0.5Pt0.5. (magnetic, pbeasa, tc)
+dic {'go': 'tc', 'potentialfile': 'pot.dat', 'brvtyp': 'st', 'a': 5.204307821390574, 'c/a': 1.2817719680464779, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'pbeasa', 'magtyp': 'mag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 8, 'maxitr': 200, 'pmix': '0.02ch', 'ntyp': 2, 'rmt': [1.0, 1.0], 'field': [0.0, 0.0], 'mxl': [3, 3], 'type': ['Fe_1a_0', 'Rh0.5Pt0.5_1d_1'], 'ncmp': [1, 2], 'anclr': [[26], [45, 78]], 'conc': [[100.0], [50.0, 50.0]], 'natm': 2, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Fe_1a_0'], ['0.50000000a', '0.50000000b', '0.50000000c', 'Rh0.5Pt0.5_1d_1']], 'r1': [1.0, 0.0, 6.123233995736766e-17], 'r2': [1.6081226496766364e-16, 1.0, 6.123233995736766e-17], 'r3': [0.0, 0.0, 1.2817719680464779], 'displc': [[[0, 0, 0]], [[0, 0, 0], [0, 0, 0]]]}
   directory:  FeRh05Pt05   output file:  out_tc.log
                 Tc
   current 2.19e+02
@@ -1019,7 +1128,9 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=2, nsite_kkr=2
 save to FeRh05Pt05/7db1320a85961ebc66c790147b5d3a3d/structure.json
+dic {'go': 'geom', 'potentialfile': 'pot.dat', 'brvtyp': 'st', 'a': 5.204307821390574, 'c/a': 1.2817719680464779, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'nmag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 0, 'pmix': '0.02', 'ntyp': 2, 'rmt': [0.0, 0.0], 'field': [0.0, 0.0], 'mxl': [2, 2], 'type': ['Fe_1a_0', 'Rh0.5Pt0.5_1d_1'], 'ncmp': [1, 2], 'anclr': [[26], [45, 78]], 'conc': [[100.0], [50.0, 50.0]], 'natm': 2, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Fe_1a_0'], ['0.50000000a', '0.50000000b', '0.50000000c', 'Rh0.5Pt0.5_1d_1']], 'r1': [1.0, 0.0, 6.123233995736766e-17], 'r2': [1.6081226496766364e-16, 1.0, 6.123233995736766e-17], 'r3': [0.0, 0.0, 1.2817719680464779], 'displc': [[[0, 0, 0]], [[0, 0, 0], [0, 0, 0]]]}
 saved to FeRh05Pt05/7db1320a85961ebc66c790147b5d3a3d/inputcard_geom
+STOP by geom mode
 kkr_struc, symmetry, nsite ('P4/mmm', 123) 2
 kkr space group symbol, nsite 123 2
 input prim structure num_site 2
@@ -1027,6 +1138,7 @@ kkr   prim structure num_site 2
 ('P4/mmm', 123) ('P4/mmm', 123)
 --------------------------------------------
 ### so FeRh0.5Pt0.5. (magnetic, pbeasa, dos)
+dic {'go': 'dos', 'potentialfile': 'pot.dat', 'brvtyp': 'st', 'a': 5.204307821390574, 'c/a': 1.2817719680464779, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 2.0, 'reltyp': 'sra', 'sdftyp': 'pbeasa', 'magtyp': 'mag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 8, 'maxitr': 200, 'pmix': '0.02ch', 'ntyp': 2, 'rmt': [1.0, 1.0], 'field': [0.0, 0.0], 'mxl': [3, 3], 'type': ['Fe_1a_0', 'Rh0.5Pt0.5_1d_1'], 'ncmp': [1, 2], 'anclr': [[26], [45, 78]], 'conc': [[100.0], [50.0, 50.0]], 'natm': 2, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Fe_1a_0'], ['0.50000000a', '0.50000000b', '0.50000000c', 'Rh0.5Pt0.5_1d_1']], 'r1': [1.0, 0.0, 6.123233995736766e-17], 'r2': [1.6081226496766364e-16, 1.0, 6.123233995736766e-17], 'r3': [0.0, 0.0, 1.2817719680464779], 'displc': [[[0, 0, 0]], [[0, 0, 0], [0, 0, 0]]]}
   directory:  FeRh05Pt05   output file:  out_dos.log
   saved to FeRh05Pt05/dos.png
   saved to FeRh05Pt05/pdos_0.png
@@ -1069,7 +1181,9 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=2, nsite_kkr=2
 save to FeRh05Pt05/7db1320a85961ebc66c790147b5d3a3d/structure.json
+dic {'go': 'geom', 'potentialfile': 'pot.dat', 'brvtyp': 'st', 'a': 5.204307821390574, 'c/a': 1.2817719680464779, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'nmag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 0, 'pmix': '0.02', 'ntyp': 2, 'rmt': [0.0, 0.0], 'field': [0.0, 0.0], 'mxl': [2, 2], 'type': ['Fe_1a_0', 'Rh0.5Pt0.5_1d_1'], 'ncmp': [1, 2], 'anclr': [[26], [45, 78]], 'conc': [[100.0], [50.0, 50.0]], 'natm': 2, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Fe_1a_0'], ['0.50000000a', '0.50000000b', '0.50000000c', 'Rh0.5Pt0.5_1d_1']], 'r1': [1.0, 0.0, 6.123233995736766e-17], 'r2': [1.6081226496766364e-16, 1.0, 6.123233995736766e-17], 'r3': [0.0, 0.0, 1.2817719680464779], 'displc': [[[0, 0, 0]], [[0, 0, 0], [0, 0, 0]]]}
 saved to FeRh05Pt05/7db1320a85961ebc66c790147b5d3a3d/inputcard_geom
+STOP by geom mode
 kkr_struc, symmetry, nsite ('P4/mmm', 123) 2
 kkr space group symbol, nsite 123 2
 input prim structure num_site 2
@@ -1078,21 +1192,22 @@ kkr   prim structure num_site 2
 ----------------------------------------------
 ### so FeRh0.5Pt0.5. (magnetic, pbeasa, spc31)
 kpath is made by HighSymmKpath
+dic {'go': 'spc31', 'potentialfile': 'pot.dat', 'brvtyp': 'st', 'a': 5.204307821390574, 'c/a': 1.2817719680464779, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'pbeasa', 'magtyp': 'mag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 8, 'maxitr': 200, 'pmix': '0.02ch', 'ntyp': 2, 'rmt': [1.0, 1.0], 'field': [0.0, 0.0], 'mxl': [3, 3], 'type': ['Fe_1a_0', 'Rh0.5Pt0.5_1d_1'], 'ncmp': [1, 2], 'anclr': [[26], [45, 78]], 'conc': [[100.0], [50.0, 50.0]], 'natm': 2, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Fe_1a_0'], ['0.50000000a', '0.50000000b', '0.50000000c', 'Rh0.5Pt0.5_1d_1']], 'r1': [1.0, 0.0, 6.123233995736766e-17], 'r2': [1.6081226496766364e-16, 1.0, 6.123233995736766e-17], 'r3': [0.0, 0.0, 1.2817719680464779], 'kpath_raw': ['150', 'c ---  \\Gamma X M \\Gamma Z R A Z', 'c ---  \\Gamma', '0.0 0.0 0.0', 'c ---  X', '0.0 0.5 0.0', 'c ---  M', '0.5 0.5 0.0', 'c ---  \\Gamma', '0.0 0.0 0.0', 'c ---  Z', '0.0 0.0 0.5', 'c ---  R', '0.0 0.5 0.5', 'c ---  A', '0.5 0.5 0.5', 'c ---  Z', '0.0 0.0 0.5'], 'displc': [[[0, 0, 0]], [[0, 0, 0], [0, 0, 0]]]}
   directory:  FeRh05Pt05   output file:  out_spc31.log
 debug: file, loaded content FeRh05Pt05/klabel.json {'kpath': [[{'\\Gamma': [0.0, 0.0, 0.0]}, {'X': [0.0, 0.5, 0.0]}, {'M': [0.5, 0.5, 0.0]}, {'\\Gamma': [0.0, 0.0, 0.0]}, {'Z': [0.0, 0.0, 0.5]}, {'R': [0.0, 0.5, 0.5]}, {'A': [0.5, 0.5, 0.5]}, {'Z': [0.0, 0.0, 0.5]}]]}
-  saved to FeRh05Pt05/Awk_up.png
-  saved to FeRh05Pt05/Awk_dn.png
-  saved to FeRh05Pt05/Awk_both.png
+  saved to Awk_up.png
+  saved to Awk_dn.png
+  saved to Awk_both.png
 
    Aw(w,k) k=0 0 0, up
   energy   -4.97e-01  -4.92e-01  -4.87e-01  ...  4.87e-01   4.92e-01   4.97e-01 
-  current   4.45e-01   7.10e-01   1.61e+00  ...   9.69e-01   8.39e-01   5.65e-01
+  current   4.46e-01   7.10e-01   1.61e+00  ...   9.69e-01   8.39e-01   5.65e-01
   
   [1 rows x 200 columns]
 
    Aw(w,k) k=0 0 0, dn
   energy   -4.97e-01  -4.92e-01  -4.87e-01  ...  4.87e-01   4.92e-01   4.97e-01 
-  current   2.10e-01   2.30e-01   3.11e-01  ...   0.00e+00   0.00e+00   0.00e+00
+  current   2.11e-01   2.31e-01   3.10e-01  ...   0.00e+00   0.00e+00   0.00e+00
   
   [1 rows x 200 columns]
 
@@ -1106,7 +1221,9 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=2, nsite_kkr=2
 save to FeRh05Pt05/7db1320a85961ebc66c790147b5d3a3d/structure.json
+dic {'go': 'geom', 'potentialfile': 'pot.dat', 'brvtyp': 'st', 'a': 5.204307821390574, 'c/a': 1.2817719680464779, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'nmag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 0, 'pmix': '0.02', 'ntyp': 2, 'rmt': [0.0, 0.0], 'field': [0.0, 0.0], 'mxl': [2, 2], 'type': ['Fe_1a_0', 'Rh0.5Pt0.5_1d_1'], 'ncmp': [1, 2], 'anclr': [[26], [45, 78]], 'conc': [[100.0], [50.0, 50.0]], 'natm': 2, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Fe_1a_0'], ['0.50000000a', '0.50000000b', '0.50000000c', 'Rh0.5Pt0.5_1d_1']], 'r1': [1.0, 0.0, 6.123233995736766e-17], 'r2': [1.6081226496766364e-16, 1.0, 6.123233995736766e-17], 'r3': [0.0, 0.0, 1.2817719680464779], 'displc': [[[0, 0, 0]], [[0, 0, 0], [0, 0, 0]]]}
 saved to FeRh05Pt05/7db1320a85961ebc66c790147b5d3a3d/inputcard_geom
+STOP by geom mode
 kkr_struc, symmetry, nsite ('P4/mmm', 123) 2
 kkr space group symbol, nsite 123 2
 input prim structure num_site 2
@@ -1114,6 +1231,7 @@ kkr   prim structure num_site 2
 ('P4/mmm', 123) ('P4/mmm', 123)
 --------------------------------------------
 ### so FeRh0.5Pt0.5. (magnetic, pbeasa, cnd)
+dic {'go': ' cnd', 'potentialfile': 'pot.dat', 'brvtyp': 'st', 'a': 5.204307821390574, 'c/a': 1.2817719680464779, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 0.01, 'reltyp': 'sra', 'sdftyp': 'pbeasa', 'magtyp': 'mag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 40, 'maxitr': 200, 'pmix': '0.02ch', 'ntyp': 2, 'rmt': [1.0, 1.0], 'field': [0.0, 0.0], 'mxl': [3, 3], 'type': ['Fe_1a_0', 'Rh0.5Pt0.5_1d_1'], 'ncmp': [1, 2], 'anclr': [[26], [45, 78]], 'conc': [[100.0], [50.0, 50.0]], 'natm': 2, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Fe_1a_0'], ['0.50000000a', '0.50000000b', '0.50000000c', 'Rh0.5Pt0.5_1d_1']], 'r1': [1.0, 0.0, 6.123233995736766e-17], 'r2': [1.6081226496766364e-16, 1.0, 6.123233995736766e-17], 'r3': [0.0, 0.0, 1.2817719680464779], 'displc': [[[0, 0, 0]], [[0, 0, 0], [0, 0, 0]]]}
   directory:  FeRh05Pt05   output file:  out_cnd.log
                           cnd    resis
   current  [1.96377, 1.52573] 1.25e+01
@@ -1129,7 +1247,9 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=1, nsite_kkr=1
 save to AlMnFeCo_bcc/c795171a55fa7f9ca0350bcb25387435/structure.json
+dic {'go': 'geom', 'potentialfile': 'pot.dat', 'brvtyp': 'bcc', 'a': 5.415957231701302, 'c/a': 1.0, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'nmag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 0, 'pmix': '0.02', 'ntyp': 1, 'rmt': [0.0], 'field': [0.0], 'mxl': [2], 'type': ['Mn0.25Al0.25Fe0.25Co0.25_2a_0'], 'ncmp': [4], 'anclr': [[13, 25, 26, 27]], 'conc': [[25.0, 25.0, 25.0, 25.0]], 'natm': 1, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Mn0.25Al0.25Fe0.25Co0.25_2a_0']], 'r1': [-0.49999999999999994, 0.5, 0.5], 'r2': [0.49999999999999994, -0.5, 0.5], 'r3': [0.5000000000000001, 0.5, -0.49999999999999994], 'displc': [[[0, 0, 0], [0, 0, 0], [0, 0, 0], [0, 0, 0]]]}
 saved to AlMnFeCo_bcc/c795171a55fa7f9ca0350bcb25387435/inputcard_geom
+STOP by geom mode
 kkr_struc, symmetry, nsite ('Im-3m', 229) 1
 kkr space group symbol, nsite 229 1
 input prim structure num_site 1
@@ -1137,6 +1257,7 @@ kkr   prim structure num_site 1
 ('Im-3m', 229) ('Im-3m', 229)
 ---------------------------------------
 ### bcc AlMnFeCo (magnetic, pbeasa, go)
+dic {'go': 'go', 'potentialfile': 'pot.dat', 'brvtyp': 'bcc', 'a': 1000000, 'c/a': 1.0, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 1.3, 'reltyp': 'sra', 'sdftyp': 'pbeasa', 'magtyp': 'mag', 'record': 'init', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 200, 'pmix': 0.01, 'ntyp': 1, 'rmt': [1.0], 'field': [0.0], 'mxl': [3], 'type': ['Mn0.25Al0.25Fe0.25Co0.25_2a_0'], 'ncmp': [4], 'anclr': [[13, 25, 26, 27]], 'conc': [[25.0, 25.0, 25.0, 25.0]], 'natm': 1, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Mn0.25Al0.25Fe0.25Co0.25_2a_0']], 'r1': [-0.49999999999999994, 0.5, 0.5], 'r2': [0.49999999999999994, -0.5, 0.5], 'r3': [0.5000000000000001, 0.5, -0.49999999999999994], 'displc': [[[0, 0, 0], [0, 0, 0], [0, 0, 0], [0, 0, 0]]]}
   directory:  AlMnFeCo_bcc   output file:  out_go.log
            conv    orbitallocalmoment  ...        te       tm
   current  True  [0.0, 0.0, 0.0, 0.0]  ... -2.03e+03 1.66e+00
@@ -1154,7 +1275,9 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=1, nsite_kkr=1
 save to AlMnFeCo_bcc/c795171a55fa7f9ca0350bcb25387435/structure.json
+dic {'go': 'geom', 'potentialfile': 'pot.dat', 'brvtyp': 'bcc', 'a': 5.415957231701302, 'c/a': 1.0, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'nmag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 0, 'pmix': '0.02', 'ntyp': 1, 'rmt': [0.0], 'field': [0.0], 'mxl': [2], 'type': ['Mn0.25Al0.25Fe0.25Co0.25_2a_0'], 'ncmp': [4], 'anclr': [[13, 25, 26, 27]], 'conc': [[25.0, 25.0, 25.0, 25.0]], 'natm': 1, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Mn0.25Al0.25Fe0.25Co0.25_2a_0']], 'r1': [-0.49999999999999994, 0.5, 0.5], 'r2': [0.49999999999999994, -0.5, 0.5], 'r3': [0.5000000000000001, 0.5, -0.49999999999999994], 'displc': [[[0, 0, 0], [0, 0, 0], [0, 0, 0], [0, 0, 0]]]}
 saved to AlMnFeCo_bcc/c795171a55fa7f9ca0350bcb25387435/inputcard_geom
+STOP by geom mode
 kkr_struc, symmetry, nsite ('Im-3m', 229) 1
 kkr space group symbol, nsite 229 1
 input prim structure num_site 1
@@ -1162,6 +1285,7 @@ kkr   prim structure num_site 1
 ('Im-3m', 229) ('Im-3m', 229)
 ----------------------------------------
 ### bcc AlMnFeCo (magnetic, pbeasa, fsm)
+dic {'go': 'fsm', 'potentialfile': 'pot_fsm.dat', 'brvtyp': 'bcc', 'a': 1000000, 'c/a': 1.0, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 1.3, 'reltyp': 'sra', 'sdftyp': 'pbeasa', 'magtyp': 'mag', 'record': 'init', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 200, 'pmix': '0.02ch', 'ntyp': 1, 'rmt': [1.0], 'field': [0.0], 'mxl': [3], 'type': ['Mn0.25Al0.25Fe0.25Co0.25_2a_0'], 'ncmp': [4], 'anclr': [[13, 25, 26, 27]], 'conc': [[25.0, 25.0, 25.0, 25.0]], 'natm': 1, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Mn0.25Al0.25Fe0.25Co0.25_2a_0']], 'r1': [-0.49999999999999994, 0.5, 0.5], 'r2': [0.49999999999999994, -0.5, 0.5], 'r3': [0.5000000000000001, 0.5, -0.49999999999999994], 'fspin': 1.0, 'displc': [[[0, 0, 0], [0, 0, 0], [0, 0, 0], [0, 0, 0]]]}
   directory:  AlMnFeCo_bcc   output file:  out_fsm.log
            conv    orbitallocalmoment  ...        te       tm
   current  True  [0.0, 0.0, 0.0, 0.0]  ... -2.03e+03 1.00e+00
@@ -1179,7 +1303,9 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=1, nsite_kkr=1
 save to AlMnFeCo_bcc/c795171a55fa7f9ca0350bcb25387435/structure.json
+dic {'go': 'geom', 'potentialfile': 'pot.dat', 'brvtyp': 'bcc', 'a': 5.415957231701302, 'c/a': 1.0, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'nmag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 0, 'pmix': '0.02', 'ntyp': 1, 'rmt': [0.0], 'field': [0.0], 'mxl': [2], 'type': ['Mn0.25Al0.25Fe0.25Co0.25_2a_0'], 'ncmp': [4], 'anclr': [[13, 25, 26, 27]], 'conc': [[25.0, 25.0, 25.0, 25.0]], 'natm': 1, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Mn0.25Al0.25Fe0.25Co0.25_2a_0']], 'r1': [-0.49999999999999994, 0.5, 0.5], 'r2': [0.49999999999999994, -0.5, 0.5], 'r3': [0.5000000000000001, 0.5, -0.49999999999999994], 'displc': [[[0, 0, 0], [0, 0, 0], [0, 0, 0], [0, 0, 0]]]}
 saved to AlMnFeCo_bcc/c795171a55fa7f9ca0350bcb25387435/inputcard_geom
+STOP by geom mode
 kkr_struc, symmetry, nsite ('Im-3m', 229) 1
 kkr space group symbol, nsite 229 1
 input prim structure num_site 1
@@ -1188,6 +1314,7 @@ kkr   prim structure num_site 1
 -----------------------------------------------------------
 ### bcc AlMnFeCo (magnetic, pbeasa, spin flipped Mn, gofmg)
   save to AlMnFeCo_bcc/fmg.input
+dic {'go': 'go', 'potentialfile': 'pot_fmg.dat', 'brvtyp': 'bcc', 'a': 1000000, 'c/a': 1.0, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 1.3, 'reltyp': 'sra', 'sdftyp': 'pbeasa', 'magtyp': 'mag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 200, 'pmix': 0.01, 'ntyp': 1, 'rmt': [1.0], 'field': [0.0], 'mxl': [3], 'type': ['Mn0.25Al0.25Fe0.25Co0.25_2a_0'], 'ncmp': [4], 'anclr': [[13, 25, 26, 27]], 'conc': [[25.0, 25.0, 25.0, 25.0]], 'natm': 1, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Mn0.25Al0.25Fe0.25Co0.25_2a_0']], 'r1': [-0.49999999999999994, 0.5, 0.5], 'r2': [0.49999999999999994, -0.5, 0.5], 'r3': [0.5000000000000001, 0.5, -0.49999999999999994], 'displc': [[[0, 0, 0], [0, 0, 0], [0, 0, 0], [0, 0, 0]]]}
   directory:  AlMnFeCo_bcc   output file:  out_gofmg.log
            conv    orbitallocalmoment  ...        te       tm
   current  True  [0.0, 0.0, 0.0, 0.0]  ... -2.03e+03 1.66e+00
@@ -1205,7 +1332,9 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=1, nsite_kkr=1
 save to AlMnFeCo_bcc/c795171a55fa7f9ca0350bcb25387435/structure.json
+dic {'go': 'geom', 'potentialfile': 'pot.dat', 'brvtyp': 'bcc', 'a': 5.415957231701302, 'c/a': 1.0, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'nmag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 0, 'pmix': '0.02', 'ntyp': 1, 'rmt': [0.0], 'field': [0.0], 'mxl': [2], 'type': ['Mn0.25Al0.25Fe0.25Co0.25_2a_0'], 'ncmp': [4], 'anclr': [[13, 25, 26, 27]], 'conc': [[25.0, 25.0, 25.0, 25.0]], 'natm': 1, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Mn0.25Al0.25Fe0.25Co0.25_2a_0']], 'r1': [-0.49999999999999994, 0.5, 0.5], 'r2': [0.49999999999999994, -0.5, 0.5], 'r3': [0.5000000000000001, 0.5, -0.49999999999999994], 'displc': [[[0, 0, 0], [0, 0, 0], [0, 0, 0], [0, 0, 0]]]}
 saved to AlMnFeCo_bcc/c795171a55fa7f9ca0350bcb25387435/inputcard_geom
+STOP by geom mode
 kkr_struc, symmetry, nsite ('Im-3m', 229) 1
 kkr space group symbol, nsite 229 1
 input prim structure num_site 1
@@ -1213,6 +1342,7 @@ kkr   prim structure num_site 1
 ('Im-3m', 229) ('Im-3m', 229)
 ------------------------------
 ### fcc Ni (magnetic, mjw, tc)
+dic {'go': 'tc', 'potentialfile': 'pot.dat', 'brvtyp': 'bcc', 'a': 1000000, 'c/a': 1.0, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 1.3, 'reltyp': 'sra', 'sdftyp': 'pbeasa', 'magtyp': 'mag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 200, 'pmix': 0.01, 'ntyp': 1, 'rmt': [1.0], 'field': [0.0], 'mxl': [3], 'type': ['Mn0.25Al0.25Fe0.25Co0.25_2a_0'], 'ncmp': [4], 'anclr': [[13, 25, 26, 27]], 'conc': [[25.0, 25.0, 25.0, 25.0]], 'natm': 1, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Mn0.25Al0.25Fe0.25Co0.25_2a_0']], 'r1': [-0.49999999999999994, 0.5, 0.5], 'r2': [0.49999999999999994, -0.5, 0.5], 'r3': [0.5000000000000001, 0.5, -0.49999999999999994], 'displc': [[[0, 0, 0], [0, 0, 0], [0, 0, 0], [0, 0, 0]]]}
   directory:  AlMnFeCo_bcc   output file:  out_tc.log
                 Tc
   current 9.74e+02
@@ -1228,7 +1358,9 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=1, nsite_kkr=1
 save to AlMnFeCo_bcc/c795171a55fa7f9ca0350bcb25387435/structure.json
+dic {'go': 'geom', 'potentialfile': 'pot.dat', 'brvtyp': 'bcc', 'a': 5.415957231701302, 'c/a': 1.0, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'nmag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 0, 'pmix': '0.02', 'ntyp': 1, 'rmt': [0.0], 'field': [0.0], 'mxl': [2], 'type': ['Mn0.25Al0.25Fe0.25Co0.25_2a_0'], 'ncmp': [4], 'anclr': [[13, 25, 26, 27]], 'conc': [[25.0, 25.0, 25.0, 25.0]], 'natm': 1, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Mn0.25Al0.25Fe0.25Co0.25_2a_0']], 'r1': [-0.49999999999999994, 0.5, 0.5], 'r2': [0.49999999999999994, -0.5, 0.5], 'r3': [0.5000000000000001, 0.5, -0.49999999999999994], 'displc': [[[0, 0, 0], [0, 0, 0], [0, 0, 0], [0, 0, 0]]]}
 saved to AlMnFeCo_bcc/c795171a55fa7f9ca0350bcb25387435/inputcard_geom
+STOP by geom mode
 kkr_struc, symmetry, nsite ('Im-3m', 229) 1
 kkr space group symbol, nsite 229 1
 input prim structure num_site 1
@@ -1236,19 +1368,20 @@ kkr   prim structure num_site 1
 ('Im-3m', 229) ('Im-3m', 229)
 -----------------------------------------
 ### bcc AlMnFeCo (magnetic, pbeasa, j3.0)
+dic {'go': 'j3.0', 'potentialfile': 'pot.dat', 'brvtyp': 'bcc', 'a': 1000000, 'c/a': 1.0, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 1.3, 'reltyp': 'sra', 'sdftyp': 'pbeasa', 'magtyp': 'mag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 200, 'pmix': 0.01, 'ntyp': 1, 'rmt': [1.0], 'field': [0.0], 'mxl': [3], 'type': ['Mn0.25Al0.25Fe0.25Co0.25_2a_0'], 'ncmp': [4], 'anclr': [[13, 25, 26, 27]], 'conc': [[25.0, 25.0, 25.0, 25.0]], 'natm': 1, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Mn0.25Al0.25Fe0.25Co0.25_2a_0']], 'r1': [-0.49999999999999994, 0.5, 0.5], 'r2': [0.49999999999999994, -0.5, 0.5], 'r3': [0.5000000000000001, 0.5, -0.49999999999999994], 'displc': [[[0, 0, 0], [0, 0, 0], [0, 0, 0], [0, 0, 0]]]}
   directory:  AlMnFeCo_bcc   output file:  out_j3.0.log
   saved to AlMnFeCo_bcc/jij.csv
 
-  saved to AlMnFeCo_bcc/Jij_Mn0.25Al0.25Fe0.25Co0.25_2a_0_Mn0.25Al0.25Fe0.25Co0.25_2a_0_1-2.png
-  saved to AlMnFeCo_bcc/Jij_Mn0.25Al0.25Fe0.25Co0.25_2a_0_Mn0.25Al0.25Fe0.25Co0.25_2a_0_3-3.png
-  saved to AlMnFeCo_bcc/Jij_Mn0.25Al0.25Fe0.25Co0.25_2a_0_Mn0.25Al0.25Fe0.25Co0.25_2a_0_1-3.png
-  saved to AlMnFeCo_bcc/Jij_Mn0.25Al0.25Fe0.25Co0.25_2a_0_Mn0.25Al0.25Fe0.25Co0.25_2a_0_2-4.png
-  saved to AlMnFeCo_bcc/Jij_Mn0.25Al0.25Fe0.25Co0.25_2a_0_Mn0.25Al0.25Fe0.25Co0.25_2a_0_1-1.png
   saved to AlMnFeCo_bcc/Jij_Mn0.25Al0.25Fe0.25Co0.25_2a_0_Mn0.25Al0.25Fe0.25Co0.25_2a_0_3-4.png
-  saved to AlMnFeCo_bcc/Jij_Mn0.25Al0.25Fe0.25Co0.25_2a_0_Mn0.25Al0.25Fe0.25Co0.25_2a_0_2-2.png
-  saved to AlMnFeCo_bcc/Jij_Mn0.25Al0.25Fe0.25Co0.25_2a_0_Mn0.25Al0.25Fe0.25Co0.25_2a_0_2-3.png
-  saved to AlMnFeCo_bcc/Jij_Mn0.25Al0.25Fe0.25Co0.25_2a_0_Mn0.25Al0.25Fe0.25Co0.25_2a_0_1-4.png
   saved to AlMnFeCo_bcc/Jij_Mn0.25Al0.25Fe0.25Co0.25_2a_0_Mn0.25Al0.25Fe0.25Co0.25_2a_0_4-4.png
+  saved to AlMnFeCo_bcc/Jij_Mn0.25Al0.25Fe0.25Co0.25_2a_0_Mn0.25Al0.25Fe0.25Co0.25_2a_0_1-3.png
+  saved to AlMnFeCo_bcc/Jij_Mn0.25Al0.25Fe0.25Co0.25_2a_0_Mn0.25Al0.25Fe0.25Co0.25_2a_0_1-4.png
+  saved to AlMnFeCo_bcc/Jij_Mn0.25Al0.25Fe0.25Co0.25_2a_0_Mn0.25Al0.25Fe0.25Co0.25_2a_0_3-3.png
+  saved to AlMnFeCo_bcc/Jij_Mn0.25Al0.25Fe0.25Co0.25_2a_0_Mn0.25Al0.25Fe0.25Co0.25_2a_0_2-2.png
+  saved to AlMnFeCo_bcc/Jij_Mn0.25Al0.25Fe0.25Co0.25_2a_0_Mn0.25Al0.25Fe0.25Co0.25_2a_0_1-1.png
+  saved to AlMnFeCo_bcc/Jij_Mn0.25Al0.25Fe0.25Co0.25_2a_0_Mn0.25Al0.25Fe0.25Co0.25_2a_0_2-3.png
+  saved to AlMnFeCo_bcc/Jij_Mn0.25Al0.25Fe0.25Co0.25_2a_0_Mn0.25Al0.25Fe0.25Co0.25_2a_0_2-4.png
+  saved to AlMnFeCo_bcc/Jij_Mn0.25Al0.25Fe0.25Co0.25_2a_0_Mn0.25Al0.25Fe0.25Co0.25_2a_0_1-2.png
                 Tc
   current 9.76e+02
 
@@ -1272,7 +1405,7 @@ None
 
    J_ij(meV) at the shortest distance
   typecomp Mn0.25Al0.25Fe0.25Co0.25_2a_0-Mn0.25Al0.25Fe0.25Co0.25_2a_0-1-1_1_1  ... Mn0.25Al0.25Fe0.25Co0.25_2a_0-Mn0.25Al0.25Fe0.25Co0.25_2a_0-4-4_4_4
-  current                                            0.093975                   ...                                          18.571370                 
+  current                                            0.093975                   ...                                          18.571365                 
   
   [1 rows x 10 columns]
 
@@ -1287,7 +1420,9 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=1, nsite_kkr=1
 save to AlMnFeCo_bcc/c795171a55fa7f9ca0350bcb25387435/structure.json
+dic {'go': 'geom', 'potentialfile': 'pot.dat', 'brvtyp': 'bcc', 'a': 5.415957231701302, 'c/a': 1.0, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'nmag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 0, 'pmix': '0.02', 'ntyp': 1, 'rmt': [0.0], 'field': [0.0], 'mxl': [2], 'type': ['Mn0.25Al0.25Fe0.25Co0.25_2a_0'], 'ncmp': [4], 'anclr': [[13, 25, 26, 27]], 'conc': [[25.0, 25.0, 25.0, 25.0]], 'natm': 1, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Mn0.25Al0.25Fe0.25Co0.25_2a_0']], 'r1': [-0.49999999999999994, 0.5, 0.5], 'r2': [0.49999999999999994, -0.5, 0.5], 'r3': [0.5000000000000001, 0.5, -0.49999999999999994], 'displc': [[[0, 0, 0], [0, 0, 0], [0, 0, 0], [0, 0, 0]]]}
 saved to AlMnFeCo_bcc/c795171a55fa7f9ca0350bcb25387435/inputcard_geom
+STOP by geom mode
 kkr_struc, symmetry, nsite ('Im-3m', 229) 1
 kkr space group symbol, nsite 229 1
 input prim structure num_site 1
@@ -1295,6 +1430,7 @@ kkr   prim structure num_site 1
 ('Im-3m', 229) ('Im-3m', 229)
 ----------------------------------------
 ### bcc AlMnFeCo (magnetic, pbeasa, dos)
+dic {'go': 'dos', 'potentialfile': 'pot.dat', 'brvtyp': 'bcc', 'a': 1000000, 'c/a': 1.0, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 2.0, 'reltyp': 'sra', 'sdftyp': 'pbeasa', 'magtyp': 'mag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 200, 'pmix': 0.01, 'ntyp': 1, 'rmt': [1.0], 'field': [0.0], 'mxl': [3], 'type': ['Mn0.25Al0.25Fe0.25Co0.25_2a_0'], 'ncmp': [4], 'anclr': [[13, 25, 26, 27]], 'conc': [[25.0, 25.0, 25.0, 25.0]], 'natm': 1, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Mn0.25Al0.25Fe0.25Co0.25_2a_0']], 'r1': [-0.49999999999999994, 0.5, 0.5], 'r2': [0.49999999999999994, -0.5, 0.5], 'r3': [0.5000000000000001, 0.5, -0.49999999999999994], 'displc': [[[0, 0, 0], [0, 0, 0], [0, 0, 0], [0, 0, 0]]]}
   directory:  AlMnFeCo_bcc   output file:  out_dos.log
   saved to AlMnFeCo_bcc/dos.png
   saved to AlMnFeCo_bcc/pdos_0.png
@@ -1339,7 +1475,9 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=1, nsite_kkr=1
 save to AlMnFeCo_bcc/c795171a55fa7f9ca0350bcb25387435/structure.json
+dic {'go': 'geom', 'potentialfile': 'pot.dat', 'brvtyp': 'bcc', 'a': 5.415957231701302, 'c/a': 1.0, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'nmag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 0, 'pmix': '0.02', 'ntyp': 1, 'rmt': [0.0], 'field': [0.0], 'mxl': [2], 'type': ['Mn0.25Al0.25Fe0.25Co0.25_2a_0'], 'ncmp': [4], 'anclr': [[13, 25, 26, 27]], 'conc': [[25.0, 25.0, 25.0, 25.0]], 'natm': 1, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Mn0.25Al0.25Fe0.25Co0.25_2a_0']], 'r1': [-0.49999999999999994, 0.5, 0.5], 'r2': [0.49999999999999994, -0.5, 0.5], 'r3': [0.5000000000000001, 0.5, -0.49999999999999994], 'displc': [[[0, 0, 0], [0, 0, 0], [0, 0, 0], [0, 0, 0]]]}
 saved to AlMnFeCo_bcc/c795171a55fa7f9ca0350bcb25387435/inputcard_geom
+STOP by geom mode
 kkr_struc, symmetry, nsite ('Im-3m', 229) 1
 kkr space group symbol, nsite 229 1
 input prim structure num_site 1
@@ -1347,6 +1485,7 @@ kkr   prim structure num_site 1
 ('Im-3m', 229) ('Im-3m', 229)
 ----------------------------------------
 ### bcc AlMnFeCo (magnetic, pbeasa, cnd)
+dic {'go': ' cnd', 'potentialfile': 'pot.dat', 'brvtyp': 'bcc', 'a': 1000000, 'c/a': 1.0, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 0.01, 'reltyp': 'sra', 'sdftyp': 'pbeasa', 'magtyp': 'mag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 40, 'maxitr': 200, 'pmix': 0.01, 'ntyp': 1, 'rmt': [1.0], 'field': [0.0], 'mxl': [3], 'type': ['Mn0.25Al0.25Fe0.25Co0.25_2a_0'], 'ncmp': [4], 'anclr': [[13, 25, 26, 27]], 'conc': [[25.0, 25.0, 25.0, 25.0]], 'natm': 1, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Mn0.25Al0.25Fe0.25Co0.25_2a_0']], 'r1': [-0.49999999999999994, 0.5, 0.5], 'r2': [0.49999999999999994, -0.5, 0.5], 'r3': [0.5000000000000001, 0.5, -0.49999999999999994], 'displc': [[[0, 0, 0], [0, 0, 0], [0, 0, 0], [0, 0, 0]]]}
   directory:  AlMnFeCo_bcc   output file:  out_cnd.log
                           cnd    resis
   current  [0.38687, 0.12289] 8.53e+01
@@ -1362,7 +1501,9 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=1, nsite_kkr=1
 save to AlMnFeCo_bcc/c795171a55fa7f9ca0350bcb25387435/structure.json
+dic {'go': 'geom', 'potentialfile': 'pot.dat', 'brvtyp': 'bcc', 'a': 5.415957231701302, 'c/a': 1.0, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'nmag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 0, 'pmix': '0.02', 'ntyp': 1, 'rmt': [0.0], 'field': [0.0], 'mxl': [2], 'type': ['Mn0.25Al0.25Fe0.25Co0.25_2a_0'], 'ncmp': [4], 'anclr': [[13, 25, 26, 27]], 'conc': [[25.0, 25.0, 25.0, 25.0]], 'natm': 1, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Mn0.25Al0.25Fe0.25Co0.25_2a_0']], 'r1': [-0.49999999999999994, 0.5, 0.5], 'r2': [0.49999999999999994, -0.5, 0.5], 'r3': [0.5000000000000001, 0.5, -0.49999999999999994], 'displc': [[[0, 0, 0], [0, 0, 0], [0, 0, 0], [0, 0, 0]]]}
 saved to AlMnFeCo_bcc/c795171a55fa7f9ca0350bcb25387435/inputcard_geom
+STOP by geom mode
 kkr_struc, symmetry, nsite ('Im-3m', 229) 1
 kkr space group symbol, nsite 229 1
 input prim structure num_site 1
@@ -1371,21 +1512,22 @@ kkr   prim structure num_site 1
 ------------------------------------------
 ### bcc AlMnFeCo (magnetic, pbeasa, spc31)
 kpath is made by HighSymmKpath
+dic {'go': 'spc31', 'potentialfile': 'pot.dat', 'brvtyp': 'bcc', 'a': 1000000, 'c/a': 1.0, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 1.3, 'reltyp': 'sra', 'sdftyp': 'pbeasa', 'magtyp': 'mag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 200, 'pmix': 0.01, 'ntyp': 1, 'rmt': [1.0], 'field': [0.0], 'mxl': [3], 'type': ['Mn0.25Al0.25Fe0.25Co0.25_2a_0'], 'ncmp': [4], 'anclr': [[13, 25, 26, 27]], 'conc': [[25.0, 25.0, 25.0, 25.0]], 'natm': 1, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Mn0.25Al0.25Fe0.25Co0.25_2a_0']], 'r1': [-0.49999999999999994, 0.5, 0.5], 'r2': [0.49999999999999994, -0.5, 0.5], 'r3': [0.5000000000000001, 0.5, -0.49999999999999994], 'kpath_raw': ['150', 'c ---  \\Gamma H N \\Gamma P H', 'c ---  \\Gamma', '0.0 0.0 0.0', 'c ---  H', '0.5 -0.5 0.5', 'c ---  N', '0.0 0.0 0.5', 'c ---  \\Gamma', '0.0 0.0 0.0', 'c ---  P', '0.25 0.25 0.25', 'c ---  H', '0.5 -0.5 0.5'], 'displc': [[[0, 0, 0], [0, 0, 0], [0, 0, 0], [0, 0, 0]]]}
   directory:  AlMnFeCo_bcc   output file:  out_spc31.log
 debug: file, loaded content AlMnFeCo_bcc/klabel.json {'kpath': [[{'\\Gamma': [0.0, 0.0, 0.0]}, {'H': [0.5, -0.5, 0.5]}, {'N': [0.0, 0.0, 0.5]}, {'\\Gamma': [0.0, 0.0, 0.0]}, {'P': [0.25, 0.25, 0.25]}, {'H': [0.5, -0.5, 0.5]}]]}
-  saved to AlMnFeCo_bcc/Awk_up.png
-  saved to AlMnFeCo_bcc/Awk_dn.png
-  saved to AlMnFeCo_bcc/Awk_both.png
+  saved to Awk_up.png
+  saved to Awk_dn.png
+  saved to Awk_both.png
 
    Aw(w,k) k=0 0 0, up
   energy   -6.47e-01  -6.40e-01  -6.34e-01  ...  6.34e-01   6.40e-01   6.47e-01 
-  current   4.97e-01   4.09e-01   3.15e-01  ...   3.07e-01   2.69e-01   2.24e-01
+  current   4.96e-01   4.08e-01   3.15e-01  ...   3.07e-01   2.69e-01   2.24e-01
   
   [1 rows x 200 columns]
 
    Aw(w,k) k=0 0 0, dn
   energy   -6.47e-01  -6.40e-01  -6.34e-01  ...  6.34e-01   6.40e-01   6.47e-01 
-  current   4.80e-01   3.81e-01   3.10e-01  ...   3.63e-01   3.53e-01   3.45e-01
+  current   4.76e-01   3.86e-01   3.06e-01  ...   3.63e-01   3.53e-01   3.45e-01
   
   [1 rows x 200 columns]
 
@@ -1399,7 +1541,9 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=1, nsite_kkr=1
 save to Fe_lmd/caf80bdd15f4dc9f486d4724ecd18076/structure.json
+dic {'go': 'geom', 'potentialfile': 'pot.dat', 'brvtyp': 'bcc', 'a': 5.415957231701302, 'c/a': 1.0, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'nmag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 0, 'pmix': '0.02', 'ntyp': 1, 'rmt': [0.0], 'field': [0.0], 'mxl': [2], 'type': ['Fe_2a_0'], 'ncmp': [1], 'anclr': [[26]], 'conc': [[100.0]], 'natm': 1, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Fe_2a_0']], 'r1': [-0.49999999999999994, 0.5, 0.5], 'r2': [0.49999999999999994, -0.5, 0.5], 'r3': [0.5000000000000001, 0.5, -0.49999999999999994], 'displc': [[[0, 0, 0]]]}
 saved to Fe_lmd/caf80bdd15f4dc9f486d4724ecd18076/inputcard_geom
+STOP by geom mode
 kkr_struc, symmetry, nsite ('Im-3m', 229) 1
 kkr space group symbol, nsite 229 1
 input prim structure num_site 1
@@ -1407,9 +1551,10 @@ kkr   prim structure num_site 1
 ('Im-3m', 229) ('Im-3m', 229)
 ------------------------
 ### bcc Fe(lmd, mjw, go)
+dic {'go': 'go', 'potentialfile': 'pot.dat', 'brvtyp': 'bcc', 'a': 5.415957231701302, 'c/a': 1.0, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'lmd', 'record': 'init', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 200, 'pmix': '0.02', 'ntyp': 1, 'rmt': [1.0], 'field': [0.0], 'mxl': [2], 'type': ['Fe_2a_0'], 'ncmp': [2], 'anclr': [[26, 26]], 'conc': [[50.0, 50.0]], 'natm': 1, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Fe_2a_0']], 'r1': [-0.49999999999999994, 0.5, 0.5], 'r2': [0.49999999999999994, -0.5, 0.5], 'r3': [0.5000000000000001, 0.5, -0.49999999999999994], 'displc': [[[0, 0, 0], [0, 0, 0]]]}
   directory:  Fe_lmd   output file:  out_go.log
-           conv orbitallocalmoment spinlocalmoment        te       tm
-  current  True              [0.0]       [2.36112] -2.54e+03 2.32e+00
+           conv orbitallocalmoment      spinlocalmoment        te        tm
+  current  True         [0.0, 0.0]  [2.12286, -2.12286] -2.54e+03 -0.00e+00
 
 get_structures(primitive=False), symmetry, nsite ('Im-3m', 229) 2
 get_structures(primitive=True), symmetry, nsite ('Im-3m', 229) 1
@@ -1421,7 +1566,9 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=1, nsite_kkr=1
 save to Fe_lmd/caf80bdd15f4dc9f486d4724ecd18076/structure.json
+dic {'go': 'geom', 'potentialfile': 'pot.dat', 'brvtyp': 'bcc', 'a': 5.415957231701302, 'c/a': 1.0, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'nmag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 0, 'pmix': '0.02', 'ntyp': 1, 'rmt': [0.0], 'field': [0.0], 'mxl': [2], 'type': ['Fe_2a_0'], 'ncmp': [1], 'anclr': [[26]], 'conc': [[100.0]], 'natm': 1, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Fe_2a_0']], 'r1': [-0.49999999999999994, 0.5, 0.5], 'r2': [0.49999999999999994, -0.5, 0.5], 'r3': [0.5000000000000001, 0.5, -0.49999999999999994], 'displc': [[[0, 0, 0]]]}
 saved to Fe_lmd/caf80bdd15f4dc9f486d4724ecd18076/inputcard_geom
+STOP by geom mode
 kkr_struc, symmetry, nsite ('Im-3m', 229) 1
 kkr space group symbol, nsite 229 1
 input prim structure num_site 1
@@ -1429,31 +1576,33 @@ kkr   prim structure num_site 1
 ('Im-3m', 229) ('Im-3m', 229)
 -------------------------
 ### bcc Fe(lmd, mjw, dos)
+dic {'go': 'dos', 'potentialfile': 'pot.dat', 'brvtyp': 'bcc', 'a': 5.415957231701302, 'c/a': 1.0, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 2.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'lmd', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 200, 'pmix': '0.02', 'ntyp': 1, 'rmt': [1.0], 'field': [0.0], 'mxl': [2], 'type': ['Fe_2a_0'], 'ncmp': [2], 'anclr': [[26, 26]], 'conc': [[50.0, 50.0]], 'natm': 1, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Fe_2a_0']], 'r1': [-0.49999999999999994, 0.5, 0.5], 'r2': [0.49999999999999994, -0.5, 0.5], 'r3': [0.5000000000000001, 0.5, -0.49999999999999994], 'displc': [[[0, 0, 0], [0, 0, 0]]]}
   directory:  Fe_lmd   output file:  out_dos.log
   saved to Fe_lmd/dos.png
   saved to Fe_lmd/pdos_0.png
+  saved to Fe_lmd/pdos_1.png
 
    totalDOS (up)
   energy   -9.95e-01  -9.85e-01  -9.75e-01  ...  9.75e-01   9.85e-01   9.95e-01 
-  current   3.16e-03   3.24e-03   3.32e-03  ...   4.85e+00   2.40e+00   1.47e+00
+  current   2.95e-03   3.02e-03   3.10e-03  ...   3.77e+00   3.19e+00   2.80e+00
   
   [1 rows x 200 columns]
 
    totalDOS (dn)
   energy   -9.95e-01  -9.85e-01  -9.75e-01  ...  9.75e-01   9.85e-01   9.95e-01 
-  current   2.40e-03   2.46e-03   2.52e-03  ...   5.38e-01   2.55e+00   4.34e-01
+  current   2.95e-03   3.02e-03   3.10e-03  ...   3.77e+00   3.19e+00   2.80e+00
   
   [1 rows x 200 columns]
 
    pdos (up), atom=0, l=d
   energy   -1.00e+00  -9.90e-01  -9.80e-01  ...  9.80e-01   9.90e-01   1.00e+00 
-  current   4.10e-03   4.10e-03   4.10e-03  ...   1.96e-01   1.99e+00   2.07e-01
+  current   3.90e-03   4.00e-03   4.00e-03  ...   4.73e-01   4.21e-01   3.67e-01
   
   [1 rows x 201 columns]
 
    pdos (dn), atom=0, l=d
   energy   -1.00e+00  -9.90e-01  -9.80e-01  ...  9.80e-01   9.90e-01   1.00e+00 
-  current   2.80e-03   2.90e-03   2.90e-03  ...   1.28e-01   2.58e-01   1.19e-01
+  current   3.00e-03   3.00e-03   3.10e-03  ...   5.12e-01   4.78e-01   4.54e-01
   
   [1 rows x 201 columns]
 
@@ -1469,7 +1618,9 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=1, nsite_kkr=1
 save to Fe_lmd/caf80bdd15f4dc9f486d4724ecd18076/structure.json
+dic {'go': 'geom', 'potentialfile': 'pot.dat', 'brvtyp': 'bcc', 'a': 5.415957231701302, 'c/a': 1.0, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'nmag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 0, 'pmix': '0.02', 'ntyp': 1, 'rmt': [0.0], 'field': [0.0], 'mxl': [2], 'type': ['Fe_2a_0'], 'ncmp': [1], 'anclr': [[26]], 'conc': [[100.0]], 'natm': 1, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Fe_2a_0']], 'r1': [-0.49999999999999994, 0.5, 0.5], 'r2': [0.49999999999999994, -0.5, 0.5], 'r3': [0.5000000000000001, 0.5, -0.49999999999999994], 'displc': [[[0, 0, 0]]]}
 saved to Fe_lmd/caf80bdd15f4dc9f486d4724ecd18076/inputcard_geom
+STOP by geom mode
 kkr_struc, symmetry, nsite ('Im-3m', 229) 1
 kkr space group symbol, nsite 229 1
 input prim structure num_site 1
@@ -1478,16 +1629,19 @@ kkr   prim structure num_site 1
 ---------------------------
 ### bcc Fe(lmd, mjw, spc31)
 kpath is made by HighSymmKpath
+dic {'go': 'spc31', 'potentialfile': 'pot.dat', 'brvtyp': 'bcc', 'a': 5.415957231701302, 'c/a': 1.0, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'lmd', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 200, 'pmix': '0.02', 'ntyp': 1, 'rmt': [1.0], 'field': [0.0], 'mxl': [2], 'type': ['Fe_2a_0'], 'ncmp': [2], 'anclr': [[26, 26]], 'conc': [[50.0, 50.0]], 'natm': 1, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Fe_2a_0']], 'r1': [-0.49999999999999994, 0.5, 0.5], 'r2': [0.49999999999999994, -0.5, 0.5], 'r3': [0.5000000000000001, 0.5, -0.49999999999999994], 'kpath_raw': ['150', 'c ---  \\Gamma H N \\Gamma P H', 'c ---  \\Gamma', '0.0 0.0 0.0', 'c ---  H', '0.5 -0.5 0.5', 'c ---  N', '0.0 0.0 0.5', 'c ---  \\Gamma', '0.0 0.0 0.0', 'c ---  P', '0.25 0.25 0.25', 'c ---  H', '0.5 -0.5 0.5'], 'displc': [[[0, 0, 0], [0, 0, 0]]]}
   directory:  Fe_lmd   output file:  out_spc31.log
 debug: file, loaded content Fe_lmd/klabel.json {'kpath': [[{'\\Gamma': [0.0, 0.0, 0.0]}, {'H': [0.5, -0.5, 0.5]}, {'N': [0.0, 0.0, 0.5]}, {'\\Gamma': [0.0, 0.0, 0.0]}, {'P': [0.25, 0.25, 0.25]}, {'H': [0.5, -0.5, 0.5]}]]}
-  saved to Fe_lmd/Awk_up.png
+  saved to Awk_up.png
 
    Aw(w,k) k=0 0 0, up
   energy   -4.97e-01  -4.92e-01  -4.87e-01  ...  4.87e-01   4.92e-01   4.97e-01 
-  current   3.25e-02   3.15e-02   3.06e-02  ...   6.99e-03   6.91e-03   6.84e-03
+  current   1.27e+00   1.46e-01   0.00e+00  ...   0.00e+00   0.00e+00   2.42e-01
   
   [1 rows x 200 columns]
 
+/home/m0048/m004800/.pyenv/versions/3.10.12/lib/python3.10/site-packages/pymatgen/core/periodic_table.py:221: UserWarning: No Pauling electronegativity for Og. Setting to NaN. This has no physical meaning, and is mainly done to avoid errors caused by the code expecting a float.
+  warnings.warn(
 get_structures(primitive=False), symmetry, nsite ('F-43m', 216) 16
 get_structures(primitive=True), symmetry, nsite ('F-43m', 216) 4
 prim_stand_struc, symmetry, nsite ('F-43m', 216) 4
@@ -1498,7 +1652,9 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=4, nsite_kkr=4
 save to GaAs/29c8bc9fb0bb8e1c8ce7e69a3cb3aa47/structure.json
+dic {'go': 'geom', 'potentialfile': 'pot.dat', 'brvtyp': 'fcc', 'a': 10.68319295812176, 'c/a': 1.0, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'nmag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 0, 'pmix': '0.02', 'ntyp': 4, 'rmt': [0.0, 0.0, 0.0, 0.0], 'field': [0.0, 0.0, 0.0, 0.0], 'mxl': [2, 2, 2, 2], 'type': ['Ga_4a_0', 'As_4c_4', 'Og_4b_8', 'Og_4d_9'], 'ncmp': [1, 1, 1, 1], 'anclr': [[31], [33], [0], [0]], 'conc': [[100.0], [100.0], [100.0], [100.0]], 'natm': 4, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Ga_4a_0'], ['0.25000000a', '0.25000000b', '0.25000000c', 'As_4c_4'], ['0.50000000a', '0.50000000b', '0.50000000c', 'Og_4b_8'], ['0.75000000a', '0.75000000b', '0.75000000c', 'Og_4d_9']], 'r1': [8.04061324838318e-17, 0.5, 0.5], 'r2': [0.5, 0.0, 0.5], 'r3': [0.5000000000000001, 0.5, 6.123233995736766e-17], 'displc': [[[0, 0, 0]], [[0, 0, 0]], [[0, 0, 0]], [[0, 0, 0]]]}
 saved to GaAs/29c8bc9fb0bb8e1c8ce7e69a3cb3aa47/inputcard_geom
+STOP by geom mode
 kkr_struc, symmetry, nsite ('F-43m', 216) 4
 kkr space group symbol, nsite 216 4
 input prim structure num_site 4
@@ -1515,10 +1671,13 @@ np.all(diff == 0) True
 ('F-43m', 216) ('F-43m', 216)
 --------------------------------
 ### GaAs (non-magnetic, mjw, go)
+dic {'go': 'go', 'potentialfile': 'pot.dat', 'brvtyp': 'fcc', 'a': 10.68319295812176, 'c/a': 1.0, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 1.5, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'nmag', 'record': 'init', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 200, 'pmix': '0.02', 'ntyp': 4, 'rmt': [1.0, 1.0, 1.0, 1.0], 'field': [0.0, 0.0, 0.0, 0.0], 'mxl': [2, 2, 2, 2], 'type': ['Ga_4a_0', 'As_4c_4', 'Og_4b_8', 'Og_4d_9'], 'ncmp': [1, 1, 1, 1], 'anclr': [[31], [33], [0], [0]], 'conc': [[100.0], [100.0], [100.0], [100.0]], 'natm': 4, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Ga_4a_0'], ['0.25000000a', '0.25000000b', '0.25000000c', 'As_4c_4'], ['0.50000000a', '0.50000000b', '0.50000000c', 'Og_4b_8'], ['0.75000000a', '0.75000000b', '0.75000000c', 'Og_4d_9']], 'r1': [8.04061324838318e-17, 0.5, 0.5], 'r2': [0.5, 0.0, 0.5], 'r3': [0.5000000000000001, 0.5, 6.123233995736766e-17], 'displc': [[[0, 0, 0]], [[0, 0, 0]], [[0, 0, 0]], [[0, 0, 0]]]}
   directory:  GaAs   output file:  out_go.log
-           conv    orbitallocalmoment        spinlocalmoment        te       tm
-  current  True  [0.0, 0.0, 0.0, 0.0]  [0.0, -0.0, 0.0, 0.0] -8.40e+03 0.00e+00
+           conv    orbitallocalmoment       spinlocalmoment        te       tm
+  current  True  [0.0, 0.0, 0.0, 0.0]  [0.0, 0.0, 0.0, 0.0] -8.40e+03 0.00e+00
 
+/home/m0048/m004800/.pyenv/versions/3.10.12/lib/python3.10/site-packages/pymatgen/core/periodic_table.py:221: UserWarning: No Pauling electronegativity for Og. Setting to NaN. This has no physical meaning, and is mainly done to avoid errors caused by the code expecting a float.
+  warnings.warn(
 get_structures(primitive=False), symmetry, nsite ('F-43m', 216) 16
 get_structures(primitive=True), symmetry, nsite ('F-43m', 216) 4
 prim_stand_struc, symmetry, nsite ('F-43m', 216) 4
@@ -1529,7 +1688,9 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=4, nsite_kkr=4
 save to GaAs/29c8bc9fb0bb8e1c8ce7e69a3cb3aa47/structure.json
+dic {'go': 'geom', 'potentialfile': 'pot.dat', 'brvtyp': 'fcc', 'a': 10.68319295812176, 'c/a': 1.0, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'nmag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 0, 'pmix': '0.02', 'ntyp': 4, 'rmt': [0.0, 0.0, 0.0, 0.0], 'field': [0.0, 0.0, 0.0, 0.0], 'mxl': [2, 2, 2, 2], 'type': ['Ga_4a_0', 'As_4c_4', 'Og_4b_8', 'Og_4d_9'], 'ncmp': [1, 1, 1, 1], 'anclr': [[31], [33], [0], [0]], 'conc': [[100.0], [100.0], [100.0], [100.0]], 'natm': 4, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Ga_4a_0'], ['0.25000000a', '0.25000000b', '0.25000000c', 'As_4c_4'], ['0.50000000a', '0.50000000b', '0.50000000c', 'Og_4b_8'], ['0.75000000a', '0.75000000b', '0.75000000c', 'Og_4d_9']], 'r1': [8.04061324838318e-17, 0.5, 0.5], 'r2': [0.5, 0.0, 0.5], 'r3': [0.5000000000000001, 0.5, 6.123233995736766e-17], 'displc': [[[0, 0, 0]], [[0, 0, 0]], [[0, 0, 0]], [[0, 0, 0]]]}
 saved to GaAs/29c8bc9fb0bb8e1c8ce7e69a3cb3aa47/inputcard_geom
+STOP by geom mode
 kkr_struc, symmetry, nsite ('F-43m', 216) 4
 kkr space group symbol, nsite 216 4
 input prim structure num_site 4
@@ -1546,6 +1707,7 @@ np.all(diff == 0) True
 ('F-43m', 216) ('F-43m', 216)
 ---------------------------------
 ### GaAs (non-magnetic, mjw, dos)
+dic {'go': 'dos', 'potentialfile': 'pot.dat', 'brvtyp': 'fcc', 'a': 10.68319295812176, 'c/a': 1.0, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 2.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'nmag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 200, 'pmix': '0.02', 'ntyp': 4, 'rmt': [1.0, 1.0, 1.0, 1.0], 'field': [0.0, 0.0, 0.0, 0.0], 'mxl': [2, 2, 2, 2], 'type': ['Ga_4a_0', 'As_4c_4', 'Og_4b_8', 'Og_4d_9'], 'ncmp': [1, 1, 1, 1], 'anclr': [[31], [33], [0], [0]], 'conc': [[100.0], [100.0], [100.0], [100.0]], 'natm': 4, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Ga_4a_0'], ['0.25000000a', '0.25000000b', '0.25000000c', 'As_4c_4'], ['0.50000000a', '0.50000000b', '0.50000000c', 'Og_4b_8'], ['0.75000000a', '0.75000000b', '0.75000000c', 'Og_4d_9']], 'r1': [8.04061324838318e-17, 0.5, 0.5], 'r2': [0.5, 0.0, 0.5], 'r3': [0.5000000000000001, 0.5, 6.123233995736766e-17], 'displc': [[[0, 0, 0]], [[0, 0, 0]], [[0, 0, 0]], [[0, 0, 0]]]}
   directory:  GaAs   output file:  out_dos.log
   saved to GaAs/dos.png
   saved to GaAs/pdos_0.png
@@ -1555,18 +1717,20 @@ np.all(diff == 0) True
 
    totalDOS (up)
   energy   -9.95e-01  -9.85e-01  -9.75e-01  ...  9.75e-01   9.85e-01   9.95e-01 
-  current   4.95e-02   5.10e-02   5.47e-02  ...   9.65e+00   8.23e+00   1.34e+01
+  current   6.95e-02   6.85e-02   7.00e-02  ...   9.22e+00   9.52e+00   1.31e+01
   
   [1 rows x 200 columns]
 
    pdos (up), atom=0, l=d
   energy   -1.00e+00  -9.90e-01  -9.80e-01  ...  9.80e-01   9.90e-01   1.00e+00 
-  current   2.35e-02   2.14e-02   1.95e-02  ...   2.15e-01   1.00e+00   5.13e-01
+  current   4.32e-02   3.84e-02   3.42e-02  ...   1.41e-01   6.62e-01   1.68e-01
   
   [1 rows x 201 columns]
 
    final: True
 
+/home/m0048/m004800/.pyenv/versions/3.10.12/lib/python3.10/site-packages/pymatgen/core/periodic_table.py:221: UserWarning: No Pauling electronegativity for Og. Setting to NaN. This has no physical meaning, and is mainly done to avoid errors caused by the code expecting a float.
+  warnings.warn(
 get_structures(primitive=False), symmetry, nsite ('F-43m', 216) 16
 get_structures(primitive=True), symmetry, nsite ('F-43m', 216) 4
 prim_stand_struc, symmetry, nsite ('F-43m', 216) 4
@@ -1577,7 +1741,9 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=4, nsite_kkr=4
 save to GaAs/29c8bc9fb0bb8e1c8ce7e69a3cb3aa47/structure.json
+dic {'go': 'geom', 'potentialfile': 'pot.dat', 'brvtyp': 'fcc', 'a': 10.68319295812176, 'c/a': 1.0, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'nmag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 0, 'pmix': '0.02', 'ntyp': 4, 'rmt': [0.0, 0.0, 0.0, 0.0], 'field': [0.0, 0.0, 0.0, 0.0], 'mxl': [2, 2, 2, 2], 'type': ['Ga_4a_0', 'As_4c_4', 'Og_4b_8', 'Og_4d_9'], 'ncmp': [1, 1, 1, 1], 'anclr': [[31], [33], [0], [0]], 'conc': [[100.0], [100.0], [100.0], [100.0]], 'natm': 4, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Ga_4a_0'], ['0.25000000a', '0.25000000b', '0.25000000c', 'As_4c_4'], ['0.50000000a', '0.50000000b', '0.50000000c', 'Og_4b_8'], ['0.75000000a', '0.75000000b', '0.75000000c', 'Og_4d_9']], 'r1': [8.04061324838318e-17, 0.5, 0.5], 'r2': [0.5, 0.0, 0.5], 'r3': [0.5000000000000001, 0.5, 6.123233995736766e-17], 'displc': [[[0, 0, 0]], [[0, 0, 0]], [[0, 0, 0]], [[0, 0, 0]]]}
 saved to GaAs/29c8bc9fb0bb8e1c8ce7e69a3cb3aa47/inputcard_geom
+STOP by geom mode
 kkr_struc, symmetry, nsite ('F-43m', 216) 4
 kkr space group symbol, nsite 216 4
 input prim structure num_site 4
@@ -1595,13 +1761,14 @@ np.all(diff == 0) True
 -----------------------------------
 ### GaAs (non-magnetic, mjw, spc31)
 kpath is made by HighSymmKpath
+dic {'go': 'spc31', 'potentialfile': 'pot.dat', 'brvtyp': 'fcc', 'a': 10.68319295812176, 'c/a': 1.0, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 1.5, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'nmag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 200, 'pmix': '0.02', 'ntyp': 4, 'rmt': [1.0, 1.0, 1.0, 1.0], 'field': [0.0, 0.0, 0.0, 0.0], 'mxl': [2, 2, 2, 2], 'type': ['Ga_4a_0', 'As_4c_4', 'Og_4b_8', 'Og_4d_9'], 'ncmp': [1, 1, 1, 1], 'anclr': [[31], [33], [0], [0]], 'conc': [[100.0], [100.0], [100.0], [100.0]], 'natm': 4, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Ga_4a_0'], ['0.25000000a', '0.25000000b', '0.25000000c', 'As_4c_4'], ['0.50000000a', '0.50000000b', '0.50000000c', 'Og_4b_8'], ['0.75000000a', '0.75000000b', '0.75000000c', 'Og_4d_9']], 'r1': [8.04061324838318e-17, 0.5, 0.5], 'r2': [0.5, 0.0, 0.5], 'r3': [0.5000000000000001, 0.5, 6.123233995736766e-17], 'kpath_raw': ['150', 'c ---  \\Gamma X W K \\Gamma L U W L K', 'c ---  \\Gamma', '0.0 0.0 0.0', 'c ---  X', '0.5 0.0 0.5', 'c ---  W', '0.5 0.25 0.75', 'c ---  K', '0.375 0.375 0.75', 'c ---  \\Gamma', '0.0 0.0 0.0', 'c ---  L', '0.5 0.5 0.5', 'c ---  U', '0.625 0.25 0.625', 'c ---  W', '0.5 0.25 0.75', 'c ---  L', '0.5 0.5 0.5', 'c ---  K', '0.375 0.375 0.75'], 'displc': [[[0, 0, 0]], [[0, 0, 0]], [[0, 0, 0]], [[0, 0, 0]]]}
   directory:  GaAs   output file:  out_spc31.log
 debug: file, loaded content GaAs/klabel.json {'kpath': [[{'\\Gamma': [0.0, 0.0, 0.0]}, {'X': [0.5, 0.0, 0.5]}, {'W': [0.5, 0.25, 0.75]}, {'K': [0.375, 0.375, 0.75]}, {'\\Gamma': [0.0, 0.0, 0.0]}, {'L': [0.5, 0.5, 0.5]}, {'U': [0.625, 0.25, 0.625]}, {'W': [0.5, 0.25, 0.75]}, {'L': [0.5, 0.5, 0.5]}, {'K': [0.375, 0.375, 0.75]}]]}
-  saved to GaAs/Awk_up.png
+  saved to Awk_up.png
 
    Aw(w,k) k=0 0 0, up
   energy   -7.46e-01  -7.39e-01  -7.31e-01  ...  7.31e-01   7.39e-01   7.46e-01 
-  current   2.08e-02   2.01e-02   1.95e-02  ...   7.58e+01   1.68e+02   6.48e+00
+  current   2.31e-02   2.23e-02   2.15e-02  ...   1.04e+02   1.41e+02   5.98e+00
   
   [1 rows x 200 columns]
 
@@ -1615,7 +1782,9 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=4, nsite_kkr=4
 save to Co2MnSi/f004c18c44f33831824ae67414f00215/structure.json
+dic {'go': 'geom', 'potentialfile': 'pot.dat', 'brvtyp': 'fcc', 'a': 10.593808876803033, 'c/a': 1.0, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'nmag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 0, 'pmix': '0.02', 'ntyp': 3, 'rmt': [0.0, 0.0, 0.0], 'field': [0.0, 0.0, 0.0], 'mxl': [2, 2, 2], 'type': ['Mn_4b_0', 'Co_8c_4', 'Si_4a_12'], 'ncmp': [1, 1, 1], 'anclr': [[25], [27], [14]], 'conc': [[100.0], [100.0], [100.0]], 'natm': 4, 'atmicx': [['0.50000000a', '0.50000000b', '0.50000000c', 'Mn_4b_0'], ['0.25000000a', '0.25000000b', '0.25000000c', 'Co_8c_4'], ['0.75000000a', '0.75000000b', '0.75000000c', 'Co_8c_4'], ['0.00000000a', '0.00000000b', '0.00000000c', 'Si_4a_12']], 'r1': [8.040613248383182e-17, 0.5, 0.5], 'r2': [0.5, 0.0, 0.5], 'r3': [0.5000000000000001, 0.5, 6.123233995736766e-17], 'displc': [[[0, 0, 0]], [[0, 0, 0]], [[0, 0, 0]]]}
 saved to Co2MnSi/f004c18c44f33831824ae67414f00215/inputcard_geom
+STOP by geom mode
 kkr_struc, symmetry, nsite ('Fm-3m', 225) 4
 kkr space group symbol, nsite 225 4
 input prim structure num_site 4
@@ -1623,9 +1792,12 @@ kkr   prim structure num_site 4
 ('Fm-3m', 225) ('Fm-3m', 225)
 -------------------------------
 ### Co2MnSi (magnetic, pbe, go)
+dic {'go': 'go', 'potentialfile': 'pot.dat', 'brvtyp': 'fcc', 'a': 10.593808876803033, 'c/a': 1.0, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.0001, 'ewidth': 1.2, 'reltyp': 'sra', 'sdftyp': 'pbe', 'magtyp': 'mag', 'record': 'init', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 200, 'pmix': '0.02', 'ntyp': 3, 'rmt': [1.0, 1.0, 1.0], 'field': [0.0, 0.0, 0.0], 'mxl': [2, 2, 2], 'type': ['Mn_4b_0', 'Co_8c_4', 'Si_4a_12'], 'ncmp': [1, 1, 1], 'anclr': [[25], [27], [14]], 'conc': [[100.0], [100.0], [100.0]], 'natm': 4, 'atmicx': [['0.50000000a', '0.50000000b', '0.50000000c', 'Mn_4b_0'], ['0.25000000a', '0.25000000b', '0.25000000c', 'Co_8c_4'], ['0.75000000a', '0.75000000b', '0.75000000c', 'Co_8c_4'], ['0.00000000a', '0.00000000b', '0.00000000c', 'Si_4a_12']], 'r1': [8.040613248383182e-17, 0.5, 0.5], 'r2': [0.5, 0.0, 0.5], 'r3': [0.5000000000000001, 0.5, 6.123233995736766e-17], 'displc': [[[0, 0, 0]], [[0, 0, 0]], [[0, 0, 0]]]}
   directory:  Co2MnSi   output file:  out_go.log
-           conv orbitallocalmoment             spinlocalmoment        te       tm
-  current  True    [0.0, 0.0, 0.0]  [3.16078, 0.981, -0.08443] -8.47e+03 5.00e+00
+           conv orbitallocalmoment  ...        te       tm
+  current  True    [0.0, 0.0, 0.0]  ... -8.47e+03 5.00e+00
+  
+  [1 rows x 5 columns]
 
 get_structures(primitive=False), symmetry, nsite ('Fm-3m', 225) 16
 get_structures(primitive=True), symmetry, nsite ('Fm-3m', 225) 4
@@ -1637,7 +1809,9 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=4, nsite_kkr=4
 save to Co2MnSi/f004c18c44f33831824ae67414f00215/structure.json
+dic {'go': 'geom', 'potentialfile': 'pot.dat', 'brvtyp': 'fcc', 'a': 10.593808876803033, 'c/a': 1.0, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'nmag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 0, 'pmix': '0.02', 'ntyp': 3, 'rmt': [0.0, 0.0, 0.0], 'field': [0.0, 0.0, 0.0], 'mxl': [2, 2, 2], 'type': ['Mn_4b_0', 'Co_8c_4', 'Si_4a_12'], 'ncmp': [1, 1, 1], 'anclr': [[25], [27], [14]], 'conc': [[100.0], [100.0], [100.0]], 'natm': 4, 'atmicx': [['0.50000000a', '0.50000000b', '0.50000000c', 'Mn_4b_0'], ['0.25000000a', '0.25000000b', '0.25000000c', 'Co_8c_4'], ['0.75000000a', '0.75000000b', '0.75000000c', 'Co_8c_4'], ['0.00000000a', '0.00000000b', '0.00000000c', 'Si_4a_12']], 'r1': [8.040613248383182e-17, 0.5, 0.5], 'r2': [0.5, 0.0, 0.5], 'r3': [0.5000000000000001, 0.5, 6.123233995736766e-17], 'displc': [[[0, 0, 0]], [[0, 0, 0]], [[0, 0, 0]]]}
 saved to Co2MnSi/f004c18c44f33831824ae67414f00215/inputcard_geom
+STOP by geom mode
 kkr_struc, symmetry, nsite ('Fm-3m', 225) 4
 kkr space group symbol, nsite 225 4
 input prim structure num_site 4
@@ -1645,6 +1819,7 @@ kkr   prim structure num_site 4
 ('Fm-3m', 225) ('Fm-3m', 225)
 --------------------------------
 ### Co2MnSi (magnetic, pbe, fsm)
+dic {'go': 'fsm', 'potentialfile': 'pot_fsm.dat', 'brvtyp': 'fcc', 'a': 10.593808876803033, 'c/a': 1.0, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.0001, 'ewidth': 1.2, 'reltyp': 'sra', 'sdftyp': 'pbe', 'magtyp': 'mag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 200, 'pmix': '0.02ch', 'ntyp': 3, 'rmt': [1.0, 1.0, 1.0], 'field': [0.0, 0.0, 0.0], 'mxl': [2, 2, 2], 'type': ['Mn_4b_0', 'Co_8c_4', 'Si_4a_12'], 'ncmp': [1, 1, 1], 'anclr': [[25], [27], [14]], 'conc': [[100.0], [100.0], [100.0]], 'natm': 4, 'atmicx': [['0.50000000a', '0.50000000b', '0.50000000c', 'Mn_4b_0'], ['0.25000000a', '0.25000000b', '0.25000000c', 'Co_8c_4'], ['0.75000000a', '0.75000000b', '0.75000000c', 'Co_8c_4'], ['0.00000000a', '0.00000000b', '0.00000000c', 'Si_4a_12']], 'r1': [8.040613248383182e-17, 0.5, 0.5], 'r2': [0.5, 0.0, 0.5], 'r3': [0.5000000000000001, 0.5, 6.123233995736766e-17], 'fspin': 4.5, 'displc': [[[0, 0, 0]], [[0, 0, 0]], [[0, 0, 0]]]}
   directory:  Co2MnSi   output file:  out_fsm.log
            conv orbitallocalmoment  ...        te       tm
   current  True    [0.0, 0.0, 0.0]  ... -8.47e+03 4.50e+00
@@ -1661,7 +1836,9 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=4, nsite_kkr=4
 save to Co2MnSi/f004c18c44f33831824ae67414f00215/structure.json
+dic {'go': 'geom', 'potentialfile': 'pot.dat', 'brvtyp': 'fcc', 'a': 10.593808876803033, 'c/a': 1.0, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'nmag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 0, 'pmix': '0.02', 'ntyp': 3, 'rmt': [0.0, 0.0, 0.0], 'field': [0.0, 0.0, 0.0], 'mxl': [2, 2, 2], 'type': ['Mn_4b_0', 'Co_8c_4', 'Si_4a_12'], 'ncmp': [1, 1, 1], 'anclr': [[25], [27], [14]], 'conc': [[100.0], [100.0], [100.0]], 'natm': 4, 'atmicx': [['0.50000000a', '0.50000000b', '0.50000000c', 'Mn_4b_0'], ['0.25000000a', '0.25000000b', '0.25000000c', 'Co_8c_4'], ['0.75000000a', '0.75000000b', '0.75000000c', 'Co_8c_4'], ['0.00000000a', '0.00000000b', '0.00000000c', 'Si_4a_12']], 'r1': [8.040613248383182e-17, 0.5, 0.5], 'r2': [0.5, 0.0, 0.5], 'r3': [0.5000000000000001, 0.5, 6.123233995736766e-17], 'displc': [[[0, 0, 0]], [[0, 0, 0]], [[0, 0, 0]]]}
 saved to Co2MnSi/f004c18c44f33831824ae67414f00215/inputcard_geom
+STOP by geom mode
 kkr_struc, symmetry, nsite ('Fm-3m', 225) 4
 kkr space group symbol, nsite 225 4
 input prim structure num_site 4
@@ -1669,6 +1846,7 @@ kkr   prim structure num_site 4
 ('Fm-3m', 225) ('Fm-3m', 225)
 -------------------------------
 ### Co2MnSi (magnetic, pbe, tc)
+dic {'go': 'tc', 'potentialfile': 'pot.dat', 'brvtyp': 'fcc', 'a': 10.593808876803033, 'c/a': 1.0, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.0001, 'ewidth': 1.2, 'reltyp': 'sra', 'sdftyp': 'pbe', 'magtyp': 'mag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 200, 'pmix': '0.02', 'ntyp': 3, 'rmt': [1.0, 1.0, 1.0], 'field': [0.0, 0.0, 0.0], 'mxl': [2, 2, 2], 'type': ['Mn_4b_0', 'Co_8c_4', 'Si_4a_12'], 'ncmp': [1, 1, 1], 'anclr': [[25], [27], [14]], 'conc': [[100.0], [100.0], [100.0]], 'natm': 4, 'atmicx': [['0.50000000a', '0.50000000b', '0.50000000c', 'Mn_4b_0'], ['0.25000000a', '0.25000000b', '0.25000000c', 'Co_8c_4'], ['0.75000000a', '0.75000000b', '0.75000000c', 'Co_8c_4'], ['0.00000000a', '0.00000000b', '0.00000000c', 'Si_4a_12']], 'r1': [8.040613248383182e-17, 0.5, 0.5], 'r2': [0.5, 0.0, 0.5], 'r3': [0.5000000000000001, 0.5, 6.123233995736766e-17], 'displc': [[[0, 0, 0]], [[0, 0, 0]], [[0, 0, 0]]]}
   directory:  Co2MnSi   output file:  out_tc.log
                 Tc
   current 9.03e+02
@@ -1683,7 +1861,9 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=4, nsite_kkr=4
 save to Co2MnSi/f004c18c44f33831824ae67414f00215/structure.json
+dic {'go': 'geom', 'potentialfile': 'pot.dat', 'brvtyp': 'fcc', 'a': 10.593808876803033, 'c/a': 1.0, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'nmag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 0, 'pmix': '0.02', 'ntyp': 3, 'rmt': [0.0, 0.0, 0.0], 'field': [0.0, 0.0, 0.0], 'mxl': [2, 2, 2], 'type': ['Mn_4b_0', 'Co_8c_4', 'Si_4a_12'], 'ncmp': [1, 1, 1], 'anclr': [[25], [27], [14]], 'conc': [[100.0], [100.0], [100.0]], 'natm': 4, 'atmicx': [['0.50000000a', '0.50000000b', '0.50000000c', 'Mn_4b_0'], ['0.25000000a', '0.25000000b', '0.25000000c', 'Co_8c_4'], ['0.75000000a', '0.75000000b', '0.75000000c', 'Co_8c_4'], ['0.00000000a', '0.00000000b', '0.00000000c', 'Si_4a_12']], 'r1': [8.040613248383182e-17, 0.5, 0.5], 'r2': [0.5, 0.0, 0.5], 'r3': [0.5000000000000001, 0.5, 6.123233995736766e-17], 'displc': [[[0, 0, 0]], [[0, 0, 0]], [[0, 0, 0]]]}
 saved to Co2MnSi/f004c18c44f33831824ae67414f00215/inputcard_geom
+STOP by geom mode
 kkr_struc, symmetry, nsite ('Fm-3m', 225) 4
 kkr space group symbol, nsite 225 4
 input prim structure num_site 4
@@ -1691,33 +1871,34 @@ kkr   prim structure num_site 4
 ('Fm-3m', 225) ('Fm-3m', 225)
 ---------------------------------
 ### Co2MnSi (magnetic, pbe, j3.0)
+dic {'go': 'j3.0', 'potentialfile': 'pot.dat', 'brvtyp': 'fcc', 'a': 10.593808876803033, 'c/a': 1.0, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.0001, 'ewidth': 1.2, 'reltyp': 'sra', 'sdftyp': 'pbe', 'magtyp': 'mag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 200, 'pmix': '0.02', 'ntyp': 3, 'rmt': [1.0, 1.0, 1.0], 'field': [0.0, 0.0, 0.0], 'mxl': [2, 2, 2], 'type': ['Mn_4b_0', 'Co_8c_4', 'Si_4a_12'], 'ncmp': [1, 1, 1], 'anclr': [[25], [27], [14]], 'conc': [[100.0], [100.0], [100.0]], 'natm': 4, 'atmicx': [['0.50000000a', '0.50000000b', '0.50000000c', 'Mn_4b_0'], ['0.25000000a', '0.25000000b', '0.25000000c', 'Co_8c_4'], ['0.75000000a', '0.75000000b', '0.75000000c', 'Co_8c_4'], ['0.00000000a', '0.00000000b', '0.00000000c', 'Si_4a_12']], 'r1': [8.040613248383182e-17, 0.5, 0.5], 'r2': [0.5, 0.0, 0.5], 'r3': [0.5000000000000001, 0.5, 6.123233995736766e-17], 'displc': [[[0, 0, 0]], [[0, 0, 0]], [[0, 0, 0]]]}
   directory:  Co2MnSi   output file:  out_j3.0.log
   saved to Co2MnSi/jij.csv
 
-  saved to Co2MnSi/Jij_Co_8c_4-Co_8c_4.png
-  saved to Co2MnSi/Jij_Mn_4b_0-Si_4a_12.png
-  saved to Co2MnSi/Jij_Mn_4b_0-Mn_4b_0.png
-  saved to Co2MnSi/Jij_Co_8c_4-Si_4a_12.png
-  saved to Co2MnSi/Jij_Mn_4b_0-Co_8c_4.png
   saved to Co2MnSi/Jij_Si_4a_12-Si_4a_12.png
+  saved to Co2MnSi/Jij_Co_8c_4-Co_8c_4.png
+  saved to Co2MnSi/Jij_Mn_4b_0-Mn_4b_0.png
+  saved to Co2MnSi/Jij_Mn_4b_0-Si_4a_12.png
+  saved to Co2MnSi/Jij_Mn_4b_0-Co_8c_4.png
+  saved to Co2MnSi/Jij_Co_8c_4-Si_4a_12.png
                 Tc
   current 9.03e+02
 
 
 debug df_result_jij
   comp1 comp2 current_J_ij current_J_ij(meV)                   pair
-0     1     1     0.001053         14.333237    Co_8c_4-Mn_4b_0-1-1
-1     1     1     0.000013          0.177178   Co_8c_4-Si_4a_12-1-1
-2     1     1     0.000181          2.461966    Co_8c_4-Co_8c_4-1-1
-3     1     1     0.000014          0.188972   Mn_4b_0-Si_4a_12-1-1
-4     1     1     0.000104          1.419687    Mn_4b_0-Mn_4b_0-1-1
-5     1     1    -0.000000         -0.000088  Si_4a_12-Si_4a_12-1-1
+0     1     1     0.001053         14.333243    Co_8c_4-Mn_4b_0-1-1
+1     1     1     0.000013          0.177187   Co_8c_4-Si_4a_12-1-1
+2     1     1     0.000181          2.461977    Co_8c_4-Co_8c_4-1-1
+3     1     1     0.000014          0.188981   Mn_4b_0-Si_4a_12-1-1
+4     1     1     0.000104          1.419689    Mn_4b_0-Mn_4b_0-1-1
+5     1     1    -0.000000         -0.000089  Si_4a_12-Si_4a_12-1-1
 debug df_ref_jij
 None
 
    J_ij(meV) at the shortest distance
   typecomp Co_8c_4-Mn_4b_0-1-1_1_1  ... Si_4a_12-Si_4a_12-1-1_1_1
-  current                14.333237  ...                 -0.000088
+  current                14.333243  ...                 -0.000089
   
   [1 rows x 6 columns]
 
@@ -1731,7 +1912,9 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=4, nsite_kkr=4
 save to Co2MnSi/f004c18c44f33831824ae67414f00215/structure.json
+dic {'go': 'geom', 'potentialfile': 'pot.dat', 'brvtyp': 'fcc', 'a': 10.593808876803033, 'c/a': 1.0, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'nmag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 0, 'pmix': '0.02', 'ntyp': 3, 'rmt': [0.0, 0.0, 0.0], 'field': [0.0, 0.0, 0.0], 'mxl': [2, 2, 2], 'type': ['Mn_4b_0', 'Co_8c_4', 'Si_4a_12'], 'ncmp': [1, 1, 1], 'anclr': [[25], [27], [14]], 'conc': [[100.0], [100.0], [100.0]], 'natm': 4, 'atmicx': [['0.50000000a', '0.50000000b', '0.50000000c', 'Mn_4b_0'], ['0.25000000a', '0.25000000b', '0.25000000c', 'Co_8c_4'], ['0.75000000a', '0.75000000b', '0.75000000c', 'Co_8c_4'], ['0.00000000a', '0.00000000b', '0.00000000c', 'Si_4a_12']], 'r1': [8.040613248383182e-17, 0.5, 0.5], 'r2': [0.5, 0.0, 0.5], 'r3': [0.5000000000000001, 0.5, 6.123233995736766e-17], 'displc': [[[0, 0, 0]], [[0, 0, 0]], [[0, 0, 0]]]}
 saved to Co2MnSi/f004c18c44f33831824ae67414f00215/inputcard_geom
+STOP by geom mode
 kkr_struc, symmetry, nsite ('Fm-3m', 225) 4
 kkr space group symbol, nsite 225 4
 input prim structure num_site 4
@@ -1739,6 +1922,7 @@ kkr   prim structure num_site 4
 ('Fm-3m', 225) ('Fm-3m', 225)
 --------------------------------
 ### Co2MnSi (magnetic, pbe, dos)
+dic {'go': 'dos', 'potentialfile': 'pot.dat', 'brvtyp': 'fcc', 'a': 10.593808876803033, 'c/a': 1.0, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.0001, 'ewidth': 2.0, 'reltyp': 'sra', 'sdftyp': 'pbe', 'magtyp': 'mag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 200, 'pmix': '0.02', 'ntyp': 3, 'rmt': [1.0, 1.0, 1.0], 'field': [0.0, 0.0, 0.0], 'mxl': [2, 2, 2], 'type': ['Mn_4b_0', 'Co_8c_4', 'Si_4a_12'], 'ncmp': [1, 1, 1], 'anclr': [[25], [27], [14]], 'conc': [[100.0], [100.0], [100.0]], 'natm': 4, 'atmicx': [['0.50000000a', '0.50000000b', '0.50000000c', 'Mn_4b_0'], ['0.25000000a', '0.25000000b', '0.25000000c', 'Co_8c_4'], ['0.75000000a', '0.75000000b', '0.75000000c', 'Co_8c_4'], ['0.00000000a', '0.00000000b', '0.00000000c', 'Si_4a_12']], 'r1': [8.040613248383182e-17, 0.5, 0.5], 'r2': [0.5, 0.0, 0.5], 'r3': [0.5000000000000001, 0.5, 6.123233995736766e-17], 'displc': [[[0, 0, 0]], [[0, 0, 0]], [[0, 0, 0]]]}
   directory:  Co2MnSi   output file:  out_dos.log
   saved to Co2MnSi/dos.png
   saved to Co2MnSi/pdos_0.png
@@ -1781,7 +1965,9 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=4, nsite_kkr=4
 save to Co2MnSi/f004c18c44f33831824ae67414f00215/structure.json
+dic {'go': 'geom', 'potentialfile': 'pot.dat', 'brvtyp': 'fcc', 'a': 10.593808876803033, 'c/a': 1.0, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'nmag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 0, 'pmix': '0.02', 'ntyp': 3, 'rmt': [0.0, 0.0, 0.0], 'field': [0.0, 0.0, 0.0], 'mxl': [2, 2, 2], 'type': ['Mn_4b_0', 'Co_8c_4', 'Si_4a_12'], 'ncmp': [1, 1, 1], 'anclr': [[25], [27], [14]], 'conc': [[100.0], [100.0], [100.0]], 'natm': 4, 'atmicx': [['0.50000000a', '0.50000000b', '0.50000000c', 'Mn_4b_0'], ['0.25000000a', '0.25000000b', '0.25000000c', 'Co_8c_4'], ['0.75000000a', '0.75000000b', '0.75000000c', 'Co_8c_4'], ['0.00000000a', '0.00000000b', '0.00000000c', 'Si_4a_12']], 'r1': [8.040613248383182e-17, 0.5, 0.5], 'r2': [0.5, 0.0, 0.5], 'r3': [0.5000000000000001, 0.5, 6.123233995736766e-17], 'displc': [[[0, 0, 0]], [[0, 0, 0]], [[0, 0, 0]]]}
 saved to Co2MnSi/f004c18c44f33831824ae67414f00215/inputcard_geom
+STOP by geom mode
 kkr_struc, symmetry, nsite ('Fm-3m', 225) 4
 kkr space group symbol, nsite 225 4
 input prim structure num_site 4
@@ -1790,11 +1976,12 @@ kkr   prim structure num_site 4
 ----------------------------------
 ### Co2MnSi (magnetic, pbe, spc31)
 kpath is made by HighSymmKpath
+dic {'go': 'spc31', 'potentialfile': 'pot.dat', 'brvtyp': 'fcc', 'a': 10.593808876803033, 'c/a': 1.0, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 90.0, 'edelt': 0.0001, 'ewidth': 1.2, 'reltyp': 'sra', 'sdftyp': 'pbe', 'magtyp': 'mag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 200, 'pmix': '0.02', 'ntyp': 3, 'rmt': [1.0, 1.0, 1.0], 'field': [0.0, 0.0, 0.0], 'mxl': [2, 2, 2], 'type': ['Mn_4b_0', 'Co_8c_4', 'Si_4a_12'], 'ncmp': [1, 1, 1], 'anclr': [[25], [27], [14]], 'conc': [[100.0], [100.0], [100.0]], 'natm': 4, 'atmicx': [['0.50000000a', '0.50000000b', '0.50000000c', 'Mn_4b_0'], ['0.25000000a', '0.25000000b', '0.25000000c', 'Co_8c_4'], ['0.75000000a', '0.75000000b', '0.75000000c', 'Co_8c_4'], ['0.00000000a', '0.00000000b', '0.00000000c', 'Si_4a_12']], 'r1': [8.040613248383182e-17, 0.5, 0.5], 'r2': [0.5, 0.0, 0.5], 'r3': [0.5000000000000001, 0.5, 6.123233995736766e-17], 'kpath_raw': ['150', 'c ---  \\Gamma X W K \\Gamma L U W L K', 'c ---  \\Gamma', '0.0 0.0 0.0', 'c ---  X', '0.5 0.0 0.5', 'c ---  W', '0.5 0.25 0.75', 'c ---  K', '0.375 0.375 0.75', 'c ---  \\Gamma', '0.0 0.0 0.0', 'c ---  L', '0.5 0.5 0.5', 'c ---  U', '0.625 0.25 0.625', 'c ---  W', '0.5 0.25 0.75', 'c ---  L', '0.5 0.5 0.5', 'c ---  K', '0.375 0.375 0.75'], 'displc': [[[0, 0, 0]], [[0, 0, 0]], [[0, 0, 0]]]}
   directory:  Co2MnSi   output file:  out_spc31.log
 debug: file, loaded content Co2MnSi/klabel.json {'kpath': [[{'\\Gamma': [0.0, 0.0, 0.0]}, {'X': [0.5, 0.0, 0.5]}, {'W': [0.5, 0.25, 0.75]}, {'K': [0.375, 0.375, 0.75]}, {'\\Gamma': [0.0, 0.0, 0.0]}, {'L': [0.5, 0.5, 0.5]}, {'U': [0.625, 0.25, 0.625]}, {'W': [0.5, 0.25, 0.75]}, {'L': [0.5, 0.5, 0.5]}, {'K': [0.375, 0.375, 0.75]}]]}
-  saved to Co2MnSi/Awk_up.png
-  saved to Co2MnSi/Awk_dn.png
-  saved to Co2MnSi/Awk_both.png
+  saved to Awk_up.png
+  saved to Awk_dn.png
+  saved to Awk_both.png
 
    Aw(w,k) k=0 0 0, up
   energy   -5.97e-01  -5.91e-01  -5.85e-01  ...  5.85e-01   5.91e-01   5.97e-01 
@@ -1808,6 +1995,8 @@ debug: file, loaded content Co2MnSi/klabel.json {'kpath': [[{'\\Gamma': [0.0, 0.
   
   [1 rows x 200 columns]
 
+/home/m0048/m004800/.pyenv/versions/3.10.12/lib/python3.10/site-packages/pymatgen/io/cif.py:1120: UserWarning: Issues encountered while parsing CIF: Some fractional coordinates rounded to ideal values to avoid issues with finite precision.
+  warnings.warn("Issues encountered while parsing CIF: " + "\n".join(self.warnings))
 get_structures(primitive=False), symmetry, nsite ('P6/mmm', 191) 6
 get_structures(primitive=True), symmetry, nsite ('P6/mmm', 191) 6
 prim_stand_struc, symmetry, nsite ('P6/mmm', 191) 6
@@ -1818,7 +2007,9 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=6, nsite_kkr=6
 save to SmCo5_oc/b8260bd2a71fea65131fe090346c6003/structure.json
+dic {'go': 'geom', 'potentialfile': 'pot.dat', 'brvtyp': 'hcp', 'a': 9.414619305071838, 'c/a': 0.7978723404255319, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 119.99999999999999, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'nmag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 0, 'pmix': '0.02', 'ntyp': 3, 'rmt': [0.0, 0.0, 0.0], 'field': [0.0, 0.0, 0.0], 'mxl': [2, 2, 2], 'type': ['Sm_1a_0', 'Co_3g_1', 'Co_2c_4'], 'ncmp': [1, 1, 1], 'anclr': [[62], [27], [27]], 'conc': [[100.0], [100.0], [100.0]], 'natm': 6, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Sm_1a_0'], ['0.50000000a', '0.00000000b', '0.50000000c', 'Co_3g_1'], ['0.00000000a', '0.50000000b', '0.50000000c', 'Co_3g_1'], ['0.50000000a', '0.50000000b', '0.50000000c', 'Co_3g_1'], ['0.33333333a', '0.66666667b', '0.00000000c', 'Co_2c_4'], ['0.66666667a', '0.33333333b', '0.00000000c', 'Co_2c_4']], 'r1': [0.5, -0.8660254037844386, 0.0], 'r2': [0.5, 0.8660254037844386, 0.0], 'r3': [0.0, 0.0, 0.7978723404255319], 'displc': [[[0, 0, 0]], [[0, 0, 0]], [[0, 0, 0]]]}
 saved to SmCo5_oc/b8260bd2a71fea65131fe090346c6003/inputcard_geom
+STOP by geom mode
 kkr_struc, symmetry, nsite ('P6/mmm', 191) 6
 kkr space group symbol, nsite 191 6
 input prim structure num_site 6
@@ -1826,12 +2017,15 @@ kkr   prim structure num_site 6
 ('P6/mmm', 191) ('P6/mmm', 191)
 ------------------------------------------------------------
 ### SmCo5(magnetic, open core for Sm-4f, srals, mjw-asa, go)
+dic {'go': 'go', 'potentialfile': 'pot.dat', 'brvtyp': 'hcp', 'a': 9.414619305071838, 'c/a': 0.7978723404255319, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 119.99999999999999, 'edelt': 0.001, 'ewidth': 1.7, 'reltyp': 'srals', 'sdftyp': 'mjwasa', 'magtyp': 'mag', 'record': 'init', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 200, 'pmix': '0.02', 'ntyp': 3, 'rmt': [0.0, 0.0, 0.0], 'field': [0.0, 0.0, 0.0], 'mxl': [3, 2, 2], 'type': ['Sm_1a_0', 'Co_3g_1', 'Co_2c_4'], 'ncmp': [1, 1, 1], 'anclr': [[62], [27], [27]], 'conc': [[100.0], [100.0], [100.0]], 'natm': 6, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Sm_1a_0'], ['0.50000000a', '0.00000000b', '0.50000000c', 'Co_3g_1'], ['0.00000000a', '0.50000000b', '0.50000000c', 'Co_3g_1'], ['0.50000000a', '0.50000000b', '0.50000000c', 'Co_3g_1'], ['0.33333333a', '0.66666667b', '0.00000000c', 'Co_2c_4'], ['0.66666667a', '0.33333333b', '0.00000000c', 'Co_2c_4']], 'r1': [0.5, -0.8660254037844386, 0.0], 'r2': [0.5, 0.8660254037844386, 0.0], 'r3': [0.0, 0.0, 0.7978723404255319], 'displc': [[[0, 0, 0]], [[0, 0, 0]], [[0, 0, 0]]]}
   directory:  SmCo5_oc   output file:  out_go.log
-           conv           orbitallocalmoment  ...        te       tm
-  current  True  [0.03987, 0.11069, 0.13569]  ... -3.48e+04 7.04e+00
+           conv          orbitallocalmoment  ...        te       tm
+  current  True  [0.0743, 0.11221, 0.13309]  ... -3.48e+04 6.93e+00
   
   [1 rows x 5 columns]
 
+/home/m0048/m004800/.pyenv/versions/3.10.12/lib/python3.10/site-packages/pymatgen/io/cif.py:1120: UserWarning: Issues encountered while parsing CIF: Some fractional coordinates rounded to ideal values to avoid issues with finite precision.
+  warnings.warn("Issues encountered while parsing CIF: " + "\n".join(self.warnings))
 get_structures(primitive=False), symmetry, nsite ('P6/mmm', 191) 6
 get_structures(primitive=True), symmetry, nsite ('P6/mmm', 191) 6
 prim_stand_struc, symmetry, nsite ('P6/mmm', 191) 6
@@ -1842,7 +2036,9 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=6, nsite_kkr=6
 save to SmCo5_oc/b8260bd2a71fea65131fe090346c6003/structure.json
+dic {'go': 'geom', 'potentialfile': 'pot.dat', 'brvtyp': 'hcp', 'a': 9.414619305071838, 'c/a': 0.7978723404255319, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 119.99999999999999, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'nmag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 0, 'pmix': '0.02', 'ntyp': 3, 'rmt': [0.0, 0.0, 0.0], 'field': [0.0, 0.0, 0.0], 'mxl': [2, 2, 2], 'type': ['Sm_1a_0', 'Co_3g_1', 'Co_2c_4'], 'ncmp': [1, 1, 1], 'anclr': [[62], [27], [27]], 'conc': [[100.0], [100.0], [100.0]], 'natm': 6, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Sm_1a_0'], ['0.50000000a', '0.00000000b', '0.50000000c', 'Co_3g_1'], ['0.00000000a', '0.50000000b', '0.50000000c', 'Co_3g_1'], ['0.50000000a', '0.50000000b', '0.50000000c', 'Co_3g_1'], ['0.33333333a', '0.66666667b', '0.00000000c', 'Co_2c_4'], ['0.66666667a', '0.33333333b', '0.00000000c', 'Co_2c_4']], 'r1': [0.5, -0.8660254037844386, 0.0], 'r2': [0.5, 0.8660254037844386, 0.0], 'r3': [0.0, 0.0, 0.7978723404255319], 'displc': [[[0, 0, 0]], [[0, 0, 0]], [[0, 0, 0]]]}
 saved to SmCo5_oc/b8260bd2a71fea65131fe090346c6003/inputcard_geom
+STOP by geom mode
 kkr_struc, symmetry, nsite ('P6/mmm', 191) 6
 kkr space group symbol, nsite 191 6
 input prim structure num_site 6
@@ -1850,12 +2046,15 @@ kkr   prim structure num_site 6
 ('P6/mmm', 191) ('P6/mmm', 191)
 -------------------------------------------------------------
 ### SmCo5(magnetic, open core for Sm-4f, srals, mjw-asa, fsm)
+dic {'go': 'fsm', 'potentialfile': 'pot_fsm.dat', 'brvtyp': 'hcp', 'a': 9.414619305071838, 'c/a': 0.7978723404255319, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 119.99999999999999, 'edelt': 0.001, 'ewidth': 1.7, 'reltyp': 'srals', 'sdftyp': 'mjwasa', 'magtyp': 'mag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 200, 'pmix': '0.02ch', 'ntyp': 3, 'rmt': [0.0, 0.0, 0.0], 'field': [0.0, 0.0, 0.0], 'mxl': [3, 2, 2], 'type': ['Sm_1a_0', 'Co_3g_1', 'Co_2c_4'], 'ncmp': [1, 1, 1], 'anclr': [[62], [27], [27]], 'conc': [[100.0], [100.0], [100.0]], 'natm': 6, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Sm_1a_0'], ['0.50000000a', '0.00000000b', '0.50000000c', 'Co_3g_1'], ['0.00000000a', '0.50000000b', '0.50000000c', 'Co_3g_1'], ['0.50000000a', '0.50000000b', '0.50000000c', 'Co_3g_1'], ['0.33333333a', '0.66666667b', '0.00000000c', 'Co_2c_4'], ['0.66666667a', '0.33333333b', '0.00000000c', 'Co_2c_4']], 'r1': [0.5, -0.8660254037844386, 0.0], 'r2': [0.5, 0.8660254037844386, 0.0], 'r3': [0.0, 0.0, 0.7978723404255319], 'fspin': 6.5, 'displc': [[[0, 0, 0]], [[0, 0, 0]], [[0, 0, 0]]]}
   directory:  SmCo5_oc   output file:  out_fsm.log
            conv           orbitallocalmoment  ...        te       tm
-  current  True  [0.05459, 0.10322, 0.13302]  ... -3.48e+04 6.50e+00
+  current  True  [0.08154, 0.10688, 0.13188]  ... -3.48e+04 6.50e+00
   
   [1 rows x 5 columns]
 
+/home/m0048/m004800/.pyenv/versions/3.10.12/lib/python3.10/site-packages/pymatgen/io/cif.py:1120: UserWarning: Issues encountered while parsing CIF: Some fractional coordinates rounded to ideal values to avoid issues with finite precision.
+  warnings.warn("Issues encountered while parsing CIF: " + "\n".join(self.warnings))
 get_structures(primitive=False), symmetry, nsite ('P6/mmm', 191) 6
 get_structures(primitive=True), symmetry, nsite ('P6/mmm', 191) 6
 prim_stand_struc, symmetry, nsite ('P6/mmm', 191) 6
@@ -1866,7 +2065,9 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=6, nsite_kkr=6
 save to SmCo5_oc/b8260bd2a71fea65131fe090346c6003/structure.json
+dic {'go': 'geom', 'potentialfile': 'pot.dat', 'brvtyp': 'hcp', 'a': 9.414619305071838, 'c/a': 0.7978723404255319, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 119.99999999999999, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'nmag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 0, 'pmix': '0.02', 'ntyp': 3, 'rmt': [0.0, 0.0, 0.0], 'field': [0.0, 0.0, 0.0], 'mxl': [2, 2, 2], 'type': ['Sm_1a_0', 'Co_3g_1', 'Co_2c_4'], 'ncmp': [1, 1, 1], 'anclr': [[62], [27], [27]], 'conc': [[100.0], [100.0], [100.0]], 'natm': 6, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Sm_1a_0'], ['0.50000000a', '0.00000000b', '0.50000000c', 'Co_3g_1'], ['0.00000000a', '0.50000000b', '0.50000000c', 'Co_3g_1'], ['0.50000000a', '0.50000000b', '0.50000000c', 'Co_3g_1'], ['0.33333333a', '0.66666667b', '0.00000000c', 'Co_2c_4'], ['0.66666667a', '0.33333333b', '0.00000000c', 'Co_2c_4']], 'r1': [0.5, -0.8660254037844386, 0.0], 'r2': [0.5, 0.8660254037844386, 0.0], 'r3': [0.0, 0.0, 0.7978723404255319], 'displc': [[[0, 0, 0]], [[0, 0, 0]], [[0, 0, 0]]]}
 saved to SmCo5_oc/b8260bd2a71fea65131fe090346c6003/inputcard_geom
+STOP by geom mode
 kkr_struc, symmetry, nsite ('P6/mmm', 191) 6
 kkr space group symbol, nsite 191 6
 input prim structure num_site 6
@@ -1874,10 +2075,13 @@ kkr   prim structure num_site 6
 ('P6/mmm', 191) ('P6/mmm', 191)
 ------------------------------------------------------------
 ### SmCo5(magnetic, open core for Sm-4f, srals, mjw-asa, tc)
+dic {'go': 'tc', 'potentialfile': 'pot.dat', 'brvtyp': 'hcp', 'a': 9.414619305071838, 'c/a': 0.7978723404255319, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 119.99999999999999, 'edelt': 0.001, 'ewidth': 1.7, 'reltyp': 'srals', 'sdftyp': 'mjwasa', 'magtyp': 'mag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 200, 'pmix': '0.02', 'ntyp': 3, 'rmt': [0.0, 0.0, 0.0], 'field': [0.0, 0.0, 0.0], 'mxl': [3, 2, 2], 'type': ['Sm_1a_0', 'Co_3g_1', 'Co_2c_4'], 'ncmp': [1, 1, 1], 'anclr': [[62], [27], [27]], 'conc': [[100.0], [100.0], [100.0]], 'natm': 6, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Sm_1a_0'], ['0.50000000a', '0.00000000b', '0.50000000c', 'Co_3g_1'], ['0.00000000a', '0.50000000b', '0.50000000c', 'Co_3g_1'], ['0.50000000a', '0.50000000b', '0.50000000c', 'Co_3g_1'], ['0.33333333a', '0.66666667b', '0.00000000c', 'Co_2c_4'], ['0.66666667a', '0.33333333b', '0.00000000c', 'Co_2c_4']], 'r1': [0.5, -0.8660254037844386, 0.0], 'r2': [0.5, 0.8660254037844386, 0.0], 'r3': [0.0, 0.0, 0.7978723404255319], 'displc': [[[0, 0, 0]], [[0, 0, 0]], [[0, 0, 0]]]}
   directory:  SmCo5_oc   output file:  out_tc.log
                 Tc
-  current 1.07e+03
+  current 1.04e+03
 
+/home/m0048/m004800/.pyenv/versions/3.10.12/lib/python3.10/site-packages/pymatgen/io/cif.py:1120: UserWarning: Issues encountered while parsing CIF: Some fractional coordinates rounded to ideal values to avoid issues with finite precision.
+  warnings.warn("Issues encountered while parsing CIF: " + "\n".join(self.warnings))
 get_structures(primitive=False), symmetry, nsite ('P6/mmm', 191) 6
 get_structures(primitive=True), symmetry, nsite ('P6/mmm', 191) 6
 prim_stand_struc, symmetry, nsite ('P6/mmm', 191) 6
@@ -1888,7 +2092,9 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=6, nsite_kkr=6
 save to SmCo5_oc/b8260bd2a71fea65131fe090346c6003/structure.json
+dic {'go': 'geom', 'potentialfile': 'pot.dat', 'brvtyp': 'hcp', 'a': 9.414619305071838, 'c/a': 0.7978723404255319, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 119.99999999999999, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'nmag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 0, 'pmix': '0.02', 'ntyp': 3, 'rmt': [0.0, 0.0, 0.0], 'field': [0.0, 0.0, 0.0], 'mxl': [2, 2, 2], 'type': ['Sm_1a_0', 'Co_3g_1', 'Co_2c_4'], 'ncmp': [1, 1, 1], 'anclr': [[62], [27], [27]], 'conc': [[100.0], [100.0], [100.0]], 'natm': 6, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Sm_1a_0'], ['0.50000000a', '0.00000000b', '0.50000000c', 'Co_3g_1'], ['0.00000000a', '0.50000000b', '0.50000000c', 'Co_3g_1'], ['0.50000000a', '0.50000000b', '0.50000000c', 'Co_3g_1'], ['0.33333333a', '0.66666667b', '0.00000000c', 'Co_2c_4'], ['0.66666667a', '0.33333333b', '0.00000000c', 'Co_2c_4']], 'r1': [0.5, -0.8660254037844386, 0.0], 'r2': [0.5, 0.8660254037844386, 0.0], 'r3': [0.0, 0.0, 0.7978723404255319], 'displc': [[[0, 0, 0]], [[0, 0, 0]], [[0, 0, 0]]]}
 saved to SmCo5_oc/b8260bd2a71fea65131fe090346c6003/inputcard_geom
+STOP by geom mode
 kkr_struc, symmetry, nsite ('P6/mmm', 191) 6
 kkr space group symbol, nsite 191 6
 input prim structure num_site 6
@@ -1896,36 +2102,39 @@ kkr   prim structure num_site 6
 ('P6/mmm', 191) ('P6/mmm', 191)
 --------------------------------------------------------------
 ### SmCo5(magnetic, open core for Sm-4f, srals, mjw-asa, j3.0)
+dic {'go': 'j3.0', 'potentialfile': 'pot.dat', 'brvtyp': 'hcp', 'a': 9.414619305071838, 'c/a': 0.7978723404255319, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 119.99999999999999, 'edelt': 0.001, 'ewidth': 1.7, 'reltyp': 'srals', 'sdftyp': 'mjwasa', 'magtyp': 'mag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 200, 'pmix': '0.02', 'ntyp': 3, 'rmt': [0.0, 0.0, 0.0], 'field': [0.0, 0.0, 0.0], 'mxl': [3, 2, 2], 'type': ['Sm_1a_0', 'Co_3g_1', 'Co_2c_4'], 'ncmp': [1, 1, 1], 'anclr': [[62], [27], [27]], 'conc': [[100.0], [100.0], [100.0]], 'natm': 6, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Sm_1a_0'], ['0.50000000a', '0.00000000b', '0.50000000c', 'Co_3g_1'], ['0.00000000a', '0.50000000b', '0.50000000c', 'Co_3g_1'], ['0.50000000a', '0.50000000b', '0.50000000c', 'Co_3g_1'], ['0.33333333a', '0.66666667b', '0.00000000c', 'Co_2c_4'], ['0.66666667a', '0.33333333b', '0.00000000c', 'Co_2c_4']], 'r1': [0.5, -0.8660254037844386, 0.0], 'r2': [0.5, 0.8660254037844386, 0.0], 'r3': [0.0, 0.0, 0.7978723404255319], 'displc': [[[0, 0, 0]], [[0, 0, 0]], [[0, 0, 0]]]}
   directory:  SmCo5_oc   output file:  out_j3.0.log
   saved to SmCo5_oc/jij.csv
 
   saved to SmCo5_oc/Jij_Co_2c_4-Co_2c_4.png
-  saved to SmCo5_oc/Jij_Co_3g_1-Co_3g_1.png
-  saved to SmCo5_oc/Jij_Co_3g_1-Co_2c_4.png
+  saved to SmCo5_oc/Jij_Sm_1a_0-Co_2c_4.png
   saved to SmCo5_oc/Jij_Sm_1a_0-Sm_1a_0.png
   saved to SmCo5_oc/Jij_Sm_1a_0-Co_3g_1.png
-  saved to SmCo5_oc/Jij_Sm_1a_0-Co_2c_4.png
+  saved to SmCo5_oc/Jij_Co_3g_1-Co_2c_4.png
+  saved to SmCo5_oc/Jij_Co_3g_1-Co_3g_1.png
                 Tc
-  current 1.06e+03
+  current 1.03e+03
 
 
 debug df_result_jij
   comp1 comp2 current_J_ij current_J_ij(meV)                 pair
-0     1     1     0.001084         14.747643  Co_2c_4-Co_3g_1-1-1
-1     1     1     0.000996         13.554262  Co_3g_1-Co_3g_1-1-1
-2     1     1     0.000391          5.314158  Co_2c_4-Co_2c_4-1-1
-3     1     1     0.000177          2.411821  Co_2c_4-Sm_1a_0-1-1
-4     1     1     0.000175          2.387633  Co_3g_1-Sm_1a_0-1-1
-5     1     1    -0.000002         -0.029975  Sm_1a_0-Sm_1a_0-1-1
+0     1     1     0.001082         14.717501  Co_2c_4-Co_3g_1-1-1
+1     1     1     0.001008         13.718617  Co_3g_1-Co_3g_1-1-1
+2     1     1     0.000364          4.949727  Co_2c_4-Co_2c_4-1-1
+3     1     1     0.000203          2.761892  Co_2c_4-Sm_1a_0-1-1
+4     1     1     0.000204          2.778382  Co_3g_1-Sm_1a_0-1-1
+5     1     1     0.000021          0.280703  Sm_1a_0-Sm_1a_0-1-1
 debug df_ref_jij
 None
 
    J_ij(meV) at the shortest distance
   typecomp Co_2c_4-Co_3g_1-1-1_1_1  ... Sm_1a_0-Sm_1a_0-1-1_1_1
-  current                14.747643  ...               -0.029975
+  current                14.717501  ...                0.280703
   
   [1 rows x 6 columns]
 
+/home/m0048/m004800/.pyenv/versions/3.10.12/lib/python3.10/site-packages/pymatgen/io/cif.py:1120: UserWarning: Issues encountered while parsing CIF: Some fractional coordinates rounded to ideal values to avoid issues with finite precision.
+  warnings.warn("Issues encountered while parsing CIF: " + "\n".join(self.warnings))
 get_structures(primitive=False), symmetry, nsite ('P6/mmm', 191) 6
 get_structures(primitive=True), symmetry, nsite ('P6/mmm', 191) 6
 prim_stand_struc, symmetry, nsite ('P6/mmm', 191) 6
@@ -1936,7 +2145,9 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=6, nsite_kkr=6
 save to SmCo5_oc/b8260bd2a71fea65131fe090346c6003/structure.json
+dic {'go': 'geom', 'potentialfile': 'pot.dat', 'brvtyp': 'hcp', 'a': 9.414619305071838, 'c/a': 0.7978723404255319, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 119.99999999999999, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'nmag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 0, 'pmix': '0.02', 'ntyp': 3, 'rmt': [0.0, 0.0, 0.0], 'field': [0.0, 0.0, 0.0], 'mxl': [2, 2, 2], 'type': ['Sm_1a_0', 'Co_3g_1', 'Co_2c_4'], 'ncmp': [1, 1, 1], 'anclr': [[62], [27], [27]], 'conc': [[100.0], [100.0], [100.0]], 'natm': 6, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Sm_1a_0'], ['0.50000000a', '0.00000000b', '0.50000000c', 'Co_3g_1'], ['0.00000000a', '0.50000000b', '0.50000000c', 'Co_3g_1'], ['0.50000000a', '0.50000000b', '0.50000000c', 'Co_3g_1'], ['0.33333333a', '0.66666667b', '0.00000000c', 'Co_2c_4'], ['0.66666667a', '0.33333333b', '0.00000000c', 'Co_2c_4']], 'r1': [0.5, -0.8660254037844386, 0.0], 'r2': [0.5, 0.8660254037844386, 0.0], 'r3': [0.0, 0.0, 0.7978723404255319], 'displc': [[[0, 0, 0]], [[0, 0, 0]], [[0, 0, 0]]]}
 saved to SmCo5_oc/b8260bd2a71fea65131fe090346c6003/inputcard_geom
+STOP by geom mode
 kkr_struc, symmetry, nsite ('P6/mmm', 191) 6
 kkr space group symbol, nsite 191 6
 input prim structure num_site 6
@@ -1944,6 +2155,7 @@ kkr   prim structure num_site 6
 ('P6/mmm', 191) ('P6/mmm', 191)
 -------------------------------------------------------------
 ### SmCo5(magnetic, open core for Sm-4f, srals, mjw-asa, dos)
+dic {'go': 'dos', 'potentialfile': 'pot.dat', 'brvtyp': 'hcp', 'a': 9.414619305071838, 'c/a': 0.7978723404255319, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 119.99999999999999, 'edelt': 0.001, 'ewidth': 2.0, 'reltyp': 'srals', 'sdftyp': 'mjwasa', 'magtyp': 'mag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 200, 'pmix': '0.02', 'ntyp': 3, 'rmt': [0.0, 0.0, 0.0], 'field': [0.0, 0.0, 0.0], 'mxl': [3, 2, 2], 'type': ['Sm_1a_0', 'Co_3g_1', 'Co_2c_4'], 'ncmp': [1, 1, 1], 'anclr': [[62], [27], [27]], 'conc': [[100.0], [100.0], [100.0]], 'natm': 6, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Sm_1a_0'], ['0.50000000a', '0.00000000b', '0.50000000c', 'Co_3g_1'], ['0.00000000a', '0.50000000b', '0.50000000c', 'Co_3g_1'], ['0.50000000a', '0.50000000b', '0.50000000c', 'Co_3g_1'], ['0.33333333a', '0.66666667b', '0.00000000c', 'Co_2c_4'], ['0.66666667a', '0.33333333b', '0.00000000c', 'Co_2c_4']], 'r1': [0.5, -0.8660254037844386, 0.0], 'r2': [0.5, 0.8660254037844386, 0.0], 'r3': [0.0, 0.0, 0.7978723404255319], 'displc': [[[0, 0, 0]], [[0, 0, 0]], [[0, 0, 0]]]}
   directory:  SmCo5_oc   output file:  out_dos.log
   saved to SmCo5_oc/dos.png
   saved to SmCo5_oc/pdos_0.png
@@ -1952,30 +2164,32 @@ kkr   prim structure num_site 6
 
    totalDOS (up)
   energy   -9.95e-01  -9.85e-01  -9.75e-01  ...  9.75e-01   9.85e-01   9.95e-01 
-  current   2.55e-02   2.54e-02   2.52e-02  ...   1.35e+01   1.26e+01   1.04e+01
+  current   2.63e-02   2.62e-02   2.61e-02  ...   1.20e+01   2.30e+01   2.22e+01
   
   [1 rows x 200 columns]
 
    totalDOS (dn)
   energy   -9.95e-01  -9.85e-01  -9.75e-01  ...  9.75e-01   9.85e-01   9.95e-01 
-  current   1.83e-02   1.84e-02   1.85e-02  ...   1.77e+01   1.53e+01   1.16e+01
+  current   1.89e-02   1.91e-02   1.93e-02  ...   1.30e+01   1.47e+01   2.23e+01
   
   [1 rows x 200 columns]
 
    pdos (up), atom=0, l=d
   energy   -1.00e+00  -9.90e-01  -9.80e-01  ...  9.80e-01   9.90e-01   1.00e+00 
-  current  -7.00e-04  -7.00e-04  -7.00e-04  ...   9.86e-01   9.31e-01   6.45e-01
+  current  -8.00e-04  -7.00e-04  -7.00e-04  ...   7.72e-01   1.41e+00   1.44e+00
   
   [1 rows x 201 columns]
 
    pdos (dn), atom=0, l=d
   energy   -1.00e+00  -9.90e-01  -9.80e-01  ...  9.80e-01   9.90e-01   1.00e+00 
-  current   8.00e-04   8.00e-04   8.00e-04  ...   7.98e-01   6.44e-01   4.23e-01
+  current  -2.00e-04  -1.00e-04  -1.00e-04  ...   6.87e-01   5.17e-01   1.82e+00
   
   [1 rows x 201 columns]
 
    final: True
 
+/home/m0048/m004800/.pyenv/versions/3.10.12/lib/python3.10/site-packages/pymatgen/io/cif.py:1120: UserWarning: Issues encountered while parsing CIF: Some fractional coordinates rounded to ideal values to avoid issues with finite precision.
+  warnings.warn("Issues encountered while parsing CIF: " + "\n".join(self.warnings))
 get_structures(primitive=False), symmetry, nsite ('P6/mmm', 191) 6
 get_structures(primitive=True), symmetry, nsite ('P6/mmm', 191) 6
 prim_stand_struc, symmetry, nsite ('P6/mmm', 191) 6
@@ -1986,7 +2200,9 @@ debug, _ElementKKR Og : Z=0 rmt=0.0 field=0.0 lmax=2
 conventional standard structure
 prim_stand_nsite=6, nsite_kkr=6
 save to SmCo5_oc/b8260bd2a71fea65131fe090346c6003/structure.json
+dic {'go': 'geom', 'potentialfile': 'pot.dat', 'brvtyp': 'hcp', 'a': 9.414619305071838, 'c/a': 0.7978723404255319, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 119.99999999999999, 'edelt': 0.001, 'ewidth': 1.0, 'reltyp': 'sra', 'sdftyp': 'mjw', 'magtyp': 'nmag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 0, 'pmix': '0.02', 'ntyp': 3, 'rmt': [0.0, 0.0, 0.0], 'field': [0.0, 0.0, 0.0], 'mxl': [2, 2, 2], 'type': ['Sm_1a_0', 'Co_3g_1', 'Co_2c_4'], 'ncmp': [1, 1, 1], 'anclr': [[62], [27], [27]], 'conc': [[100.0], [100.0], [100.0]], 'natm': 6, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Sm_1a_0'], ['0.50000000a', '0.00000000b', '0.50000000c', 'Co_3g_1'], ['0.00000000a', '0.50000000b', '0.50000000c', 'Co_3g_1'], ['0.50000000a', '0.50000000b', '0.50000000c', 'Co_3g_1'], ['0.33333333a', '0.66666667b', '0.00000000c', 'Co_2c_4'], ['0.66666667a', '0.33333333b', '0.00000000c', 'Co_2c_4']], 'r1': [0.5, -0.8660254037844386, 0.0], 'r2': [0.5, 0.8660254037844386, 0.0], 'r3': [0.0, 0.0, 0.7978723404255319], 'displc': [[[0, 0, 0]], [[0, 0, 0]], [[0, 0, 0]]]}
 saved to SmCo5_oc/b8260bd2a71fea65131fe090346c6003/inputcard_geom
+STOP by geom mode
 kkr_struc, symmetry, nsite ('P6/mmm', 191) 6
 kkr space group symbol, nsite 191 6
 input prim structure num_site 6
@@ -1995,21 +2211,22 @@ kkr   prim structure num_site 6
 ---------------------------------------------------------------
 ### SmCo5(magnetic, open core for Sm-4f, srals, mjw-asa, spc31)
 kpath is made by HighSymmKpath
+dic {'go': 'spc31', 'potentialfile': 'pot.dat', 'brvtyp': 'hcp', 'a': 9.414619305071838, 'c/a': 0.7978723404255319, 'b/a': 1.0, 'alpha': 90.0, 'beta': 90.0, 'gamma': 119.99999999999999, 'edelt': 0.001, 'ewidth': 1.7, 'reltyp': 'srals', 'sdftyp': 'mjwasa', 'magtyp': 'mag', 'record': '2nd', 'outtyp': 'update', 'bzqlty': 6, 'maxitr': 200, 'pmix': '0.02', 'ntyp': 3, 'rmt': [0.0, 0.0, 0.0], 'field': [0.0, 0.0, 0.0], 'mxl': [3, 2, 2], 'type': ['Sm_1a_0', 'Co_3g_1', 'Co_2c_4'], 'ncmp': [1, 1, 1], 'anclr': [[62], [27], [27]], 'conc': [[100.0], [100.0], [100.0]], 'natm': 6, 'atmicx': [['0.00000000a', '0.00000000b', '0.00000000c', 'Sm_1a_0'], ['0.50000000a', '0.00000000b', '0.50000000c', 'Co_3g_1'], ['0.00000000a', '0.50000000b', '0.50000000c', 'Co_3g_1'], ['0.50000000a', '0.50000000b', '0.50000000c', 'Co_3g_1'], ['0.33333333a', '0.66666667b', '0.00000000c', 'Co_2c_4'], ['0.66666667a', '0.33333333b', '0.00000000c', 'Co_2c_4']], 'r1': [0.5, -0.8660254037844386, 0.0], 'r2': [0.5, 0.8660254037844386, 0.0], 'r3': [0.0, 0.0, 0.7978723404255319], 'kpath_raw': ['150', 'c ---  \\Gamma M K \\Gamma A L H A', 'c ---  \\Gamma', '0.0 0.0 0.0', 'c ---  M', '0.5 0.0 0.0', 'c ---  K', '0.3333333333333333 0.3333333333333333 0.0', 'c ---  \\Gamma', '0.0 0.0 0.0', 'c ---  A', '0.0 0.0 0.5', 'c ---  L', '0.5 0.0 0.5', 'c ---  H', '0.3333333333333333 0.3333333333333333 0.5', 'c ---  A', '0.0 0.0 0.5'], 'displc': [[[0, 0, 0]], [[0, 0, 0]], [[0, 0, 0]]]}
   directory:  SmCo5_oc   output file:  out_spc31.log
 debug: file, loaded content SmCo5_oc/klabel.json {'kpath': [[{'\\Gamma': [0.0, 0.0, 0.0]}, {'M': [0.5, 0.0, 0.0]}, {'K': [0.3333333333333333, 0.3333333333333333, 0.0]}, {'\\Gamma': [0.0, 0.0, 0.0]}, {'A': [0.0, 0.0, 0.5]}, {'L': [0.5, 0.0, 0.5]}, {'H': [0.3333333333333333, 0.3333333333333333, 0.5]}, {'A': [0.0, 0.0, 0.5]}]]}
-  saved to SmCo5_oc/Awk_up.png
-  saved to SmCo5_oc/Awk_dn.png
-  saved to SmCo5_oc/Awk_both.png
+  saved to Awk_up.png
+  saved to Awk_dn.png
+  saved to Awk_both.png
 
    Aw(w,k) k=0 0 0, up
   energy   -8.46e-01  -8.37e-01  -8.29e-01  ...  8.29e-01   8.37e-01   8.46e-01 
-  current   3.17e-02   3.25e-02   3.33e-02  ...   2.46e+00   3.29e+00   2.62e+01
+  current   3.28e-02   3.36e-02   3.44e-02  ...   5.19e+00   3.19e+00   7.40e+00
   
   [1 rows x 200 columns]
 
    Aw(w,k) k=0 0 0, dn
   energy   -8.46e-01  -8.37e-01  -8.29e-01  ...  8.29e-01   8.37e-01   8.46e-01 
-  current   2.53e-02   2.60e-02   2.67e-02  ...   1.25e+01   1.56e+02   1.65e+02
+  current   2.71e-02   2.80e-02   2.89e-02  ...   2.59e+00   5.76e+00   1.01e+02
   
   [1 rows x 200 columns]
 
