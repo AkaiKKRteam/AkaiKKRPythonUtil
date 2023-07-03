@@ -1273,6 +1273,7 @@ def _SmCo5_oc_common_param(akaikkr_exe: dict, displc: bool, ciffilepath="../stru
     param["sdftyp"] = "mjwasa"
     param["magtyp"] = "mag"
     param["rmt"] = [0.0 for i in range(param["ntyp"])]
+    param["mxl"] = [3, 2, 2]
 
     return param
 
@@ -1363,7 +1364,9 @@ def _SmCo5_noc_common_param(akaikkr_exe: dict, displc: bool,
     param["reltyp"] = "srals"
     param["sdftyp"] = "mjwasa"
     param["magtyp"] = "mag"
+    param["pmix"] = 0.005
     param["rmt"] = [0.0 for i in range(param["ntyp"])]
+    param["mxl"] = [3, 2, 2]
 
     return param
 
