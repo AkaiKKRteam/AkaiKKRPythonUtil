@@ -1,0 +1,142 @@
+diff --git a/makefile b/makefile
+index a652549..4f60760 100755
+--- a/makefile
++++ b/makefile
+@@ -1,3 +1,6 @@
++#.SUFFIXES:
++#.SUFFIXES: .f .o
++
+ # ThecCommand invoking the fortran compiler of the
+ # system should be specified by "fort= ".
+ # The corresponding compiler option also should be given 
+@@ -287,7 +290,7 @@ source/xtoken.o \
+ source/zroots.o
+ 
+ $(program): $(objs) 
+-	@$(fort) -o $@ $(flag) $(omp) $(objs) $(libs)
++	$(fort) -o $@ $(flag) $(omp) $(objs) $(libs)
+ 
+ .f.o:
+ 	$(fort) $(flag) $(omp) -o $(<:.f=.o) -c $<
+diff --git a/source/specx.f b/source/specx.f
+index 8df6155..1c7d325 100644
+--- a/source/specx.f
++++ b/source/specx.f
+@@ -59,8 +59,8 @@ c
+       character  go*6,file*256,brvtyp*6,reltyp*6,sdftyp*12,magtyp*6
+      &          ,outtyp*6,title*2000,bzqlty*8,record*4,cwtyp*4,pmxtyp*16
+      &          ,dmy*6,trmkey*16
+-      character,allocatable::xtype(:)*16,xatmtyp(:)*16,xatmicv(:)*24
+-     &          ,type(:)*16,atmtyp(:)*16,atmicv(:)*24
++      character,allocatable::xtype(:)*40,xatmtyp(:)*40,xatmicv(:)*24
++     &          ,type(:)*40,atmtyp(:)*40,atmicv(:)*24
+ c
+       logical    openc,ifkey
+       logical,allocatable::convrg(:)
+@@ -115,6 +115,7 @@ c     ----------------------------------------------------
+      &          ,xatmicv)
+ c
+       if(go .eq. 'go') then
++      elseif(go.eq.'geom') then
+       elseif(go .eq. 'dsp') then
+ c      --- display the result without any iteration process.
+       ids=2
+diff --git a/source/spmain.f b/source/spmain.f
+index e886dd2..9e1463c 100644
+--- a/source/spmain.f
++++ b/source/spmain.f
+@@ -70,7 +70,7 @@ c
+       integer*4 iwk(niwk)
+       integer,allocatable::korder(:)
+ c
+-      character  type(ntyp)*16,atmtyp(natm)*16,atmicv(3,natm)*24
++      character  type(ntyp)*40,atmtyp(natm)*40,atmicv(3,natm)*24
+      &          ,go*6,file*256,brvtyp*6,reltyp*6,sdftyp*12,magtyp*6
+      &          ,outtyp*6,title*2000,token*80
+      &          ,bzqlty*8,record*4,bravai*3,status*2
+@@ -236,7 +236,7 @@ c     endif
+       call setari(unpair,1,ncmpx)
+       do 11 i=1,ntyp
+       write(*,1210)trim(type(i)),rmt(i),field(i),lmxtyp(i)
+- 1210 format('   type=',a,t17,'  rmt=',f8.5,' field=',f7.3
++ 1210 format('   type=',a,'  rmt=',f8.5,' field=',f7.3
+      &      ,'   lmxtyp=',i3)
+       jistrt=ji+1
+       do 11 j=1,ncmp(i)
+@@ -274,6 +274,13 @@ c         signs.
+       write(*,'(1x)')
+       write(*,'(a,f13.6)')'   fixed spin moment=',fspin
+       endif
++
++      if (go=="geom") then
++        write(*,*)
++        write(*,*)
++        stop 'by geom mode'
++      endif
++
+       write(*,'(1x)')
+ c     --- anclr data on file 05 are used --
+ c         (i.e. anclr on file 24 ignored)
+diff --git a/source/spmfld.f b/source/spmfld.f
+index fb6f754..7bd9f01 100644
+--- a/source/spmfld.f
++++ b/source/spmfld.f
+@@ -65,7 +65,7 @@ c
+      &          ,match(18,ncmpx,2),itblk(5,natm**2)
+      &          ,irotat(natm*24),iatm(ntyp),lmxblk(ndmx)
+      &          ,isymop(24),lmxtyp(ntyp),mxlcmp(ncmpx),iatmp(natm)
+-      character  type(ntyp)*8,atmtyp(natm)*8,atmicv(3,natm)*24
++      character  type(ntyp)*40,atmtyp(natm)*40,atmicv(3,natm)*24
+      &          ,go*3,file*256,brvtyp*3,reltyp*6,sdftyp*12,magtyp*4
+      &          ,outtyp*6,title*300,token*80
+      &          ,bzqlty*4,record*4,bravai*3,status*2
+@@ -162,7 +162,7 @@ c     endif
+       ji=0
+       do 11 i=1,ntyp
+       write(*,1210)type(i),rmt(i),field(i),lmxtyp(i)
+- 1210 format('   type=',a8,'  rmt=',f7.5,'  field=',f7.3
++ 1210 format('   type=',a,'  rmt=',f7.5,'  field=',f7.3
+      &      ,'   lmxtyp=',i3)
+       do 11 j=1,ncmp(i)
+       ji=ji+1
+diff --git a/source/wrtspc.f b/source/wrtspc.f
+index 45e4248..89bceb8 100644
+--- a/source/wrtspc.f
++++ b/source/wrtspc.f
+@@ -20,6 +20,36 @@ c-----------------------------------------------------------------------
+ c     --- output with format (a)
+       sftfct=5d-1*unit
+       estep=dble(e(2,is))-dble(e(1,is))
++      eb=dble(e(1,is))-ef(is)+5d-1*estep
++      et=dble(e(mse,is))-ef(is)-5d-1*estep
++      do  n=1,kblst
++      kk=nk1+kcrt(n)
++      lbl(n)=''
++      do  i=1,3
++      a=s(i)
++      vk=vcrt(i,n)
++      if(abs(vk) .le. small)a='0'
++      if(abs(vk-1d0) .le. small)a='1'
++      if(abs(vk+1d0) .le. small)a='-1'
++      if(abs(vk-5d-1) .le. small)a='1/2'
++      if(abs(vk+5d-1) .le. small)a='-1/2'
++      if(abs(vk-1.5d0) .le. small)a='3/2'
++      if(abs(vk+1.5d0) .le. small)a='-3/2'
++      if(abs(vk-1d0/3d0) .le. small)a='1/3'
++      if(abs(vk+1d0/3d0) .le. small)a='-1/3'
++      if(abs(vk-3d0/4d0) .le. small)a='3/4'
++      if(abs(vk+3d0/4d0) .le. small)a='-3/4'
++      lbl(n)=lbl(n)(1:len_trim(lbl(n)))//' '//a
++      enddo
++      enddo
++
++      write(26+is,'(a/a,2e15.7,2i4/a,25(i4,1x,a))')
++     &      '### header for format (a)'
++     &     ,'#',eb,et,mse-1,kblst
++     &     ,'#',(kcrt(i),lbl(i),i=1,kblst)
++      write(26+is,'(a)')
++     &     ,'### end of header'
++
+ c     write(*,'(1x,a,i2)')'#  A(E,k) for spin =',is
+       write(26+is,'(a,i2)')'#  A(E,k) for spin =',is
+       do 10 kp=1,nk3
